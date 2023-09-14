@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/api/form_api/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>FORM API</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/">产品简介</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/quick_start/">快速入门</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_guide/">开发者指南</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/rest_api/">REST API</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="api/form_api/">FORM API</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">请求方法</a></li>
+                    
+                  
+                    <li class=""><a href="#_2">小文件上传</a></li>
+                    
+                  
+                    <li class=""><a href="#_3">响应信息</a></li>
+                    
+                  
+                    <li class=""><a href="#_4">通知规则</a></li>
+                    
+                  
+                    <li class=""><a href="#_5">大文件上传</a></li>
+                    
+                  
+                    <li class=""><a href="#_6">路径设置</a></li>
+                    
+                  
+                    <li class=""><a href="#_7">异步预处理</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#apps">apps 参数结构</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_8">响应信息</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_9">回调通知</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#ext-param">ext-param</a></li>
+                    
+                  
+                    <li class=""><a href="#_10">签名认证（旧）</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_11">请求签名（旧）</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_12">回调签名（旧）</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_13">图片预处理（旧）</a></li>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_tools/">开发者工具</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/sdk/">SDK 使用文档</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/fusion_storage/">融合云存储</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/multipart_upload/">分块上传（已弃用）</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/errno/">API 错误码表</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/purge/">缓存刷新</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/small_program/">微信小程序</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="mobile-stats/">移动流量</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="sms/">短信服务</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>FORM API</h1>
+
+<p>通过网页 FORM，使用 HTTP/HTTPS 直接把文件上传到又拍云存储。特别地，文中请求参数放在 HTTP/HTTPS body 中传递，请确保您上传表单格式符合 <a href="https://www.ietf.org/rfc/rfc1867.txt">RFC 1867</a> 协议规范。</p>
+<hr />
+<h2 id="_1">请求方法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<pre><code class="language-sh">curl http://v0.api.upyun.com/&lt;bucket&gt; \
+    -F authorization=&quot;UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -F file=@&lt;filename&gt; \
+    -F policy=&lt;policy&gt; \
+    # 其他参数...
+</code></pre>
+<p><strong>基本域名</strong></p>
+<ul>
+<li>智能选路（推荐）：<code>v0.api.upyun.com</code></li>
+<li>电信线路：<code>v1.api.upyun.com</code></li>
+<li>联通（网通）线路：<code>v2.api.upyun.com</code></li>
+<li>移动（铁通）线路：<code>v3.api.upyun.com</code></li>
+</ul>
+<p><strong>认证鉴权</strong></p>
+<p>详见<a href="/api/authorization/#body">签名认证</a>。</p>
+<p><strong>推荐上传流程</strong></p>
+<pre><code>            +-----------------+ +-----------------+ +-----------------+
+            | Client/Browser  | |    FORM API     | | Customer Server |
+            +-----------------+ +-----------------+ +-----------------+
+                    |                   |                   |
+                    |                   |                   |
+                   +++        Request authorization        +++
+                   |-|====================================&gt;|-|
+                   |-|                  |                  |-|
+                   |-|                  |                  |-|
+                   |-|        Response authorization       |-|
+                   |-|&lt;====================================|-|
+                   +++                  |                  +++
+                    |                   |                   |
+                    |                   |                   |
+                    |                   |                   |
+                   +++     Upload      +++                 +++
+                   |-|================&gt;|-|     Notify      |-|
+                   |-|                 |-|----------------&gt;|-|
+                   |-|                 |-|                 |-|
+                   |-|     Response    |-|                 |-|
+                   |-|&lt;================|-|                 |-|
+                   +++                 +++                 +++
+                    |                   |                   |
+                    |                   |                   |                              
+</code></pre>
+<ol>
+<li>客户端请求客户服务器，生成、获取上传所需的 <a href="/api/authorization/#policy">policy</a>、<a href="/api/authorization/#body">authorization</a>；</li>
+<li>客户端通过 FORM API 上传文件，返回上传结果信息，（可选）回调通知客户服务器；</li>
+<li>客户端处理其他业务流程。</li>
+</ol>
+<hr />
+<p><a name="upload_args"></a></p>
+<h2 id="_2">小文件上传<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>文件大小超过 100M 后，建议使用<a href="#form_big_file_upload">大文件上传</a>；移动端或者弱网环境上传，推荐使用 <a href="/api/rest_api/#Multi_upload">REST API 断点续传上传</a>。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bucket</td>
+<td>是</td>
+<td>文件上传到的服务</td>
+</tr>
+<tr>
+<td>save-key</td>
+<td>是</td>
+<td>文件保存路径，可用占位符，见 <a href="#save-key">路径设置</a></td>
+</tr>
+<tr>
+<td>expiration</td>
+<td>是</td>
+<td>请求的过期时间，UNIX UTC 时间戳，单位秒。建议设为 30 分钟</td>
+</tr>
+<tr>
+<td>date</td>
+<td>否</td>
+<td>请求日期时间，GMT 格式字符串 (<a href="http://tools.ietf.org/html/rfc1123">RFC 1123</a>)，如 <code>Wed, 29 Oct 2014 02:26:58 GMT</code></td>
+</tr>
+<tr>
+<td>content-md5</td>
+<td>否</td>
+<td>上传文件的 MD5 值，如果请求中文件太大计算 MD5 不方便，可以为空</td>
+</tr>
+<tr>
+<td>return-url</td>
+<td>否</td>
+<td>同步通知 URL，见 <a href="#notify_return">通知规则</a></td>
+</tr>
+<tr>
+<td>notify-url</td>
+<td>否</td>
+<td>异步通知 URL，见 <a href="#notify_return">通知规则</a></td>
+</tr>
+<tr>
+<td>content-secret</td>
+<td>否</td>
+<td>文件密钥，用于保护文件，防止文件被直接访问，见 <a href="/api/rest_api/#Content-Secret">Content-Secret 参数说明</a></td>
+</tr>
+<tr>
+<td>content-type</td>
+<td>否</td>
+<td>文件类型，默认使用文件扩展名作为文件类型</td>
+</tr>
+<tr>
+<td>allow-file-type</td>
+<td>否</td>
+<td>允许上传的文件扩展名，以 <code>,</code> 分隔。如 <code>jpg,jpeg,png</code></td>
+</tr>
+<tr>
+<td>content-length-range</td>
+<td>否</td>
+<td>文件大小限制，格式：<code>min,max</code>，单位：字节 <br /> 如 <code>102400,1024000</code>，表示允许上传 100Kb～1Mb 的文件</td>
+</tr>
+<tr>
+<td>image-width-range</td>
+<td>否</td>
+<td>图片宽度限制，格式：<code>min,max</code>，单位：像素 <br /> 如 <code>0,1024</code>，允许上传宽度为 0～1024px 之间</td>
+</tr>
+<tr>
+<td>image-height-range</td>
+<td>否</td>
+<td>图片高度限制，格式：<code>min,max</code>，单位：像素 <br /> 如 <code>0,1024</code>，允许上传高度在 0～1024px 之间</td>
+</tr>
+<tr>
+<td>x-gmkerl-thumb</td>
+<td>否</td>
+<td>图片预处理，见 <a href="/cloud/image/#sync_upload_process">上传预处理（同步）</a></td>
+</tr>
+<tr>
+<td>x-gmkerl-type</td>
+<td>否</td>
+<td>可选值：<code>get_meta</code>，获取图片信息；<code>get_theme_color</code>，获取图片主题色</td>
+</tr>
+<tr>
+<td>apps</td>
+<td>否</td>
+<td>异步预处理，见 <a href="#async_process">异步预处理</a></td>
+</tr>
+<tr>
+<td>b64encoded</td>
+<td>否</td>
+<td>对通过 Base64 编码上传的文件进行 Base64 解码，值为 <code>on</code></td>
+</tr>
+<tr>
+<td>ext-param</td>
+<td>否</td>
+<td>额外参数，见 <a href="#ext-param">ext-param</a></td>
+</tr>
+<tr>
+<td>x-upyun-meta-ttl</td>
+<td>否</td>
+<td>文件元信息, 指定文件的生存时间， 单位天，最大支持180天</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注</strong></p>
+<ul>
+<li>每个上传请求只能上传一个文件，请求的参数名和参数值 <strong>区分大小写</strong>。</li>
+<li>若在上传非图片文件时使用 <code>image-width-range</code>，<code>image-height-range</code>，会返回「不是图片」的错误。</li>
+<li>若请求中带有预处理参数（<code>x-gmkerl-thumb</code>），图片处理后再保存。</li>
+<li>若设置了 <code>x-gmkerl-type</code> 参数，则图片上传完成后会返回图片的 meta 信息或主题色。</li>
+</ul>
+<hr />
+<h2 id="_3">响应信息<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>上传成功：返回 <code>200</code> 或访问指定的 URL（见 <a href="#notify_return">通知规则</a>）。</li>
+<li>上传失败：返回相应的出错信息，具体请参阅「<a href="/api/errno/">API 错误码表</a>」。</li>
+</ul>
+<hr />
+<p><a name="notify_return"></a></p>
+<h2 id="_4">通知规则<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p><strong>return-url 参数说明</strong></p>
+<ul>
+<li>如果没有设置 <code>return-url</code>，文件上传完成后，结果信息在响应体中返回。</li>
+<li>如果设置了 <code>return-url</code>，文件上传完成后，结果信息以 Query String 的形式追加到 <code>return-url</code> 指定的 URL 后，并访问。例如，<code>return-url</code> 为 <code>http://www.yourdomain.com/return/</code>，访问的 URL 是：</li>
+</ul>
+<pre><code>http://yourdomain.com/return/?code=200&amp;message=ok&amp;url=%2F2011%2F12%2Ffd0e30047f81fa95.mp3&amp;time=1332129461
+</code></pre>
+<ul>
+<li>结果信息的参数名及说明如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>状态码，<code>200</code> 表示上传成功</td>
+</tr>
+<tr>
+<td>message</td>
+<td>URL encoding 的描述信息，<code>ok</code> 表示上传成功，其他的表示错误信息</td>
+</tr>
+<tr>
+<td>url</td>
+<td>URL encoding 的文件保存路径</td>
+</tr>
+<tr>
+<td>time</td>
+<td>UNIX UTC 时间戳，单位秒</td>
+</tr>
+<tr>
+<td>sign/no-sign</td>
+<td>签名，详见<a href="#sign">回调签名（旧）</a>。使用<a href="/api/authorization/#header">回调签名（新）</a>时，不存在</td>
+</tr>
+<tr>
+<td>image-width</td>
+<td>图片的宽。上传文件是图片时，才存在</td>
+</tr>
+<tr>
+<td>image-height</td>
+<td>图片的高。上传文件是图片时，才存在</td>
+</tr>
+<tr>
+<td>image-type</td>
+<td>图片类型。上传文件是图片时，才存在</td>
+</tr>
+<tr>
+<td>image-frames</td>
+<td>图片帧数。上传文件是图片时，才存在</td>
+</tr>
+<tr>
+<td>task_ids</td>
+<td>异步任务 ID 集。设置了 <code>apps</code> 参数时，才存在</td>
+</tr>
+</tbody>
+</table>
+<!--
+包括 `code`、`message`、`url`、`time` 和 [`sign`](#sign)(或 [`no-sign`](#sign)) 参数。如果上传的是图片，还包括 `image-width`、`image-height`、`image-frames` 和 `image-type` 四个参数（备注：这四个参数不参与旧版回调签名计算）。如果设置了 `apps` 参数，还包括 `task_ids`。
+-->
+
+<p><strong>notify-url 参数说明</strong></p>
+<ul>
+<li>如果没有设置 <code>notify-url</code>，不发起异步通知。</li>
+<li>如果设置了 <code>notify-url</code>，文件上传完成后，向 <code>notify-url</code> 发送 <code>HTTP POST</code> 请求，请求体是回调信息。回调信息是 URL encoding 的字符串，内容和 <code>return-url</code> 中的<a href="#notify_return">结果信息</a>相同。回调通知签名，见<a href="/api/authorization/#header">签名认证</a>，它提供给客户端用于验证回调通知的合法性。</li>
+</ul>
+<hr />
+<p><a name="form_big_file_upload"></a></p>
+<h2 id="_5">大文件上传<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>大文件上传基于数据流式传输的原理，通过降低数据在边缘节点、中转节点的时间开销，让上传速度更快。</p>
+<p>相比小文件上传，它有两点约束，具体如下：</p>
+<p>1、需要在<a href="#upload_args">小文件上传</a>的参数中加入 <code>content-length</code> 参数，指定文件长度。</p>
+<p>2、确保三个字段 <code>authorization</code>、<code>policy</code>、<code>file</code> 中，<code>file</code> 处于最后的位置。</p>
+<p><strong>举例说明</strong></p>
+<pre><code>// policy 中加入文件长度 content-length
+
+POLICY = {
+    'bucket': 'bucket1',
+    'expiration': 1509200758,
+    'content-length': 10,
+    'save-key': '/img1.txt',
+}
+</code></pre>
+<pre><code>// file 字段处于最后的位置
+
+POST /bucket1 HTTP/1.1
+Host: v0.api.upyun.com
+Content-Type: multipart/form-data; boundary=xxxxxxx
+Content-Length: 386
+--xxxxxxx.
+Content-Disposition: form-data; name=&quot;policy&quot;
+eyJjb250ZW50LWxlbmd0aCI6IDEwLCAiYnVja2V0IjogImJ1Y2tldDEiLCAiZXhwaXJhdGlvbiI6IDE1MDkyMDA3NTgsICJzYXZlLWtleSI6ICIvaW1nMS50eHQifQ==
+--xxxxxxx
+Content-Disposition: form-data; name=&quot;signature&quot;
+48f7ccda45cc3a5e25f4eb5eb1d6dbba
+--xxxxxxx
+Content-Disposition: form-data; name=&quot;file&quot;; filename=abc.txt.
+d63..`PPq.
+--xxxxxxx--
+</code></pre>
+<hr />
+<p><a name="save-key"></a></p>
+<h2 id="_6">路径设置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p><code>save-key</code> 支持的设置类型：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>格式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>绝对值</td>
+<td>String</td>
+<td>指定具体的路径，如: <code>/path/to/file.txt</code></td>
+</tr>
+<tr>
+<td>时间类</td>
+<td>{year} {mon} {day} {hour} {min} {sec}</td>
+<td>日期、时间相关内容（UTC 时间）</td>
+</tr>
+<tr>
+<td>md5 类</td>
+<td>{filemd5}</td>
+<td>文件的 md5 值</td>
+</tr>
+<tr>
+<td>随机类</td>
+<td>{random} {random32}</td>
+<td>16 位或 32 位随机字符和数字</td>
+</tr>
+<tr>
+<td>文件名</td>
+<td>{filename} {suffix} {.suffix}</td>
+<td>上传文件的文件名及扩展名</td>
+</tr>
+</tbody>
+</table>
+<p><strong>举例说明</strong></p>
+<p>例 1：时间类 + 随机类</p>
+<pre><code>上传文件名：sample.jpg
+UTC 时间：2013-01-01 10:05:20
+save-key：/{year}/{mon}/{day}/upload_{random32}{.suffix}
+保存路径为：/2013/01/01/upload_b92c9cc21ce6a88ea696705c88b57c3f.jpg
+</code></pre>
+<p>例 2：时间类 + 文件名</p>
+<pre><code>上传文件名：sample.jpg
+UTC 时间：2014-02-02 11:05:20
+save-key：/{year}/{mon}/{day}/{hour}_{min}_{sec}_{filename}{.suffix}
+保存路径为：/2014/02/02/11_05_20_sample.jpg
+</code></pre>
+<p>为了避免路径重名导致文件被覆盖，建议使用复杂的低重复性的命名方式。</p>
+<hr />
+<p><a name="async_process"></a></p>
+<h2 id="_7">异步预处理<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>如果设置了 <code>apps</code> 参数，文件上传完成后，会创建异步处理任务。目前，异步预处理支持<strong>异步图片处理</strong>、<strong>异步音视频处理</strong>和<strong>异步图片鉴别</strong>。</p>
+<h3 id="apps">apps 参数结构<a class="headerlink" href="#apps" title="Permanent link">&para;</a></h3>
+<pre><code>apps = [
+    {                                           // 异步图片处理任务
+        &quot;name&quot;: &quot;thumb&quot;,                        // 异步任务名称，必填。thumb 表示异步图片处理服务
+        &quot;x-gmkerl-thumb&quot;: &quot;&lt;图片处理参数&gt;&quot;,       // 处理参数，必填
+        &quot;save_as&quot;: &quot;&lt;save_as&gt;&quot;,                 // 结果图片保存路径，选填
+        &quot;notify_url&quot;: &quot;&lt;notify_url&gt;&quot;            // 回调地址，不填时使用上传参数中的  notify_url
+    },
+    ......
+]
+
+apps = [
+    {                                               // 异步音视频处理任务
+        &quot;name&quot;: &quot;naga&quot;,                             // 异步任务名称，必填。naga 表示异步音视频处理服务
+        &quot;type&quot;: &quot;&lt;type&gt;&quot;,                           // 视频转码，必填
+        &quot;avopts&quot;: &quot;&lt;avopts&gt;&quot;,                       // 处理参数，必填
+        &quot;return_info&quot;: true/false,                  // 是否返回元数据，选填
+        &quot;save_as&quot;: &quot;&lt;save_as&gt;&quot;,                     // 结果音频/视频保存路径，选填
+        &quot;notify_url&quot;: &quot;&lt;notify_url&gt;&quot;                // 回调地址，不填时使用上传参数中的 notify_url
+    },
+    ......
+]
+
+apps = [
+    {                                               // 异步图片审核任务
+        &quot;name&quot;: &quot;imgaudit&quot;,                         // 异步任务名称，必填。imgaudit 表示异步图片审核服务
+        &quot;notify_url&quot;: &quot;&lt;notify_url&gt;&quot;                // 回调地址，不填时使用上传参数中的 notify_url
+    },
+    ......
+]
+
+apps = [
+    {                                               // 异步文本审核任务
+        &quot;name&quot;: &quot;textjudge&quot;,                        // 异步任务名称，必填。textjudge 表示异步文本审核服务
+        &quot;notify_url&quot;: &quot;&lt;notify_url&gt;&quot;                // 回调地址，不填时使用上传参数中的 notify_url
+    },
+    ......
+]
+</code></pre>
+<p><strong>注</strong></p>
+<ul>
+<li><code>apps</code> 按 JSON 格式组装任务，最多可以包含 10 个任务，每个任务必须指定 <code>name</code> 参数。</li>
+<li>原文件的保存路径由<a href="#upload_args">上传参数</a>中的 <code>save-key</code> 指定。</li>
+<li>异步图片处理，详见 「图片处理」 &gt; 「<a href="/cloud/image/#async_upload_process">上传预处理（异步）</a>」；异步音视频处理，详见「音视频处理」 &gt; 「<a href="/cloud/av/#async_upload_process">上传预处理</a>」；异步内容审核，详见 「内容审核」 &gt; 「<a href="/cloud/audit/#async_upload_process">上传预处理</a>」。</li>
+</ul>
+<hr />
+<h3 id="_8">响应信息<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>异步处理任务创建成功后，在上传返回信息和回调信息（详见<a href="#notify_return">通知规则</a>）中会带上 <code>task_ids</code> 字段，里面包含每个任务的 <code>task_id</code>。</p>
+<hr />
+<h3 id="_9">回调通知<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>异步处理任务完成后，如果存在 <code>notify_url</code>（任务中不存在 <code>notify_url</code>，使用<a href="#upload_args">上传参数</a>中的 <code>notify_url</code>，如果上传参数中也不存在，不回调），以回调的形式发送处理结果，里面包含 <code>task_id</code> 等信息，具体详见各服务的回调通知。</p>
+<hr />
+<p><a name="ext-param"></a></p>
+<h2 id="ext-param">ext-param<a class="headerlink" href="#ext-param" title="Permanent link">&para;</a></h2>
+<p>当使用 <code>return-url</code> 或 <code>notify-url</code> 参数发送返回信息或回调信息时，结果信息（详见<a href="#notify_return">通知规则</a>）仅包含又拍云指定的内容，无法回传用户自定义的内容。如果需要回传自定义的内容，可以指定 <code>ext-param</code> 参数。</p>
+<ul>
+<li>自定义的内容必须是 UTF-8 编码，且长度不能超过 255 个字节。</li>
+<li><code>notify-url</code> 回调是异步进行的，如果回调信息需要区分自定义内容来自那个上传请求，可以在 <code>ext-param</code> 参数中添加个 clientId_xxx 标识。</li>
+</ul>
+<hr />
+<h2 id="_10">签名认证（旧）<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="_11">请求签名（旧）<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p><strong>请求方法</strong></p>
+<pre><code class="language-sh">curl http://v0.api.upyun.com/&lt;bucket&gt; \
+    -F file=@&lt;filename&gt; \
+    -F policy=&lt;policy&gt; \
+    -F signature=&lt;signature&gt; \
+    # 其他参数...
+</code></pre>
+<p><strong>signature 算法</strong></p>
+<p>为了保证服务的安全性，使用服务的表单 API 密钥（可登录又拍云控制台查看）对 policy 进行签名，签名的结果即是 signature。</p>
+<p>signature 生成步骤：</p>
+<ol>
+<li>生成 policy 字符串（见 <a href="/api/authorization/#policy">policy 算法</a>）；</li>
+<li>将第 1 步中的字符串与表单 API 密钥字符串用 <code>&amp;</code> 拼接；</li>
+<li>将第 2 步中的字符串计算 md5，所得即为 <code>signature</code>。</li>
+</ol>
+<p>例如，假设服务的表单 API 验证密钥为：<code>cAnyet74l9hdUag34h2dZu8z7gU=</code></p>
+<p>第一步，生成 policy 字符串：</p>
+<pre><code>eyJidWNrZXQiOiJkZW1vYnVja2V0IiwiZXhwaXJhdGlvbiI6MTQwOTIwMDc1OCwic2F2ZS1rZXkiOiIvaW1nLmpwZyJ9
+</code></pre>
+<p>第二步，第一步的字符串与表单 API 密钥字符串用 <code>&amp;</code> 拼接：</p>
+<pre><code>eyJidWNrZXQiOiJkZW1vYnVja2V0IiwiZXhwaXJhdGlvbiI6MTQwOTIwMDc1OCwic2F2ZS1rZXkiOiIvaW1nLmpwZyJ9&amp;cAnyet74l9hdUag34h2dZu8z7gU=
+</code></pre>
+<p>第三步，将第二步的字符串计算 md5 后即得到 <code>signature</code>：</p>
+<pre><code>646a6a629c344ce0e6a10cadd49756d4
+</code></pre>
+<hr />
+<p><a name="sign"></a></p>
+<h3 id="_12">回调签名（旧）<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p><strong>sign 算法</strong></p>
+<p><code>sign</code> 是根据 <code>code</code>、<code>message</code>、<code>url</code>、<code>time</code> 和表单 API 验证密匙(<code>form_api_secret</code>) 使用 <code>&amp;</code> 拼接后进行 MD5 处理得到。拼接时需注意 URL 的编码与解码问题。如果使用了 <code>ext-param</code> 参数, <code>ext-param</code> 也需要使用 <code>&amp;</code> 拼接在 <code>form_api_secret</code> 之后。</p>
+<p>如果上传的是图片，存在 <code>image-width</code>、<code>image-height</code>、<code>image-frames</code> 和 <code>image-type</code> 四个参数，这四个参数不参与签名计算。
+如果设置了 <code>apps</code> 参数，存在 <code>task_ids</code>，它也不参与签名计算。</p>
+<p>例如，code：<code>200</code></p>
+<p>message：<code>'ok'</code></p>
+<p>url：<code>'/2015/06/17/190623/upload_QQ 图片 201506011111206f7c696f0920f097d7eefd750334003e.png'</code></p>
+<p>time：<code>1434539183</code></p>
+<p>form_api_secret：<code>lGetaXubhGezKp89+6iuOb5IaS3=</code></p>
+<p>拼接后的字符串：</p>
+<pre><code>200&amp;ok&amp;/2015/06/17/190623/upload_QQ 图片 201506011111206f7c696f0920f097d7eefd750334003e.png&amp;1434539183&amp;lGetaXubhGezKp89+6iuOb5IaS3=
+</code></pre>
+<p><code>sign</code> 是 <code>'086c46cfedfc22bfa2e4971a77530a76'</code>。</p>
+<p>回调信息（已经签名）是：</p>
+<pre><code>{&quot;code&quot;:200,&quot;message&quot;:&quot;ok&quot;,&quot;url&quot;:&quot;\/2015\/06\/17\/190623\/upload_QQ\u56fe\u7247201506011111206f7c696f0920f097d7eefd750334003e.png&quot;,&quot;time&quot;:1434539183,&quot;image-width&quot;:1024,&quot;image-height&quot;:768,&quot;image-frames&quot;:1,&quot;image-type&quot;:&quot;PNG&quot;,&quot;sign&quot;:&quot;086c46cfedfc22bfa2e4971a77530a76&quot;}
+</code></pre>
+<p><strong>no-sign 算法</strong></p>
+<p>如果发生异常，表单 API 验证密钥获取失败，返回 <code>no-sign</code>。<code>no-sign</code> 算法跟 <code>sign</code> 相同，只是表单 API 验证密匙(<code>form_api_secret</code>) 为空字符串 <code>''</code>。</p>
+<p>例如，使用上例参数拼接后的字符串是：</p>
+<pre><code>200&amp;ok&amp;/2015/06/17/190623/upload_QQ 图片 201506011111206f7c696f0920f097d7eefd750334003e.png&amp;1434539183
+</code></pre>
+<p><code>no-sign</code> 是 <code>'bbaeeb9d05623fe1b380f756a291011a'</code>。</p>
+<hr />
+<h2 id="_13">图片预处理（旧）<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x-gmkerl-extract-color-count</td>
+<td>否</td>
+<td>主题色提取的颜色数量，默认 <code>256</code></td>
+</tr>
+<tr>
+<td>x-gmkerl-extract-format</td>
+<td>否</td>
+<td>主题色提取格式，默认 <code>dec</code></td>
+</tr>
+<tr>
+<td>x-gmkerl-thumbnail</td>
+<td>否</td>
+<td>缩略图版本名称，可搭配其他 <code>x-gmkerl-*</code> 参数使用</td>
+</tr>
+<tr>
+<td>x-gmkerl-type</td>
+<td>否</td>
+<td>缩略类型，见 <a href="#gmkerl-type">x-gmkerl-type 可选值列表</a></td>
+</tr>
+<tr>
+<td>x-gmkerl-value</td>
+<td>否</td>
+<td>缩略类型对应的参数值，见 <a href="#gmkerl-value">x-gmkerl-value 值说明</a></td>
+</tr>
+<tr>
+<td>x-gmkerl-quality</td>
+<td>否</td>
+<td>压缩质量，默认 <code>95</code></td>
+</tr>
+<tr>
+<td>x-gmkerl-unsharp</td>
+<td>否</td>
+<td>是否锐化，默认锐化</td>
+</tr>
+<tr>
+<td>x-gmkerl-rotate</td>
+<td>否</td>
+<td>图片旋转（顺时针），可选值：<code>auto</code>、<code>(0, 360]</code>。详见<a href="/cloud/image/#rotate">旋转</a></td>
+</tr>
+<tr>
+<td>x-gmkerl-crop</td>
+<td>否</td>
+<td>图片裁剪，格式：<code>&lt;w&gt;x&lt;h&gt;a&lt;x&gt;a&lt;y&gt;</code>。详见<a href="/cloud/image/#crop">裁剪</a></td>
+</tr>
+<tr>
+<td>x-gmkerl-exif-switch</td>
+<td>否</td>
+<td>是否保留 EXIF 信息，默认不保留 <br /> 仅在搭配 <code>x-gmkerl-crop</code>、<code>x-gmkerl-type</code>、<code>x-gmkerl-thumbnail</code> 时有效</td>
+</tr>
+</tbody>
+</table>
+<p><a name="gmkerl-type"></a>
+<strong>x-gmkerl-type 可选值列表</strong></p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fix_width</code></td>
+<td>限定宽度，高度自适应</td>
+</tr>
+<tr>
+<td><code>fix_height</code></td>
+<td>限定高度，宽度自适应</td>
+</tr>
+<tr>
+<td><code>fix_width_or_height</code></td>
+<td>限定宽度和高度，宽高不足时不缩放</td>
+</tr>
+<tr>
+<td><code>fix_both</code></td>
+<td>固定宽度和高度，宽高不足时强行缩放</td>
+</tr>
+<tr>
+<td><code>fix_max</code></td>
+<td>限定最长边，短边自适应</td>
+</tr>
+<tr>
+<td><code>fix_min</code></td>
+<td>限定最短边，长边自适应</td>
+</tr>
+<tr>
+<td><code>fix_scale</code></td>
+<td>等比例缩放（1-1000）</td>
+</tr>
+</tbody>
+</table>
+<p><a name="gmkerl-value"></a>
+<strong>x-gmkerl-value 值说明</strong></p>
+<ul>
+<li>当 <code>x-gmkerl-type</code> 指定为 <code>fix_width_or_height</code> 或 <code>fix_both</code> 时，<code>x-gmkerl-value</code> 值的格式为 <code>&lt;width&gt;x&lt;height&gt;</code>，如 <code>480x576</code>。</li>
+<li>当 <code>x-gmkerl-type</code>  为其他的类型，<code>x-gmkerl-value</code> 值只需要指定单个数字，如 <code>100</code>，意思为高和/或宽为 <code>100</code>。</li>
+</ul>
+<hr />
+<p>如有疑问请 <a href="https://www.upyun.com/contact">联系我们</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

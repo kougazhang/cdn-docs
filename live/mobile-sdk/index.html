@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/live/mobile-sdk/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>移动端 sdk</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="live/Introduction/">产品简介</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="live/guide/">快速入门</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="live/primary/">基础配置</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="live/advanced/">增值服务</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="live/mobile-sdk/">移动端 sdk</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#ios-sdk">IOS 推流 SDK</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_1">系统说明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_2">功能说明</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#sdk">安卓推流 SDK</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">系统说明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">功能说明</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#ios-sdk_1">IOS 播放器 SDK</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_5">系统说明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_6">功能说明</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#sdk_1">安卓播放器 SDK</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_7">系统说明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_8">功能说明</a></li>
+                      </ul>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>移动端 sdk</h1>
+
+<h2 id="ios-sdk">IOS 推流 SDK<a class="headerlink" href="#ios-sdk" title="Permanent link">&para;</a></h2>
+<h3 id="_1">系统说明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>支持 iOS 8 及以上系统版本   </li>
+<li>支持 ARMv7，ARM64，x86_64 架构</li>
+</ul>
+<h3 id="_2">功能说明<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>采集模块源码开放，音视频可以自由配置  </li>
+<li>支持硬件编码  </li>
+<li>多码率可选  </li>
+<li>支持 H.264 视频编码  </li>
+<li>支持 AAC 音频编码  </li>
+<li>支持前后摄像头  </li>
+<li>支持自动对焦  </li>
+<li>支持手动调整对焦点  </li>
+<li>支持闪光灯操作  </li>
+<li>支持多分辨率编码   </li>
+<li>支持构造带安全授权凭证的 RTMP 推流地址  </li>
+<li>支持 ARMv7, ARM64, x86_64 架构  </li>
+<li>支持 RTMP 协议直播推流    </li>
+<li>支持推流时可变码率  </li>
+<li>提供发送 buffer      </li>
+<li>支持视频 Orientation 操作   </li>
+<li>支持弱网丢帧策略   </li>
+<li>支持后台音频推流  </li>
+<li>支持水印功能  </li>
+<li>支持美颜功能  </li>
+</ul>
+<p>项目地址：https://github.com/upyun/ios-live-sdk<br />
+反馈及建议：livesdk@upai.com</p>
+<h2 id="sdk">安卓推流 SDK<a class="headerlink" href="#sdk" title="Permanent link">&para;</a></h2>
+<h3 id="_3">系统说明<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Android 4.1(API 16) 以上</li>
+<li>支持 ARMv5，ARMv7，ARMv8 版本</li>
+</ul>
+<h3 id="_4">功能说明<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>支持 H.264 和 AAC 硬编</li>
+<li>硬编支持 Android Min API 18（Android 4.3）及其以上版本</li>
+<li>支持 RTMP 封包及推流</li>
+<li>支持 RTMP 推流自适应网络质量动态切换码率或自定义策略</li>
+<li>支持纯音频推流，以及后台运行</li>
+<li>支持动态更改 Encoding Orientation</li>
+</ul>
+<p>项目地址：https://github.com/upyun/android-push-sdk<br />
+反馈及建议：livesdk@upai.com</p>
+<h2 id="ios-sdk_1">IOS 播放器 SDK<a class="headerlink" href="#ios-sdk_1" title="Permanent link">&para;</a></h2>
+<h3 id="_5">系统说明<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>支持 iOS 8 及以上系统版本   </li>
+<li>支持 ARMv7，ARM64，x86_64 架构  </li>
+</ul>
+<h3 id="_6">功能说明<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>支持 RTMP 、HLS 和 HTTP-FLV 协议的直播流媒体播放</li>
+<li>高可定制：可自定义尺寸，按钮，进度条，全屏，旋转等 UI 属性</li>
+<li>支持单音频播放</li>
+<li>支持 RTMP 直播首屏秒开</li>
+<li>RTMP 直播累积延迟消除技术</li>
+<li>支持 speex 解码</li>
+<li>音画同步调整</li>
+<li>一屏多画</li>
+<li>点播支持</li>
+<li>支持 seek 功能</li>
+<li>视频缓冲设置，缓冲进度</li>
+<li>支持预连接，后播放功能</li>
+<li>集成亮度调整和音量调整</li>
+<li>支持静音播放</li>
+<li>支持播放器状态回调</li>
+<li>支持流信息，播放器信息察看（Dashboard）</li>
+<li>支持播放本地视频文件</li>
+<li>集成播放质量监控  </li>
+</ul>
+<p>项目地址：https://github.com/upyun/ios-live-sdk<br />
+反馈及建议：livesdk@upai.com</p>
+<h2 id="sdk_1">安卓播放器 SDK<a class="headerlink" href="#sdk_1" title="Permanent link">&para;</a></h2>
+<h3 id="_7">系统说明<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Android 2.3 (API 9) 及其以上</li>
+<li>支持 ARMv5，ARMv7，ARMv8 版本</li>
+</ul>
+<h3 id="_8">功能说明<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>支持 RTMP 、HLS 和 HTTP-FLV 协议的直播流媒体播放</li>
+<li>支持常见的音视频文件播放（MP4、M4A、FLV 等）</li>
+<li>支持 MediaCodec 硬件解码</li>
+<li>提供播放器核心类 PLMediaPlayer</li>
+<li>提供 PLVideoView 控件</li>
+<li>支持播放器音量设置，可实现静音功能</li>
+<li>支持纯音频播放</li>
+<li>支持直播累积延时优化</li>
+<li>支持 ARM，ARMv7a，ARM64v8a，X86 主流芯片体系架构</li>
+<li>可高度定制化的 MediaController</li>
+<li>高可定制：可自定义尺寸，按钮，进度条，全屏，旋转等 UI 属性</li>
+<li>单音频播放</li>
+<li>RTMP 直播首屏秒开支持</li>
+<li>RTMP 直播累积延迟消除技术</li>
+<li>支持 speex 解码</li>
+<li>音画同步调整</li>
+<li>支持点播</li>
+<li>支持 seek 功能</li>
+<li>视频缓冲设置，缓冲进度</li>
+<li>支持预连接，后播放功能</li>
+<li>集成亮度调整和音量调整</li>
+<li>支持静音播放</li>
+<li>支持播放器状态回调</li>
+<li>支持流信息，播放器信息察看（Dashboard）</li>
+<li>支持播放本地视频文件</li>
+</ul>
+<p>项目地址：https://github.com/upyun/android-player-sdk<br />
+反馈及建议：livesdk@upai.com</p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/misc/phpwind/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>Phpwind</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>Phpwind</h1>
+
+<p>Phpwind 用户需要使用 UPYUN 有以下两个方法：</p>
+<h2 id="_1">通过论坛自带的远程附件功能<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>使用 phpwind 的远程附件功能，可将论坛附件全部存放到 UPYUN 上。经过 phpwind 官方测试，可正常使用。</p>
+<ol>
+<li>
+<p>前期准备：</p>
+<ul>
+<li>
+<p>在 UPYUN 上创建一个文件类空间。 注意：必须是文件类空间，不能是图片类空间，phpwind 附件含多种类型文件</p>
+</li>
+<li>
+<p>获取刚才创建空间的 FTP 帐号信息</p>
+</li>
+</ul>
+</li>
+<li>
+<p>设置步骤：
+    <img alt="" src="http://upyun-assets.b0.upaiyun.com/docs/misc/pw.png" /></p>
+</li>
+<li>
+<p>论坛原有附件需要通过 ftp 上传到云存储空间的相应位置</p>
+</li>
+<li>
+<p>到这一步，恭喜您，您的附件已经托管到 UPYUN，这下您不用担心附件的安全及性能问题了。</p>
+</li>
+</ol>
+<h2 id="upyun">安装使用 UPYUN 官方插件<a class="headerlink" href="#upyun" title="Permanent link">&para;</a></h2>
+<h3 id="v03">v0.3<a class="headerlink" href="#v03" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UPYUN 附件助手（PW）v0.3 下载地址：<a href="http://upyun-assets.b0.upaiyun.com/docs/phpwind-plugin/pw_upyun_v0.3.zip">Zip 压缩包</a> | <a href="http://upyun-assets.b0.upaiyun.com/docs/phpwind-plugin/pw_upyun_v0.3.7z">7z 压缩包</a></li>
+<li>UPYUN 附件助手（PW）v0.3 安装使用手册：<a href="http://upyun-assets.b0.upaiyun.com/docs/phpwind-plugin/pw_readme_v0.3.docx">Word 版</a> | <a href="http://upyun-assets.b0.upaiyun.com/docs/phpwind-plugin/pw_readme_v0.3.pdf">Pdf 版</a></li>
+</ul>
+<h3 id="v02">v0.2<a class="headerlink" href="#v02" title="Permanent link">&para;</a></h3>
+<ul>
+<li>UPYUN 附件助手（PW）v0.2 下载地址：<a href="http://upyun-assets.b0.upaiyun.com/docs/phpwind-plugin/pw_upyun_v0.2.zip">Zip 压缩包</a> | <a href="http://upyun-assets.b0.upaiyun.com/docs/phpwind-plugin/pw_upyun_v0.2.7z">7z 压缩包</a></li>
+<li>UPYUN 附件助手（PW）v0.2 安装使用手册： <a href="http://upyun-assets.b0.upaiyun.com/docs/phpwind-plugin/pw_readme_v0.2.docx">Word 版</a> | <a href="http://upyun-assets.b0.upaiyun.com/docs/phpwind-plugin/pw_readme_v0.2.pdf">Pdf 版</a></li>
+</ul>
+<h3 id="_2">版本更新说明<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><strong>v0.3 更新说明</strong>
+完善了新版的兼容问题（针对 20130227 升级包），20130227 升级包前的版本请使用 0.2 版</p>
+<p><strong>v0.2 更新说明</strong>
+将原有 FTP 远程附件存储模式修改成 UPYUN 远程附件云存储方式，更高速稳定上传附件和图片到 UPYUN；</p>
+<p><strong>v0.1 更新说明</strong>
+无需进行繁琐的远程附件设置，仅需在插件中设置空间，操作员，密码，访问域名，远程目录等信息即可使用 UPYUN 服务；</p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

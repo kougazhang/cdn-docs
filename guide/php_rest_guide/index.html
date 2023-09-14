@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/guide/php_rest_guide/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>Php rest guide</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>Php rest guide</h1>
+
+<p>这一部分将说明如何快速使用<code>PHP</code>向又拍云上创建的服务上传一份文件，通过这个例子，你将学会如何生成签名并调用我们的<code>REST API</code>进行工作。</p>
+<p>讲解例子之前，假设你已经注册了又拍云的帐号，并创建了服务，分配了操作员。示例中我们架设使用一下服务和操作员（虚构，请先自行注册和创建又拍云服务）：</p>
+<ul>
+<li>服务名:<code>demobucket</code></li>
+<li>操作员帐号:<code>operator</code></li>
+<li>操作员密码:<code>operatorpassword</code></li>
+</ul>
+<h2 id="_1">准备文件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>本示例目标是将本地文件 <code>assets/bar.txt</code> 上传到 <code>demobucket</code> 服务，并重命名为 <code>foo.txt</code>。
+所以最终的服务端路径是 <code>$uri = '/demobucket/foo.txt'</code>。</p>
+<pre><code class="language-php">    $bucketName = 'demobucket';
+    //被上传的文件路径
+    $filePath = 'assets/bar.txt';
+    $fileSize = filesize($filePath);
+    //文件上传到服务器的服务端路径
+    $serverPath = 'foo.txt';
+    $uri = &quot;/$bucketName/$serverPath&quot;;
+</code></pre>
+<h2 id="_2">生成签名<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>示例中使用安全的签名认证，强烈建议你在实际的生产环境中都使用这种方式来调用我们的 API。
+上传文件接口需要通过 HTTP <code>PUT</code> 方法调用，签名生成可以参考如下方式：</p>
+<pre><code class="language-php">    //生成签名时间。得到的日期格式如：Thu, 11 Jul 2014 05:34:12 GMT
+    $date = gmdate('D, d M Y H:i:s \G\M\T');
+    //本示例只上传了文件，所以 HTTP BODY 长度等于文件长度
+    $contentLength = $fileSize;
+    $sign = md5(&quot;PUT&amp;{$uri}&amp;{$date}&amp;{$contentLength}&amp;&quot;.md5($operatorPwd));
+</code></pre>
+<h2 id="_3">发送请求<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>将上一步生成的签名，放到 HTTP 消息头中。如果没有签名或者签名错误，则会导致接口调用失败，服务端会返回 HTTP 状态码 <code>401</code></p>
+<p>格式如下：</p>
+<pre><code class="language-php">    $headers = array(
+        &quot;Expect:&quot;,
+        &quot;Date: &quot;.$date, // header 中使用的时间必须和生成签名的时间相同
+        &quot;Authorization: UpYun $operatorName:&quot;.$sign
+    );
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+</code></pre>
+<h2 id="_4">完整代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>通过 php <code>curl</code> 发送<code>put</code>请求，调用接口。倘若接口返回的 HTTP 状态码等于<code>200</code>，说明接口调用成功
+- <code>CURLOPT_INFILE</code> 设置上传文件的句柄
+- <code>CURLOPT_INFILESIZE</code> 设置上传文件大小</p>
+<p>最终项目结构如下</p>
+<pre><code>/-
+ |-assets
+   |-bar.txt
+ |-upload.php
+</code></pre>
+<p><code>upload.php</code>完整代码如下：</p>
+<pre><code class="language-php">&lt;?php
+    $bucketName   = 'demobucket';
+    $operatorName = 'operator';
+    $operatorPwd  = 'operatorpassword';
+
+    //被上传的文件路径
+    $filePath = 'assets/bar.txt';
+    $fileSize = filesize($filePath);
+    //文件上传到服务器的服务端路径
+    $serverPath = 'foo.txt';
+    $uri = &quot;/$bucketName/$serverPath&quot;;
+
+
+    //生成签名时间。得到的日期格式如：Thu, 11 Jul 2014 05:34:12 GMT
+    $date = gmdate('D, d M Y H:i:s \G\M\T');
+    $sign = md5(&quot;PUT&amp;{$uri}&amp;{$date}&amp;{$fileSize}&amp;&quot;.md5($operatorPwd));
+
+    $ch = curl_init('http://v0.api.upyun.com' . $uri);
+
+    $headers = array(
+        &quot;Expect:&quot;,
+        &quot;Date: &quot;.$date, // header 中需要使用生成签名的时间
+        &quot;Authorization: UpYun $operatorName:&quot;.$sign
+    );
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_PUT, true);
+
+    $fh = fopen($filePath, 'rb');
+    curl_setopt($ch, CURLOPT_INFILE, $fh);
+    curl_setopt($ch, CURLOPT_INFILESIZE, $fileSize);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+    $result = curl_exec($ch);
+    if(curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200) {
+        //&quot;上传成功&quot;
+
+    } else {
+        $errorMessage = sprintf(&quot;UPYUN API ERROR:%s&quot;, $result);
+        echo $errorMessage;
+    }
+    curl_close($ch);
+</code></pre>
+<p>至此，您已经学会了如何基于 PHP，使用又拍云的 HTTP REST API 上传文件了，您可以访问 <a href="/api/rest_api/">HTTP REST API 文档</a> 深入学习 REST API 的其他功能和参数。</p>
+<p>或者，您也可以前往 <a href="/download/#sdk">资源下载</a> 页面下载我们所提供的 SDK，来加速你的开发流程。</p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

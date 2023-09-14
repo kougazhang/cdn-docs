@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/cloud/unzip/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>压缩解压缩</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/">产品简介</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/image/">图片处理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/av/">异步音视频处理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/sync_video/">同步视频处理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/sync_audio/">同步音频处理</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="cloud/unzip/">压缩解压缩</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">快速入门</a></li>
+                    
+                  
+                    <li class=""><a href="#_2">开发者指南</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">提交处理任务</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">回调通知</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_5">状态码表</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_6">功能</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#compress">压缩（compress）</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#depress">解压缩（depress）</a></li>
+                      </ul>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/spider/">文件拉取</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/uconvert/">文档转换</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/async_image/">异步图片拼接</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/av_pretreatment/">音视频处理（已弃用）</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>压缩解压缩</h1>
+
+<h2 id="_1">快速入门<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>又拍云处理（压缩解压缩）基于云存储服务，您在使用它之前，请确保您已经注册又拍云账号并完成实名验证，请确保您已经创建<a href="/api/quick_start/">云存储服务</a>。</p>
+<p>价格方面，免费。</p>
+<hr />
+<h2 id="_2">开发者指南<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><a name="submit_task"></a></p>
+<h3 id="_3">提交处理任务<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>** 请求方法 **</p>
+<p>对已经存在云存储中的压缩/解压缩文件，以 <code>POST</code> 方法向 <code>http://p0.api.upyun.com/pretreatment/</code> 提交处理任务，响应中返回任务 <code>task_id</code>。任务以异步的方式处理，处理完成后，回调通知用户处理结果。</p>
+<pre><code>curl -X POST \
+    http://p0.api.upyun.com/pretreatment/ \
+    -H &quot;Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -H &quot;Date: &lt;Wed, 29 Oct 2014 02:26:58 GMT&gt;&quot; \
+    -H &quot;Content-MD5: &lt;Content-MD5&gt;&quot; \
+    -d &quot;service=&lt;service&gt;&quot; \
+    -d &quot;notify_url=&lt;notify_url&gt;&quot; \
+    -d &quot;app_name=&lt;app_name&gt;&quot; \
+    -d &quot;tasks=&lt;base64 编码后的任务字符串&gt;&quot;
+</code></pre>
+<p>** 认证鉴权 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<p>** 请求参数 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>是</td>
+<td>压缩/解压缩文件所在的服务名</td>
+</tr>
+<tr>
+<td>notify_url</td>
+<td>string</td>
+<td>是</td>
+<td>回调通知地址，详见<a href="#notify_url">回调通知</a></td>
+</tr>
+<tr>
+<td>tasks</td>
+<td>string</td>
+<td>是</td>
+<td>任务信息，详见 <a href="#tasks">tasks 参数说明</a></td>
+</tr>
+<tr>
+<td>app_name</td>
+<td>string</td>
+<td>是</td>
+<td>处理功能，<code>compress</code> 表示压缩，<code>depress</code> 表示解压缩</td>
+</tr>
+</tbody>
+</table>
+<p><a name="tasks"></a>
+** tasks 参数说明 **</p>
+<p>1. 按 JSON 格式组装任务，一次请求 <code>tasks</code> 最多可以提交 10 个任务。<strong> 任务参数见<a href="#function">功能</a> </strong>。</p>
+<pre><code>[
+    {
+        &quot;sources&quot;: [&quot;/a/1.pdf&quot;,&quot;/a/b/&quot;],     // 需要压缩的文件路径
+        &quot;save_as&quot;: &quot;/result/abc.zip&quot;         // 保存路径
+    },
+    {
+        &quot;sources&quot;: [&quot;/e/f&quot;,&quot;/e/g.jpg&quot;],         // 需要压缩的文件或目录路径
+        &quot;save_as&quot;: &quot;/result/e.zip&quot;              // 保存路径
+    },
+    …
+]
+</code></pre>
+<p>2. 把 JSON 字符串 Base64 编码，得到 <code>tasks</code>。</p>
+<p>** 响应信息 **</p>
+<ul>
+<li>任务提交成功：返回 <code>200</code>，响应体是一组按任务提交先后顺序排序的 <code>task_id</code>。例如：</li>
+</ul>
+<pre><code>[
+    &quot;35f0148d414a688a275bf915ba7cebb2&quot;,
+    &quot;98adbaa52b2f63d6d7f327a0ff223348&quot;,
+    &quot;c3103189fa906a5354d29bd807e8dc51&quot;,
+    …
+]
+</code></pre>
+<ul>
+<li>任务提交失败：返回相应的出错信息，具体请参阅「<a href="#status">状态码表</a>」。</li>
+</ul>
+<hr />
+<p><a name="notify_url"></a></p>
+<h3 id="_4">回调通知<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>任务处理完成后，向 <code>notify_url</code> 发送 <code>HTTP POST</code> 请求，请求体是回调信息。</p>
+<pre><code>curl -X POST \
+    &lt;notify_url&gt; \
+    -H &quot;Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -H &quot;Date: &lt;Wed, 29 Oct 2014 02:26:58 GMT&gt;&quot; \
+    -H &quot;Content-MD5: &lt;Content-MD5&gt;&quot; \
+    -d &quot;service=&lt;service&gt;&quot; \
+    # 其他参数...
+</code></pre>
+<p>** 回调信息 **</p>
+<p>回调信息是 JSON 字符串，参数名及说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task_id</td>
+<td>string</td>
+<td>任务对的任务 ID</td>
+</tr>
+<tr>
+<td>status_code</td>
+<td>integer</td>
+<td>处理结果状态码，<code>200</code> 表示成功处理</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>输出文件保存路径</td>
+</tr>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>错误信息，空字符串表示无错误信息</td>
+</tr>
+</tbody>
+</table>
+<p>** 回调签名 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<hr />
+<p><a name="status"></a></p>
+<h3 id="_5">状态码表<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>处理成功</td>
+</tr>
+<tr>
+<td>400</td>
+<td>文件不合法</td>
+</tr>
+<tr>
+<td>404</td>
+<td>文件不存在</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>服务端错误。如遇此类错误，请反馈给<a href="https://www.upyun.com/contact">售后</a>或您的商务经理</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="function"></a></p>
+<h2 id="_6">功能<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="compress">压缩（compress）<a class="headerlink" href="#compress" title="Permanent link">&para;</a></h3>
+<p>将多个文件或文件夹压缩成一个压缩文件。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sources</td>
+<td>array</td>
+<td>是</td>
+<td>需要被压缩的文件或目录的路径，路径不需要 URI encoding。见「注」</td>
+</tr>
+<tr>
+<td>save_as</td>
+<td>string</td>
+<td>是</td>
+<td>输出文件保存路径</td>
+</tr>
+<tr>
+<td>home_dir</td>
+<td>string</td>
+<td>否</td>
+<td>文件或目录被压缩时可不包含的父目录。默认包含从根开始的全部目录</td>
+</tr>
+<tr>
+<td>parent_dir</td>
+<td>string</td>
+<td>否</td>
+<td>被压缩文件或目录的新增父目录名。默认为空</td>
+</tr>
+<tr>
+<td>sources_list</td>
+<td>string</td>
+<td>否</td>
+<td>需要被压缩的文件或目录信息的文件路径。见「注」</td>
+</tr>
+</tbody>
+</table>
+<p>** 注 **</p>
+<ul>
+<li><code>sources</code> 和 <code>sources_list</code> 参数指定的压缩文件最大不能超过 10000 个，总文件大小不能超过 4G。</li>
+<li>当需要被压缩的文件或目录很多时，可以把这些信息放到一个文件里，一条一行（不需要 URI encoding），再把文件上传到需要处理的服务名下，通过 <code>sources_list</code> 参数提交文件 URI ，代替 <code>sources</code> 参数进行大量信息提交。</li>
+<li>当 <code>sources_list</code> 参数存在时，<code>sources</code> 参数可以不存在。</li>
+<li>压缩算法: 目前仅支持 <code>zip</code>，因此， <code>save_as</code> 参数必须以 <code>.zip</code> 后缀结尾。</li>
+<li><code>home_dir</code> 会去除指定父目录及父目录下文件，压缩目录层级较深的文件时，可以通过它去除父目录及父目录下文件的干扰。例如：</li>
+</ul>
+<pre><code class="language-json">[
+    {
+        &quot;sources&quot;: [&quot;/a/b/c/source/1.jpg&quot;,&quot;/a/b/c/source/2.jpg&quot;],
+        &quot;save_as&quot;: &quot;/result/t.zip&quot;,
+        &quot;home_dir&quot;: &quot;a/b/c&quot; //压缩时，不包含的目录
+    }
+]
+</code></pre>
+<p>压缩文件的目录结构如下:（ <code>a/b/c</code> 父目录已经不存在了，放在 <code>a/b</code> 父目录下的文件也已经不存在了）</p>
+<pre><code>source
+|-------1.jpg
+|-------2.jpg
+</code></pre>
+<hr />
+<h3 id="depress">解压缩（depress）<a class="headerlink" href="#depress" title="Permanent link">&para;</a></h3>
+<p>将压缩文件解压到指定目录。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sources</td>
+<td>string</td>
+<td>是</td>
+<td>需要解压缩文件的路径</td>
+</tr>
+<tr>
+<td>save_as</td>
+<td>string</td>
+<td>是</td>
+<td>文件解压缩后保存路径（需要为目录）</td>
+</tr>
+</tbody>
+</table>
+<p>注：</p>
+<ul>
+<li><code>sources</code> 参数指定的压缩文件最大大小不能超过 5G。</li>
+<li>解压算法: 目前仅支持 <code>zip</code>，因此， <code>sources</code> 参数指定的压缩文件必须是 zip 文件。</li>
+<li>解压缩后，目录中会多一个以 <code>task_id</code> 命名的文件，它记录了所有解压缩的文件信息。</li>
+</ul>
+<hr />
+<p>如有疑问请 <a href="https://www.upyun.com/contact">联系我们</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

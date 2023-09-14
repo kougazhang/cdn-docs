@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/api/sdk/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>SDK 使用文档</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/">产品简介</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/quick_start/">快速入门</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_guide/">开发者指南</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/rest_api/">REST API</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/form_api/">FORM API</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_tools/">开发者工具</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="api/sdk/">SDK 使用文档</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#php-sdk">PHP SDK</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_1">开发准备</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_2">初始化</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">功能使用</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#java-sdk">Java SDK</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">开发准备</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_5">初始化</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_6">功能使用</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#python-sdk">Python SDK</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_7">开发准备</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_8">初始化</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_9">功能使用</a></li>
+                      </ul>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/fusion_storage/">融合云存储</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/multipart_upload/">分块上传（已弃用）</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/errno/">API 错误码表</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/purge/">缓存刷新</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/small_program/">微信小程序</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="mobile-stats/">移动流量</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="sms/">短信服务</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>SDK 使用文档</h1>
+
+<h2 id="php-sdk">PHP SDK<a class="headerlink" href="#php-sdk" title="Permanent link">&para;</a></h2>
+<p>又拍云 PHP SDK 托管在 <a href="https://github.com/upyun/php-sdk">github</a> ，它包含如下功能：1）存储管理；2）图片处理；3）音视频处理；4）缓存刷新。本段介绍 PHP SDK 的使用。</p>
+<h3 id="_1">开发准备<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>** 运行环境 **</p>
+<p>PHP SDK version 3.0，需要 PHP 版本 &gt;= 5.5。您可以通过 <code>php -v</code> 命令查看当前的 PHP 版本。</p>
+<p>** 安装 **</p>
+<ul>
+<li>Composer 方式</li>
+</ul>
+<p><a href="http://www.phpcomposer.com/">Composer</a> 是 PHP 的依赖管理工具。您可以在自己的项目中声明所依赖的外部工具库，Composer 会自动帮您安装这些依赖的库文件。</p>
+<p>在项目根目录运行：</p>
+<pre><code class="language-shell">composer require upyun/sdk
+</code></pre>
+<ul>
+<li>源码方式</li>
+</ul>
+<p>如果使用 Composer 方式较慢，可以直接下载<a href="https://github.com/upyun/php-sdk/releases"> SDK 包</a>，放到项目根目录，然后把包导入工程中。</p>
+<h3 id="_2">初始化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Config（配置）和 Upyun（连接）是 PHP SDK 的初始化类，在操作云存储、云处理之前，需要先实例化它们。</p>
+<pre><code class="language-php">&lt;?php
+// 包含文件
+require_once('vendor/autoload.php');
+
+use Upyun\Upyun;
+use Upyun\Config;
+
+// 创建实例
+$bucketConfig = new Config('您的服务名', '您的操作员名', '您的操作员密码');
+$client = new Upyun($bucketConfig);
+?&gt;
+</code></pre>
+<p>说明，为了避免重复，后续 「功能使用」 中的 DEMO 不再包含这段代码，请在使用时注意。</p>
+<h3 id="_3">功能使用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>列表：<a href="#php_file_upload">文件上传</a>、<a href="#php_file_delete">文件删除</a>、<a href="#php_operator_dir">目录创建和删除</a>、<a href="#php_list_dir">列目录</a>、<a href="#php_get_fileinfo">获取文件信息</a>、<a href="#php_get_storage">获取服务容量</a></p>
+<p><a name="php_file_upload"></a>
+** 文件上传、图片处理（同步） **</p>
+<pre><code>&lt;?php
+// 省略初始化代码
+
+// 读文件
+$file = fopen('/root/13.jpg', 'r');         
+// 上传文件
+$res = $client-&gt;write('/up/dd.jpg', $file);
+// 打印上传结果
+print_r($res);
+?&gt;
+</code></pre>
+<p>说明，<code>/root/13.jpg</code> 为本地文件绝对路径，<code>/up/dd.jpg</code> 为保存到又拍云存储的路径及文件名。</p>
+<pre><code>&lt;?php
+// 省略初始化代码
+
+// 读文件
+$file = fopen('/root/13.jpg', 'r');
+// 添加作图参数
+$tasks = array('x-gmkerl-thumb' =&gt; '/format/png/fw/100');
+// 上传文件
+$res = $client-&gt;write('/up/dd.png', $file, $tasks);
+// 打印上传结果
+print_r($res);
+?&gt;
+</code></pre>
+<p>说明，上传图片同时，对图片进行处理，把处理后的图片存进存储。具体详见<a href="/cloud/image/#sync_upload_process">图片处理（同步）</a>。</p>
+<!--
+<a name="php_form_upload"></a>
+** 表单上传、图片处理（同步） **
+
+<a name="php_Multi_upload"></a>
+** 断点续传上传 **
+
+
+REST API
+
+
+<pre><code>&lt;?php
+
+// 判断文件是否存在
+$res=$client-&gt;has('/up/dd.mp4');
+if($res==true) echo &quot;true&quot;;
+else if($res==false) echo &quot;false&quot;;
+else echo $res;
+
+?&gt;
+</code></pre>
+
+
+** 上传预处理 **
+
+图片处理（同步）、图片处理（异步）、音视频处理（异步）、内容审核（异步）
+-->
+
+<p><a name="php_file_delete"></a>
+** 文件删除 **</p>
+<pre><code>&lt;?php
+// 省略初始化代码
+
+// 单文件删除
+$res=$client-&gt;delete('/up/dd.txt');
+echo $res;
+?&gt;
+</code></pre>
+<p>说明，<code>/up/dd.txt</code> 为文件在又拍云存储的路径。结果为 <code>1</code>，表示删除成功。异常直接抛出。</p>
+<p><a name="php_operator_dir"></a>
+** 目录创建和删除 **</p>
+<pre><code>&lt;?php
+// 省略初始化代码
+
+// 创建目录
+$res=$client-&gt;createDir('/up/tt/ss');
+echo $res;
+
+// 删除空目录
+$res=$client-&gt;deleteDir('/up/tt/ss');
+echo $res;
+?&gt;
+</code></pre>
+<p>说明，<code>/up/tt/ss</code> 为目录的路径。结果为 <code>1</code>，表示成功。异常直接抛出。</p>
+<!--
+<a name="php_list_dir"></a>
+** 列目录 **
+-->
+
+<p><a name="php_get_fileinfo"></a>
+** 获取文件信息 **</p>
+<pre><code>&lt;?php
+// 省略初始化代码
+
+$res=$client-&gt;info('/up/dd.jpg');
+print_r($res);
+?&gt;
+</code></pre>
+<p>说明，<code>/up/dd.jpg</code> 为文件在又拍云存储的路径。结果以数组形式返回，内容包括：文件类型、文件大小和文件最后修改时间。</p>
+<p><a name="php_get_storage"></a>
+** 获取服务容量 **</p>
+<pre><code>&lt;?php
+// 省略初始化代码
+
+$res=$client-&gt;usage();
+echo $res;
+?&gt;
+</code></pre>
+<p>说明，结果为容量数值，单位字节。异常直接抛出。</p>
+<h2 id="java-sdk">Java SDK<a class="headerlink" href="#java-sdk" title="Permanent link">&para;</a></h2>
+<p>又拍云 Java SDK 托管在 <a href="https://github.com/upyun/java-sdk">github</a> ，它包含如下功能：1）存储管理；2）图片处理；3）音视频处理；4）缓存刷新。本段介绍 Java SDK 的使用。</p>
+<h3 id="_4">开发准备<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>** 运行环境 **</p>
+<p>Java SDK version 3.0+，需要 Java 版本 &gt;= 6。可以通过 <code>java -version</code> 命令查看当前的 Java 版本。</p>
+<p>** 安装 **</p>
+<ul>
+<li>Maven 方式</li>
+</ul>
+<p><a href="https://zh.wikipedia.org/wiki/Apache_Maven">Maven</a> 是一个项目管理及自动构建工具。您可以在自己的项目中声明所依赖的外部工具库，Maven 会自动帮您安装这些依赖的库文件。</p>
+<pre><code class="language-shell">&lt;dependency&gt;
+  &lt;groupId&gt;com.upyun&lt;/groupId&gt;
+  &lt;artifactId&gt;java-sdk&lt;/artifactId&gt;
+  &lt;version&gt;4.0.1&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<ul>
+<li>源码方式</li>
+</ul>
+<p>除了 Maven 方式外，还可以直接下载<a href="https://github.com/upyun/java-sdk/releases"> SDK 包</a>，放到项目根目录，然后把包导入工程中。</p>
+<h3 id="_5">初始化<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>UpYun 是 Java SDK 的初始化类，在操作云存储、云处理之前，需要先实例化它。</p>
+<pre><code>// 创建实例
+UpYun upyun = new UpYun('您的服务名', '您的操作员名', '您的操作员密码');
+
+// 可选属性1，是否开启 debug 模式，默认不开启
+upyun.setDebug(false);
+// 可选属性2，超时时间，默认 30s
+upyun.setTimeout(30);
+</code></pre>
+<p>说明，为了避免重复，后续 「功能使用」 中的 DEMO 不再包含初始化这段代码，请在使用时注意。</p>
+<h3 id="_6">功能使用<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>列表：<a href="#java_file_upload">文件上传</a>、<a href="#java_form_upload">表单上传</a>、<a href="#java_file_delete">文件删除</a>、<a href="#java_operator_dir">目录创建和删除</a>、<a href="#java_list_dir">列目录</a>、<a href="#java_get_fileinfo">获取文件信息</a>、<a href="#java_get_storage">获取服务容量</a></p>
+<p><a name="java_file_upload"></a>
+** 文件上传、批量上传 **</p>
+<p>REST API、FORM API</p>
+<pre><code>// 文件上传
+upyun.setContentMD5(UpYun.md5('/root/13.jpg'));     // 计算文件 MD5，如果文件太大或计算不便，可以不计算
+boolean result4 = upyun.writeFile('/up/dd.jpg', '/root/13.jpg');
+</code></pre>
+<p>说明，<code>/root/13.jpg</code> 为本地文件绝对路径，<code>/up/dd.jpg</code> 为保存到又拍云存储的路径及文件名。</p>
+<p><a name="java_form_upload"></a>
+** 表单上传 **</p>
+<pre><code>// 定义保存路径
+String savePath = &quot;/uploads/{year}{mon}{day}/{random32}{.suffix}&quot;;
+paramsMap.put(Params.SAVE_KEY, savePath);
+
+// 上传文件
+FormUploader uploader = new FormUploader(BUCKET_NAME, APIKEY, null);
+Result result = uploader.upload(paramsMap, file);   // file（File 类型） 表示一个待上传的文件
+</code></pre>
+<p>说明，<code>savePath</code> 的解释详见 <a href="/api/form_api/#save-key">FORM API 路径设置</a>。</p>
+<!--
+<a name="java_Multi_upload"></a>
+** 断点续传上传 **
+
+REST API
+图片处理（同步）、图片处理（异步）、音视频处理（异步）、内容审核（异步）
+-->
+
+<p>** 上传预处理 **</p>
+<pre><code>// 文件上传
+boolean result3 = upyun.writeFile('/up/dd.jpg', '/root/13.jpg');
+
+// 图片上传预处理（同步）
+params.put(“x-gmkerl-thumb”,&quot;/fw/300/unsharp/true/quality/80/format/png&quot;)
+</code></pre>
+<p><a name="java_file_delete"></a>
+** 文件删除 **</p>
+<pre><code>// 单个文件删除
+boolean result = upyun.deleteFile('/up/dd.jpg');
+</code></pre>
+<p>说明，<code>/up/dd.jpg</code> 为文件的路径。</p>
+<p><a name="java_operator_dir"></a>
+** 目录创建和删除 **</p>
+<pre><code>// 创建目录
+boolean result = upyun.mkDir('/up/tt/');
+
+// 删除目录
+boolean result = upyun.rmDir('/up/tt/');
+</code></pre>
+<p>说明，<code>/up/tt/</code> 为目录的路径。</p>
+<p><a name="java_list_dir"></a>
+** 列目录 **</p>
+<pre><code>List&lt;UpYun.FolderItem&gt; items = upyun.readDir('/up/tt/');
+</code></pre>
+<p>说明，<code>/up/tt/</code> 为目录的路径。结果返回目录下前 10000 个文件列表，超出 10000 个的不会返回，如果需要列出来，需要使用分页参数循环获取，直到取完。</p>
+<p><a name="java_get_fileinfo"></a>
+** 获取文件信息 **</p>
+<pre><code>Map&lt;String,String&gt; result = upyun.getFileInfo('/up/dd.jpg');
+</code></pre>
+<p>说明，<code>/up/dd.jpg</code> 为文件在又拍云存储的路径。结果以 Map 形式返回，内容包括：文件类型、文件大小和文件最后修改时间。</p>
+<p><a name="java_get_storage"></a>
+** 获取空间容量 **</p>
+<pre><code>long usage = upyun.getBucketUsage();
+</code></pre>
+<p>说明，结果为容量数值，单位字节。</p>
+<h2 id="python-sdk">Python SDK<a class="headerlink" href="#python-sdk" title="Permanent link">&para;</a></h2>
+<p>又拍云 Python SDK 托管在 <a href="https://github.com/upyun/python-sdk">github</a> ，它包含如下功能：1）存储管理；2）图片处理；3）音视频处理；4）缓存刷新。本段介绍 Python SDK 的使用。</p>
+<h3 id="_7">开发准备<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>** 运行环境 **</p>
+<ul>
+<li>Python SDK version 2.2+，适用于 Python 2.6、2.7、3.3、3.4 版本。可以通过 <code>python -V</code> 命令查看当前的 Python 版本。</li>
+<li>Python SDK version 2.3+，不再直接使用默认标准库 httplib，使用基于 httplib 的 requests 这个第三方库。</li>
+</ul>
+<p>** 安装 **</p>
+<ul>
+<li>pip 方式</li>
+</ul>
+<p><a href="https://en.wikipedia.org/wiki/Pip_(package_manager)">pip</a> 是 Python 的依赖管理工具。您可以在自己的项目中声明所依赖的外部工具库，pip 会自动帮您安装这些依赖的库文件。</p>
+<p>安装 requests</p>
+<pre><code class="language-shell">pip install requests
+</code></pre>
+<p>安装 Python SDK</p>
+<pre><code class="language-shell">pip install upyun
+</code></pre>
+<p>运行测试用例，判断安装成功与否</p>
+<pre><code># 配置参数
+export UPYUN_SERVICE=&lt;service&gt;
+export UPYUN_USERNAME=&lt;username&gt;
+export UPYUN_PASSWORD=&lt;password&gt;
+
+# 执行测试用例
+make init test
+</code></pre>
+<ul>
+<li>源码方式</li>
+</ul>
+<p>除了 pip 方式外，还可以直接下载 <a href="https://github.com/upyun/python-sdk/releases">SDK 包</a>，放到项目根目录，然后把包导入工程中。</p>
+<h3 id="_8">初始化<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>UpYun 是 Python SDK 的初始化类，在操作云存储、云处理之前，需要先实例化它。</p>
+<pre><code># 包含文件
+import upyun
+
+# 创建实例
+up = upyun.UpYun('您的服务名', '您的操作员名', '您的操作员密码')
+</code></pre>
+<p>说明，为了避免重复，后续 「功能使用」 中的 DEMO 不再包含初始化这段代码，请在使用时注意。</p>
+<h3 id="_9">功能使用<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>列表：<a href="#py_file_upload">文件上传</a>、<a href="#py_form_upload">表单上传</a>、<a href="#py_Multi_upload">断点续传上传</a>、<a href="#py_file_delete">文件删除</a>、<a href="#py_operator_dir">目录创建和删除</a>、<a href="#py_list_dir">列目录</a>、<a href="#py_get_fileinfo">获取文件信息</a>、<a href="#py_get_storage">获取服务容量</a></p>
+<p><a name="py_file_upload"></a>
+** 文件上传、图片处理（同步） **</p>
+<pre><code>/*
+* 参数说明
+* checksum，表示是否进行 MD5 校验，如果是小文件，建议进行，为 True；如果是大文件，建议不进行，为 False
+* headers，表示需要的头信息，见 REST API 上传文件
+*/
+headers = { 'x-gmkerl-thumb': '/fw/300' }
+
+with open('dd.png', 'rb') as f:
+    res = up.put('/up/dd.png', f, checksum=True, headers=headers)
+</code></pre>
+<p>说明，上传成功，如果是图片，返回包含图片宽、高、格式、帧数的 Python Dict 对象，如果不是，是空 Python Dict 对象；上传失败，抛出异常。</p>
+<p><a name="py_form_upload"></a>
+** 表单上传、图片处理（同步） **</p>
+<pre><code>// 设定参数
+kwargs = { 'allow-file-type': 'jpg,jpeg,png',
+           'notify-url': 'http://notify-url/',
+           'x-gmkerl-thumb':'/fw/300' }
+
+// checksum，表示是否进行 MD5 校验，如果是小文件，建议进行，为 True；如果是大文件，建议不进行，为 False
+with open('dd.png', 'rb') as f:
+    res = up.put('/up/dd.png', f, checksum=True, form=True, **kwargs)
+</code></pre>
+<p>说明，上传成功，返回内容见 FORM API 的<a href="/api/form_api/#notify_return">通知设置</a>；上传失败，抛出异常。</p>
+<p><a name="py_Multi_upload"></a>
+** 断点续传上传 **</p>
+<pre><code>from upyun import FileStore
+from upyun import print_reporter
+
+/*
+* 参数说明
+* need_resume，表示是否需要断点续传，默认 False
+* headers，表示需要的头信息，，见 REST API 断点续传
+* store，表示断点信息存储位置，默认 memory_store。memory_store 表示存放在内存，FileStore() 表示存放在文件，默认是 ~/.up-python-resume/
+* reporter，表示报告上传进度，默认忽略。print_reporter 只是 print 上传进度，有其他需要的用户可以自行实现
+*/
+with open('dd.png', 'rb') as f:
+    res = up.put('/up/dd.png', f, checksum=True, need_resume=True, headers={}, store=None, reporter=print_reporter)
+</code></pre>
+<p>说明，上传成功，返回空 Python Dict 对象；上传失败，抛出异常。</p>
+<!--
+** 上传预处理 **
+
+图片处理（同步）、图片处理（异步）、音视频处理（异步）、内容审核（异步）
+-->
+
+<p><a name="py_file_delete"></a>
+** 文件删除 **</p>
+<pre><code>up.delete('/up/dd.png') 
+</code></pre>
+<p>说明，成功，返回 Python None 对象；失败，抛出异常。</p>
+<p><a name="py_operator_dir"></a>
+** 目录创建和删除**</p>
+<pre><code>up.mkdir('/up/temp/')   // 创建
+
+up.delete('/up/temp/')  // 删除
+</code></pre>
+<p>说明，成功，返回 Python None 对象；失败，抛出异常。注，目录删除只能删除空目录。</p>
+<p><a name="py_list_dir"></a>
+** 列目录 **</p>
+<pre><code>res = up.getlist('/up/', limit=100, order='asc', begin='')
+</code></pre>
+<p>说明，获取成功，返回 Python List 对象；获取失败，抛出异常。</p>
+<p><a name="py_get_fileinfo"></a>
+** 获取文件信息 **</p>
+<pre><code>res = up.getinfo('/up/dd.png')
+print res['file-type']
+print res['file-size']
+print res['file-date']
+</code></pre>
+<p>说明，获取成功，返回 Python List 对象，内容包括：文件类型、文件大小和文件最后修改时间；获取失败，抛出异常。</p>
+<p><a name="py_get_storage"></a>
+** 获取服务容量 **</p>
+<pre><code>res = up.usage()
+</code></pre>
+<p>说明，获取成功，返回 Python String 对象，单位 Bytes；获取失败，抛出异常。</p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

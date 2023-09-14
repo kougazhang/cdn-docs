@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/cloud/sync_audio/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>同步音频处理</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/">产品简介</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/image/">图片处理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/av/">异步音视频处理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/sync_video/">同步视频处理</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="cloud/sync_audio/">同步音频处理</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">简介</a></li>
+                    
+                  
+                    <li class=""><a href="#_2">音频转码</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">请求</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">响应</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_5">举例</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_6">状态码说明</a></li>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/unzip/">压缩解压缩</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/spider/">文件拉取</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/uconvert/">文档转换</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/async_image/">异步图片拼接</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/av_pretreatment/">音视频处理（已弃用）</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>同步音频处理</h1>
+
+<h2 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>为了解决异步音频处理时间长，又拍云发布了的同步音频处理，可以实现秒级音频转码。它在上传时使用，把上传的音频处理成指定规格的音频再存储。</p>
+<p>本类功能需要<a href="https://www.upyun.com/products/process#section-pricing">收费</a>，在使用它之前，请确保您已经注册又拍云账号并完成实名验证，请确保您已经创建<a href="/api/quick_start/">云存储服务</a>。</p>
+<p>相关阅读：<a href="/cloud/av/">异步音视频处理</a>，<a href="/cloud/sync_video/">同步视频处理</a>。</p>
+<p><a name="audio_transcode"></a></p>
+<h2 id="_2">音频转码<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>提供对音频进行转格式、转码率、转声道，通常的设置是格式 mp3、码率 44、声道 2。</p>
+<h3 id="_3">请求<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>** 请求方法 **</p>
+<p>使用 <a href="/api/form_api/#upload_args">FORM API</a> 上传音频文件，在上传参数中附加参数 <code>x-audio-avopts</code> 来使用。</p>
+<p>** 请求参数 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/ab/<audio_bitrate></td>
+<td>integer</td>
+<td>是</td>
+<td>音频码率，单位 kbps，默认值 44</td>
+</tr>
+<tr>
+<td>/ac/<audio_channel></td>
+<td>integer</td>
+<td>是</td>
+<td>音频声道，默认值 2。可选值 1、2</td>
+</tr>
+<tr>
+<td>/f/<audio_format></td>
+<td>string</td>
+<td>是</td>
+<td>音频格式，默认值 mp3 。可选值  mp3 、ogg</td>
+</tr>
+</tbody>
+</table>
+<p>** 注 **</p>
+<ul>
+<li>又拍云 CDN 默认开启了分段缓存（分段分发文件），您不需要担心音频文件大访问慢的问题。</li>
+</ul>
+<h3 id="_4">响应<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>详见 FORM API 的<a href="http://docs.upyun.com/api/form_api/#notify_return">通知规则</a>。</p>
+<h3 id="_5">举例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>** 请求示例 **</p>
+<pre><code>// FORM API 附加上传参数
+
+x-audio-avopts: /ab/48/ac/1/f/ogg
+</code></pre>
+<p>** 响应示例 **</p>
+<pre><code>HTTP/1.1 200 OK
+X-Request-Id: 5133947d3aa83f733da38c5630964d30
+Content-Length: 153
+
+{&quot;sign&quot;:&quot;6a73b2781706a62794db9c9dac179921&quot;,&quot;code&quot;:200,&quot;file_size&quot;:23508491,&quot;url&quot;:&quot;\/audio.mp3&quot;,&quot;time&quot;:1494559280,&quot;message&quot;:&quot;ok&quot;,&quot;mimetype&quot;:&quot;audio\/mpeg&quot;}
+</code></pre>
+<p><a name="status"></a></p>
+<h2 id="_6">状态码说明<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>处理成功</td>
+</tr>
+<tr>
+<td>403</td>
+<td>转码失败</td>
+</tr>
+<tr>
+<td>405</td>
+<td>参数错误</td>
+</tr>
+<tr>
+<td>413</td>
+<td>转码超时</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>服务端错误，请反馈给<a href="https://www.upyun.com/contact">售后</a>或您的商务经理</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>如有疑问请 <a href="https://www.upyun.com/contact">联系我们</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/api/developer_tools/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>开发者工具</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/">产品简介</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/quick_start/">快速入门</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_guide/">开发者指南</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/rest_api/">REST API</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/form_api/">FORM API</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="api/developer_tools/">开发者工具</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#ftpftps">FTP/FTPS</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_1">登录服务</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_2">上传文件</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">下载文件</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">删除文件</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_5">退出服务</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#upx">UPX （命令行工具）</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_6">语法</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_7">访问服务</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_8">上传文件</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_9">下载文件</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_10">增量文件同步</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_11">创建目录</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_12">删除文件、目录</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_13">退出服务</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#curl">cURL（命令行工具）</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_14">访问服务</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_15">上传文件</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_16">下载文件</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_17">获取文件信息</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_18">删除文件</a></li>
+                      </ul>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/sdk/">SDK 使用文档</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/fusion_storage/">融合云存储</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/multipart_upload/">分块上传（已弃用）</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/errno/">API 错误码表</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/purge/">缓存刷新</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/small_program/">微信小程序</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="mobile-stats/">移动流量</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="sms/">短信服务</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>开发者工具</h1>
+
+<h2 id="ftpftps">FTP/FTPS<a class="headerlink" href="#ftpftps" title="Permanent link">&para;</a></h2>
+<p>通过 FTP/FTPS 客户端，可以连接云存储的 FTP/FTPS 服务器，实现对云存储的管理。推荐使用 <a href="https://www.filezilla.cn/download">FileZilla 客户端</a> 。</p>
+<p><strong>FTP/FTPS 登录方式</strong></p>
+<blockquote>
+<p>地址（主机)：</p>
+<ul>
+<li>智能选路（推荐）：v0.ftp.upyun.com</li>
+<li>电信线路：v1.ftp.upyun.com</li>
+<li>联通线路：v2.ftp.upyun.com</li>
+<li>移动线路：v3.ftp.upyun.com</li>
+</ul>
+<p>加密：选择 <code>不加密</code> 使用 FTP，选择 <code>显式的 FTP over TLS</code> 或 <code>TLS/SSL 显式加密</code> 使用 FTPS</p>
+<p>用户名：<code>操作员名/服务名</code>，如 <em><code>operator/mybucket</code></em></p>
+<p>密码：操作员的密码</p>
+<p>端口：21</p>
+</blockquote>
+<p>本文演示 Windows 下的 FTPS 使用。</p>
+<hr />
+<h3 id="_1">登录服务<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>打开 FileZilla，按 FTP/FTPS 使用说明进行登录。如下图：</p>
+<p><img alt="FTPS 登录" src="http://upyun-assets.b0.upaiyun.com/docs/storage/ftps_login.png" /></p>
+<hr />
+<h3 id="_2">上传文件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>选定需要上传的文件，拖动到云存储服务区域。拖动前，请注意云存储目录是否正确。</p>
+<p><img alt="上传文件" src="http://upyun-assets.b0.upaiyun.com/docs/storage/ftps_upload.png_/fw/800" /></p>
+<hr />
+<h3 id="_3">下载文件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>选定需要下载的文件，拖动到本地目录文件区域。拖动前，请注意云存储目录是否正确。</p>
+<p><img alt="下载文件" src="http://upyun-assets.b0.upaiyun.com/docs/storage/ftps_download.png_/fw/800" /></p>
+<hr />
+<h3 id="_4">删除文件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>选定需要删除的文件、目录，点击右键，进行删除。</p>
+<p><img alt="删除文件" src="http://upyun-assets.b0.upaiyun.com/docs/storage/ftps_delete.png_/fw/800" /></p>
+<hr />
+<h3 id="_5">退出服务<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>关闭连接或退出 FileZilla 即可。</p>
+<hr />
+<h2 id="upx">UPX （命令行工具）<a class="headerlink" href="#upx" title="Permanent link">&para;</a></h2>
+<p>UPX 是又拍云专为开发者设计，基于命令行的云存储管理工具。通过它，可以实现文件上下传、增量文件同步、目录创建删除、文件删除（包括异步文件批量删除）。</p>
+<p>在使用 UPX 之前，需要下载它，<a href="https://github.com/polym/upx">点此访问到 Github 下载 UPX</a>。下载它后，通过终端使用。</p>
+<p>本文演示 Windows DOS 窗口下 UPX 使用，Linux 的使用请<a href="https://techs.b0.upaiyun.com/videos/cdnpage/upx.html">观看视频</a>。 </p>
+<hr />
+<h3 id="_6">语法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<pre><code class="language-sh">upx [global options] command [command options]
+</code></pre>
+<p><strong>选项</strong></p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>login</td>
+<td>登录又拍云存储</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>显示当前所处目录</td>
+</tr>
+<tr>
+<td>ls</td>
+<td>显示当前目录中的文件和目录信息，加 <code>–d</code>， 仅显示目录信息</td>
+</tr>
+<tr>
+<td>cd</td>
+<td>改变工作目录（进入一个目录），加 <code>..</code>，回到上一级目录</td>
+</tr>
+<tr>
+<td>get</td>
+<td>下载一个文件或目录</td>
+</tr>
+<tr>
+<td>put</td>
+<td>上传一个文件或目录</td>
+</tr>
+<tr>
+<td>sync</td>
+<td>增量文件同步，类似 rsync</td>
+</tr>
+<tr>
+<td>mkdir</td>
+<td>创建目录</td>
+</tr>
+<tr>
+<td>rm</td>
+<td>删除文件，支持通配符 <code>*</code>；加 <code>–d</code>，删除目录；加 <code>–a</code>，删除目录和文件；加 <code>–async</code>，异步方式删除文件或目录</td>
+</tr>
+<tr>
+<td>info</td>
+<td>显示登录的服务名、操作员信息和当前所在目录</td>
+</tr>
+<tr>
+<td>logout</td>
+<td>退出又拍云存储</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>global options</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-h</td>
+<td>显示帮助信息</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示 UPX 版本信息或处理过程信息</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_7">访问服务<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><img alt="访问服务" src="http://upyun-assets.b0.upaiyun.com/docs/storage/upx_login.png" /></p>
+<pre><code>// 登录方式一
+upx-windows-amd64-v0.1.4.exe login
+// 依次输入服务名、操作员、操作员的密码
+ServiceName: &lt;bucket&gt;
+Operator: &lt;operator&gt;
+Password: &lt;operator_password&gt;
+
+// 登录方式二
+upx-windows-amd64-v0.1.4.exe login &lt;bucket&gt; &lt;operator&gt; &lt;operator_password&gt;
+</code></pre>
+<p><img alt="访问服务" src="http://upyun-assets.b0.upaiyun.com/docs/storage/upx_login2.png" /></p>
+<pre><code>// 登录方式三，用于多操作员、多服务登录
+upx-windows-amd64-v0.1.4.exe login &lt;bucket&gt; &lt;operator&gt; &lt;operator_password&gt;
+// 生成基于服务名、操作员、操作员密码的秘钥
+upx-windows-amd64-v0.1.4.exe auth &lt;bucket&gt; &lt;operator&gt; &lt;operator_password&gt;
+// 执行操作时，加上 --auth &lt;key&gt;，操作基于秘钥的身份信息进行
+upx-windows-amd64-v0.1.4.exe info --auth &lt;key&gt;
+</code></pre>
+<hr />
+<h3 id="_8">上传文件<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><img alt="上传文件" src="http://upyun-assets.b0.upaiyun.com/docs/storage/upx_upload.png" /></p>
+<pre><code>// 上传文件
+upx-windows-amd64-v0.1.4.exe put &lt;本地路径&gt; &lt;云存储路径&gt;
+// 获取服务当前目录下的文件（含目录）列表
+upx-windows-amd64-v0.1.4.exe ls
+</code></pre>
+<hr />
+<h3 id="_9">下载文件<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p><img alt="下载文件" src="http://upyun-assets.b0.upaiyun.com/docs/storage/upx_download.png" /></p>
+<pre><code>// 下载文件
+upx-windows-amd64-v0.1.4.exe get &lt;云存储路径&gt; &lt;本地路径&gt;
+</code></pre>
+<hr />
+<h3 id="_10">增量文件同步<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p><img alt="增量文件同步" src="http://upyun-assets.b0.upaiyun.com/docs/storage/upx_sync.png" /></p>
+<pre><code>// 增量文件同步,加 -v,显示增量文件同步过程信息
+upx-windows-amd64-v0.1.4.exe sync &lt;本地目录&gt; &lt;云存储目录&gt; -v
+</code></pre>
+<hr />
+<h3 id="_11">创建目录<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p><img alt="创建目录" src="http://upyun-assets.b0.upaiyun.com/docs/storage/upx_create_directory.png" /></p>
+<pre><code>// 显示当前所在目录
+upx-windows-amd64-v0.1.4.exe pwd
+// 在当前目录下，创建目录
+upx-windows-amd64-v0.1.4.exe mkdir &lt;目录名称&gt;
+</code></pre>
+<hr />
+<h3 id="_12">删除文件、目录<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>文件或目录删除后，不可恢复，请慎重操作！</p>
+<p><img alt="删除文件、目录" src="http://upyun-assets.b0.upaiyun.com/docs/storage/upx_delete.png" /></p>
+<pre><code>// 删除文件
+upx-windows-amd64-v0.1.4.exe rm &lt;文件名&gt;
+// 加 -d，删除目录
+upx-windows-amd64-v0.1.4.exe rm -d &lt;目录名&gt;
+// 异步文件删除，通配符匹配，批量删除
+upx-windows-amd64-v0.1.4.exe rm --async /*
+</code></pre>
+<hr />
+<h3 id="_13">退出服务<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p><img alt="退出服务" src="http://upyun-assets.b0.upaiyun.com/docs/storage/upx_logout.png" /></p>
+<pre><code>// 退出服务
+upx-windows-amd64-v0.1.4.exe logout
+</code></pre>
+<hr />
+<h2 id="curl">cURL（命令行工具）<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h2>
+<p>cURL 是一个利用 URL 语法在命令行下工作的文件传输工具。借助 cURL，使用 <a href="/api/rest_api/">REST API</a> 、<a href="/api/authorization/">基本认证</a>进行存储管理，包括列目录、文件上下传、目录创建删除、文件删除等。</p>
+<p>在使用 cURL 之前，请确保您的终端支持它。</p>
+<p>本文演示 Windows DOS 窗口下 cURL 使用，Linux 的使用请<a href="https://techs.b0.upaiyun.com/videos/cdnpage/curl_http_rest_api.html">观看视频</a>。 </p>
+<hr />
+<h3 id="_14">访问服务<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p><img alt="访问服务" src="http://upyun-assets.b0.upaiyun.com/docs/storage/curl_access.png" /></p>
+<pre><code>// 访问服务，列出服务根目录下文件信息，如果没有文件信息，则为空
+curl http://v0.api.upyun.com/&lt;bucket&gt;/ -u &lt;operator&gt;:&lt;password&gt; -v
+</code></pre>
+<hr />
+<h3 id="_15">上传文件<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p><img alt="上传文件" src="http://upyun-assets.b0.upaiyun.com/docs/storage/curl_upload.png" /></p>
+<pre><code>// 上传文件
+curl -T &lt;上传文件路径&gt; http://v0.api.upyun.com/&lt;bucket&gt;/&lt;文件路径&gt; -u &lt;operator&gt;:&lt;password&gt; -v
+</code></pre>
+<hr />
+<h3 id="_16">下载文件<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p><img alt="下载文件" src="http://upyun-assets.b0.upaiyun.com/docs/storage/curl_download.png" /></p>
+<pre><code>// 下载文件
+curl http://v0.api.upyun.com/&lt;bucket&gt;/&lt;文件&gt; -o &lt;文件本地保存路径&gt; -u &lt;operator&gt;:&lt;password&gt; -v
+</code></pre>
+<hr />
+<h3 id="_17">获取文件信息<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p><img alt="获取文件信息" src="http://upyun-assets.b0.upaiyun.com/docs/storage/curl_info.png" /></p>
+<pre><code>//获取文件/目录信息
+curl http://v0.api.upyun.com/&lt;bucket&gt;/&lt;文件/目录名&gt; -X HEAD -u &lt;operator&gt;:&lt;password&gt; -v
+// 返回信息
+x-upyun-file-type: &lt;file 表示文件，folder 表示文件夹&gt; 
+x-upyun-file-size: &lt;文件/文件夹大小&gt;
+x-upyun-file-date: &lt;创建时间，Unix 时间戳&gt;
+</code></pre>
+<hr />
+<h3 id="_18">删除文件<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p><img alt="删除文件" src="http://upyun-assets.b0.upaiyun.com/docs/storage/curl_delete.png" /></p>
+<pre><code>//删除文件/目录，目录必须为空目录，才能删除
+curl http://v0.api.upyun.com/&lt;bucket&gt;/&lt;文件/目录名&gt; -X DELETE -u &lt;operator&gt;:&lt;password&gt; -v
+</code></pre>
+<hr />
+<p>如有疑问请 <a href="https://www.upyun.com/contact">联系我们</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

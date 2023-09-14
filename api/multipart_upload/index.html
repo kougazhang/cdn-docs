@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/api/multipart_upload/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>分块上传（已弃用）</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/">产品简介</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/quick_start/">快速入门</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_guide/">开发者指南</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/rest_api/">REST API</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/form_api/">FORM API</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_tools/">开发者工具</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/sdk/">SDK 使用文档</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/fusion_storage/">融合云存储</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="api/multipart_upload/">分块上传（已弃用）</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#api">API 基本域名</a></li>
+                    
+                  
+                    <li class=""><a href="#_1">名称概念</a></li>
+                    
+                  
+                    <li class=""><a href="#signature-policy">signature 和 policy 算法</a></li>
+                    
+                  
+                    <li class=""><a href="#_2">上传步骤</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">初始化上传</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_8">分块上传数据</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_13">文件合并完成上传</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_18">错误代码说明</a></li>
+                      </ul>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/errno/">API 错误码表</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/purge/">缓存刷新</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/small_program/">微信小程序</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="mobile-stats/">移动流量</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="sms/">短信服务</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>分块上传（已弃用）</h1>
+
+<p>在上传大文件的时候，面对有可能因为网络质量等其他原因而造成的上传失败，使用分块上传和断点续传机制就显得非常有必要。</p>
+<blockquote>
+<p>云存储完善了断点续传机制，新的断点续传比分快上传更快、更简单，因此，分块上传不再更新，敬请使用<a href="/api/rest_api/#Multi_upload">新的断点续传</a>。</p>
+</blockquote>
+<h2 id="api">API 基本域名<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<pre><code>m0.api.upyun.com
+</code></pre>
+<h2 id="_1">名称概念<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>文件分块：直接切分二进制文件成小块。具体文件的每个分块的大小以及分块数目，可以根据自己情况调整（eg. 10MB 的文件，可以定每个分块 1MB，则分块数目即为 10 块）</li>
+<li>请求参数（Request Params）： 即是指常规的请求中所带参数</li>
+<li>参数组（Meta Params）： 包含文件上传存储及校验相关的必要信息，也是每次请求时候计算 <code>policy</code> 和 <code>signature</code> 所需的参数组。</li>
+<li>signature： 校验签名</li>
+<li>policy： 存储/校验信息</li>
+</ul>
+<h2 id="signature-policy">signature 和 policy 算法<a class="headerlink" href="#signature-policy" title="Permanent link">&para;</a></h2>
+<p>signature 和 policy 算法与表单 API 相同，请参考 <a href="/api/form_api/#policy">这里</a>。</p>
+<blockquote>
+<p>注：在分块上传数据和合并文件请求中，需要将此处所用『表单 API 验证密钥』替换为上次请求返回的 <code>token_secret</code>，再进行 <code>signature</code> 计算</p>
+</blockquote>
+<p>假设一个请求所需的的策略参数如下表:</p>
+<table>
+<thead>
+<tr>
+<th>键</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path</td>
+<td>/demo.png</td>
+</tr>
+<tr>
+<td>expiration</td>
+<td>1409200758</td>
+</tr>
+<tr>
+<td>file_blocks</td>
+<td>1</td>
+</tr>
+<tr>
+<td>file_hash</td>
+<td>b1143cbc07c8e768d517fa5e73cb79ca</td>
+</tr>
+<tr>
+<td>file_size</td>
+<td>653252</td>
+</tr>
+</tbody>
+</table>
+<p>另设，该空间『表单 API 验证密钥』为：<code>cAnyet74l9hdUag34h2dZu8z7gU=</code></p>
+<p>计算 policy 和 signature 相应步骤所得结果如下：</p>
+<p>第一步，将参数组转换为 JSON 字符串后：</p>
+<pre><code>{&quot;path&quot;:&quot;/demo.png&quot;,&quot;expiration&quot;:1409200758,&quot;file_blocks&quot;:1,&quot;file_size&quot;:653252,&quot;file_hash&quot;:&quot;b1143cbc07c8e768d517fa5e73cb79ca&quot;}
+</code></pre>
+<p>第二步，将第一步所得字符串 base64 编码后：</p>
+<pre><code>eyJwYXRoIjoiL2RlbW8ucG5nIiwiZXhwaXJhdGlvbiI6MTQwOTIwMDc1OCwiZmlsZV9ibG9ja3MiOjEsImZpbGVfc2l6ZSI6NjUzMjUyLCJmaWxlX2hhc2giOiJiMTE0M2NiYzA3YzhlNzY4ZDUxN2ZhNWU3M2NiNzljYSJ9
+</code></pre>
+<p>第三步，第二步结果与『表单 API 验证密钥』用 <code>&amp;</code> 拼接后：</p>
+<pre><code>eyJwYXRoIjoiL2RlbW8ucG5nIiwiZXhwaXJhdGlvbiI6MTQwOTIwMDc1OCwiZmlsZV9ibG9ja3MiOjEsImZpbGVfc2l6ZSI6NjUzMjUyLCJmaWxlX2hhc2giOiJiMTE0M2NiYzA3YzhlNzY4ZDUxN2ZhNWU3M2NiNzljYSJ9&amp;cAnyet74l9hdUag34h2dZu8z7gU=
+</code></pre>
+<blockquote>
+<p>注：在分块上传数据和合并文件请求中，需要将此处所用『表单 API 验证密钥』替换为上次请求返回的 <code>token_secret</code>，再进行第四步计算</p>
+</blockquote>
+<p>第四步，将第三步所得字符计算 md5 后即得到 signature：</p>
+<pre><code>98cf3f74698bfec04886eee446439ae3
+</code></pre>
+<hr />
+<h2 id="_2">上传步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>表单分块上传的整个步骤分为：</p>
+<ol>
+<li>初始化上传</li>
+<li>分块上传数据</li>
+<li>文件合并完成上传</li>
+</ol>
+<h3 id="_3">初始化上传<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<pre><code>POST /&lt;bucket-name&gt;/
+</code></pre>
+<h4 id="_4">请求类型<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<pre><code>Content-Type: application/x-www-form-urlencoded
+</code></pre>
+<h4 id="_5">请求参数<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数类型</th>
+<th>必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>policy</td>
+<td>string</td>
+<td>true</td>
+<td>文件存储/校验信息，见<a href="#signature">算法</a></td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>true</td>
+<td>校验签名，见<a href="#policy">算法</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_6">参数组<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path</td>
+<td>文件存储路径</td>
+</tr>
+<tr>
+<td>expiration</td>
+<td>授权有效期，Unix UTC 时间戳</td>
+</tr>
+<tr>
+<td>file_blocks</td>
+<td>本次所上传的文件的分块数目</td>
+</tr>
+<tr>
+<td>file_hash</td>
+<td>所上传文件整个文件的 md5 hash 值</td>
+</tr>
+<tr>
+<td>file_size</td>
+<td>所上传文件整个文件的大小(单位 Byte)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：请选取适当的 <code>file_blocks</code> 以保证分块的大小<strong> 不超过 5M </strong>，并且除最后一块外其余分块<strong> 不小于 100K </strong>。</p>
+</blockquote>
+<p>其他可选参数如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>可选性</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>allow-file-type</td>
+<td>否</td>
+<td>文件类型限制，制定允许上传的文件扩展名</td>
+</tr>
+<tr>
+<td>content-length-range</td>
+<td>否</td>
+<td>文件大小限制，格式：<code>min,max</code>，单位：字节，如 <code>102400,1024000</code>，允许上传 100Kb～1Mb 的文件</td>
+</tr>
+<tr>
+<td>content-md5</td>
+<td>否</td>
+<td>所上传的文件的 MD5 校验值，又拍云根据此来校验文件上传是否正确</td>
+</tr>
+<tr>
+<td>content-secret</td>
+<td>否</td>
+<td>原图访问密钥 <a href="/api/form_api/#note2">[表单 API 注 2]</a></td>
+</tr>
+<tr>
+<td>content-type</td>
+<td>否</td>
+<td>又拍云默认根据扩展名判断，手动指定可提高精确性</td>
+</tr>
+<tr>
+<td>image-width-range</td>
+<td>否</td>
+<td>图片宽度限制，格式：<code>min,max</code>，单位：像素，如 <code>0,1024</code>，允许上传宽度为 0～1024px 之间</td>
+</tr>
+<tr>
+<td>image-height-range</td>
+<td>否</td>
+<td>图片高度限制，格式：<code>min,max</code>，单位：像素，如 <code>0,1024</code>，允许上传高度在 0～1024px 之间</td>
+</tr>
+<tr>
+<td>notify-url</td>
+<td>否</td>
+<td>异步通知 URL，见 <a href="/api/form_api/#notify_return">[表单 API 通知规则]</a></td>
+</tr>
+<tr>
+<td>return-url</td>
+<td>否</td>
+<td>同步通知 URL，见 <a href="/api/form_api/#notify_return">[表单 API 通知规则]</a></td>
+</tr>
+<tr>
+<td>x-gmkerl-thumb</td>
+<td>否</td>
+<td>图片处理参数，见 <a href="/cloud/image/#_2">上传作图</a></td>
+</tr>
+<tr>
+<td>x-gmkerl-type</td>
+<td>否</td>
+<td><code>get_meta</code>（获取图片信息）或 <code>get_theme_color</code>（主题色提取）</td>
+</tr>
+<tr>
+<td>x-gmkerl-extract-color-count</td>
+<td>否</td>
+<td>主题色提取颜色数量，默认 <code>256</code></td>
+</tr>
+<tr>
+<td>x-gmkerl-extract-format</td>
+<td>否</td>
+<td>主题色提取格式，默认 <code>hex</code></td>
+</tr>
+<tr>
+<td>ext-param</td>
+<td>否</td>
+<td>额外参数，UTF-8 编码，并小于 255 个字符 <a href="/api/form_api/#note5">[表单 API 注 5]</a></td>
+</tr>
+<tr>
+<td>apps</td>
+<td>否</td>
+<td>json 格式的异步处理任务列表。见 <a href="/api/form_api/#_4">异步处理任务</a></td>
+</tr>
+<tr>
+<td><em>x-gmkerl-thumbnail</em> <strong>DEPRECATED</strong></td>
+<td><em>否</em></td>
+<td><em>缩略图版本名称，仅支持图片类空间，可搭配其他 <code>x-gmkerl-*</code> 参数使用 <a href="/api/form_api/#note3">[表单 API 注 3]</a></em></td>
+</tr>
+<tr>
+<td><em>x-gmkerl-type</em>  <strong>DEPRECATED</strong></td>
+<td><em>否</em></td>
+<td><em>缩略类型 <a href="/api/form_api/#note4">[表单 API 注 4]</a></em></td>
+</tr>
+<tr>
+<td><em>x-gmkerl-value</em>  <strong>DEPRECATED</strong></td>
+<td><em>否</em></td>
+<td><em>缩略类型对应的参数值 <a href="/api/form_api/#note5">[表单 API 注 4]</a></em></td>
+</tr>
+<tr>
+<td><em>x-gmkerl-quality</em>  <strong>DEPRECATED</strong></td>
+<td><em>否</em></td>
+<td><em><strong>默认 95</strong>缩略图压缩质量</em></td>
+</tr>
+<tr>
+<td><em>x-gmkerl-unsharp</em>   <strong>DEPRECATED</strong></td>
+<td><em>否</em></td>
+<td><em><strong>默认锐化（true）</strong>是否进行锐化处理</em></td>
+</tr>
+<tr>
+<td><em>x-gmkerl-rotate</em>  <strong>DEPRECATED</strong></td>
+<td><em>否</em></td>
+<td><em>图片旋转（顺时针），可选：<code>auto，90，180，270</code> 之一</em></td>
+</tr>
+<tr>
+<td><em>x-gmkerl-crop</em>  <strong>DEPRECATED</strong></td>
+<td><em>否</em></td>
+<td><em>图片裁剪，格式：<code>&lt;w&gt;x&lt;h&gt;a&lt;x&gt;a&lt;y&gt;</code>。 其中 w, h 分别表示裁剪后的宽和高，x, y 表示左上角坐标。如 100x100a0a0。</em></td>
+</tr>
+<tr>
+<td><em>x-gmkerl-exif-switch</em> <strong>DEPRECATED</strong></td>
+<td><em>否</em></td>
+<td><em>是否保留 EXIF 信息，仅在搭配 <code>x-gmkerl-crop，x-gmkerl-type，x-gmkerl-thumbnail</code> 时有效。</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_7">返回结果<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<pre><code class="language-js">{
+  save_token: '68640c7ab4120b4992907cabc6ea2c48',
+  token_secret: &quot;89a3d8d8a26a8adb32a3651a63c0d5cc&quot;,
+  bucket_name: 'example',
+  blocks: 5,
+  status: [0,0,0,0,0],
+  expired_at: 1401784219
+}
+</code></pre>
+<p><strong>返回参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>save_token</td>
+<td>分块上传索引 key，下一步分块上传数据时必须携带本参数</td>
+</tr>
+<tr>
+<td>token_secret</td>
+<td>用于之后请求计算 <code>policy</code> 和 <code>signature</code> 所用，代替『表单 API 验证密钥』</td>
+</tr>
+<tr>
+<td>bucket_name</td>
+<td>文件保存空间</td>
+</tr>
+<tr>
+<td>blocks</td>
+<td>文件分块数量</td>
+</tr>
+<tr>
+<td>status</td>
+<td>分块文件上传状态，<code>1</code>表示已完成上传，<code>0</code>表示分块未完成上传。数组索引表示分块序号，<strong> 从 0 开始 </strong>；</td>
+</tr>
+<tr>
+<td>expired_at</td>
+<td>当前分块上传数据有效期，超过有效期之后数据将会被清理</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">分块上传数据<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<pre><code>POST /&lt;bucket-name&gt;/
+</code></pre>
+<h4 id="_9">请求类型<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<pre><code>Content-Type: multipart/form-data
+</code></pre>
+<h4 id="_10">请求参数<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数类型</th>
+<th>必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>policy</td>
+<td>String</td>
+<td>true</td>
+<td>文件存储/校验信息，见<a href="#policy">算法</a></td>
+</tr>
+<tr>
+<td>signature</td>
+<td>String</td>
+<td>true</td>
+<td>校验签名，见<a href="#signature">算法</a></td>
+</tr>
+<tr>
+<td>file</td>
+<td>Blob</td>
+<td>true</td>
+<td>上传的文件分块数据</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_11">参数组<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>save_token</td>
+<td>即初始化上传请求返回结果中的 <code>save_token</code></td>
+</tr>
+<tr>
+<td>expiration</td>
+<td>Unix UTC 时间戳，授权有效期，超过这个时间之后授权将会失效</td>
+</tr>
+<tr>
+<td>block_index</td>
+<td>该分块在完整文件中的分块索引</td>
+</tr>
+<tr>
+<td>block_hash</td>
+<td>该分块文件的 md5 值</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_12">返回结果<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<p>上传成功返回:</p>
+<pre><code>{
+  save_token: '68640c7ab4120b4992907cabc6ea2c48',
+  token_secret: &quot;89a3d8d8a26a8adb32a3651a63c0d5cc&quot;,
+  bucket_name: 'example',
+  blocks: 5,
+  status: [1,1,1,1,0],
+  expired_at: 1401784219
+}
+</code></pre>
+<p><strong>返回参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>save_token</td>
+<td>分块上传索引 key，下一步分块上传数据时必须携带本参数</td>
+</tr>
+<tr>
+<td>token_secret</td>
+<td>用于之后请求计算 <code>policy</code> 和 <code>signature</code> 所用，代替『表单 API 验证密钥』</td>
+</tr>
+<tr>
+<td>bucket_name</td>
+<td>文件保存空间</td>
+</tr>
+<tr>
+<td>blocks</td>
+<td>文件分块数量</td>
+</tr>
+<tr>
+<td>status</td>
+<td>分块文件上传状态，<code>1</code>表示已完成上传，<code>0</code>表示分块未完成上传。数组索引表示分块序号，<strong> 从 0 开始 </strong>；</td>
+</tr>
+<tr>
+<td>expired_at</td>
+<td>当前分块上传数据有效期，超过有效期之后数据将会被清理</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_13">文件合并完成上传<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<pre><code>POST /&lt;bucket-name&gt;/
+</code></pre>
+<h4 id="_14">请求类型<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<pre><code>Content-Type: application/x-www-form-urlencoded
+</code></pre>
+<h4 id="_15">请求参数<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数类型</th>
+<th>必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>policy</td>
+<td>string</td>
+<td>true</td>
+<td>文件存储/校验信息，见<a href="#policy">算法</a></td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>true</td>
+<td>校验签名，见<a href="#signature">算法</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_16">参数组<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>save_token</td>
+<td>即初始化上传请求返回结果中的 <code>save_token</code></td>
+</tr>
+<tr>
+<td>expiration</td>
+<td>Unix UTC 时间戳，授权有效期，超过这个时间之后授权将会失效</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_17">返回结果<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<p>表单 API 结合 <code>return-url</code> 和 <code>notify-url</code> 两个，有三种方式将上传结果返回:
+* HTTP Body 同步返回；在没有传递 <code>return-url</code> 时，都会使用这种方式以 JSON 字符串的方式返回数据到客户端；
+* 客户端同步跳转回调；传递 <code>return-url</code> 参数时，会通过 HTTP 302 的方式在客户端跳转到回调地址，通过 GET 参数传递；
+* 服务器异步队列通知；传递了 <code>notify-url</code> 参数时，会通过又拍云的服务端异步队列发送 POST 请求以标准的<em>x-www-form-urlencoded</em>表单进行通知，如果回调通知失败，再重试 10 次（累计一天时间）之后将丢弃这条回调任务；</p>
+<p>三种方式将返回/提交一样的数据，签名验证机制也完全一样，以 HTTP Body 返回的数据为例上传成功返回：</p>
+<pre><code class="language-js">{
+  bucket_name: 'example',
+  path: '/demo.png',
+  mimetype: 'image/png',
+  file_size: 65422,
+  image_width: 800,
+  image_height: 600,
+  image_frames: 1,
+  image_type: 'PNG',
+  last_modified: 1402021925,
+  signature: 'c0ec4d6b0bb0515b4b889a12436118aa'
+}
+</code></pre>
+<p><strong>返回参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bucket_name</td>
+<td>空间名</td>
+</tr>
+<tr>
+<td>path</td>
+<td>文件保存路径</td>
+</tr>
+<tr>
+<td>mimetype</td>
+<td>保存文件的 content-type</td>
+</tr>
+<tr>
+<td>file_size</td>
+<td>文件大小</td>
+</tr>
+<tr>
+<td>image_width</td>
+<td>图片宽度，仅图片返回</td>
+</tr>
+<tr>
+<td>image_height</td>
+<td>图片高度，仅图片返回</td>
+</tr>
+<tr>
+<td>image_frames</td>
+<td>图片帧数，仅图片返回</td>
+</tr>
+<tr>
+<td>image_type</td>
+<td>图片类型，仅图片返回</td>
+</tr>
+<tr>
+<td>last_modified</td>
+<td>文件最后修改时间，既本次上传操作成功创建文件的时间</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>校验签名，用于校验返回数据的合法性 ，生成方式参见签名算法</td>
+</tr>
+<tr>
+<td>ext-param</td>
+<td>初始化时指定的额外参数（如果没有指定则不返回这个字段）</td>
+</tr>
+</tbody>
+</table>
+<p>同步回调方式会通过 HTTP 302 的方式进行跳转：</p>
+<pre><code>&gt; Access-Control-Allow-Methods:PUT,POST
+&gt; Access-Control-Allow-Origin:*
+&gt; X-Powered-By:Crocodile/0.0.1
+&gt; ...
+&gt; Location: http://www.example.com/callback/return.php?path=%2Fdemo.png&amp;content_type=image%2Fpng&amp;file_size=65422&amp;image_width=800&amp;image_height=600&amp;image_frames=1&amp;last_modified=1402021925&amp;signature=bc0b1ee186486c050146616a6ec74747
+</code></pre>
+<h3 id="_18">错误代码说明<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>请参考 <a href="/api/errno/">API 错误码表</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

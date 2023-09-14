@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/cloud/av_pretreatment/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>音视频处理（已弃用）</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/">产品简介</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/image/">图片处理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/av/">异步音视频处理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/sync_video/">同步视频处理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/sync_audio/">同步音频处理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/unzip/">压缩解压缩</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/spider/">文件拉取</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/uconvert/">文档转换</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/async_image/">异步图片拼接</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="cloud/av_pretreatment/">音视频处理（已弃用）</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#api">API 基本域名</a></li>
+                    
+                  
+                    <li class=""><a href="#_1">请求方法</a></li>
+                    
+                  
+                    <li class=""><a href="#_2">授权认证</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">请求签名</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">回调签名</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_5">视频处理</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_6">请求地址</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_7">请求方法</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_8">请求参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_9">处理参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_10">返回结果</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_11">处理结果回调通知</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_12">回调参数</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_13">处理进度查询</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_14">请求地址</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_15">请求方法</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_16">请求参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_17">返回数据</a></li>
+                      </ul>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>音视频处理（已弃用）</h1>
+
+<blockquote>
+<p>** 该文档为旧版异步视频处理文档，新版请参考 <a href="/cloud/av/">异步音视频处理文档</a> **</p>
+</blockquote>
+<p>视频预处理接口是用于处理已经上传到对应存储空间中的视频文件，进行转码、截图等操作。在处理完成之后，异步通知用户处理结果。</p>
+<blockquote>
+<p><strong>注：</strong>
+文中所有 <code>&lt;&gt;</code> 标注的字段，均需根据你的实际情况替换（无需 <code>&lt;&gt;</code> 符号，仅作标注之用）</p>
+</blockquote>
+<h2 id="api">API 基本域名<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<pre><code>p0.api.upyun.com
+</code></pre>
+<h2 id="_1">请求方法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<pre><code class="language-sh">curl -X POST \
+    http://p0.api.upyun.com/pretreatment/ \
+    -H &quot;Authorization: UPYUN &lt;operator&gt;:&lt;signature&gt;&quot; \
+    -H &quot;Date: Wed, 29 Oct 2014 02:26:58 GMT&quot;
+    # 其他可选参数...
+</code></pre>
+<h2 id="_2">授权认证<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>调用视频处理接口需要进行授权认证，通过在 HTTP Request Header 中添加 <code>Authorization</code> 的方式来进行权限验证：</p>
+<pre><code>Authorization: UPYUN &lt;operator&gt;:&lt;signature&gt;
+</code></pre>
+<p>其中 <code>operator</code> 为操作员名称，<code>signature</code> 为根据参数计算出来的签名。</p>
+<h3 id="_3">请求签名<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>授权认证过程中的 <code>signature</code> 参数通过下面的方式获得：</p>
+<p>1. 将参数按照参数名称的<a href="https://zh.wikipedia.org/wiki/%E5%AD%97%E5%85%B8%E5%BA%8F">字典序</a>排序后，将参数键值对连接成一个字符串；
+2. 将第一步生成的字符串按照下面的规则进行连接，获取待签名字符串：</p>
+<pre><code>&lt;operator_name&gt;&lt;signature_string&gt;&lt;md5_operator_password&gt;
+</code></pre>
+<p>其中，<code>operator_name</code> 为用于认证授权的操作员名，<code>signature_string</code> 为第一步生成的字符串，
+<code>md5_operator_password</code> 为对操作员密码进行 md5 计算之后得到的字符串；</p>
+<p>3. 对第二步生成的字符串做 md5 计算，得到最终的 <code>signature</code> 值。</p>
+<p>特别地，参数字符串都必须使用 <code>utf-8</code> 编码处理。</p>
+<p>假设接口提交如下参数：</p>
+<pre><code>bucket_name: 'imtester'
+tasks: 'W3sidHlwZSI6InZpZGVvIiwiYml0cmF0ZSI6IjUwMCIsInJvdGF0ZSI6ImF1dG8iLCJmb3JtYXQiOiJtcDQifSx7InR5cGUiOiJ0aHVtYm5haWwiLCJ0aHVtYl9zaWdubGUiOmZhbHNlLCJ0aHVtYl9hbW91bnQiOjEwMCwiZm9ybWF0IjoicG5nIn1d'
+notify_url: 'http://www.example.com/notify/'
+source: '/video/20130514_190031.mp4'
+</code></pre>
+<p>用于授权验证的操作员名为 <code>operator_tester</code> ，操作员密码为 <code>tester_password</code>。</p>
+<p>首先根据参数名称的字段顺序进行排序：</p>
+<pre><code>bucket_name: 'imtester'
+notify_url: 'http://www.example.com/notify/'
+source: '/video/20130514_190031.mp4'
+tasks: 'W3sidHlwZSI6InZpZGVvIiwiYml0cmF0ZSI6IjUwMCIsInJvdGF0ZSI6ImF1dG8iLCJmb3JtYXQiOiJtcDQifSx7InR5cGUiOiJ0aHVtYm5haWwiLCJ0aHVtYl9zaWdubGUiOmZhbHNlLCJ0aHVtYl9hbW91bnQiOjEwMCwiZm9ybWF0IjoicG5nIn1d'
+</code></pre>
+<p>将排序后的参数键值对连接成一个字符串，得到：</p>
+<pre><code>bucket_nameimtesternotify_urlhttp://www.example.com/notify/source/video/20130514_190031.mp4tasksW3sidHlwZSI6InZpZGVvIiwiYml0cmF0ZSI6IjUwMCIsInJvdGF0ZSI6ImF1dG8iLCJmb3JtYXQiOiJtcDQifSx7InR5cGUiOiJ0aHVtYm5haWwiLCJ0aHVtYl9zaWdubGUiOmZhbHNlLCJ0aHVtYl9hbW91bnQiOjEwMCwiZm9ybWF0IjoicG5nIn1d
+</code></pre>
+<p>连接操作员名和进行 md5 计算之后的操作员密码：</p>
+<pre><code>operator_testerbucket_nameimtesternotify_urlhttp://www.example.com/notify/source/video/20130514_190031.mp4tasksW3sidHlwZSI6InZpZGVvIiwiYml0cmF0ZSI6IjUwMCIsInJvdGF0ZSI6ImF1dG8iLCJmb3JtYXQiOiJtcDQifSx7InR5cGUiOiJ0aHVtYm5haWwiLCJ0aHVtYl9zaWdubGUiOmZhbHNlLCJ0aHVtYl9hbW91bnQiOjEwMCwiZm9ybWF0IjoicG5nIn1d97b5a9d718b7a2064f7e7673c4d8bcb8
+</code></pre>
+<p>将得到的字符串进行 md5 计算，得到最终的 <code>signature</code> 值为 <code>ad91a9ab81ecc34e973844a6723ce354</code></p>
+<p>特别地，<code>signature</code> 参数不参与签名计算。</p>
+<p><a name="old_notify_url"></a></p>
+<h3 id="_4">回调签名<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>signature 的计算方法：</p>
+<pre><code>md5(&lt;operator_name&gt;&lt;md5_operator_password&gt;&lt;task_id&gt;&lt;timestamp&gt;), 并取中间 16 位。
+</code></pre>
+<h2 id="_5">视频处理<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>提交视频处理请求到处理队列，处理完成之后异步回调通知用户</p>
+<h3 id="_6">请求地址<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>http://p0.api.upyun.com/pretreatment/</p>
+<h3 id="_7">请求方法<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>POST，需要进行授权验证</p>
+<h3 id="_8">请求参数<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bucket_name</td>
+<td>string</td>
+<td>true</td>
+<td>空间名称，即要处理的文件所在的空间</td>
+</tr>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>true</td>
+<td>待处理源文件路径</td>
+</tr>
+<tr>
+<td>notify_url</td>
+<td>string</td>
+<td>true</td>
+<td>异步回调地址，在处理完成之后将会进行异步通知</td>
+</tr>
+<tr>
+<td>tasks</td>
+<td>string</td>
+<td>true</td>
+<td>提交的任务数据，base64 处理之后的字符串</td>
+</tr>
+<tr>
+<td>accept</td>
+<td>string</td>
+<td>false</td>
+<td>如果指定为 <code>json</code>，则在回调时会返回 <code>application/json</code> 格式的内容，否则返回 <code>application/x-www-form-urlencoded</code> 格式的内容</td>
+</tr>
+</tbody>
+</table>
+<p><code>tasks</code> 参数通过下面三个步骤生成：</p>
+<p>1. 组装业务参数，每次最多可以提交 10 组处理参数；</p>
+<pre><code>[
+    {
+        type: 'video',
+        bitrate: 4000,
+        ...
+    },
+    ...
+]
+</code></pre>
+<p>2. 将业务参数转换为 JSON 字符串；</p>
+<p>3. 对第二步生成的字符串进行 base64 encode 处理。</p>
+<h3 id="_9">处理参数<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>又拍云的视频处理服务目前支持四种类型的处理请求：</p>
+<ul>
+<li>视频转码</li>
+<li>HLS 切割</li>
+<li>视频截图</li>
+<li>视频信息获取</li>
+</ul>
+<p>其中，<code>视频信息读取</code> 的任务可用于获取空间内的任一视频文件的源信息</p>
+<p>1. 视频转码</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>true</td>
+<td>处理类型，进行视频转码时值必须为 <code>video</code></td>
+</tr>
+<tr>
+<td>bitrate</td>
+<td>integer</td>
+<td>false</td>
+<td>视频比特率，单位 <code>kbit/s</code>，默认按照视频原始比特率处理</td>
+</tr>
+<tr>
+<td>scale</td>
+<td>string</td>
+<td>false</td>
+<td>视频分辨率，格式 <code>1024:768</code>，默认按照原始分辨率处理</td>
+</tr>
+<tr>
+<td>auto_scale</td>
+<td>boolean</td>
+<td>false</td>
+<td>是否根据分辨率自动调整视频长宽比例，仅当传递了 <code>scale</code> 参数时有效</td>
+</tr>
+<tr>
+<td>frame_rate</td>
+<td>integer</td>
+<td>false</td>
+<td>帧率，既每秒显示的帧数，常用帧率："24"、"25"、"30"等，默认按照原始帧率处理</td>
+</tr>
+<tr>
+<td>rotate</td>
+<td>string</td>
+<td>false</td>
+<td>旋转角度，默认按照原始视频角度处理</td>
+</tr>
+<tr>
+<td>map_metadata</td>
+<td>boolean</td>
+<td>false</td>
+<td>是否保留视频 meta 信息，默认值 <code>true</code></td>
+</tr>
+<tr>
+<td>audio_codec</td>
+<td>string</td>
+<td>false</td>
+<td>设置音频编码器,  可选: "libmp3lame", "libfdk_aac", "copy"</td>
+</tr>
+<tr>
+<td>video_codec</td>
+<td>string</td>
+<td>false</td>
+<td>设置视频编码器, 可选: "libx264", "libtheora", "copy"</td>
+</tr>
+<tr>
+<td>disable_audio</td>
+<td>boolean</td>
+<td>false</td>
+<td>是否禁掉音频，默认 <code>false</code></td>
+</tr>
+<tr>
+<td>disable_video</td>
+<td>boolean</td>
+<td>false</td>
+<td>是否禁掉视频，默认 <code>false</code></td>
+</tr>
+<tr>
+<td>format</td>
+<td>string</td>
+<td>false</td>
+<td>视频输出格式，支持 mp4/flv，默认按照原始格式输出</td>
+</tr>
+<tr>
+<td>accelerate_factor</td>
+<td>float</td>
+<td>false</td>
+<td>设置视频加速的倍数，取值范围［1.0，10.0］这个值是一个浮点数，可以是 <code>2.5</code>，表示加速 2.5 倍</td>
+</tr>
+<tr>
+<td>save_as</td>
+<td>string</td>
+<td>false</td>
+<td>转码后输出的文件保存路径（同一个空间下），如果没有传递，会根据请求的参数生成一个文件名保存在原始文件同目录下</td>
+</tr>
+<tr>
+<td>return_info</td>
+<td>boolean</td>
+<td>false</td>
+<td>是否返回视频元数据，仅当处理类型为 <code>video</code> 时有效，默认 <code>false</code></td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>string</td>
+<td>false</td>
+<td>视频起始处理时间，格式 <code>HH:MM:SS</code>，默认为视频开始</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>string</td>
+<td>false</td>
+<td>视频结束处理时间，格式 <code>HH:MM:SS</code>，默认为视频结束</td>
+</tr>
+<tr>
+<td>watermark_img</td>
+<td>string</td>
+<td>false</td>
+<td>水印图片路径，建议使用 png 格式图片，暂时不支持外链</td>
+</tr>
+<tr>
+<td>watermark_gravity</td>
+<td>string</td>
+<td>false</td>
+<td>水印图片位置，支持 <code>NorthWest</code>，<code>North</code>，<code>NorthEast</code>，<code>West</code>，<code>Center</code>，<code>East</code>，<code>SouthWest</code>，<code>South</code>，<code>SouthEast</code>，默认 <code>NorthEast</code></td>
+</tr>
+<tr>
+<td>watermark_dx</td>
+<td>int</td>
+<td>false</td>
+<td>水印图片横坐标偏移量，单位 px，当水印位置为 NorthEast 时，默认值为 -20. 其余情况下默认值为 0</td>
+</tr>
+<tr>
+<td>watermark_dy</td>
+<td>int</td>
+<td>false</td>
+<td>水印图片纵坐标偏移量，单位 px，当水印位置为 NorthEast 时，默认值为 15. 其余情况下默认值为 0</td>
+</tr>
+</tbody>
+</table>
+<p>2. HLS 转码切片
+HLS（<a href="http://zh.wikipedia.org/wiki/HTTP_Live_Streaming">HTTP Live Streaming</a>） 转码切割处理除了 <code>hls_time</code> 之外其他参数与普通视频转码一致</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>true</td>
+<td>处理类型，进行 hls 切片时值必须为 <code>hls</code></td>
+</tr>
+<tr>
+<td>hls_time</td>
+<td>string</td>
+<td>true</td>
+<td>指定切割的时间片长度</td>
+</tr>
+</tbody>
+</table>
+<p>3. 视频截图</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>true</td>
+<td>处理类型，截图时值必须为 <code>thumbnail</code></td>
+</tr>
+<tr>
+<td>thumb_single</td>
+<td>boolean</td>
+<td>true</td>
+<td>是否仅截取单张图片，默认值 <code>true</code></td>
+</tr>
+<tr>
+<td>thumb_amount</td>
+<td>integer</td>
+<td>false</td>
+<td>截图数量，当 thumb_single 参数的值为 <code>false</code> 时，本参数为必须</td>
+</tr>
+<tr>
+<td>thumb_start</td>
+<td>string</td>
+<td>false</td>
+<td>截图开始时间，格式为 <code>00:04:13</code>，默认值为 <code>00:00:00</code></td>
+</tr>
+<tr>
+<td>thumb_end</td>
+<td>string</td>
+<td>false</td>
+<td>截图结束时间，格式为 <code>00:09:13</code>，默认值为视频结束时间</td>
+</tr>
+<tr>
+<td>thumb_scale</td>
+<td>string</td>
+<td>false</td>
+<td>截图尺寸，格式为 <code>1024:768</code>，默认值为视频原始尺寸</td>
+</tr>
+<tr>
+<td>thumb_format</td>
+<td>string</td>
+<td>false</td>
+<td>截图输出格式，支持 png/jpg 格式，默认 <code>jpg</code></td>
+</tr>
+</tbody>
+</table>
+<p>4. 视频元数据获取</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>true</td>
+<td>处理类型，获取视频文件元数据时值必须为 <code>probe</code></td>
+</tr>
+</tbody>
+</table>
+<p>5. 音频转码</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>true</td>
+<td>处理类型，进行音频转码时值必须为 <code>audio</code></td>
+</tr>
+<tr>
+<td>format</td>
+<td>string</td>
+<td>false</td>
+<td>音频输出格式，支持 mp4/mp3，默认按照原始格式输出</td>
+</tr>
+<tr>
+<td>audio_channel</td>
+<td>integer</td>
+<td>false</td>
+<td>声道，默认 <code>2</code></td>
+</tr>
+<tr>
+<td>audio_bitrate</td>
+<td>integer</td>
+<td>false</td>
+<td>比特率，如 <code>64</code></td>
+</tr>
+<tr>
+<td>audio_vbr</td>
+<td>integer</td>
+<td>false</td>
+<td>variable bitrate [0-9]</td>
+</tr>
+<tr>
+<td>map_metadata</td>
+<td>boolean</td>
+<td>false</td>
+<td>是否保留视频 meta 信息，默认值 <code>true</code></td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>string</td>
+<td>false</td>
+<td>音频起始处理时间，格式 <code>HH:MM:SS</code>，默认为视频开始</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>string</td>
+<td>false</td>
+<td>音频结束处理时间，格式 <code>HH:MM:SS</code>，默认为视频结束</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">返回结果<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>成功提交处理请求之后，接口会针对提交的处理任务返回一组唯一的 <code>task_id</code>，可以根据这个 <code>task_id</code> 查询处理进度。</p>
+<pre><code>[
+    '35f0148d414a688a275bf915ba7cebb2',
+    '98adbaa52b2f63d6d7f327a0ff223348',
+    ...
+]
+
+</code></pre>
+<p>特别地，返回的 <code>task_id</code> 的顺序与提交的任务参数 <code>tasks</code> 里的任务顺序匹配对应。</p>
+<h2 id="_11">处理结果回调通知<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>当视频处理完成之后，系统将根据任务提交时的 <code>notify_url</code> 参数，将处理结果以 <code>HTTP POST</code> 请求进行回调通知。</p>
+<h3 id="_12">回调参数<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bucket_name</td>
+<td>string</td>
+<td>视频文件所在空间名</td>
+</tr>
+<tr>
+<td>status_code</td>
+<td>integer</td>
+<td>处理结果状态码，<code>200</code> 表示成功处理</td>
+</tr>
+<tr>
+<td>path</td>
+<td>array</td>
+<td>生成的目标文件保存路径</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>处理结果描述</td>
+</tr>
+<tr>
+<td>task_id</td>
+<td>string</td>
+<td>任务对应的 <code>task_id</code></td>
+</tr>
+<tr>
+<td>info</td>
+<td>string</td>
+<td>视频文件的元数据信息，经过 base64 处理过之后的 JSON 字符串，仅当提视频转码任务，且处理参数中包含 <code>return_info</code> 且值为 <code>true</code> 时返回</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>回调验证签名</td>
+</tr>
+</tbody>
+</table>
+<p>回调验证签名的计算方法与认证授权的计算方式相同。特别地，因为 <code>path</code> 参数返回的数据是一个数组，
+在计算签名的时候，将其使用空字符串连接之后再计算签名。</p>
+<p><strong>处理结果状态码</strong> 字段说明</p>
+<p><code>status_cod</code> 表示转码后的状态码</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>转码成功</td>
+</tr>
+<tr>
+<td>400</td>
+<td>提交的任务格式不合法或者原文件不合法</td>
+</tr>
+<tr>
+<td>406</td>
+<td>用户指定的转码的参数错误</td>
+</tr>
+<tr>
+<td>500</td>
+<td>转码出现错误</td>
+</tr>
+<tr>
+<td>504</td>
+<td>转码超时</td>
+</tr>
+</tbody>
+</table>
+<p><strong>info</strong> 字段说明
+对 <code>info</code> 的值进行 base64 解码和 JSON 转换之后，得到下面的数据：</p>
+<pre><code class="language-json">{
+    streams: [
+        {
+            index: 0,
+            video_fps: 30.0,
+            type: &quot;video&quot;,
+            video_height: 150,
+            codec: &quot;h264&quot;,
+            bitrate: 65304,
+            duration: 12.866667,
+            video_width: 150,
+            codec_desc: &quot;H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10&quot;,
+            metadata: {
+                handler_name: &quot;VideoHandler&quot;,
+                language: &quot;und&quot;
+            }
+        },
+        {
+            index: 1,
+            audio_channels: 1,
+            audio_samplerate: 44100.0,
+            codec_desc: &quot;AAC (Advanced Audio Coding)&quot;,
+            codec: &quot;aac&quot;,
+            bitrate: 128107, &quot;duration: 11.971338,
+            type: &quot;audio&quot;,
+            metadata: {
+                handler_name: &quot;SoundHandler&quot;,
+                language: &quot;und&quot;
+            }
+        }
+    ],
+    format: {
+        duration: 12.867,
+        fullname: &quot;QuickTime / MOV&quot;,
+        bitrate: 193359.0,
+        format: &quot;mov,mp4,m4a,3gp,3g2,mj2&quot;
+    }
+}
+</code></pre>
+<p>1. <code>format</code> 字段说明</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>duration</td>
+<td>float</td>
+<td>文件长度</td>
+</tr>
+<tr>
+<td>fullname</td>
+<td>string</td>
+<td>格式详细名字</td>
+</tr>
+<tr>
+<td>bitrate</td>
+<td>float</td>
+<td>总比特率</td>
+</tr>
+<tr>
+<td>format</td>
+<td>string</td>
+<td>格式简称</td>
+</tr>
+<tr>
+<td>filesize</td>
+<td>integer</td>
+<td>文件大小</td>
+</tr>
+</tbody>
+</table>
+<p>2. <code>stream</code> 字段说明</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index</td>
+<td>int</td>
+<td>stream 的 index</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>流的类型</td>
+</tr>
+<tr>
+<td>codec</td>
+<td>string</td>
+<td>编码解码器</td>
+</tr>
+<tr>
+<td>codec_desc</td>
+<td>string</td>
+<td>编码解码器的全名</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>float</td>
+<td>流的长度</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>object</td>
+<td>原数据</td>
+</tr>
+<tr>
+<td>bitrate</td>
+<td>float</td>
+<td>比特率</td>
+</tr>
+<tr>
+<td>attached_pic</td>
+<td>mixed</td>
+<td>(0, 1 or None) is stream a poster image?</td>
+</tr>
+<tr>
+<td>video_width</td>
+<td>integer</td>
+<td>视频的宽</td>
+</tr>
+<tr>
+<td>video_height</td>
+<td>integer</td>
+<td>视频的高</td>
+</tr>
+<tr>
+<td>video_fps</td>
+<td>integer</td>
+<td>视频的帧率</td>
+</tr>
+<tr>
+<td>audio_channels</td>
+<td>integer</td>
+<td>音轨的数量</td>
+</tr>
+<tr>
+<td>audio_samplerate</td>
+<td>float</td>
+<td>采样率</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_13">处理进度查询<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>根据 <code>task_id</code> 查询任务处理进度</p>
+<h3 id="_14">请求地址<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>http://p0.api.upyun.com/status/</p>
+<h3 id="_15">请求方法<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>GET，需要进行授权验证</p>
+<h3 id="_16">请求参数<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bucket_name</td>
+<td>string</td>
+<td>true</td>
+<td>处理文件对应的空间名称</td>
+</tr>
+<tr>
+<td>task_ids</td>
+<td>string</td>
+<td>true</td>
+<td>任务 id 以 <code>,</code> 作为分隔符，最多 20 个</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_17">返回数据<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<pre><code>{
+    tasks: {
+        35f0148d414a688a275bf915ba7cebb2: 100,
+        98adbaa52b2f63d6d7f327a0ff223348: 20,
+        c3103189fa906a5354d29bd807e8dc51: null
+        ...
+    }
+}
+
+</code></pre>
+<p>特别的，当值为 <code>null</code> 时，表示没有查询到相关的任务信息。</p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

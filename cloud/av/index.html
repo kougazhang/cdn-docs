@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/cloud/av/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>异步音视频处理</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/">产品简介</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/image/">图片处理</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="cloud/av/">异步音视频处理</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">快速入门</a></li>
+                    
+                  
+                    <li class=""><a href="#_2">开发者指南</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">提交处理任务</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">回调通知</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_5">上传预处理</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_6">进度查询</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_7">结果查询</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_8">状态码表</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_9">支持格式</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_10">预置模板</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_11">视频转码</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_12">常用参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_13">切片参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_14">水印参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_15">剪辑参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_16">动图参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_17">拼接参数</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_18">窄带高清</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_19">常用参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_20">切片参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_21">水印参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_22">剪辑参数</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_23">视频截图</a></li>
+                    
+                  
+                    <li class=""><a href="#_24">音频转码</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_25">常用参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_26">剪辑参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_27">拼接参数</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_28">元数据获取</a></li>
+                    
+                  
+                    <li class=""><a href="#_29">链式处理</a></li>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/sync_video/">同步视频处理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/sync_audio/">同步音频处理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/unzip/">压缩解压缩</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/spider/">文件拉取</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/uconvert/">文档转换</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/async_image/">异步图片拼接</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/av_pretreatment/">音视频处理（已弃用）</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>异步音视频处理</h1>
+
+<h2 id="_1">快速入门<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>又拍云处理（异步音视频处理）基于云存储服务，您在使用它之前，请确保您已经注册又拍云账号并完成实名验证，请确保您已经创建<a href="/api/quick_start/">云存储服务</a>。</p>
+<p>收费方面，见<a href="https://www.upyun.com/products/process#section-pricing">价格</a>。</p>
+<p>相关阅读：<a href="/cloud/sync_video/">同步视频处理</a>，<a href="/cloud/sync_audio/">同步音频处理</a>。</p>
+<hr />
+<h2 id="_2">开发者指南<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><a name="submit_task"></a></p>
+<h3 id="_3">提交处理任务<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>** 请求方法 **</p>
+<p>对已经存在云存储中的音视频文件，以 <code>POST</code> 方法向 <code>http://p0.api.upyun.com/pretreatment/</code> 提交处理任务，响应中返回任务 <code>task_id</code>。任务以异步的方式处理，处理完成后，回调通知用户处理结果。</p>
+<pre><code>curl -X POST \
+    http://p0.api.upyun.com/pretreatment/ \
+    -H &quot;Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -H &quot;Date: &lt;Wed, 29 Oct 2014 02:26:58 GMT&gt;&quot; \
+    -H &quot;Content-MD5: &lt;Content-MD5&gt;&quot; \
+    -d &quot;accept=json&quot;
+    -d &quot;service=&lt;service&gt;&quot; \
+    -d &quot;notify_url=&lt;notify_url&gt;&quot; \
+    -d &quot;source=&lt;音视频文件相对路径&gt;&quot; \
+    -d &quot;tasks=&lt;base64 编码后的任务字符串&gt;&quot; \
+</code></pre>
+<p>** 认证鉴权 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<p>** 请求参数 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>是</td>
+<td>音/视频文件所在的服务名</td>
+</tr>
+<tr>
+<td>notify_url</td>
+<td>string</td>
+<td>是</td>
+<td>回调通知地址，详见<a href="#notify_url">回调通知</a></td>
+</tr>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>是</td>
+<td>原始音/视频文件路径</td>
+</tr>
+<tr>
+<td>tasks</td>
+<td>string</td>
+<td>是</td>
+<td>任务信息，详见 <a href="#tasks">tasks 参数说明</a></td>
+</tr>
+<tr>
+<td>accept</td>
+<td>string</td>
+<td>是</td>
+<td>回调信息的格式，值为<code>json</code></td>
+</tr>
+</tbody>
+</table>
+<p><a name="tasks"></a>
+** tasks 参数说明 **</p>
+<p>1. 按 JSON 格式组装任务，一次请求 <code>tasks</code> 最多可以提交 10 个任务。<strong> 任务参数见<a href="#function">功能</a> </strong>。</p>
+<pre><code>[
+    {
+        &quot;type&quot;: &quot;video&quot;,                        // 视频转码
+        &quot;avopts&quot;: &quot;/s/240p(4:3)/as/1/r/30&quot;,     // 参数
+        &quot;return_info&quot;: true,                    // 返回元数据
+        &quot;save_as&quot;: &quot;/a/b.mp4&quot;                   // 保存路径
+    },
+    {
+        &quot;type&quot;: &quot;video&quot;,                                        // 视频拼接
+        &quot;avopts&quot;: &quot;/i/L2EvYi9jLm1wNA==/i/LzEvMi8zLm1wNA==&quot;,     // 参数
+        &quot;save_as&quot;: &quot;/concat/a.mp4&quot;                              // 保存路径
+    },
+    …
+]
+</code></pre>
+<p>2. 把 JSON 字符串 Base64 编码，得到 <code>tasks</code>。</p>
+<pre><code>W3siYXZvcHRzIjoiL3MvMjQwcCg0OjMpL2FzLzEvci8zMCIsInJldHVybl9pbmZvIjp0cnVlLCJzYXZlX2FzIjoiL2EvYi5tcDQiLCJ0eXBlIjoidmlkZW8ifSx7ImF2b3B0cyI6Ii9pL0wyRXZZaTlqTG0xd05BPT0vaS9MekV2TWk4ekxtMXdOQT09Iiwic2F2ZV9hcyI6Ii9jb25jYXQvYS5tcDQiLCJ0eXBlIjoidmNvbmNhdCJ9XQ==
+</code></pre>
+<p>** 响应信息 **</p>
+<ul>
+<li>任务提交成功：返回 <code>200</code>，响应体是一组按任务提交先后顺序排序的 <code>task_id</code>。例如：</li>
+</ul>
+<pre><code>[
+    &quot;35f0148d414a688a275bf915ba7cebb2&quot;,
+    &quot;98adbaa52b2f63d6d7f327a0ff223348&quot;,
+    &quot;c3103189fa906a5354d29bd807e8dc51&quot;,
+    …
+]
+</code></pre>
+<ul>
+<li>任务提交失败：返回相应的出错信息，具体请参阅「<a href="#status">状态码表</a>」。</li>
+</ul>
+<hr />
+<p><a name="notify_url"></a></p>
+<h3 id="_4">回调通知<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>任务处理完成后，向 <code>notify_url</code> 发送 <code>HTTP POST</code> 请求，请求体是回调信息。</p>
+<pre><code>curl -X POST \
+    &lt;notify_url&gt; \
+    -H &quot;Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -H &quot;Date: &lt;Wed, 29 Oct 2014 02:26:58 GMT&gt;&quot; \
+    -H &quot;Content-MD5: &lt;Content-MD5&gt;&quot; \
+    -d &quot;service=&lt;service&gt;&quot; \
+    # 其他参数...
+</code></pre>
+<p>** 回调信息 **</p>
+<p>回调信息是 JSON 字符串，参数名及说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>音/视频文件所在的服务名</td>
+</tr>
+<tr>
+<td>status_code</td>
+<td>integer</td>
+<td>处理结果状态码，<code>200</code> 表示成功处理，详见<a href="#status">状态码表</a></td>
+</tr>
+<tr>
+<td>path</td>
+<td>array</td>
+<td>输出文件保存路径</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>处理结果描述</td>
+</tr>
+<tr>
+<td>task_id</td>
+<td>string</td>
+<td>任务对应的 <code>task_id</code></td>
+</tr>
+<tr>
+<td>info</td>
+<td>json</td>
+<td>输出文件的元数据，仅当 <code>return_info</code> 为 <code>true</code> 时，有效</td>
+</tr>
+<tr>
+<td>signature（旧）</td>
+<td>string</td>
+<td>回调通知的签名，<a href="#old_notify_url">回调签名（旧）</a>的参数</td>
+</tr>
+<tr>
+<td>timestamp（旧）</td>
+<td>integer</td>
+<td>服务端发送回调时的时间戳，<a href="#old_notify_url">回调签名（旧）</a>的参数</td>
+</tr>
+</tbody>
+</table>
+<p>** 回调签名 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>，它提供给客户端，用于验证回调通知的合法性。</p>
+<hr />
+<p><a name="async_upload_process"></a></p>
+<h3 id="_5">上传预处理<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>在上传音视频文件时，对上传的音视频进行处理，生成一个或多个新的文件，同时保存上传的音视频到又拍云存储。任务以异步的方式处理，处理完成后，回调通知用户处理结果。</p>
+<p>支持的 API： <a href="/api/form_api/#upload_args">FORM API</a>。</p>
+<p>参数名是 <code>apps</code>，参数值是 JSON 数组。一个 <code>apps</code> 最多允许包含 10 个音视频处理任务。<strong> 任务参数见<a href="#function">功能</a> </strong>。</p>
+<p>** 举例 **</p>
+<pre><code>apps = [
+    {                                               // 异步音视频处理任务
+        &quot;name&quot;: &quot;naga&quot;,                             // 异步任务名称，必填。naga 表示异步音视频处理服务
+        &quot;type&quot;: &quot;&lt;type&gt;&quot;,                           // 功能标识，必填
+        &quot;avopts&quot;: &quot;&lt;avopts&gt;&quot;,                       // 处理参数，必填
+        &quot;return_info&quot;: true/false,                  // 是否返回元数据，选填
+        &quot;save_as&quot;: &quot;&lt;save_as&gt;&quot;,                     // 结果音频/视频保存路径，选填
+        &quot;notify_url&quot;: &quot;&lt;notify_url&gt;&quot;                // 回调地址，不填时使用上传参数中的 notify_url
+    },
+    {
+        &quot;name&quot;: &quot;naga&quot;,
+        &quot;type&quot;: &quot;video&quot;,
+        &quot;avopts&quot;: &quot;/s/240p(4:3)/as/1/r/30&quot;,
+        &quot;return_info&quot;: true,
+        &quot;save_as&quot;: &quot;/a/b.mp4&quot;,
+    },
+    ......
+]
+</code></pre>
+<p>** 回调通知 **</p>
+<p>任务处理完成后，向 <code>notify_url</code> 地址发送回调通知。详见 「音视频处理」 &gt; 「<a href="#notify_url">回调通知</a>」。</p>
+<hr />
+<h3 id="_6">进度查询<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>** 请求方法 **</p>
+<p>通过 <code>task_id</code>，以 <code>GET</code> 方法向 <code>http://p0.api.upyun.com/status/</code> 提交进度查询任务。</p>
+<pre><code>curl http://p0.api.upyun.com/status?service=&lt;service&gt;&amp;task_ids=&lt;task_id1&gt;,&lt;task_id2&gt;,&lt;task_id3&gt; \
+    -H &quot;Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -H &quot;Date: &lt;Wed, 29 Oct 2014 02:26:58 GMT&gt;&quot;
+</code></pre>
+<p>** 认证鉴权 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<p><code>代码实现</code> 详见<a href="/api/authorization/#_3">代码示例</a>。</p>
+<p>** 查询参数 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>是</td>
+<td>音/视频文件所在的服务名</td>
+</tr>
+<tr>
+<td>task_ids</td>
+<td>string</td>
+<td>是</td>
+<td>任务集，多个 <code>task_id</code> 使用 <code>,</code> 连接，最多 20 个 <code>task_id</code></td>
+</tr>
+</tbody>
+</table>
+<p>** 响应信息 **</p>
+<ul>
+<li>查询成功：返回 <code>200</code>，响应体是 <code>tasks</code>。<code>tasks</code> 是 JSON 格式，存放各个任务（<code>task_id</code>）的进度。例如：</li>
+</ul>
+<pre><code>{
+  &quot;tasks&quot;: {
+      &quot;35f0148d414a688a275bf915ba7cebb2&quot;: 100,
+      &quot;98adbaa52b2f63d6d7f327a0ff223348&quot;: 20,
+      &quot;c3103189fa906a5354d29bd807e8dc51&quot;: null,
+      …
+  }
+}
+</code></pre>
+<p><code>20</code> 表示任务进度百分比，<code>100</code> 表示任务处理完成，<code>-1</code> 表示任务处理失败，<code>null</code> 表示任务尚未开始。如果长时间是 <code>null</code>，请反馈给<a href="(https://www.upyun.com/contact)">售后</a>或您的商务经理。</p>
+<ul>
+<li>查询失败：返回相应的出错信息，具体请参阅「<a href="#status">状态码表</a>」。</li>
+</ul>
+<hr />
+<h3 id="_7">结果查询<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>** 请求方法 **</p>
+<p>通过 <code>task_id</code>，以 <code>GET</code> 方法向 <code>http://p0.api.upyun.com/result/</code> 提交处理结果查询任务。</p>
+<pre><code>curl http://p0.api.upyun.com/result?service=&lt;service&gt;&amp;task_ids=&lt;task_id1&gt;,&lt;task_id2&gt;,&lt;task_id3&gt; \
+    -H &quot;Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -H &quot;Date: &lt;Wed, 29 Oct 2014 02:26:58 GMT&gt;&quot;
+</code></pre>
+<p>** 认证鉴权 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<p><code>代码实现</code> 详见<a href="/api/authorization/#_3">代码示例</a>。</p>
+<p>** 查询参数 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>是</td>
+<td>音/视频文件所在的服务名</td>
+</tr>
+<tr>
+<td>task_ids</td>
+<td>string</td>
+<td>是</td>
+<td>任务集，多个 <code>task_id</code> 使用 <code>,</code> 连接，最多 20 个 <code>task_id</code></td>
+</tr>
+</tbody>
+</table>
+<p>** 响应信息 **</p>
+<ul>
+<li>查询成功：返回 <code>200</code>，响应体是任务的<a href="#notify_url">回调信息</a>。回调信息例如：</li>
+</ul>
+<pre><code>{
+    &quot;9d9c32b63a1034834e77672c6f51f661&quot;: {
+        &quot;path&quot;: [&quot;/v2.mp4&quot;],
+        &quot;signature&quot;: &quot;4042c1f07f546d28&quot;,
+        &quot;status_code&quot;: 200,
+        &quot;service&quot;: &quot;service&quot;,
+        &quot;description&quot;: &quot;OK&quot;,
+        &quot;task_id&quot;: &quot;9d9c32b63a1034834e77672c6f51f661&quot;,
+        &quot;timestamp&quot;: 1472010905
+    },
+    &quot;3438a54b4991e8d4a46a003bc15e9867&quot;: {
+        &quot;path&quot;: [&quot;/v2.mp4&quot;],
+        &quot;signature&quot;: &quot;1c49be9b672394ff&quot;,
+        &quot;status_code&quot;: 200,
+        &quot;service&quot;: &quot;service&quot;,
+        &quot;description&quot;: &quot;OK&quot;,
+        &quot;task_id&quot;: &quot;3438a54b4991e8d4a46a003bc15e9867&quot;,
+        &quot;timestamp&quot;: 1472010684
+    }
+    …
+}
+</code></pre>
+<ul>
+<li>查询失败：返回相应的出错信息，具体请参阅「<a href="#status">状态码表</a>」。</li>
+</ul>
+<hr />
+<p><a name="status"></a></p>
+<h3 id="_8">状态码表<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>处理成功</td>
+</tr>
+<tr>
+<td>400</td>
+<td>参数错误</td>
+</tr>
+<tr>
+<td>401</td>
+<td>参数错误</td>
+</tr>
+<tr>
+<td>404</td>
+<td>文件不存在</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>服务端错误。如遇此类错误，请反馈给<a href="https://www.upyun.com/contact">售后</a>或您的商务经理</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_9">支持格式<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>输入格式</th>
+<th>输出格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>视频容器格式</td>
+<td>AVI、MP4、FLV、MOV、3GP、ASF、WMV、M3U8(TS)、MPG、F4V、M4V、MKV、VOB（SVCD/DVD）等</td>
+<td>MP4、FLV、M3U8(TS) 等</td>
+</tr>
+<tr>
+<td>音频容器格式</td>
+<td>MP3、OGG、M4A、SILK 等</td>
+<td>MP4、MP3、OGG 等</td>
+</tr>
+<tr>
+<td>视频编码格式</td>
+<td>H.264/AVC 、H.263、H.263+、MPEG-2、MPEG-4、VP8、VP9、Quicktime、RealVideo、Windows Media Video 等</td>
+<td>H.264/AVC、VP8、H.265/HEVC、VP9 等</td>
+</tr>
+<tr>
+<td>音频编码格式</td>
+<td>MP1、MP2、MP3、AAC、AC-3、Vorbis、PCM、RealAudio、Windows Media Audio 等</td>
+<td>AAC、MP3 等</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="preset_mode"></a></p>
+<h3 id="_10">预置模板<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>同等清晰度下，建议优先使用 16:9 的宽高比。特别地，窄带高清也可以使用。</p>
+<table>
+<thead>
+<tr>
+<th>清晰度</th>
+<th>模板名</th>
+<th>分辨率</th>
+<th>码率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4K</td>
+<td>2160p(16:9)</td>
+<td>3840x2160,16:9</td>
+<td>≤ 8000Kbps</td>
+</tr>
+<tr>
+<td>2K</td>
+<td>1440p(16:9)</td>
+<td>2560x1440,16:9</td>
+<td>≤ 4000Kbps</td>
+</tr>
+<tr>
+<td>FHD/全高清</td>
+<td>1080p(16:9)</td>
+<td>1920x1080,16:9</td>
+<td>≤ 2560Kbps</td>
+</tr>
+<tr>
+<td>HD/高清</td>
+<td>720p(16:9)</td>
+<td>1280x720,16:9</td>
+<td>≤ 1500Kbps</td>
+</tr>
+<tr>
+<td>HD/高清</td>
+<td>720p(4:3)</td>
+<td>960x720,4:3</td>
+<td>≤ 1500Kbps</td>
+</tr>
+<tr>
+<td>LD/标清</td>
+<td>540p(16:9)</td>
+<td>960x540,16:9</td>
+<td>≤ 800Kbps</td>
+</tr>
+<tr>
+<td>LD/标清</td>
+<td>480p(16:9)</td>
+<td>854x480,16:9</td>
+<td>≤ 800Kbps</td>
+</tr>
+<tr>
+<td>SD/流畅</td>
+<td>480p(4:3)</td>
+<td>640x480,4:3</td>
+<td>≤ 500Kbps</td>
+</tr>
+<tr>
+<td>SD/流畅</td>
+<td>360p(16:9)</td>
+<td>640x360,16:9</td>
+<td>≤ 500Kbps</td>
+</tr>
+<tr>
+<td>SD/流畅</td>
+<td>240p(4:3)</td>
+<td>320x240,4:3</td>
+<td>≤ 300Kbps</td>
+</tr>
+</tbody>
+</table>
+<!--   旧的
+| LD/标清         | 480p(3:2)         | 720x480,3:2      | ≤ 800kbps      |
+| SD/流畅         | 360p(4:3)         | 480x360,4:3       | ≤ 500kbps     |
+-->
+
+<hr />
+<p><a name="function"></a>
+<a name="video_transcode"></a></p>
+<h2 id="_11">视频转码<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>是</td>
+<td>固定值，<code>video</code>，表示标准转码</td>
+</tr>
+<tr>
+<td><code>avopts</code></td>
+<td>string</td>
+<td>是</td>
+<td>视频转码参数，格式为 <code>/key1/value1/key2/value2/...</code>，参数见「参数」</td>
+</tr>
+<tr>
+<td><code>save_as</code></td>
+<td>string</td>
+<td>否</td>
+<td>输出文件保存路径，默认使用原始视频所在目录+系统随机生成的文件名+原始视频后缀</td>
+</tr>
+<tr>
+<td><code>return_info</code></td>
+<td>boolean</td>
+<td>否</td>
+<td>回调信息是否包含输出文件的元数据，元数据格式为 JSON，默认 <code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p>** 注 **</p>
+<ul>
+<li><code>save_as</code> 的后缀名默认当作输出封装格式。格式除视频格式外，还支持 GIF/WebP，可以实现把视频转码成动态 GIF/动态 WebP。</li>
+</ul>
+<h3 id="_12">常用参数<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/vb/&lt;bitrate&gt;</code></td>
+<td>integer</td>
+<td>否</td>
+<td>视频比特率，单位 kbps，默认按照视频原始比特率处理</td>
+</tr>
+<tr>
+<td><code>/s/&lt;scale&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>视频分辨率，默认按照原始分辨率处理。见「注」</td>
+</tr>
+<tr>
+<td><code>/as/&lt;auto_scale&gt;</code></td>
+<td>boolean</td>
+<td>否</td>
+<td>是否根据分辨率自动调整视频的比例，默认 <code>false</code>。仅当传递了 <code>s</code> 参数时有效</td>
+</tr>
+<tr>
+<td><code>/r/&lt;frame_rate&gt;</code></td>
+<td>integer</td>
+<td>否</td>
+<td>视频帧率，默认按照原始帧率处理。推荐值：<code>25</code>、<code>30</code></td>
+</tr>
+<tr>
+<td><code>/sp/&lt;rotate&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>旋转角度，默认按照原始视频角度处理。可选值：<code>auto（自动扶正）</code>、<code>90</code>、<code>180</code>、<code>270</code></td>
+</tr>
+<tr>
+<td><code>/sm/&lt;map_metadata&gt;</code></td>
+<td>boolean</td>
+<td>否</td>
+<td>是否保留视频元数据，默认 <code>true</code></td>
+</tr>
+<tr>
+<td><code>/acodec/&lt;audio_codec&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>设置音频编码器，默认按照音频原始编码器处理。可选值：<code>libmp3lame</code>、<code>libfdk_aac</code>、<code>copy</code></td>
+</tr>
+<tr>
+<td><code>/vcodec/&lt;video_codec&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>设置视频编码器，默认按照视频原始编码器处理。可选值：<code>libx264</code>、<code>libtheora</code>、<code>libx265</code>、<code>libvpx-vp9</code>、<code>libvpx</code>、<code>copy</code></td>
+</tr>
+<tr>
+<td><code>/an/&lt;disable_audio&gt;</code></td>
+<td>boolean</td>
+<td>否</td>
+<td>是否禁掉音频，默认 <code>false</code></td>
+</tr>
+<tr>
+<td><code>/vn/&lt;disable_video&gt;</code></td>
+<td>boolean</td>
+<td>否</td>
+<td>是否禁掉视频，默认 <code>false</code></td>
+</tr>
+<tr>
+<td><code>/su/&lt;accelerate_factor&gt;</code></td>
+<td>float</td>
+<td>否</td>
+<td>视频加速倍数，默认 <code>1.0</code>。取值范围 <code>[1.0，10.0]</code></td>
+</tr>
+<tr>
+<td><code>/ar/&lt;audio_sample_rate&gt;</code></td>
+<td>integer</td>
+<td>否</td>
+<td>音频采样率，单位 Hz，默认按照原始采样率处理。可选值：<code>44100</code>、<code>48000</code>、<code>32000</code>、<code>22050</code>、<code>24000</code>、<code>16000</code>、<code>0</code></td>
+</tr>
+<tr>
+<td><code>/ac/&lt;audio_channel&gt;</code></td>
+<td>float</td>
+<td>否</td>
+<td>音频声道数，默认按照原始声道数处理。常用值：<code>1</code>表示单声道(mono)，<code>2</code>表示立体声(stereo)，<code>5.1</code>，<code>7.1</code>等</td>
+</tr>
+<tr>
+<td><code>/sar/&lt;sar&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td><a href="https://en.wikipedia.org/wiki/Aspect_ratio_(image)#Distinctions">采样长宽比</a>，格式 <code>w:h</code>，常用值 <code>1:1</code>，<code>4:3</code> 或 <code>16:9</code></td>
+</tr>
+<tr>
+<td><code>/dar/&lt;dar&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td><a href="https://en.wikipedia.org/wiki/Pixel_aspect_ratio#Introduction">显示长宽比</a>，格式 <code>w:h</code>，常用值 <code>1:1</code>，<code>4:3</code> 或 <code>16:9</code></td>
+</tr>
+<tr>
+<td><code>/pv/&lt;pv&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>H264 Profile，常用值 <code>baseline</code>，<code>main</code>，<code>high</code> 等</td>
+</tr>
+<tr>
+<td><code>/level/&lt;level&gt;</code></td>
+<td>float</td>
+<td>否</td>
+<td>H264 Level，常用值 <code>3.0</code>，<code>3.1</code>，<code>4.0</code>，<code>4.1</code>，<code>4.2</code> 等</td>
+</tr>
+<tr>
+<td><code>/f/&lt;format&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>视频格式。当输出文件没有后缀时，需要指定，其余时候根据输出文件后缀名自动判定</td>
+</tr>
+</tbody>
+</table>
+<p>** 注 **</p>
+<ul>
+<li><code>s</code> 参数有两种设置方法：1）使用<a href="#preset_mode">预置模板</a>，值是预置模板的<code>模板名</code>，如 <code>720p(16:9)</code>；2）自定义，值是 <code>宽x高</code>，如 <code>1280x720</code>。</li>
+</ul>
+<h3 id="_13">切片参数<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ht/&lt;hls_time&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>每片时长，单位 s（秒），默认 <code>10</code></td>
+</tr>
+</tbody>
+</table>
+<p>** 注 **</p>
+<ul>
+<li>使用 <code>ht</code> 参数时，<code>save_as</code> 参数必须以 <code>.m3u8</code> 后缀结尾。</li>
+</ul>
+<h3 id="_14">水印参数<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/wmImg/&lt;watermark_img&gt;</code></td>
+<td>string</td>
+<td>是</td>
+<td>水印图片相对路径，需要安全的 Base64 编码。图片格式支持 <code>png</code> 和 <code>webp</code></td>
+</tr>
+<tr>
+<td><code>/wmGravity/&lt;wmGravity&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>水印图片放置方位，默认 <code>northeast</code>。见「注」</td>
+</tr>
+<tr>
+<td><code>/wmDx/&lt;watermark_dx&gt;</code></td>
+<td>integer</td>
+<td>否</td>
+<td>水印图片横偏移量，单位 px，当 <code>wmGravity</code> 为 <code>northeast</code> 时，默认 <code>-20</code> <br /> 横偏移量取值正负的依据：往 <code>east</code> 方向偏移，为正；往 <code>west</code> 方向偏移，为负</td>
+</tr>
+<tr>
+<td><code>/wmDy/&lt;watermark_dy&gt;</code></td>
+<td>integer</td>
+<td>否</td>
+<td>水印图片纵偏移量，单位 px，当 <code>wmGravity</code> 为 <code>northeast</code> 时，默认 <code>15</code> <br /> 纵偏移量取值正负的依据：往 <code>south</code> 方向偏移，为正；往 <code>north</code> 方向偏移，为负</td>
+</tr>
+</tbody>
+</table>
+<p>** 注 **</p>
+<ul>
+<li>9 个方位：</li>
+</ul>
+<pre><code>northwest     |     north      |     northeast
+              |                |
+              |                |
+--------------+----------------+--------------
+              |                |
+west          |     center     |          east
+              |                |
+--------------+----------------+--------------
+              |                |
+              |                |
+southwest     |     south      |     southeast
+</code></pre>
+<h3 id="_15">剪辑参数<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ss/&lt;start_time&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>剪辑开始时间，格式为 <code>HH:MM:SS</code>，默认视频开始时间</td>
+</tr>
+<tr>
+<td><code>/es/&lt;end_time&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>剪辑结束时间，格式为 <code>HH:MM:SS</code>，默认视频结束时间</td>
+</tr>
+</tbody>
+</table>
+<p><a name="video_image"></a></p>
+<h3 id="_16">动图参数<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>把 <code>save_as</code> 的后缀名指定为 <code>gif</code> 或 <code>webp</code>，实现视频转码成动态图片。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/cr/&lt;concat_reverse&gt;</code></td>
+<td>boolean</td>
+<td>否</td>
+<td>向视频结尾处添加倒序的内容。功能效果是，正序内容+倒序内容</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_17">拼接参数<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>拼接的视频分辨率需要保持一致，拼接参数不能与其他参数混用。如果要混用，请分做两个任务，使用<a href="#chain">链式处理</a>。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/i/&lt;video&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>需要<strong>后置</strong>拼接视频文件的相对路径，需要安全的 Base64 编码 <br /> 多个需要拼接视频按 <code>/i/&lt;video&gt;/i/&lt;video&gt;/...</code> 方式进行连接。见「注」</td>
+</tr>
+<tr>
+<td><code>/h/&lt;video&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>需要<strong>前置</strong>拼接视频文件的相对路径，需要安全的 Base64 编码 <br /> 多个需要拼接视频按 <code>/h/&lt;video&gt;/h/&lt;video&gt;/...</code> 方式进行连接。见「注」</td>
+</tr>
+<tr>
+<td><code>/codec/&lt;codec&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>设置视频编码器，默认不需要设置。可选值：<code>copy</code>。见「注」</td>
+</tr>
+</tbody>
+</table>
+<p>** 注 **</p>
+<ul>
+<li>视频拼接顺序：待拼接视频按 <code>h</code> 出现顺序，依次拼接在<a href="#submit_task">原始视频（<code>source</code>）</a>前面；待拼接视频按 <code>i</code> 出现顺序，依次拼接在<a href="#submit_task">原始视频（<code>source</code>）</a>后面。</li>
+<li>如果 <code>save_as</code> 参数指定格式跟<a href="#submit_task">原始视频（<code>source</code>）</a>格式、拼接视频格式不一致，系统会<strong>自动转码</strong>原始视频、拼接视频成  <code>save_as</code>  参数指定格式；如果 <code>save_as</code> 参数未指定，拼接视频跟原始视频格式不一致，系统会自动转码拼接视频成原始视频格式。</li>
+<li>如果拼接视频和原始视频的编码一致，可以设置 <code>codec</code> 参数为 <code>copy</code>，不对拼接视频进行编解码，提高拼接速度。</li>
+</ul>
+<hr />
+<p><a name="nbhd"></a></p>
+<h2 id="_18">窄带高清<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p>通过对视频的编码进行优化，平均降低视频大小 30%。特别地，暂时只支持 H.264 编码。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>是</td>
+<td>固定值，<code>nbhd</code>，表示窄带高清</td>
+</tr>
+<tr>
+<td><code>avopts</code></td>
+<td>string</td>
+<td>是</td>
+<td>视频转码参数，格式为 <code>/key1/value1/key2/value2/...</code>，参数见「参数」</td>
+</tr>
+<tr>
+<td><code>return_info</code></td>
+<td>boolean</td>
+<td>否</td>
+<td>回调信息是否包含输出文件的元数据，元数据格式为 JSON，默认 <code>false</code></td>
+</tr>
+<tr>
+<td><code>save_as</code></td>
+<td>string</td>
+<td>否</td>
+<td>输出文件保存路径，默认原始视频所在目录+系统随机生成的文件名</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_19">常用参数<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ct/&lt;codec_type&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>视频编码器选择，默认 <code>h264</code>，可选值只能是<code>h264</code>或者<code>h265</code>。</td>
+</tr>
+<tr>
+<td><code>/scene/&lt;scene&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>视频内容场景，默认 <code>auto</code>，服务根据视频内容智能选择。场景参数见「注」</td>
+</tr>
+<tr>
+<td><code>/s/&lt;scale&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>视频分辨率，默认按照原始分辨率处理。见「注」</td>
+</tr>
+<tr>
+<td><code>/as/&lt;auto_scale&gt;</code></td>
+<td>boolean</td>
+<td>否</td>
+<td>是否根据分辨率自动调整视频的比例，默认 <code>false</code>。仅当传递了 <code>s</code> 参数时有效</td>
+</tr>
+<tr>
+<td><code>/r/&lt;frame_rate&gt;</code></td>
+<td>integer</td>
+<td>否</td>
+<td>视频帧率，默认按照原始帧率处理。推荐值：<code>25</code>、<code>30</code></td>
+</tr>
+<tr>
+<td><code>/sp/&lt;rotate&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>旋转角度，默认按照原始视频角度处理。可选值：<code>auto（自动扶正）</code>、<code>90</code>、<code>180</code>、<code>270</code></td>
+</tr>
+<tr>
+<td><code>/sm/&lt;map_metadata&gt;</code></td>
+<td>boolean</td>
+<td>否</td>
+<td>是否保留视频元数据，默认 <code>true</code></td>
+</tr>
+<tr>
+<td><code>/su/&lt;accelerate_factor&gt;</code></td>
+<td>float</td>
+<td>否</td>
+<td>视频加速倍数，默认 <code>1.0</code>。取值范围 <code>[1.0，10.0]</code></td>
+</tr>
+<tr>
+<td><code>/ar/&lt;audio_sample_rate&gt;</code></td>
+<td>integer</td>
+<td>否</td>
+<td>音频采样率，单位 Hz，默认按照原始采样率处理。可选值：<code>44100</code>、<code>48000</code>、<code>32000</code>、<code>22050</code>、<code>24000</code>、<code>16000</code>、<code>0</code></td>
+</tr>
+<tr>
+<td><code>/f/&lt;format&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>视频格式。当输出文件没有后缀时，需要指定，其余时候根据输出文件后缀名自动判定</td>
+</tr>
+</tbody>
+</table>
+<p>** 注 **</p>
+<ul>
+<li><code>scene</code> 可选参数：<code>auto</code>，表示智能选择；<code>self_portrait</code>，表示自拍；<code>animation</code>，表示动画；<code>film_calm</code>，表示电视剧，包括综艺、访谈、在线教育等；<code>film_dramatic</code>，表示电影。注意：<code>scene</code>只能是<code>h264</code>下的选项，<code>h265</code>无需使用<code>scene</code>参数。</li>
+<li><code>s</code> 参数有两种设置方法：1）使用<a href="#preset_mode">预置模板</a>，值是预置模板的<code>模板名</code>，如 <code>720p(16:9)</code>；2）自定义，值是 <code>宽x高</code>，如 <code>1280x720</code>。</li>
+<li><code>vb</code> 参数在窄带高清转码中禁止使用。</li>
+</ul>
+<h3 id="_20">切片参数<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ht/&lt;hls_time&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>每片时长，单位 s（秒），默认 <code>10</code></td>
+</tr>
+</tbody>
+</table>
+<p>** 注 **</p>
+<ul>
+<li>使用 <code>ht</code> 参数时，<code>save_as</code> 参数必须以 <code>.m3u8</code> 后缀结尾。</li>
+</ul>
+<h3 id="_21">水印参数<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/wmImg/&lt;watermark_img&gt;</code></td>
+<td>string</td>
+<td>是</td>
+<td>水印图片相对路径，需要安全的 Base64 编码。图片格式支持 <code>png</code> 和 <code>webp</code></td>
+</tr>
+<tr>
+<td><code>/wmGravity/&lt;wmGravity&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>水印图片放置方位，默认 <code>northeast</code>。见「注」</td>
+</tr>
+<tr>
+<td><code>/wmDx/&lt;watermark_dx&gt;</code></td>
+<td>integer</td>
+<td>否</td>
+<td>水印图片横偏移量，单位 px，当 <code>wmGravity</code> 为 <code>northeast</code> 时，默认 <code>-20</code> <br /> 横偏移量取值正负的依据：往 <code>east</code> 方向偏移，为正；往 <code>west</code> 方向偏移，为负</td>
+</tr>
+<tr>
+<td><code>/wmDy/&lt;watermark_dy&gt;</code></td>
+<td>integer</td>
+<td>否</td>
+<td>水印图片纵偏移量，单位 px，当 <code>wmGravity</code> 为 <code>northeast</code> 时，默认 <code>15</code> <br /> 纵偏移量取值正负的依据：往 <code>south</code> 方向偏移，为正；往 <code>north</code> 方向偏移，为负</td>
+</tr>
+</tbody>
+</table>
+<p>** 注 **</p>
+<ul>
+<li>9 个方位：</li>
+</ul>
+<pre><code>northwest     |     north      |     northeast
+              |                |
+              |                |
+--------------+----------------+--------------
+              |                |
+west          |     center     |          east
+              |                |
+--------------+----------------+--------------
+              |                |
+              |                |
+southwest     |     south      |     southeast
+</code></pre>
+<h3 id="_22">剪辑参数<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ss/&lt;start_time&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>剪辑开始时间，格式为 <code>HH:MM:SS</code>，默认视频开始时间</td>
+</tr>
+<tr>
+<td><code>/es/&lt;end_time&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>剪辑结束时间，格式为 <code>HH:MM:SS</code>，默认视频结束时间</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="thumbnail"></a></p>
+<h2 id="_23">视频截图<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>是</td>
+<td>固定值，<code>thumbnail</code></td>
+</tr>
+<tr>
+<td><code>avopts</code></td>
+<td>string</td>
+<td>是</td>
+<td>视频转码参数，格式为 <code>/key1/value1/key2/value2/...</code>，参数见「截图参数」</td>
+</tr>
+<tr>
+<td><code>return_info</code></td>
+<td>boolean</td>
+<td>否</td>
+<td>回调信息是否包含输出文件的元数据，元数据格式为 JSON，默认 <code>false</code></td>
+</tr>
+<tr>
+<td><code>save_as</code></td>
+<td>string</td>
+<td>否</td>
+<td>输出文件保存路径，默认原始视频所在目录+系统随机生成的文件名。见「注」</td>
+</tr>
+</tbody>
+</table>
+<p>** 截图参数 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/o/&lt;thumb_single&gt;</code></td>
+<td>boolean</td>
+<td>是</td>
+<td>是否单张截图，单张截图为 <code>true</code>，多张截图为 <code>false</code></td>
+</tr>
+<tr>
+<td><code>/n/&lt;thumb_amount&gt;</code></td>
+<td>integer</td>
+<td>是</td>
+<td>截图数量。当 <code>o</code> 参数为 <code>false</code> 时，有效；当 <code>o</code> 参数为 <code>true</code> 时，无效</td>
+</tr>
+<tr>
+<td><code>/ss/&lt;thumb_start&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>截图开始时间，格式为 <code>HH:MM:SS</code>，默认 <code>00:00:00</code></td>
+</tr>
+<tr>
+<td><code>/es/&lt;thumb_end&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>截图结束时间，格式为  <code>HH:MM:SS</code>，默认视频结束时间。当 <code>o</code> 参数为 <code>true</code> 时，无效</td>
+</tr>
+<tr>
+<td><code>/s/&lt;thumb_scale&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>截图尺寸，格式为 <code>宽:高</code>，默认视频原始尺寸</td>
+</tr>
+<tr>
+<td><code>/f/&lt;thumb_format&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>截图输出格式，默认 <code>jpg</code>。图片格式支持 <code>png</code> 和 <code>jpg</code>。见「注」</td>
+</tr>
+</tbody>
+</table>
+<p>** 注 **</p>
+<ul>
+<li>多张截图时，自定义 <code>save_as</code> 参数时只需指定一个保存路径，具体每张图片保存路径根据规则进行类推，例如 <code>save_as</code> 为 <code>/path/to/img.png</code>，输出文件保存路径第一张为 <code>/path/to/img1.png</code>，第二张为 <code>/path/to/img2.png</code>......以此类推。</li>
+<li>自定义 <code>f</code> 和 <code>save_as</code> 参数时，使用 <code>f</code> 参数指定的格式作为输出格式；仅自定义 <code>save_as</code> 参数时，使用 <code>save_as</code> 参数指定的后缀名作为输出格式；两者都不自定义时，使用 <code>f</code> 参数的默认值 <code>jpg</code> 作为输出格式。</li>
+<li>支持 m3u8 截图。</li>
+</ul>
+<hr />
+<p><a name="audio_transcode"></a></p>
+<h2 id="_24">音频转码<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>是</td>
+<td>固定值，<code>audio</code></td>
+</tr>
+<tr>
+<td><code>avopts</code></td>
+<td>string</td>
+<td>是</td>
+<td>视频转码参数，格式为 <code>/key1/value1/key2/value2/...</code>，参数见「参数」</td>
+</tr>
+<tr>
+<td><code>return_info</code></td>
+<td>boolean</td>
+<td>否</td>
+<td>回调信息是否包含输出文件的元数据，元数据格式为 JSON，默认 <code>false</code></td>
+</tr>
+<tr>
+<td><code>save_as</code></td>
+<td>string</td>
+<td>否</td>
+<td>输出文件保存路径，默认原始音频所在目录+系统随机生成的文件名</td>
+</tr>
+</tbody>
+</table>
+<p>** 注 **</p>
+<ul>
+<li><code>save_as</code> 的后缀名作为输出封装格式。</li>
+</ul>
+<h3 id="_25">常用参数<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/f/&lt;format&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>音频格式，当输出文件没有后缀时，需要指定，其余时候根据输出文件后缀名自动判定</td>
+</tr>
+<tr>
+<td><code>/ac/&lt;audio_channel&gt;</code></td>
+<td>integer</td>
+<td>否</td>
+<td>声道，默认 <code>2</code></td>
+</tr>
+<tr>
+<td><code>/ab/&lt;audio_bitrate&gt;</code></td>
+<td>integer</td>
+<td>否</td>
+<td>比特率，单位 kbps，默认按照音频原始比特率处理</td>
+</tr>
+<tr>
+<td><code>/vbr/&lt;audio_vbr&gt;</code></td>
+<td>integer</td>
+<td>否</td>
+<td>Variable bitrate, 默认按照音频原始 VBR 处理。取值范围 <code>[0-9]</code></td>
+</tr>
+<tr>
+<td><code>/sm/&lt;map_metadata&gt;</code></td>
+<td>boolean</td>
+<td>否</td>
+<td>是否保留音频 metadata，默认 <code>true</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_26">剪辑参数<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<p>拼接参数不能与其他参数混用，请注意。如果要混用，请分做两个任务，使用<a href="#chain">链式处理</a>。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ss/&lt;start_time&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>剪辑开始时间，格式为 <code>HH:MM:SS</code>，默认视频开始时间</td>
+</tr>
+<tr>
+<td><code>/es/&lt;end_time&gt;</code></td>
+<td>string</td>
+<td>否</td>
+<td>剪辑结束时间，格式为 <code>HH:MM:SS</code>，默认视频结束时间</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_27">拼接参数<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<p>拼接参数不能与其他参数混用。如果要混用，请分做两个任务，使用<a href="#chain">链式处理</a>。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/i/&lt;audio&gt;</code></td>
+<td>string</td>
+<td>是</td>
+<td>需要拼接音频文件的相对路径，需要安全的 Base64 编码  <br /> 多个需要拼接音频文件按 <code>/i/&lt;audio&gt;/i/&lt;audio&gt;/...</code> 方式进行连接</td>
+</tr>
+</tbody>
+</table>
+<p>** 注 **</p>
+<ul>
+<li>音频拼接顺序：需要拼接音频按 <code>i</code> 出现顺序，依次拼接在<a href="#submit_task">原始音频（<code>source</code>）</a>后面。</li>
+<li>如果 <code>save_as</code> 参数指定格式跟<a href="#submit_task">原始音频（<code>source</code>）</a>格式、拼接音频格式不一致，系统会<strong>自动转码</strong>原始音频、拼接音频成 <code>save_as</code> 参数指定格式；如果 <code>save_as</code> 参数未指定，拼接音频跟原始音频格式不一致，系统会自动转码拼接音频成原始音频格式。</li>
+</ul>
+<hr />
+<p><a name="probe"></a></p>
+<h2 id="_28">元数据获取<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
+<p>获取音/视频文件的元信息。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>是</td>
+<td>固定值，<code>probe</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="chain"></a></p>
+<h2 id="_29">链式处理<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h2>
+<p>多个任务按提交任务参数的先后顺序，对原文件进行链式处理。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>是</td>
+<td>固定值，<code>chain</code></td>
+</tr>
+<tr>
+<td><code>avopts</code></td>
+<td>string</td>
+<td>是</td>
+<td>链式处理参数，格式为 <code>/type1/key1/value1/type2/key2/value2...</code>，参数见「参数」</td>
+</tr>
+<tr>
+<td><code>return_info</code></td>
+<td>boolean</td>
+<td>否</td>
+<td>回调信息是否包含输出文件的元数据，元数据格式为 JSON，默认 <code>false</code></td>
+</tr>
+<tr>
+<td><code>save_as</code></td>
+<td>string</td>
+<td>否</td>
+<td>输出文件保存路径，默认原始音频所在目录+系统随机生成的文件名</td>
+</tr>
+</tbody>
+</table>
+<p>** 链式处理参数 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/&lt;type&gt;/&lt;avopts&gt;</code></td>
+<td>string</td>
+<td>是</td>
+<td>多个功能标识 <code>type</code> 以及其对应的处理参数 <code>avopts</code></td>
+</tr>
+</tbody>
+</table>
+<p>** 请求样例 **</p>
+<pre><code class="language-json">{
+    &quot;type&quot;: &quot;chain&quot;,
+    &quot;avopts&quot;: &quot;/video/i/Zm9vLm1wNA==/video/s/480p(16:9)/wmImg/L3Rlc3QvbG9nby5wbmc=&quot;,
+    &quot;save_as&quot;: &quot;/foo.jpg&quot;
+}
+</code></pre>
+<p>上述任务先解析 <code>/video/i/Zm9vLm1wNA==</code> 部分，和源视频进行拼接；之后解析 <code>/video/s/480p(16:9)/vb/300/r/25/vcodec/libx264/wmImg/L3Rlc3QvbG9nby5wbmc=</code>，将上一步输出的视频的分辨率转码成 480p(16:9) 并同时加上水印；最后输出文件保存至 <code>/foo.mp4</code>。</p>
+<p>** 注 **</p>
+<ul>
+<li>最多包含 4 个子任务。</li>
+<li>截图任务、视频切片任务不产生音视频输出的任务，仅允许放置在子任务列表的末尾。</li>
+</ul>
+<!--
+
+<a name="function"></a>
+## 功能
+
+<a name="hls"></a>
+### 视频切片
+
+| 参数                | 类型    | 必选    | 说明                                                        |
+|-------------------|-----------|-------|-----------------------------------------------------------|
+| `type`            | string    | 是     | 固定值，`hls`                                             |
+| `avopts`          | string    | 是     | 视频转码参数，格式为 `/key1/value1/key2/value2/...`，见「avopts 参数说明」 |
+| `return_info`     | boolean   | 否     | 回调信息是否包含输出文件的元数据，元数据格式为 JSON，默认 `false`           |
+| `save_as`         | string    | 否     | 输出文件保存路径，默认原始视频所在目录+系统随机生成的文件名。见「注」   |
+
+** avopts 参数说明 **
+
+| 参数                | 类型    | 必选    | 说明                                                |
+|-------------------|-----------|-------|---------------------------------------------------|
+| `/ht/<hls_time>`  | string    | 否     | 每片时长，单位 s（秒），默认 `10`                      |
+| `/vb/<bitrate>`   | integer   | 否     | 视频比特率，单位 kbps，默认按照视频原始比特率处理       |
+| `/s/<scale>`      | string    | 否     | 视频分辨率，默认按照原始分辨率处理。见「注」            |
+| `/as/<auto_scale>`| boolean   | 否     | 是否根据分辨率自动调整视频的比例，默认 `false`。仅当传递了 `s` 参数时有效        |
+| `/r/<frame_rate>` | integer   | 否     | 视频帧率，默认按照原始帧率处理。推荐值：`25`、`30`      |
+
+** 注 **
+
+- `s` 参数有两种设置方法：1）使用[预置模板](#preset_mode)，值是预置模板的参数名，如 `720p(16:9)`；2）自定义，值是「宽x高」，如 `1280x720`。
+- 自定义 `save_as` 参数时，必须以 `.m3u8` 后缀结尾。
+
+---------
+
+<a name="watermark"></a>
+### 视频水印
+
+| 参数                | 类型    | 必选    | 说明                                                        |
+|-------------------|-----------|-------|-----------------------------------------------------------|
+| `type`            | string    | 是     | 固定值，`video`                                           |
+| `avopts`          | string    | 是     | 视频转码参数，格式为 `/key1/value1/key2/value2/...`，见「avopts 参数说明」 |
+| `return_info`     | boolean   | 否     | 回调信息是否包含输出文件的元数据，元数据格式为 JSON，默认 `false`       |
+| `save_as`         | string    | 否     | 输出文件保存路径，默认原始视频所在目录+系统随机生成的文件名   |
+
+** avopts 参数说明 **
+
+| 参数                        | 类型    | 必选    | 说明                                                |
+|---------------------------|-----------|-------|---------------------------------------------------|
+| `/wmImg/<watermark_img>`  | string    | 是     | 水印图片相对路径，需要安全的 Base64 编码。图片格式支持 `png` 和 `webp`  |
+| `/wmGravity/<wmGravity>`  | string    | 否     | 水印图片放置方位，默认 `northeast`。见「注」                              |
+| `/wmDx/<watermark_dx>`    | integer   | 否     | 水印图片横偏移量，单位 px，当 `wmGravity` 为 `northeast` 时，默认 `-20` <br /> 横偏移量取值正负的依据：往 `east` 方向偏移，为正；往 `west` 方向偏移，为负       |
+| `/wmDy/<watermark_dy>`    | integer   | 否     | 水印图片纵偏移量，单位 px，当 `wmGravity` 为 `northeast` 时，默认 `15` <br /> 纵偏移量取值正负的依据：往 `south` 方向偏移，为正；往 `north` 方向偏移，为负      |
+
+** 注 **
+
+- 9 个方位：
+
+<pre><code>northwest     |     north      |     northeast
+              |                |
+              |                |
+--------------+----------------+--------------
+              |                |
+west          |     center     |          east
+              |                |
+--------------+----------------+--------------
+              |                |
+              |                |
+southwest     |     south      |     southeast
+</code></pre>
+
+
+---------
+
+### 视频截图
+
+| 参数                | 类型    | 必选    | 说明                                                        |
+|-------------------|-----------|-------|-----------------------------------------------------------|
+| `type`            | string    | 是     | 固定值，`thumbnail`                                           |
+| `avopts`          | string    | 是     | 视频转码参数，格式为 `/key1/value1/key2/value2/...`，见「avopts 参数说明」  |
+| `return_info`     | boolean   | 否     | 回调信息是否包含输出文件的元数据，元数据格式为 JSON，默认 `false`       |
+| `save_as`         | string    | 否     | 输出文件保存路径，默认原始视频所在目录+系统随机生成的文件名。见「注」   |
+
+** avopts 参数说明 **
+
+| 参数                    | 类型    | 必选    | 说明                                                |
+|-----------------------|-----------|-------|---------------------------------------------------|
+| `/o/<thumb_single>`   | boolean   | 是     | 是否单张截图，单张截图为 `true`，多张截图为 `false`     |
+| `/n/<thumb_amount>`   | integer   | 是     | 截图数量。当 `o` 参数为 `false` 时，有效；当 `o` 参数为 `true` 时，无效     |
+| `/ss/<thumb_start>`   | string    | 否     | 截图开始时间，格式为 `HH:MM:SS`，默认 `00:00:00`                  |
+| `/es/<thumb_end>`     | string    | 否     | 截图结束时间，格式为  `HH:MM:SS`，默认视频结束时间。当 `o` 参数为 `true` 时，无效     |
+| `/s/<thumb_scale>`    | string    | 否     | 截图尺寸，格式为 `宽:高`，默认视频原始尺寸                   |
+| `/f/<thumb_format>`   | string    | 否     | 截图输出格式，默认 `jpg`。图片格式支持 `png` 和 `jpg`。见「注」  |
+
+** 注 **
+
+- 多张截图时，自定义 `save_as` 参数时只需指定一个保存路径，具体每张图片保存路径根据规则进行类推，例如 `save_as` 为 `/path/to/img.png`，输出文件保存路径第一张为 `/path/to/img1.png`，第二张为 `/path/to/img2.png`......以此类推。
+- 自定义 `f` 和 `save_as` 参数时，使用 `f` 参数指定的格式作为输出格式；仅自定义 `save_as` 参数时，使用 `save_as` 参数指定的后缀名作为输出格式；两者都不自定义时，使用 `f` 参数的默认值 `jpg` 作为输出格式。
+- 支持 m3u8 截图。
+
+---------
+
+### 视频剪辑
+
+| 参数                | 类型    | 必选    | 说明                                                        |
+|-------------------|-----------|-------|-----------------------------------------------------------|
+| `type`            | string    | 是     | 固定值，`video`                                           |
+| `avopts`          | string    | 是     | 视频转码参数，格式为 `/key1/value1/key2/value2/...`，见「avopts 参数说明」  |
+| `return_info`     | boolean   | 否     | 回调信息是否包含输出文件的元数据，元数据格式为 JSON，默认 `false`       |
+| `save_as`         | string    | 否     | 输出文件保存路径，默认原始视频所在目录+系统随机生成的文件名，见「注」   |
+
+** avopts 参数说明 **
+
+| 参数                | 类型    | 必选    | 说明                                                |
+|-------------------|-----------|-------|---------------------------------------------------|
+| `/ss/<start_time>`| string    | 否     | 剪辑开始时间，格式为 `HH:MM:SS`，默认视频开始时间    |
+| `/es/<end_time>`  | string    | 否     | 剪辑结束时间，格式为 `HH:MM:SS`，默认视频结束时间    |
+
+** 注 **
+
+- 自定义 `save_as` 参数时，后缀名作为输出格式，除了视频格式外，支持 GIF/WebP，可以把剪辑转换成动态 GIF/动态 WebP。
+
+---------
+
+<a name="vconcat"></a>
+### 视频拼接
+
+| 参数                | 类型    | 必选    | 说明                                                        |
+|-------------------|-----------|-------|-----------------------------------------------------------|
+| `type`            | string    | 是     | 固定值，`vconcat`                                             |
+| `avopts`          | string    | 是     | 视频转码参数，格式为 `/key1/value1/key2/value2/...`，见「avopts 参数说明」 |
+| `return_info`     | boolean   | 否     | 回调信息是否包含输出文件的元数据，元数据格式为 JSON，默认 `false`   |
+| `save_as`         | string    | 否     | 输出文件保存路径，默认原始视频所在目录+系统随机生成的文件名   |
+
+** avopts 参数说明 **
+
+| 参数                | 类型    | 必选    | 说明                                                |
+|-------------------|-----------|-------|---------------------------------------------------|
+| `/i/<video>`      | string    | 否     | 需要**后置**拼接视频文件的相对路径，需要安全的 Base64 编码 <br /> 多个需要拼接视频按 `/i/<video>/i/<video>/...` 方式进行连接。见「注」 |
+| `/h/<video>`      | string    | 否     | 需要**前置**拼接视频文件的相对路径，需要安全的 Base64 编码 <br /> 多个需要拼接视频按 `/h/<video>/h/<video>/...` 方式进行连接。见「注」 |
+| `/codec/<codec>`  | string    | 否     | 设置视频编码器，默认不需要设置。可选值：`copy`。见「注」 |
+
+** 注 **
+
+- 视频拼接顺序：待拼接视频按 `h` 出现顺序，依次拼接在[原始视频（`source`）](#submit_task)前面；待拼接视频按 `i` 出现顺序，依次拼接在[原始视频（`source`）](#submit_task)后面。
+- 如果 `save_as` 参数指定格式跟[原始视频（`source`）](#submit_task)格式、拼接视频格式不一致，系统会自动转码原始视频、拼接视频成  `save_as`  参数指定格式；如果 `save_as` 参数未指定，拼接视频跟原始视频格式不一致，系统会自动转码拼接视频成原始视频格式。
+- 如果拼接视频和原始视频的编码一致，可以设置 `codec` 参数为 `copy`，不对拼接视频进行编解码，提高拼接速度。
+- 各个拼接视频的分辨率（画面宽高）必须跟[原始视频（`source`）](#submit_task)保持一致，否则会拼接失败。
+
+---------
+
+<a name="audio_transcode"></a>
+### 音频转码
+
+| 参数                | 类型    | 必选    | 说明                                                        |
+|-------------------|-----------|-------|-----------------------------------------------------------|
+| `type`            | string    | 是     | 固定值，`audio`                                           |
+| `avopts`          | string    | 是     | 视频转码参数，格式为 `/key1/value1/key2/value2/...`，见「avopts 参数说明」 |
+| `return_info`     | boolean   | 否     | 回调信息是否包含输出文件的元数据，元数据格式为 JSON，默认 `false`       |
+| `save_as`         | string    | 否     | 输出文件保存路径，默认原始音频所在目录+系统随机生成的文件名       |
+
+** avopts 参数说明 **
+
+| 参数                    | 类型    | 必选    | 说明                                                |
+|-----------------------|-----------|-------|---------------------------------------------------|
+| `/f/<format>`         | string    | 否     | 音频格式，当输出文件没有后缀时，需要指定，其余时候根据输出文件后缀名自动判定        |
+| `/ac/<audio_channel>` | integer   | 否     | 声道，默认 `2`                                         |
+| `/ab/<audio_bitrate>` | integer   | 否     | 比特率，单位 kbps，默认按照音频原始比特率处理        |
+| `/vbr/<audio_vbr>`    | integer   | 否     | Variable bitrate, 默认按照音频原始 VBR 处理。取值范围 `[0-9]`   |
+| `/sm/<map_metadata>`  | boolean   | 否     | 是否保留音频 metadata，默认 `true`                  |
+
+---------
+
+### 音频剪辑
+
+| 参数                | 类型    | 必选    | 说明                                                        |
+|-------------------|-----------|-------|-----------------------------------------------------------|
+| `type`            | string    | 是     | 固定值，`audio`                                           |
+| `avopts`          | string    | 是     | 视频转码参数，格式为 `/key1/value1/key2/value2/...`，见「avopts 参数说明」 |
+| `return_info`     | boolean   | 否     | 回调信息是否包含输出文件的元数据，元数据格式为 JSON，默认 `false`       |
+| `save_as`         | string    | 否     | 输出文件保存路径，默认原始音频所在目录+系统随机生成的文件名   |
+
+** avopts 参数说明 **
+
+| 参数                | 类型    | 必选    | 说明                                                |
+|-------------------|-----------|-------|---------------------------------------------------|
+| `/ss/<start_time>`| string    | 否     | 剪辑开始时间，格式为 `HH:MM:SS`，默认视频开始时间   |
+| `/es/<end_time>`  | string    | 否     | 剪辑结束时间，格式为 `HH:MM:SS`，默认视频结束时间   |
+
+---------
+
+### 音频拼接
+
+| 参数                | 类型    | 必选    | 说明                                                        |
+|-------------------|-----------|-------|-----------------------------------------------------------|
+| `type`            | string    | 是     | 固定值，`aconcat`                                             |
+| `avopts`          | string    | 是     | 视频转码参数，格式为 `/key1/value1/key2/value2/...`，见「avopts 参数说明」 |
+| `return_info`     | boolean   | 否     | 回调信息是否包含输出文件的元数据，元数据格式为 JSON，默认 `false`   |
+| `save_as`         | string    | 否     | 输出文件保存路径，默认原始音频所在目录+系统随机生成的文件名   |
+
+** avopts 参数说明 **
+
+| 参数                | 类型    | 必选    | 说明                                                |
+|-------------------|-----------|-------|---------------------------------------------------|
+| `/i/<audio>`      | string    | 是     | 需要拼接音频文件的相对路径，需要安全的 Base64 编码  <br /> 多个需要拼接音频文件按 `/i/<audio>/i/<audio>/...` 方式进行连接   |
+
+** 注 **
+
+- 音频拼接顺序：需要拼接音频按 `i` 出现顺序，依次拼接在[原始音频（`source`）](#submit_task)后面。
+- 如果 `save_as` 参数指定格式跟[原始音频（`source`）](#submit_task)格式、拼接音频格式不一致，系统会自动转码原始音频、拼接音频成 `save_as` 参数指定格式；如果 `save_as` 参数未指定，拼接音频跟原始音频格式不一致，系统会自动转码拼接音频成原始音频格式。
+
+---------
+
+<a name="probe"></a>
+### 元数据获取
+
+获取音/视频文件的元信息。
+
+| 参数                | 类型    | 必选    | 说明                                                        |
+|-------------------|-----------|-------|-----------------------------------------------------------|
+| `type`            | string    | 是     | 固定值，`probe`                                           |
+
+---------
+
+<a name="chain"></a>
+### 链式处理
+
+多个任务按提交任务参数的先后顺序，对原文件进行链式处理。
+
+| 参数                | 类型    | 必选    | 说明                                                        |
+|-------------------|-----------|-------|-----------------------------------------------------------|
+| `type`            | string    | 是     | 固定值，`chain`                                           |
+| `avopts`          | string    | 是     | 链式处理参数，格式为 `/type1/key1/value1/type2/key2/value2...`，见「avopts 参数说明」 |
+| `return_info`     | boolean   | 否     | 回调信息是否包含输出文件的元数据，元数据格式为 JSON，默认 `false`   |
+| `save_as`         | string    | 否     | 输出文件保存路径，默认原始音频所在目录+系统随机生成的文件名   |
+
+** avopts 参数说明 **
+
+| 参数                | 类型    | 必选    | 说明                                                |
+|-------------------|-----------|-------|---------------------------------------------------|
+| `/<type>/<avopts>`      | string    | 是       | 多个功能标识 `type` 以及其对应的处理参数 `avopts` |
+
+** 请求样例 **
+
+
+<pre><code class="language-json">{
+    &quot;type&quot;: &quot;chain&quot;,
+    &quot;avopts&quot;: &quot;/video/s/480p(16:9)/vb/300/r/25/vcodec/libx264/video/wmImg/L3Rlc3QvbG9nby5wbmc=&quot;,
+    &quot;save_as&quot;: &quot;/foo.jpg&quot;
+}
+</code></pre>
+
+
+上述任务将先对原视频进行转码，调整大小至 360p(4:3)，然后对转码完成的临时输出文件进行截图操作，截图文件保存并上传至 "/foo.jpg"
+
+** 注 **
+
+- 最多包含 4 个子任务。
+- 截图任务、视频切片任务不产生音视频输出的任务, 仅允许放置在子任务列表的末尾。
+
+-->
+
+<hr />
+<p>如有疑问请 <a href="https://www.upyun.com/contact">联系我们</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

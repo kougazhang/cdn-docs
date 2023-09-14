@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/video/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/prettify.css" rel="stylesheet">
+        <link href="../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>短视频简介</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="active">
+                <a class="itm-l1" href="video/">短视频简介</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">概述</a></li>
+                    
+                  
+                    <li class=""><a href="#_2">解决方案</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#sdk">短视频 SDK</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">云存储</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#cdn">CDN 分发</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#sdk_1">播放器 SDK</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">云端处理</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_5">应用场景</a></li>
+                    
+                  
+                    <li class=""><a href="#_6">收费说明</a></li>
+                    
+                  
+                    <li class=""><a href="#sdk-key">SDK 版本 Key 获取</a></li>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="video/short_video_demo/">短视频 DEMO</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>短视频简介</h1>
+
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>又拍云短视频（UPYUN Short Video）集短视频采集、上传、存储、分发、播放于一体，借助短视频 SDK、上传加速、不限量存储、稳定快速的 CDN 及播放器 SDK，为用户提供专业可靠的短视频解决方案。</p>
+<p><img alt="短视频" src="https://upyun-assets.b0.upaiyun.com/docs/video/short_video.png" /></p>
+<h2 id="_2">解决方案<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><a name="short_video_sdk"></a></p>
+<h3 id="sdk">短视频 SDK<a class="headerlink" href="#sdk" title="Permanent link">&para;</a></h3>
+<p>用于短视频的录制，分为拍摄、编辑、合成、上传四部分。</p>
+<p><strong>拍摄</strong>
+拍摄视频，可以设置拍摄时长，拍摄的过程可以添加美颜、滤镜、贴纸、大眼瘦脸等。</p>
+<p><img alt="拍摄" src="https://upyun-assets.b0.upaiyun.com/docs/video/paishe.png" /></p>
+<p><strong>编辑</strong>
+对拍摄的视频进行处理，比如剪辑、加入滤镜、调整背景音乐等。</p>
+<p><img alt="编辑" src="https://upyun-assets.b0.upaiyun.com/docs/video/bianji.png" /></p>
+<p><strong>合成</strong>
+把编辑好后的视频生成文件。</p>
+<p><img alt="合成" src="https://upyun-assets.b0.upaiyun.com/docs/video/hecheng.png" /></p>
+<p><strong>上传</strong>
+上传短视频文件到云存储。</p>
+<p><img alt="上传" src="https://upyun-assets.b0.upaiyun.com/docs/video/shangchuan.png" /></p>
+<p><strong>SDK 及文档</strong>：<a href="https://github.com/upyun/Android-short-video">Android 短视频 SDK</a>、<a href="https://github.com/upyun/ios-short-video">iOS 短视频 SDK</a></p>
+<h3 id="_3">云存储<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>上传上来的短视频存放在云存储。</p>
+<p>又拍云存储是对象存储，一份数据写三份，支持不限量存放数据，收费仅按存放数据量收费，相比其他云厂商，少了请求费用、流出流量费用。</p>
+<p>另外，和又拍云 CDN 搭配使用，提供 CDN 使用流量 1:1 的免费存储空间，让存储成本更低。</p>
+<p><strong>相关阅读</strong>：<a href="https://docs.upyun.com/api/quick_start/">快速入门</a>、<a href="https://docs.upyun.com/api/developer_tools/">开发者工具</a></p>
+<h3 id="cdn">CDN 分发<a class="headerlink" href="#cdn" title="Permanent link">&para;</a></h3>
+<p>当用户访问短视频时，通过 CDN进行全国和海外分发，让用户就近访问到短视频。</p>
+<p>另外，CDN 会把访问过的短视频缓存起来，下次有用户来访问时，直接把它提供给用户，极大的提升了访问速度。</p>
+<p>目前，又拍云 CDN 在国内建设了 200+ 节点，海外建设了 15+ 节点，满足全国各地和海外的访问需求。</p>
+<p><strong>相关阅读</strong>：<a href="https://docs.upyun.com/cdn/guide/">快速入门</a>、<a href="https://docs.upyun.com/cdn/service/">服务管理</a></p>
+<p><a name="player_sdk"></a></p>
+<h3 id="sdk_1">播放器 SDK<a class="headerlink" href="#sdk_1" title="Permanent link">&para;</a></h3>
+<p>提供 Android 播放器 SDK 和 iOS 播放器 SDK，支持 Android、iPhone、iPad 等移动设备播放短视频，支持秒播、分段加载、拖拉等功能，省去企业开发播放器的时间。</p>
+<p><img alt="播放" src="https://upyun-assets.b0.upaiyun.com/docs/video/bofang.png" /></p>
+<p><strong>相关阅读</strong>：<a href="https://github.com/upyun/Android-short-video#3">Android 播放器 SDK</a>、<a href="https://github.com/upyun/ios-short-video#3">iOS 播放器 SDK</a></p>
+<h3 id="_4">云端处理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>云端处理是个可选的服务，由于终端的资源有限，不能做复杂处理，如果需要复杂的视频处理，需要使用云端处理。</p>
+<p>云端短视频处理是异步进行的，提供转码、切片、剪辑、拼接、水印、截图等功能，提供链式处理（顺序执行多个功能），满足复杂处理需要。</p>
+<p><strong>相关阅读</strong>：<a href="https://docs.upyun.com/cloud/av/">异步音视频处理</a>、<a href="https://docs.upyun.com/cloud/sync_video/">同步视频处理</a></p>
+<h2 id="_5">应用场景<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p><strong>搞笑幽默</strong></p>
+<p>以糗事百科为例，糗事百科作为幽默搞笑类的巨头，我们为糗事百科提供了上传、云存储、分发、播放，帮助糗事百科构建搞笑短视频服务。</p>
+<p><strong>电商买家卖家秀</strong></p>
+<p>以洋码头为例，使用一整套方案，快速上线了买家卖家短视频秀，相比之前的文字图片评论，短视频展示的信息更丰富、更有趣，用户活跃度更高。</p>
+<p><strong>户外&amp;旅游</strong></p>
+<p>记录美景、户外经历，通过断点续拍、回删功能，把它编辑成一个相册集或者 MV，互相分享。另外，还有搞笑贴纸供您选择。</p>
+<p><strong>美食</strong></p>
+<p>作为一个吃货，怎么少了记录美食呢。通过短视频解决方案，随时随地记录吃美食、制作美食、聚会等的前后过程，让快乐永久。</p>
+<p><a name="charges_notes"></a></p>
+<h2 id="_6">收费说明<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>解决方案按短视频 SDK、云存储、CDN 收费，上传、播放器 SDK 免费。如果有使用云端处理，云端处理需要收费。</p>
+<p><strong>相关阅读</strong>：<a href="https://www.upyun.com/products/short-video#section-pricing">价格</a></p>
+<p><a name="SDK_Key"></a></p>
+<h2 id="sdk-key">SDK 版本 Key 获取<a class="headerlink" href="#sdk-key" title="Permanent link">&para;</a></h2>
+<p>短视频 SDK 提供一个免费版和两个收费版，任何版本使用都需要授权（key）。</p>
+<p>免费版的 Key 有效期一年，到期后可以续期。收费版可以免费试用一个月。</p>
+<p>获取 Key，请提供应用名称、申请使用的 SDK 版本、使用的平台（安卓、iOS）、bundleID（iOS）、包名（Android）给您的商务经理，或者<a href="https://www.upyun.com/contact">联系我们</a>。</p>
+<p><strong>相关阅读</strong>：<a href="https://www.upyun.com/products/short-video#section-version">短视频 SDK 版本</a></p></div>
+        </div>
+
+        
+
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/prettify.min.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

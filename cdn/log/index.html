@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/cdn/log/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>日志管理</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/">内容总览</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/product/">产品介绍</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/guide/">快速入门</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/buy/">购买指南</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/service/">服务管理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/config/">功能配置</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/edgerules/">边缘规则</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/analysis/">统计分析</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/refresh/">刷新预热</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="cdn/log/">日志管理</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">日志分析</a></li>
+                    
+                  
+                    <li class=""><a href="#_2">日志下载</a></li>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/ssl/">证书服务</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/tools/">辅助工具</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/faq/">常见问题</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>日志管理</h1>
+
+<h2 id="_1">日志分析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>可根据时间粒度，查看相应访问域名下热门文件、热门客户端、热门引用文件、资源状态码、文件大小、热门 IP 等维度 top1000 的统计分析数据。日志分析是以天为粒度进行分析的，第二天凌晨会开始进行日志分析工作，正常情况下，第二天早晨 09:00:00 之前会统计计算完毕。</p>
+<p><strong>配置引导</strong></p>
+<p>登陆 <a href="https://console.upyun.com/login/">CDN 控制台</a>，在置顶菜单进入 <code>工具箱</code>，找到 <code>日志管理</code> 栏目，选择 <code>日志分析</code> 选项。如下图所示：</p>
+<p><img src="http://upyun-assets.b0.upaiyun.com/docs/cdn/upyun-cdn-log-analysis.png" height="490" width="800" /></p>
+<hr />
+<h2 id="_2">日志下载<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>支持以小时粒度的日志下载，可收集详细的终端访问日志；日志文件延迟 1 小时，可以在日志管理模块查询到 1 小时之前的日志文件。</p>
+<p>日志命名规则：时间段-访问域名-随机数.gz，日志命名示例：</p>
+<blockquote>
+<p>10_00-impress-demo.b0.upaiyun.com-9571272666104702574.gz</p>
+</blockquote>
+<p><strong>日志格式说明</strong></p>
+<pre><code>$remote_addr - $remote_user [$time_local] "$request_method $scheme://$http_host$uri$querystring $server_protocol" $status $body_bytes_sent "$http_referer" "$http_user_agent" $content_type $request_content_length $cache_hit $source_code $is_dynamic $cache_control $request_time $edge_server_ip
+</code></pre>
+<p><strong>详细参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>  序号    </th>
+<th>   字段        </th>
+<th>  解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>$remote_addr</td>
+<td>客户端 IP</td>
+</tr>
+<tr>
+<td>2</td>
+<td>$remote_user</td>
+<td>HTTP Auth 的用户名</td>
+</tr>
+<tr>
+<td>3</td>
+<td>$time_local           </td>
+<td>访问时间</td>
+</tr>
+<tr>
+<td>4</td>
+<td>$request_method</td>
+<td>访问类型 GET</td>
+</tr>
+<tr>
+<td>5  </td>
+<td>$scheme           </td>
+<td>应用协议</td>
+</tr>
+<tr>
+<td>6  </td>
+<td>$http_host          </td>
+<td>访问域名   </td>
+</tr>
+<tr>
+<td>7</td>
+<td>$uri</td>
+<td>请求 URI</td>
+</tr>
+<tr>
+<td>8   </td>
+<td>$querystring     </td>
+<td> 请求参数    </td>
+</tr>
+<tr>
+<td>9 </td>
+<td>$server_protocol            </td>
+<td>HTTP 协议版本</td>
+</tr>
+<tr>
+<td>10</td>
+<td>$status         </td>
+<td>返回状态码   </td>
+</tr>
+<tr>
+<td>11  </td>
+<td>$body_bytes_sent</td>
+<td>发送 body 字节数</td>
+</tr>
+<tr>
+<td>12  </td>
+<td>$http_referer       </td>
+<td>请求来源 referer</td>
+</tr>
+<tr>
+<td>13  </td>
+<td>$http_user_agent</td>
+<td>客户端信息</td>
+</tr>
+<tr>
+<td>14  </td>
+<td>$content_type</td>
+<td>内容类型</td>
+</tr>
+<tr>
+<td>15  </td>
+<td>$request_content_length</td>
+<td>客户端向服务端发起请求的内容大小</td>
+</tr>
+<tr>
+<td>16  </td>
+<td>$cache_hit      </td>
+<td>是否 CDN 缓存命中</td>
+</tr>
+<tr>
+<td>17  </td>
+<td>$source_code</td>
+<td>源站返回状态码</td>
+</tr>
+<tr>
+<td>18  </td>
+<td>$is_dynamic      </td>
+<td>是否动态请求</td>
+</tr>
+<tr>
+<td>19  </td>
+<td>$cache_control</td>
+<td>缓存控制头信息</td>
+</tr>
+<tr>
+<td>20 </td>
+<td>$request_time     </td>
+<td>请求处理耗时</td>
+</tr>
+<tr>
+<td>21  </td>
+<td>$edge_server_ip   </td>
+<td>CDN 边缘节点 IP</td>
+</tr>
+</tbody>
+</table>
+<p><strong>日志样例</strong></p>
+<pre><code>122.96.42.186 - - [13/Dec/2016:00:00:02 +0800] "GET http://impress-demo.b0.upaiyun.com/kphone/icons/weihui_icon3.png?v=1.0 HTTP/1.1" 200 1851 "-" "Mozilla/4.0" "image/png" 0 Hit "C/200" Static "max-age=900" 0.014 153.101.64.13
+</code></pre>
+<p><strong>字段说明</strong></p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>字段</th>
+<th>示例值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>客户端 IP</td>
+<td>122.96.42.186</td>
+</tr>
+<tr>
+<td>2</td>
+<td>HTTP Auth 的用户名</td>
+<td>-</td>
+</tr>
+<tr>
+<td>3</td>
+<td>访问时间</td>
+<td>[13/Dec/2016:00:00:02 +0800]</td>
+</tr>
+<tr>
+<td>4</td>
+<td>客户端请求方法</td>
+<td>GET</td>
+</tr>
+<tr>
+<td>5</td>
+<td>请求协议</td>
+<td>HTTP</td>
+</tr>
+<tr>
+<td>6      </td>
+<td>访问域名         </td>
+<td>impress-demo.b0.upaiyun.com  </td>
+</tr>
+<tr>
+<td>7</td>
+<td>请求 URI</td>
+<td>/kphone/icons/weihui_icon3.png</td>
+</tr>
+<tr>
+<td>8     </td>
+<td>请求参数         </td>
+<td> v=1.0   </td>
+</tr>
+<tr>
+<td>9 </td>
+<td>HTTP 协议版本          </td>
+<td>HTTP/1.1</td>
+</tr>
+<tr>
+<td>10</td>
+<td>返回状态码          </td>
+<td>200  </td>
+</tr>
+<tr>
+<td>11    </td>
+<td>发送 body 字节数</td>
+<td>1851  </td>
+</tr>
+<tr>
+<td>12  </td>
+<td>Referer 请求头    </td>
+<td>-</td>
+</tr>
+<tr>
+<td>13  </td>
+<td>客户端信息</td>
+<td>Mozilla/4.0</td>
+</tr>
+<tr>
+<td>14  </td>
+<td>内容类型</td>
+<td>image/png</td>
+</tr>
+<tr>
+<td>15  </td>
+<td>客户端向服务端发起请求的内容大小</td>
+<td>0</td>
+</tr>
+<tr>
+<td>16  </td>
+<td>缓存命中状态            </td>
+<td>Hit  </td>
+</tr>
+<tr>
+<td>17  </td>
+<td>源站返回状态码       </td>
+<td>C/200</td>
+</tr>
+<tr>
+<td>18  </td>
+<td>动态请求标记            </td>
+<td>Static  </td>
+</tr>
+<tr>
+<td>19  </td>
+<td>缓存控制头信息           </td>
+<td>max-age=900 </td>
+</tr>
+<tr>
+<td>20   </td>
+<td>请求处理耗时（单位s）  </td>
+<td>0.014</td>
+</tr>
+<tr>
+<td>21  </td>
+<td>CDN 边缘节点 IP          </td>
+<td>153.101.64.13</td>
+</tr>
+</tbody>
+</table>
+<p><strong>配置引导</strong></p>
+<p>登陆 <a href="https://console.upyun.com/login/">CDN 控制台</a>，在置顶菜单进入 <code>工具箱</code>，找到 <code>日志管理</code> 栏目，选择 <code>日志下载</code> 选项。如下图所示：</p>
+<p><img src="http://upyun-assets.b0.upaiyun.com/docs/cdn/upyun-cdn-log-download.png" height="490" width="800" /></p>
+<p>关于日志分析和下载视频教程请点击 <a href="https://techs.b0.upaiyun.com/videos/cdnpage/upyunlog.html">日志管理视频教程</a>。</p>
+<hr />
+<p>如有疑问请 <a href="https://www.upyun.com/contact">联系我们</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

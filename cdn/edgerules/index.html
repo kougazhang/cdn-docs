@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/cdn/edgerules/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>边缘规则</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/">内容总览</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/product/">产品介绍</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/guide/">快速入门</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/buy/">购买指南</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/service/">服务管理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/config/">功能配置</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="cdn/edgerules/">边缘规则</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">功能概述</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_2">使用方式</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">条件判断</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">功能选择</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_5">其他选项</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_6">语法规则</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_7">函数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_8">变量</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_9">字符串常量</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#break">break</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_10">配置指南</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_11">认识规则管理界面</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_12">规则优先级</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#uri">URI 字符串提取</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_13">变量使用</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_14">执行动作</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_15">规则测试</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_16">编程模式（案例）</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1、自定义防盗链</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2、边缘重定向</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3url">3、URL 改写</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4">4、请求/响应头修改</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#5url">5、URL 限速</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#6">6、大小写转换</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#7">7、数值比较</a></li>
+                      </ul>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/analysis/">统计分析</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/refresh/">刷新预热</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/log/">日志管理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/ssl/">证书服务</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/tools/">辅助工具</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cdn/faq/">常见问题</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>边缘规则</h1>
+
+<h2 id="_1">功能概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>又拍云 CDN 边缘网络中的智能可扩展应用程序规则可以帮助您简化内容分发业务逻辑，并提升终端用户访问体验。该规则可以快速部署且配置简单，可极大降低业务实现成本。网站及 Web 应用开发者或者安全工程师可以快速创建边缘规则集来提升网站安全及分发性能。例如，这些场景可能包括：</p>
+<ul>
+<li>通过 URL 改写，可美化网站 URL，提升网站 SEO</li>
+<li>为了节省更多访问带宽，限制网站请求下载速度</li>
+<li>控制请求 URL 的结构、HTTP 头域等</li>
+<li>自定义源站错误页面，提升终端用户体验</li>
+<li>限制特定客户端的访问行为，合理进行访问控制；</li>
+</ul>
+<p>您可以根据实际使用场景，合理选择功能项。</p>
+<h3 id="_2">使用方式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>EdgeRules 根据不同用户背景划分了两种不同的使用方式，一种是通用模式，一种是编程模式。</p>
+<p>1）通用模式：适用于没有开发基础的用户且对又拍云 EdgeRules 语法规则不熟悉，该模式使用方便快捷，用户体验会更好一些，参考如下截图：</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/edgerules/edgerules_shiyong_tongyong.png "height="470" width="800" /></p>
+<p>2）编程模式：适用于开发者，对 EdgeRules 语法规则有很深了解的用户，相对通用模式来说，编程模式会更灵活，功能会更强大一些。参照如下截图：</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/edgerules/edgerules_shiyong_biancheng.png "height="470" width="800" /></p>
+<h3 id="_3">条件判断<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>默认情况下，EdgeRules 是根据服务维度生效的，您也可以添加条件判断，当条件满足某些特定要求时，才会触发后面的功能选项。例如：</p>
+<blockquote>
+<p>当请求 HOST 为 test.example.com 时，添加 HTTP 响应头 CDN 为 UPYUN。</p>
+</blockquote>
+<p>这些条件过滤器包括：</p>
+<ul>
+<li>请求 URI</li>
+<li>HTTP 请求头</li>
+<li>请求方法</li>
+<li>请求协议</li>
+<li>请求参数</li>
+<li>查询字符串</li>
+<li>POST 参数</li>
+<li>Cookie 变量</li>
+<li>客户端 IP </li>
+<li>国家</li>
+</ul>
+<p>为了配合条件判断使用，支持的运算符包括：</p>
+<ul>
+<li>等于</li>
+<li>不等于</li>
+<li>正则匹配</li>
+<li>正则不匹配</li>
+<li>正则匹配（不区分大小写）</li>
+<li>正则不匹配（不区分大小写）</li>
+</ul>
+<p>如希望通过编程模式来使用变量，更多了解请参考语法规则章节 <a href="https://docs.upyun.com/cdn/edgerules/#_8">变量</a> 及 <a href="https://docs.upyun.com/cdn/edgerules/#_7">函数</a> 的介绍。</p>
+<h3 id="_4">功能选择<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>根据使用场景，我们针对【通用模式】配备了 7 大功能，具体功能列表包括：</p>
+<ul>
+<li>添加 HTTP 头部（包括请求头和响应头）</li>
+<li>删除 HTTP 头部（包括请求头和响应头）</li>
+<li>边缘重定向</li>
+<li>URL 改写</li>
+<li>请求限速</li>
+<li>访问控制</li>
+<li>自定义错误页面</li>
+</ul>
+<h3 id="_5">其他选项<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><strong>优先级</strong></p>
+<p>又拍云 EdgeRules 默认是按照先后顺序执行的。理论上优先级在前面的规则将会优先执行，您需要根据业务需求来合理调整规则的优先级。更多细节了解请参考【配置指南】章节的 <a href="https://docs.upyun.com/cdn/edgerules/#_12">规则优先级</a> 介绍。</p>
+<p><strong>break</strong></p>
+<p>该开关默认为关闭状态。开启状态下，如果此条规则命中则终止匹配剩下的规则，也即会跳出整个规则集，请结合业务需求合理开启和关闭。</p>
+<p><strong>状态</strong></p>
+<p>1）启用</p>
+<p>启用状态下，规则会在几秒钟内下发部署到全网 CDN 节点，及时生效。请确保业务测试成功之后，再调整为启用状态。</p>
+<p>2）关闭</p>
+<p>关闭状态下，规则不会在全网 CDN 节点进行部署。请根据业务情况，有选择性的关闭规则。</p>
+<p>3）测试</p>
+<p>规则默认为测试状态，平台会自动获取本地 IP 地址，也即规则只会对该客户端 IP 生效，您也可以换成其他 IP 地址进行测试。当且仅当测试满足业务要求之后，你才可以将规则调整为启用状态。</p>
+<h2 id="_6">语法规则<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>当您希望通过编程模式来自行编写边缘规则时，你需要对又拍云边缘规则的语法规则进行详细了解，方可自行编写规则。本文将围绕函数、变量、字符串常量、break 进行详细介绍。</p>
+<h3 id="_7">函数<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>函数调用以 <code>$</code> 开头，后跟一组大写字母，字母之间可以包含下划线 <code>_</code>，函数需要的参数放在<code>()</code>中，以 <code>,</code> 分隔。如果没有特别说明，边缘规则 中的函数参数个数不能少于要求的参数个数，否则视为语法错误，然后终止规则执行过程，多余的参数会被求值，但不影响调用。函数调用是有上下文的，譬如 <code>$WHEN</code> 这个函数，参数是 <code>bool</code> 类 型，参数中有不成立的条件 <code>false</code> 时，会终止本次规则执行过程。支持的函数有：</p>
+<blockquote>
+<p>条件选择和判断</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">函数</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>$WHEN(E1, E2, ...)</code></td>
+<td style="text-align: left;">所有条件都成立时才会执行规则，并返回空字符串</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$NOT(E)</code></td>
+<td style="text-align: left;"><code>E</code> 不成立时返回 <code>true</code>， 否则返回 <code>false</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$ALL(E1, E2, ...)</code></td>
+<td style="text-align: left;">所有条件都成立时返回 <code>true</code>，否则返回 <code>false</code>，参数个数不限</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$ANY(E1, E2, ...)</code></td>
+<td style="text-align: left;">其中一个条件成立时返回 <code>true</code>，否则返回 <code>false</code>，参数个数不限</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$OR(E1, E2, ...)</code></td>
+<td style="text-align: left;">值为第一个为真的表达式</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$SELECT(E1, E2, E3)</code></td>
+<td style="text-align: left;"><code>E1</code> 为真时值为 <code>E2</code>，否则为 <code>E3</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$PCALL(E)</code></td>
+<td style="text-align: left;">保护模式下解析 <code>E</code>，失败时返回空字符串</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>字符匹配和捕获</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">函数</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>$MATCH(E1, E2)</code></td>
+<td style="text-align: left;">PCRE 匹配，<code>E2</code> 为要匹配的 pattern，返回 <code>true</code> 或者 <code>false</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$CAPTURE(E1, E2, E3)</code></td>
+<td style="text-align: left;">按 <code>E2</code> pattern 对 <code>E1</code> 进行捕获，<code>E3</code> 表示是否忽略大小写，捕获后生成 <code>$n.m</code> 形式的变量，<code>n</code> 为当前 <code>CAPTURE</code> 出现的次序，<code>m</code> 表示匹配分组；<code>E2</code> 为空时，表示对 <code>E1</code> 进行捕获，此时 <code>E1</code> 对应 <code>$n.0</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>请求/响应修改</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">函数</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>$ADD_REQ_HEADER(E1, E2)</code></td>
+<td style="text-align: left;">添加请求头 <code>E1</code> 为 <code>E2</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$DEL_REQ_HEADER(E)</code></td>
+<td style="text-align: left;">删除请求头 <code>E</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$ADD_RSP_HEADER(E1, E2)</code></td>
+<td style="text-align: left;">添加响应头 <code>E1</code> 为 <code>E2</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$DEL_RSP_HEADER(E)</code></td>
+<td style="text-align: left;">删除响应头 <code>E</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$DEL_ARG(E)</code></td>
+<td style="text-align: left;">删除请求参数项 <code>E</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$SET_METHOD(E)</code></td>
+<td style="text-align: left;">修改当前 HTTP 请求方法为 <code>E</code>，<code>E</code> 可选值有：<code>GET</code>, <code>HEAD</code>, <code>PUT</code>, <code>POST</code>, <code>DELETE</code>, <code>OPTIONS</code>, <code>PATCH</code>; 注 1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$SET_BODY(E)</code></td>
+<td style="text-align: left;">修改当前 HTTP 请求体的内容为 <code>E</code>，仅在 <code>PUT</code> 或 <code>POST</code> 请求下有效</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$REDIRECT(E1, E2)</code></td>
+<td style="text-align: left;">重定向地址到 <code>E1</code>，状态码为 <code>E2(301, 302)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$EXIT(E1, E2)</code></td>
+<td style="text-align: left;">以状态码 <code>E1</code> 退出，响应体为 <code>E2</code></td>
+</tr>
+</tbody>
+</table>
+<p>注: 删除响应头函数不能删除 CDN 自带的一些字段，比如 via、age、server、connection、x-cache、x-request-id、x-source、content-length、transfer-encoding等字段是有保护的。</p>
+<blockquote>
+<p>数值计算</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">函数</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>$ADD(E1, E2)</code></td>
+<td style="text-align: left;">数字相加，返回 <code>E1 + E2</code> 结果数值</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$MOD(E1, E2)</code></td>
+<td style="text-align: left;">数字取余，返回 <code>E1 % E2</code> 结果数值，其中 <code>E2</code> 不能为 <code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$MSUB(E1, E2)</code></td>
+<td style="text-align: left;">数字相减，返回 <code>E1 - E2</code> 结果数值</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$MULTIPLY(E1, E2)</code></td>
+<td style="text-align: left;">数字相乘，返回 <code>E1 * E2</code> 结果数值</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$DIVIDE(E1, E2)</code></td>
+<td style="text-align: left;">数字相除，返回 <code>E1 / E2</code> 结果数值，其中 <code>E2</code> 不能为 <code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$BYTE(E)</code></td>
+<td style="text-align: left;">返回字符 <code>E</code> 的 ASCII 编码值</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$FLOOR(E)</code></td>
+<td style="text-align: left;">返回小于或等于数字 <code>E</code> 的最大整数</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$CEIL(E)</code></td>
+<td style="text-align: left;">返回大于或等于数字 <code>E</code> 的最小整数</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$GT(E1, E2)</code></td>
+<td style="text-align: left;">数字比较，是否大于，返回 <code>true</code> 或者 <code>false</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$GE(E1, E2)</code></td>
+<td style="text-align: left;">数字比较，是否大于等于，返回 <code>true</code> 或者 <code>false</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>字符串操作</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">函数</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>$SUB(E1, from, to)</code></td>
+<td style="text-align: left;">字符串截取，从 <code>from</code> 到 <code>to</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$GSUB(E1,E2,E3,N)</code></td>
+<td style="text-align: left;"><code>E1</code>为要处理的字符串，<code>E2</code>为要替换的字符串，<code>E3</code>为替换成的字符串（可以为空，表示删除<code>E1</code>），<code>N</code>为从字符串开始的替换<code>E1</code>的个数，空或小于零表示所有，函数返回处理后的字符串</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$EQ(E1, E2)</code></td>
+<td style="text-align: left;">字符串是否相等，返回 <code>true</code> 或者 <code>false</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$UPPER(E)</code></td>
+<td style="text-align: left;">将 <code>E</code> 转换为大写</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$LOWER(E)</code></td>
+<td style="text-align: left;">将 <code>E</code> 转换为小写</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$LEN(E)</code></td>
+<td style="text-align: left;">返回字符串 <code>E</code> 的长度</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>通用功能类函数</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">函数</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>$ENCODE_BASE64(E)</code></td>
+<td style="text-align: left;">将字符串 E 按 base64 编码压缩</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$DECODE_BASE64(E)</code></td>
+<td style="text-align: left;">将字符串 E 按 base64 编码解压</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$ESCAPE(E)</code></td>
+<td style="text-align: left;">将字符串 E 按 URL 编码处理，具体实现和 <code>Chrome JS</code> 实现的  <code>encodeURIComponent()</code> 一致</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$UNESCAPE(E)</code></td>
+<td style="text-align: left;">将字符串 E 按 URL 解码处理，具体实现和 <code>Chrome JS</code> 实现的  <code>decodeURIComponent()</code> 一致</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$MD5(E)</code></td>
+<td style="text-align: left;">计算 <code>E</code> 的 md5 值</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$MD5_BIN（E）</code></td>
+<td style="text-align: left;">计算 <code>E</code> 的 md5 值，并以二进制数据输出</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$RANDI(E1, E2)</code></td>
+<td style="text-align: left;">返回大于 <code>E1</code> 并小于 <code>E2</code> 的随机数值</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$UNIXT(y, m, d, h, min, sec)</code></td>
+<td style="text-align: left;">指定年，月，日，小时，分钟，秒，返回相应的 UNIX TIME</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$INT(E1, E2, E3)</code></td>
+<td style="text-align: left;">进制转换，将 <code>E2</code> 进制的数字（字符串形式） <code>E1</code> 转换成 <code>E3</code> 进制并返回，<code>E2</code>, <code>E3</code> 可选，<code>E2</code> 默认为 <code>10</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$STRF_TIME(E1,E2 )</code>        </td>
+<td style="text-align: left;">时间格式转换，表示把时间进行格式化成年月日时分，<code>E1</code> 代表 UNIX 时间戳，可以使用变量 <code>$_TIME</code>来获取当前时间；<code>E2</code> 为间隔符，为可选项，不填时格式为 <code>201802230955</code>；间隔符为 <code>-</code>时，格式为<code>2018-02-23-09-55</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>限速相关</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">函数</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>$LIMIT_RATE_AFTER(E1, E2)</code></td>
+<td style="text-align: left;">限速策略设置，发送 <code>E1</code> 大小单位为 <code>E2</code> 字节数据后，进行限速，<code>E2</code> 可选值有：<code>k</code>（KB)，<code>m</code>（MB）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$LIMIT_RATE(E1, E2)</code></td>
+<td style="text-align: left;">限速策略设置，按 <code>E1</code> 大小每秒进行限速，单位为 <code>E2</code>，<code>E2</code> 可选值有：<code>k</code>（KB)，<code>m</code>（MB）</td>
+</tr>
+</tbody>
+</table>
+<p>注 1：若当前请求带有请求体的情况下，<code>$SET_METHOD(E)</code> 不允许设置为除 <code>PUT</code> 和 <code>POST</code> 以外的方法。</p>
+<p>其中 <code>E[n]</code> 代表合法的表达式，也就是说函数可以相互嵌套，例如规则可以为：</p>
+<p><code>/$SUB($DECODE_BASE64($_HEADER_foo), $_GET_from, $_GET_to)/</code>；布尔函数包括 <code>WHEN
+, ALL, ANY</code> 都是短路的，譬如 <code>$WHEN($ALL(), $EXIT(403))</code> 不会返回 <code>403</code>，因为
+<code>$ALL()</code> 的值为 <code>false</code></p>
+<p>使用 <code>''</code> 能对变量进行转义，使其不被解释，例如以下规则：</p>
+<pre><code>/foo/'$_HOST'
+</code></pre>
+<p>会被转换为:</p>
+<pre><code>/foo/$_HOST
+</code></pre>
+<p>对于含有请求参数的规则，原先的请求参数会附加到后面，如果不希望这样，可以放置一个
+'?' 在规则的最后面，例如这样：</p>
+<pre><code>/foo?bar=$1?
+</code></pre>
+<p>特别地，如果重写后的 URL 没有参数，那么此时需要在最后加两个 <code>?</code>，例如这样：</p>
+<pre><code>/foo??
+</code></pre>
+<h3 id="_8">变量<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>变量以 <code>$_</code> 开头，这些变量都是对此次请求上下文中一些参数的映射，譬如 <code>$_HOST</code> 对应此次请求头中的 <code>Host</code> 字段，<code>$_GET_foo</code> 对应此次请求 URL 参数 foo 的值，等等。若将变量内插到重写后的 URL 中，譬如 URL 改写 <code>/$_GET_foo/bar</code>，如果请求参数中没有 <code>foo</code>则视为此次改写 失败；</p>
+<p>若将变量放在函数中，则由该函数确定返回的值，例如 <code>$NOT($_GET_foo)</code>，如果参数中包含 <code>foo</code>，则返回 <code>false</code>，否则返回<code>true</code>。目前支持的变量有：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">变量</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>$_IP</code></td>
+<td style="text-align: left;">客户端 IP</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_HOST</code></td>
+<td style="text-align: left;">请求头中的 Host 字段</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_HOST_n</code></td>
+<td style="text-align: left;"><code>$_HOST_n</code> 指 Host 中的第 n 个子域，例如对于 foo.bar.baz.com：<code>$_HOST_1 = foo，$_HOST_2 = bar，$_HOST_3 = baz</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_GET_name</code></td>
+<td style="text-align: left;">使用 Query String 中的变量（无需 urldecode）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_POST_name</code></td>
+<td style="text-align: left;">使用 POST 表单中的变量（只支持 www form ）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_HEADER_name</code></td>
+<td style="text-align: left;">使用 Header 中的值，注意 name 全为小写</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_COOKIE_name</code></td>
+<td style="text-align: left;">使用 Cookie 中的字段值</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_RANDOM</code></td>
+<td style="text-align: left;">随机字符串，字符集为 <code>[a-zA-Z0-9]</code>，默认 8 位</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_RANDOM_n</code></td>
+<td style="text-align: left;"><code>n</code> 位随机字符串，其中 <code>1 &lt;= n &lt;= 32</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_URI</code></td>
+<td style="text-align: left;">请求的 URI，不包含参数</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_QUERY</code></td>
+<td style="text-align: left;">Query String，不带前缀 '?'</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_METHOD</code></td>
+<td style="text-align: left;">GET/POST/PUT/POST/DELETE/OPTIONS/PATCH</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_SCHEME</code></td>
+<td style="text-align: left;">http/https，注意此处全为小写</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_TIME</code></td>
+<td style="text-align: left;">获取当前服务器时间，格式为 UNIX TIME</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_BODY</code></td>
+<td style="text-align: left;">获取当前请求的 BODY（请求体）内容，大小限制为 16KB</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_GEOIP_COUNTRY_CODE</code></td>
+<td style="text-align: left;">国家代码，可参照维基百科： https://en.wikipedia.org/wiki/ISO_3166-2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">字符串常量<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>字符串常量有两种形式，第一种就是普通的字符串例如<code>/foo/bar</code>，但是如果字符串中包含了一些特殊字符，例如空白字符将被省略，例如 <code>$(),'</code> 这些字符有特殊的用途，不能被直接使用，要使用这些特殊的字符，要加 <code>\</code> 前缀对其转义，例如 <code>/foo/bar\,</code>；第二种是加单引号的字符串 <code>''</code>，单引号中的字符只有 <code>\</code> 是特殊转义字符前缀，其他的都视为普通字符，例如这样一条改写规则 <code>/foo/'$\\,\''</code>，改写过后对应 <code>/foo/$\,'</code>。</p>
+<h3 id="break">break<a class="headerlink" href="#break" title="Permanent link">&para;</a></h3>
+<p>除了能勾选 <code>break 选项</code> 指定是否 <code>break</code>，也可以直接在边缘规则最后加上 <code>$$</code> 表示 <code>break</code>。</p>
+<h2 id="_10">配置指南<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>在这个章节，我们会介绍如何添加和编辑边缘规则集，主要大纲包括：</p>
+<ul>
+<li>认识规则管理界面</li>
+<li>规则优先级</li>
+<li>URI 字符串提取</li>
+<li>变量使用</li>
+<li>执行动作</li>
+<li>规则测试</li>
+</ul>
+<h3 id="_11">认识规则管理界面<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>登陆 <a href="https://console.upyun.com/login/">CDN 控制台</a>，依次进入：服务管理 &gt; 功能配置 &gt; 边缘规则 &gt; EdgeRules，即可进入边缘规则管理界面。如下图所示：</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/edgerules/edgerules_rule_management.png "height="470" width="800" /></p>
+<p>在规则管理界面，针对每一条规则，控制台提供了如下字段信息：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">字段</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">优先级</td>
+<td style="text-align: left;">指定规则执行的先后顺序</td>
+</tr>
+<tr>
+<td style="text-align: left;">规则名称</td>
+<td style="text-align: left;">该条规则的名称，方便管理标识</td>
+</tr>
+<tr>
+<td style="text-align: left;">break</td>
+<td style="text-align: left;">规则命中之后，是否跳出所有的规则集</td>
+</tr>
+<tr>
+<td style="text-align: left;">状态</td>
+<td style="text-align: left;">包括启用、关闭、测试三种状态</td>
+</tr>
+<tr>
+<td style="text-align: left;">编辑</td>
+<td style="text-align: left;">编辑规则</td>
+</tr>
+<tr>
+<td style="text-align: left;">删除</td>
+<td style="text-align: left;">删除规则</td>
+</tr>
+<tr>
+<td style="text-align: left;">更多</td>
+<td style="text-align: left;">包括启用、关闭、测试三个选项</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_12">规则优先级<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>理论上，所有规则的优先级是按照先后顺序来执行的，优先级越靠前则会被优先执行，这个仅适用于添加 HTTP 头部、删除 HTTP 头部、访问控制、请求限速、自定义错误页面、边缘重定向。针对 URL 改写动作，即使 URL 改写的规则放在前面， 还是会等执行完其他动作之后，才会去执行 URL 改写动作。</p>
+<p>这里根据具体示例进行说明，如截图所示：</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/edgerules/edgerules_rule_youxianji.png "height="470" width="800" /></p>
+<p>特别地：当匹配的条件都相同时，例如：当请求 URI 都为 <code>/123.mp4</code> 时，按照优先级顺序出现了如下 5 条规则：</p>
+<p>第 1 条规则：当请求的 URI 为 <code>/123.mp4</code> 时，改写到 <code>/beibei.mp4</code></p>
+<p>第 2 条规则：当请求的 URI 为 <code>/123.mp4</code> 时，添加 HTTP 响应头 CDN</p>
+<p>第 3 条规则：当请求的 URI 为 <code>/123.mp4</code> 时，边缘重定向到 <code>https://www.upyun.com/</code></p>
+<p>第 4 条规则：当请求的 URI 为 <code>/123.mp4</code> 时，进行访问控制，响应 403 状态码</p>
+<p>第 5 条规则：当请求的 URI 为 <code>/123.mp4</code> 时，进行请求限速，限速到 <code>200KB/s</code> 。</p>
+<p>按照当前的设计逻辑，第 1 条规则不会被立马执行，会等待后面所有的规则执行完毕之后，才会进行 URL 改写的动作。按照规则优先级，会依次执行第 2 条规则，然后再执行第 3 条规则，通过 curl 发起命令测试，测试结果为：</p>
+<pre><code> GET /123.mp4 HTTP/1.1
+ Host: wuxuejun2018.b0.upaiyun.com
+ User-Agent: curl/7.43.0
+ Accept: */*
+
+ HTTP/1.1 302 Moved Temporarily
+ Server: marco/1.10
+ Date: Wed, 20 Dec 2017 09:28:28 GMT
+ Content-Type: text/html
+ Content-Length: 159
+ Connection: keep-alive
+ Location: https://www.upyun.com
+ Via: M.ctn-zj-lna3-019
+ X-Request-Id: 32c1c154c192027be98887ad63c3b08c
+ CDN: UPYUN
+</code></pre>
+<p>按照测试结果，依次命中了第 2 条和 第 3 条规则。</p>
+<p>可以看出，第 1 条、第 4 条、第 5 条都没有被执行，那是因为第 1 条属于 URL 改写，不会立马执行；第 3 条为边缘重定向，直接 302 到 <code>https://www.upyun.com</code> 了，跳出了整个规则集，从而接下来的规则不会被执行，包括 URL 改写。</p>
+<p>特别注意的是，类似边缘重定向这类直接跳出所有规则集的行为，还包括：</p>
+<ul>
+<li>自定义错误页面</li>
+<li>访问控制</li>
+</ul>
+<p>也就是说，当执行完边缘重定向、自定义错误页面、访问控制等动作之后，会直接跳出整个规则集，不会执行接下来的匹配动作。</p>
+<h3 id="uri">URI 字符串提取<a class="headerlink" href="#uri" title="Permanent link">&para;</a></h3>
+<p>所谓 URI 字符串提取，也即在执行边缘重定向以及 URL 改写动作时，根据业务需求，可能会提取原始请求 URI 中的字符串。其中 URI 字符串提取支持 PCRE 正则表达式，匹配后，产生 <code>$1</code>, <code>$2</code> ... 这样的变量。</p>
+<p>URI 字符串提取正则表达式：</p>
+<pre><code>^/pay/([0-9]+)/([0-9]+)/(.*?).html$
+</code></pre>
+<p>根据以上的 PCRE 正则表达式，分别会产生 3 个 字符串，为  <code>$1</code>、<code>$2</code>、<code>$3</code>。分别对应了以上正则表达式里面的从左到右 <code>()</code> 里面的字符串。</p>
+<p>URL 改写规则：</p>
+<pre><code>/pay.php?payid=$1&amp;categoryid=$2
+</code></pre>
+<p>配置截图可参考：</p>
+<p>1）通用模式</p>
+<p><img src="http://upyun-assets.b0.upaiyun.com/docs/cdn/edgerules/edgerules_uri_string_tiqu.png "height="470" width="800" /></p>
+<p>2）编程模式</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/edgerules/edgerules_uri_string_tiqu2.png "height="470" width="800" /></p>
+<p>通过执行以上规则之后，原始请求和改写后的地址分别如下：</p>
+<p>原始请求：</p>
+<pre><code>http://example.com/pay/25/8/...
+</code></pre>
+<p>改写后地址：</p>
+<pre><code>http://example.com/pay.php?payid=25&amp;categoryid=8...
+</code></pre>
+<h3 id="_13">变量使用<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>在进行 URL 改写和边缘重定向动作时，除了可以提取 URI 中的 字符串，您还可以获取原始请求中的变量。这些变量包括：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">变量</th>
+<th style="text-align: left;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>$_IP</code></td>
+<td style="text-align: left;">客户端 IP</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_HOST</code></td>
+<td style="text-align: left;">请求头中的 Host 字段</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_HOST_n</code></td>
+<td style="text-align: left;"><code>$_HOST_n</code> 指 Host 中的第 n 个子域，例如对于 foo.bar.baz.com：<code>$_HOST_1 = foo，$_HOST_2 = bar，$_HOST_3 = baz</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_GET_name</code></td>
+<td style="text-align: left;">使用 Query String 中的变量（无需 urldecode）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_POST_name</code></td>
+<td style="text-align: left;">使用 POST 表单中的变量（只支持 www form ）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_HEADER_name</code></td>
+<td style="text-align: left;">使用 Header 中的值，注意 name 全为小写</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_COOKIE_name</code></td>
+<td style="text-align: left;">使用 Cookie 中的字段值</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_RANDOM</code></td>
+<td style="text-align: left;">随机字符串，字符集为 <code>[a-zA-Z0-9]</code>，默认 8 位</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_RANDOM_n</code></td>
+<td style="text-align: left;"><code>n</code> 位随机字符串，其中 <code>1 &lt;= n &lt;= 32</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_URI</code></td>
+<td style="text-align: left;">请求的 URI，不包含参数</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_QUERY</code></td>
+<td style="text-align: left;">Query String，不带前缀 '?'</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_METHOD</code></td>
+<td style="text-align: left;">GET/POST/PUT/POST/DELETE/OPTIONS/PATCH</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_SCHEME</code></td>
+<td style="text-align: left;">http/https，注意此处全为小写</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_TIME</code></td>
+<td style="text-align: left;">获取当前服务器时间，格式为 UNIX TIME</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_BODY</code></td>
+<td style="text-align: left;">获取当前请求的 BODY（请求体）内容，大小限制为 16KB</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$_GEOIP_COUNTRY_CODE</code></td>
+<td style="text-align: left;">国家代码，可参照维基百科： https://en.wikipedia.org/wiki/ISO_3166-2</td>
+</tr>
+</tbody>
+</table>
+<p>为了更加方便理解，下面将通过一个应用示例来展开介绍：</p>
+<p><strong>示例：URL 改写</strong></p>
+<p>例如：某个 URL 为 <code>https://www.example.com/index.htm</code></p>
+<p>需求：希望通过 URL 改写动作，将客户端 IP (这里以 <code>192.168.1.1</code> 为例) 以及请求方法（实际的请求方法为 GET）通过查询字符串传递到源站后端；</p>
+<p>改写规则可以为：</p>
+<pre><code>/index.php?ip=$_IP&amp;method=$_METHOD
+</code></pre>
+<p>则改写后的完整 URL 为：</p>
+<pre><code>https://example.com/index.php?ip=192.168.1.1&amp;method=GET
+</code></pre>
+<p>配置截图可参考(通用模式):</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/edgerules/edgerules_bianliang_shiyong.png "height="470" width="800" /></p>
+<h3 id="_14">执行动作<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p><strong>添加 HTTP 头部</strong></p>
+<p>通过使用边缘规则的【添加 HTTP 响应头部】功能，当您的用户请求业务资源时，可以在返回的【响应消息】中添加您配置的头部，这些头部可能包括：</p>
+<ul>
+<li>Cache-Control</li>
+<li>Content-Disposition</li>
+<li>Content-Language</li>
+<li>Access-Control-Allow-Origin</li>
+<li>Content-Type</li>
+</ul>
+<p>当然，您也可以根据业务要求，自定义响应字段。例如：CDN：UPYUN</p>
+<p>具体使用截图如下截图所示：</p>
+<p>1）通用模式</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/edgerules/edgerules_add_resp_header1.png "height="470" width="800" /></p>
+<p>2）编程模式</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/edgerules/edgerules_add_resp_header2.png "height="470" width="800" /></p>
+<p>从截图可以看出，添加 HTTP 头部，您需要分别填写：</p>
+<ul>
+<li>Header 域名：Access-Control-Allow-Origin</li>
+<li>Header 域值：*</li>
+</ul>
+<p>另外，有【覆盖原有响应头】的配置，默认为否，可以根据具体情况来勾选。当勾选时，会覆盖掉原始的响应头信息。</p>
+<p><strong>删除 HTTP 头部</strong></p>
+<p>通过使用边缘规则的【删除 HTTP 响应头】功能，您可以删除掉不必要的响应字段。如隐藏掉一些并不安全的响应头部信息。例如：</p>
+<ul>
+<li>X-Powered-By</li>
+</ul>
+<p>具体配置参见如下截图所示：</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/edgerules/edgerules_del_resp_header.png "height="470" width="800" /></p>
+<p>注意事项：又拍云 CDN 内部不能删除的响应头包括：</p>
+<pre><code>Via
+Age
+Server
+connection
+X-cache
+x-source
+X-request-id
+Content-range
+Content-length
+Transfer-encoding
+</code></pre>
+<p><strong>边缘重定向</strong></p>
+<p>通过使用边缘规则的【边缘重定向】功能，当匹配到条件时，CDN 会响应一个 301/302 请求给客户端，重定向状态码支持 301 和 302。</p>
+<p>具体的配置可参照如截图所示：</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/edgerules/edgerules_edge_redirect.png" height="470" width="800" /></p>
+<p>当条件满足：请求 HOST 为 XXX 并且客户端 User-Agent 正则匹配 XXX 时，则执行重定向动作，301 重定向到：</p>
+<pre><code>https://test.com/$1/123.html
+</code></pre>
+<p><strong>自定义错误页面</strong></p>
+<p>通过使用边缘规则的【自动错误页面】功能。使用自定义源站错误页面，而非 CDN 默认指定的错误页面。当前支持的源站错误信息状态码包括：</p>
+<ul>
+<li>404</li>
+<li>500</li>
+<li>501</li>
+<li>502</li>
+<li>503</li>
+<li>504</li>
+</ul>
+<p>这里以 404 错误页面为例，当源站响应 404 状态码时，则 302 重定向到指定 404 页面。具体的配置可参照如截图所示：</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/edgerules/edgerules_custom_error_page.png" height="470" width="800" /></p>
+<p><strong>URL 改写</strong></p>
+<p>配合网站将动态 URL 转换为语义 URL，改善搜索引擎索引机制，提高网站 SEO 排名。将原始请求 <code>http://www.example.com/pay/25/8/...</code> 进行 URL 改写。 </p>
+<p>相关配置如截图所示：</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/edgerules/edgerules_url_rewrite.png" height="470" width="800" /></p>
+<p><strong>请求限速</strong></p>
+<p>通过使用边缘规则的【请求限速】功能，在不影响终端用户体验的情况下，将请求速度控制在合理范围之内，节省 CDN 带宽。</p>
+<p>具体配置如截图所示：</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/edgerules/edgerules_request_limite_rate.png" height="470" width="800" /></p>
+<p>规则释义：开始 <code>20MB</code> 不限速，后面限制到 <code>800KB/s</code>。</p>
+<p><strong>访问控制</strong></p>
+<p>灵活针对请求内容进行访问控制，可以响应 403/404 状态码。这里针对 <code>User-Agent</code> 进行过滤，比如：来自搜狗等爬虫的请求直接响应 403 状态码。具体的配置如截图所示：</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/edgerules/edgerules_access_control.png" height="470" width="800" /></p>
+<h3 id="_15">规则测试<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>由于边缘规则的 URL 改写、边缘重定向、访问控制等动作是有副作用的，为了安全起见，
+每一条规则默认都在测试状态下。测试状态下，平台会自动获取客户端本地 IP 地址，也即规则仅针对该 IP 地址生效。您也可以更换其他 IP 地址进行测试。具体的配置截图如图所示：</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/edgerules/edgerules_rule_test.png" height="470" width="800" /></p>
+<h2 id="_16">编程模式（案例）<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<h3 id="1">1、自定义防盗链<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>需求描述：将请求 URL 按照一定的算法规则实现 token 防盗链，使用边缘规则来实现，会更加灵活和高效。token 防盗链详解请参见：</p>
+<pre><code>https://blog.upyun.com/?p=1177
+</code></pre>
+<p>请求 URL 示例：</p>
+<pre><code>/test.ts?key=68ddbe535557d6630a19cebde0cb9252&amp;t=1481106349
+</code></pre>
+<p>以上请求 URL 是按照如下算法生成的，参见如下算法说明：</p>
+<pre><code>&lt;?php
+$etime = time() + 600; // 授权 10 分钟后过期 
+$key = 'abc'; // token 防盗链密钥
+$path = '/test.ts'; // 文件相对路径
+$url = $path.'?key='.md5($key.$etime.$path).'&amp;t='.$etime;
+echo $url; 
+?&gt;
+</code></pre>
+<p>CDN 节点需要进行两层判断，一层就是对时间戳进行比较，另外一层就是按照约定的规则生成验证信息并进行比较，看是否一致。按照要求，可编写如下规则集来实现以上要求：</p>
+<pre><code>rules:
+{
+  &quot;rule&quot;: &quot;$WHEN($MATCH($_URI, '.ts$'),$OR($NOT($_GET_t),$NOT($_GET_key)))$EXIT(403)&quot;,
+  &quot;pattern&quot;: &quot;&quot;
+}, 
+{
+   &quot;rule&quot;: &quot;$WHEN($MATCH($_URI, '.ts$'),$GT($_TIME, $_GET_t))$EXIT(401)&quot;,
+   &quot;pattern&quot;: &quot;&quot;
+}, 
+{
+  &quot;rule&quot;: &quot;$WHEN($MATCH($_URI, '.ts$'),$NOT($EQ($MD5('abc'$_GET_t$_URI),$LOWER($_GET_key))))$EXIT(403)&quot;,
+  &quot;pattern&quot;: &quot;&quot;
+}
+</code></pre>
+<p>规则释义：</p>
+<p>第一条：当文件后缀为 <code>ts</code> 时，判断请求 URL 里面是否存在 <code>t</code> 和<code>key</code> 参数，如果其中一个不存在，则返回 403；</p>
+<p>第二条：当文件后缀为 <code>ts</code> 时，判断当前 CDN 节点 UNIX 时间是否大于请求参数里面的时间戳（也即参数 t 的值），否则返回 401；</p>
+<p>第三条：当文件后缀为 <code>ts</code> 时，CDN 节点按照约定的算法规则生成验证信息（也即 MD5 值），判断生成的 MD5 值和请求参数 <code>key</code> 的值是否一致，不一致则返回 403；</p>
+<h3 id="2">2、边缘重定向<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>示例一：匹配 <code>cookie</code> 进行跳转</p>
+<pre><code>&quot;rule&quot;: &quot;$WHEN($NOT($EQ($_URI, /live.html)), $NOT($_COOKIE_token))$REDIRECT(http://test.example.com/no_token.html,301)&quot;,
+&quot;pattern&quot;: &quot;&quot;
+</code></pre>
+<p>规则释义：首先匹配请求 <code>URI</code> 是否为 <code>/live.html</code>,当 <code>cookie</code> 中 <code>token</code> 值为空时，则跳转到指定到地址 <code>http://test.example.com/no_token.html</code>。</p>
+<h3 id="3url">3、URL 改写<a class="headerlink" href="#3url" title="Permanent link">&para;</a></h3>
+<p>示例一：目录及参数改写</p>
+<p>将请求 URL 转换为带参数的动态 URL，例如请求的 URL 为：</p>
+<pre><code>http://example.com/pay/25/8/...
+</code></pre>
+<p>需要 CDN 边缘节点转换为如下请求：</p>
+<pre><code>http://example.com/pay.php?payid=25&amp;categoryid=8...
+</code></pre>
+<p>这个时候，<code>pattern</code> 部分需要提取目录数字，需要生成 <code>$1</code> 和 <code>$2</code> 这样的变量，如下规则所示：</p>
+<pre><code>&quot;rule&quot;: &quot;/pay.php?productid=$1&amp;categoryid=$2&quot;,
+&quot;pattern&quot;: &quot;^pay/([0-9]+)/([0-9]+)/(.*?).html$&quot;
+</code></pre>
+<p>规则释义：当解析的 url 符合规则 <code>^pay/([0-9]+)/([0-9]+)/(.*?).html$</code>，那么将请求导向到 <code>/pay.php?productid=$1&amp;categoryid=$2</code>。</p>
+<pre><code>也即将 http://example.com/pay/25/8/... 转换为 http://example.com/pay.php?payid=25&amp;categoryid=8...
+</code></pre>
+<p>示例二：文件名改写</p>
+<pre><code>pattern: /(.*)/playlist\.m3u8$
+rule: /$1'.m3u8'
+</code></pre>
+<p>规则释义：当访问地址为 <code>http://domain/app/stream/playlist.m3u8</code> 时，将访问地址改写为 <code>http://domain/app/stream.m3u8</code>。</p>
+<p>应用场景：在直播应用场景中，因为客户端机制无法或者不方便升级的情况，可以通过 URL 改写，将 <code>/stream/playlist.m3u8</code> 改为 <code>/stream.m3u8</code>，其中 <code>app</code> 代表发布点，<code>stream</code> 代表流名。</p>
+<h3 id="4">4、请求/响应头修改<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>示例一：添加、删除请求头</p>
+<pre><code>&quot;rule&quot;: &quot;$ADD_REQ_HEADER(X-From-Cdn, upyun)&quot;,
+&quot;pattern&quot;: &quot;&quot;
+</code></pre>
+<p>规则释义：添加请求头 <code>X-From-Cdn:upyun</code>，识别 CDN 厂商。</p>
+<pre><code>&quot;rule&quot;: &quot;$DEL_REQ_HEADER(Accept-Encoding) &quot;,
+&quot;pattern&quot;: &quot;&quot;
+</code></pre>
+<p>规则释义：删除请求头 <code>Accept-Encoding</code> ，无论终端是否发起 <code>gzip</code> 的请求，都进行 <code>ungzip</code> 的返回。</p>
+<p>示例二：添加响应头</p>
+<pre><code>&quot;rule&quot;: &quot;$ADD_RSP_HEADER(CDN, UPYUN, 1) &quot;,
+&quot;pattern&quot;: &quot;&quot;
+</code></pre>
+<p>规则释义：添加响应头 <code>CDN</code>  为 <code>UPYUN</code>, <code>1</code> 表示会覆盖掉已有的响应头，通过响应头也可以识别 CDN 厂商。</p>
+<h3 id="5url">5、URL 限速<a class="headerlink" href="#5url" title="Permanent link">&para;</a></h3>
+<p>假如请求的 URL 为：<code>http://test.example.com/mp4/4E10F356C0FEAD359C33DC5901307461-10.mp4</code> ，需要对该类型文件进行限速，限速要求为：前 20MB 不限速，20MB 之后限速 800 KB/s，规则可这样编写：</p>
+<pre><code>&quot;rule&quot;: &quot;$WHEN($1, $EQ($_HOST, 'test.example.com'))$LIMIT_RATE_AFTER(20, m)$LIMIT_RATE(800, k)&quot;,
+&quot;pattern&quot;: &quot;^(/).+-10\.mp4$&quot;
+</code></pre>
+<p>规则释义：当 <code>$1</code> 为真，且满足请求 <code>HOST</code> 为 <code>test.example.com</code> 时 ，开始 20MB 不限速，后面限制到 <code>800KB/s</code>。</p>
+<h3 id="6">6、大小写转换<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>该部分会使用到<code>$LOWER(E)</code> 函数，直接看规则：</p>
+<pre><code>&quot;rule&quot;: &quot;$WHEN($MATCH($LOWER($_URI), /uptest.png)) /UPtest.png&quot;,
+&quot;pattern&quot;: &quot;&quot;
+</code></pre>
+<p>规则释义：首先是获取请求 <code>URI</code> ，使用 <code>$LOWER(E)</code> 函数将 <code>URI</code> 转换为小写，和 <code>/uptest.png</code> 进行匹配，匹配成功，则直接将 <code>URI</code> 改写为<code>/UPtest.png</code>。如果需要将字符串转换为大写，使用 <code>$UPPER(E)</code> 函数。</p>
+<h3 id="7">7、数值比较<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>也即将字符串或者数字进行比较。例如： <code>A</code> 和 <code>B</code> 进行比较，是否大于、大于等于、相等等逻辑，参见如下规则示例：</p>
+<pre><code>&quot;rule&quot;: &quot;$GT($_TIME,$ADD($INT($_GET_t,16,10),3600))&quot;,
+&quot;pattern&quot;: &quot;&quot;
+</code></pre>
+<p>规则释义：将请求 URL 中的 t 参数 由 16 进制转换为 10 进制，然后加上 3600 ，将相加得到的值和当前系统时间进行比较。这里使用到了 <code>$GT(E1，E2）</code> 函数，也即 <code>E1</code> 是否大于 <code>E2</code>，大于即返回 true 。另外，等于使用 <code>$EQ(E1，E2）</code> 函数，大于等于使用 <code>$GE(E1，E2）</code> 函数。</p>
+<hr />
+<p>如有疑问请 <a href="https://www.upyun.com/contact">联系我们</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

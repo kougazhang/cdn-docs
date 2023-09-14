@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/api/fusion_storage/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>融合云存储</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/">产品简介</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/quick_start/">快速入门</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_guide/">开发者指南</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/rest_api/">REST API</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/form_api/">FORM API</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_tools/">开发者工具</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/sdk/">SDK 使用文档</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="api/fusion_storage/">融合云存储</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">基础架构</a></li>
+                    
+                  
+                    <li class=""><a href="#_2">功能配置</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">配置入口</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">添加服务</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_5">配置</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_6">配置列表</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_7">其他操作</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#sdk">SDK</a></li>
+                    
+                  
+                    <li class=""><a href="#_8">同步凭证生成指南</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#oss">阿里云 OSS</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_9">七牛云存储</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_10">常见问题</a></li>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/multipart_upload/">分块上传（已弃用）</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/errno/">API 错误码表</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/purge/">缓存刷新</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/small_program/">微信小程序</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="mobile-stats/">移动流量</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="sms/">短信服务</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>融合云存储</h1>
+
+<p>针对很多用户在平台选型时，需要将数据存储在多家存储厂商以保证服务的可用性，又拍云推出了融合云存储。它以又拍云存储作为主存储，自动将增量文件同步到第三方存储厂商（如：阿里云 OSS、七牛云存储等），并在又拍云存储变动时，启用第三方存储源，保证您服务的高可用。</p>
+<h2 id="_1">基础架构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><img alt="融合云存储基础架构" src="http://upyun-assets.b0.upaiyun.com/docs/storage/fusion_storage.png_/fh/408" /></p>
+<ul>
+<li>
+<p>当又拍云存储正常时，终端服务上传文件到又拍云存储，又拍云存储自动同步文件到第三方存储厂商。用户访问文件时，通过又拍云 CDN 访问又拍云存储上的文件。</p>
+</li>
+<li>
+<p>当又拍云存储出现变动（异常）时，CDN 感知到云存储变动，去第三方存储厂商获取文件，分发给用户。同时，终端服务的文件需要上传到第三方存储厂商。待又拍云存储恢复后，自动同步该期间上传到第三方存储厂商的文件到又拍云存储。</p>
+</li>
+</ul>
+<p>使用融合云存储需要做两方面事情：</p>
+<ul>
+<li>
+<p>在又拍云控制台配置服务融合的第三方存储厂商，见<a href="#function_config">功能配置</a>；</p>
+</li>
+<li>
+<p>上传支持第三方存储厂商，见 <a href="#fusion_sdk">SDK</a>。</p>
+</li>
+</ul>
+<p><a name="function_config"></a></p>
+<h2 id="_2">功能配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>您在使用控制台进行功能配置之前，请确保您已经注册又拍云账号并完成实名验证，请确保您已经创建<a href="/api/quick_start/">云存储服务</a>。</p>
+<h3 id="_3">配置入口<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>1）「工具箱」 &gt; 「融合云存储」。</p>
+<p><img alt="融合云存储入口1" src="http://upyun-assets.b0.upaiyun.com/docs/storage/fusion_entrance1.jpg_/fw/800" /></p>
+<p>2）「服务」 列表 &gt; 「融合云」。特别地，只有源站是 「又拍云」的服务，才有「融合云」 这个入口。 </p>
+<p><img alt="融合云存储入口2" src="http://upyun-assets.b0.upaiyun.com/docs/storage/fusion_entrance2.jpg_/fw/800" /></p>
+<h3 id="_4">添加服务<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>进入配置列表页面后，点击右上角的 「添加服务」。</p>
+<p><img alt="添加服务" src="http://upyun-assets.b0.upaiyun.com/docs/storage/fusion_add_service.jpg_/fw/800" /></p>
+<h3 id="_5">配置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>1）选择需要融合的服务</p>
+<p>通过左侧的选项，选择您需要配置融合云存储的又拍云服务，支持通过关键字进行搜索筛选，以便快速找到您要配置的服务。</p>
+<p>2）选择第三方存储厂商</p>
+<p>目前仅支持阿里云 OSS 和七牛云存储，且单个服务只能选择一家第三方存储厂商。</p>
+<p>3）创建空间并输入</p>
+<p>在第三方存储厂商的管理中心创建一个新的具备<strong>公共读权限</strong>的空间用于又拍云服务增量文件同步，不同厂商需要提供的配置项不同。</p>
+<ul>
+<li>
+<p>阿里云 OSS 需要提供 BucketName 、所属地区、同步凭证（AccessKeyId 、AccessKeySecret）。</p>
+</li>
+<li>
+<p>七牛云存储需要提供空间名称、同步凭证（UploadToken）。</p>
+</li>
+</ul>
+<p>特别地，不要使用一个第三方存储厂商空间配置又拍云的多个服务，避免文件同名覆盖。同步凭证获取，见<a href="#fusion_auth">同步凭证生成指南</a>。</p>
+<p>4）启用第三方存储源</p>
+<p>根据需要，选择是否启用第三方存储源。如果开启，需要输入第三方厂商配置的空间对应回源地址。</p>
+<ul>
+<li>
+<p>阿里云 OSS 是空间对应的外网域名。</p>
+</li>
+<li>
+<p>七牛云存储是空间对应的外链域名。需向七牛申请不带加速的外链域名，否则可能会引起 CDN 服务在多家 CDN 厂商进行调度，最终影响体验。</p>
+</li>
+</ul>
+<p>5）验证配置</p>
+<p>点击提交，会验证您的配置是否有效。配置验证无误，提示：验证成功，服务配置成功！</p>
+<h3 id="_6">配置列表<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>配置成功后，会显示在配置列表中。</p>
+<p><img alt="配置列表" src="http://upyun-assets.b0.upaiyun.com/docs/storage/fusion_list.jpg_/fw/800" /></p>
+<h3 id="_7">其他操作<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>1) 日志</p>
+<p>您可以通过该功能查看增量同步的日期和同步进度，并可以点击 「下载」，把日志保存到本地。</p>
+<p>2）禁用/启用</p>
+<p>您可以通过该功能随时对您的配置进行禁用和启用。禁用后将会停止向第三方存储厂商进行增量同步，第三方回源也将禁用。</p>
+<p>3）修改</p>
+<p>您可以对配置进行修改，更换第三方厂商或空间。更换第三方厂商将会按照当前同步时间开始重新进行增量同步。</p>
+<p>4）删除</p>
+<p>您可以对配置进行删除操作。删除后增量同步将会停止，第三方回源也将禁用。</p>
+<p><a name="fusion_sdk"></a></p>
+<h2 id="sdk">SDK<a class="headerlink" href="#sdk" title="Permanent link">&para;</a></h2>
+<p>当前，融合云存储上传 SDK 仅包括 <a href="https://github.com/upyun/ios-fusion-sdk">iOS</a> 和 <a href="https://github.com/upyun/android-fusion-sdk">Android</a>。其他语言的实现，需要用户自行处理。</p>
+<p><a name="fusion_auth"></a></p>
+<h2 id="_8">同步凭证生成指南<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>同步凭证的生成各存储厂商的方式和方法各不相同。这里推荐：阿里云 OSS 可通过 RAM 的方式生成，七牛可手动生成。</p>
+<h3 id="oss">阿里云 OSS<a class="headerlink" href="#oss" title="Permanent link">&para;</a></h3>
+<p>阿里云提供了 RAM 和 STS 两种权限管理系统。RAM 主要的作用是控制账号系统的权限，通过使用 RAM 可以在主账号的权限范围内创建子用户，给不同的子用户分配不同的权限从而达到授权管理的目的。STS 是一个安全凭证（Token）的管理系统，用来授予临时的访问权限，完成对于临时用户的访问授权。由于 STS 方式具有临时性，不适用于本方案，故推荐使用 RAM 的方式来生成同步凭证。</p>
+<p>** 生成步骤 **</p>
+<p>1）通过阿里云 RAM 管理平台创建用户；</p>
+<p>2）自动生成 AccessKey，保存 AK 信息；</p>
+<p>3）添加授权策略（可指定单个 OSS 空间权限）；</p>
+<p>4）授权策略配置好之后，在 AK 信息里面便可以找到 AccessKeyID 和 AccessKeySecret 信息。</p>
+<p>详情请参考<a href="https://help.aliyun.com/document_detail/31929.html">阿里云 OSS RAM 使用指南</a>。</p>
+<p>** 注意事项 **</p>
+<p>1）需要授权对指定的空间资源具有公共读权限；</p>
+<p>2）在限制条件方面，授权的时间要尽可能的长。否则授权时间失效之后，又拍云存储无法进行上传同步操作。</p>
+<h3 id="_9">七牛云存储<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>七牛云存储提供一对主和从 Access Key 和 Secret Key 作为权限管理基础，上传、下载等操作的授权凭证，通过对应的空间与 Access Key 和 Secret Key 生成。其中，上传操作的上传凭证 UploadToken，即是融合云存储配置中需要的同步凭证。</p>
+<p>** 生成步骤 **</p>
+<p>1）构造上传策略；</p>
+<p>2）将上传策略序列化成为 JSON 格式；</p>
+<p>3）对 JSON 编码的上传策略进行 URL 安全的 Base64 编码，得到待签名字符串 encodedPutPolicy；</p>
+<p>4）使用SecretKey对上一步生成的待签名字符串计算 HMAC-SHA1 签名；</p>
+<p>5）对签名进行 URL 安全的 Base64 编码，得到值：encodedSign；</p>
+<p>6）将 AccessKey、encodedSign 和 encodedPutPolicy 用英文符号 : 连接起来，得到 UploadToken。</p>
+<p>详情请参考<a href="https://developer.qiniu.com/kodo/manual/upload-token">七牛上传凭证生成指南</a>。</p>
+<p>** 注意事项 **</p>
+<p>1) 在构造上传策略时，授权的生效时间需要尽可能的长，否则授权时间截止，文件将不能够进行同步。</p>
+<p>2）指定上传的目标资源空间（Bucket）和资源键名（Key），需要和融合云存储配置中指定的空间名一致。</p>
+<h2 id="_10">常见问题<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>** 什么是融合云存储？ **</p>
+<p>融合云存储是又拍云结合自有云存储服务，同时融合第三方云存储服务，推出的多源存储方案。</p>
+<p>** 融合云存储方案只能对增量文件进行同步，存量文件同步可以支持吗？ **</p>
+<p>目前仅支持增量文件同步，存量文件不支持。</p>
+<p>** 是否支持对增量文件删除的同步？ **</p>
+<p>不支持。</p>
+<p>** 融合云存储方案收费吗？ **</p>
+<p>在公测阶段该方案不收取任何流量和资源消耗费用，完全免费开放给用户使用。</p>
+<p>** 融合云存储方案中同步凭证有什么作用？ **</p>
+<p>主要是对增量文件同步上传进行授权的，各存储厂商会用来验证上传请求合法性的机制，此处授权其实就是通过 「同步凭证」 来实现。</p>
+<p>** 使用融合云存储方案后，是否支持使用第三方云存储厂商的云处理服务？ **</p>
+<p>仅支持融合七牛云图片处理服务，如有需要，请联系<a href="https://www.upyun.com/contact">售后</a>或您的商务经理。</p>
+<hr />
+<p>如有疑问请 <a href="https://www.upyun.com/contact">联系我们</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

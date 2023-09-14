@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/sms/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/prettify.css" rel="stylesheet">
+        <link href="../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>短信服务</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/">产品简介</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/quick_start/">快速入门</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_guide/">开发者指南</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/rest_api/">REST API</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/form_api/">FORM API</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_tools/">开发者工具</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/sdk/">SDK 使用文档</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/fusion_storage/">融合云存储</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/multipart_upload/">分块上传（已弃用）</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/errno/">API 错误码表</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/purge/">缓存刷新</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/small_program/">微信小程序</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="mobile-stats/">移动流量</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="sms/">短信服务</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#1">1. 介绍</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#11">1.1 又拍云短信介绍</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#12">1.2 又拍云短信组成</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#13">1.3 又拍云短信模板</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#14">1.4 又拍云短信签名</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#15">1.5 计费标准</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#16">1.6 购买流程</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#2">2. 短信接入</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#21">2.1 接入说明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#22">2.2 接入步骤</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#23">2.3 注册又拍云账号</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#24">2.4 实名认证</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#25">2.5 创建模板</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#26">2.6 发送短信</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#3">3. 数据统计</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#31">3.1 短信资源包</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#32">3.2 报表统计</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#4">4. 常见问题</a></li>
+                    
+                  
+                    <li class=""><a href="#5">5. 接口文档</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#51">5.1 短信模板新增接口</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#52">5.2 短信模板删除接口</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#53">5.3 短信模板修改接口</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#54">5.4 查询模板接口</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#55">5.5 短信发送接口</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#56">5.6 短信报表查询接口</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#6">6. 错误码</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#61">6.1 错误码列表</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#62">6.2 错误码响应</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#63">6.3 响应说明</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#7">7. 发送失败原因查询</a></li>
+                    
+                  
+                    <li class=""><a href="#8">8. 常用语言示例代码</a></li>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>短信服务</h1>
+
+<h2 id="1">1. 介绍<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h4 id="11">1.1 又拍云短信介绍<a class="headerlink" href="#11" title="Permanent link">&para;</a></h4>
+<p>又拍云短信服务通过对网络服务资源统一管理和调度，三网合一，全网覆盖，采用行业专用通道，为用户提供企业级短信送达服务。</p>
+<h4 id="12">1.2 又拍云短信组成<a class="headerlink" href="#12" title="Permanent link">&para;</a></h4>
+<p>又拍云目前可提供的短信通道分为两大类：免审签名通道与普通签名通道，两种通道按类型又分为行业短信与营销短信。</p>
+<p>短信的组成由短信模板内容+短信签名组成，短信长度限制为 350 字。</p>
+<h4 id="13">1.3 又拍云短信模板<a class="headerlink" href="#13" title="Permanent link">&para;</a></h4>
+<p>1.&nbsp;又拍云短信模板分为两种，行业短信与营销短信模板，两类模板最大的区别就是营销短信尾部须添加“退订回T、退订回TD或退订回N”字样。</p>
+<p>2.&nbsp;又拍云短信提供的模板短信由固定内容与多个变量构成，变量格式为（{$var1}，{$var2}…），变量内容可以是汉字、字母、数字或者特殊字符自合。</p>
+<p>3.&nbsp;已审核通过的短信模板，若需修改模板重新提交审核，在审核期间无法使用，需重新审核通过才可使用。</p>
+<p>4.&nbsp;每种通道可分别创建模板上限为 40 个。</p>
+<p>5.&nbsp;行业短信模板中，单个手机号每天能接收的短信次数为 10 次，营销短信无限制。</p>
+<p>6.&nbsp;短信内容不能含有政治敏感字眼和“黄赌毒”等低俗敏感字样，出现违法违规或损害相关他人权益的，平台将保留最终追究的权利。</p>
+<p>7.&nbsp;不支持全变量短信模板，请将短信内容的结构安排合理。</p>
+<p>8.&nbsp;请您避免在短信正文中使用 “【 ” ， “ 】”，“&lt;”，“&gt;” 等特殊字符。</p>
+<h4 id="14">1.4 又拍云短信签名<a class="headerlink" href="#14" title="Permanent link">&para;</a></h4>
+<p>1.&nbsp;每种通道的短信签名最多可创建 20 个签名。</p>
+<p>2.&nbsp;单个签名长度介于 3-8 个字符之间；</p>
+<p>3.&nbsp;不能含违禁关键字，不能有任何特殊符号（如-.+.#);</p>
+<p>4.&nbsp;无需添加【】符号，系统将自动生成。</p>
+<h4 id="15">1.5 计费标准<a class="headerlink" href="#15" title="Permanent link">&para;</a></h4>
+<p>每条短信内容（包括但不限于标点符号、英文字符、汉字等）长度为70个字符（包含签名）如发送短信内容超出 70 个字符，将以每 67 字符（包括但不限于标点符号、英文字符、汉字等）为一条短信进行累计计费。单条短信字符数最大值为 350 个字。短信服务的付费方式为短信资源包计费，按照短信发送成功量进行短信条数的扣除，发送多少即扣除短信资源包内对应的条数。</p>
+<h4 id="16">1.6 购买流程<a class="headerlink" href="#16" title="Permanent link">&para;</a></h4>
+<p>进入总管理后台中【云产品】-【短信服务】-【充值】-【短信包管理】中进行充值购买。</p>
+<p><br></p>
+<h2 id="2">2. 短信接入<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h4 id="21">2.1 接入说明<a class="headerlink" href="#21" title="Permanent link">&para;</a></h4>
+<p>短信服务属于收费功能，用户可根据自身需求通过购买短信资源包进行使用，不支持自选短信包。</p>
+<h4 id="22">2.2 接入步骤<a class="headerlink" href="#22" title="Permanent link">&para;</a></h4>
+<p>1.&nbsp;注册又拍云账号（已有又拍云账号无需注册）</p>
+<p>2.&nbsp;进行实名认证</p>
+<p>3.&nbsp;创建模板</p>
+<p>4.&nbsp;发送短信</p>
+<h4 id="23">2.3 注册又拍云账号<a class="headerlink" href="#23" title="Permanent link">&para;</a></h4>
+<p>用户若需开通短信服务，需先在官网注册又拍云账号，官网地址如下: <a href="https://www.upyun.com/">https://www.upyun.com/</a>,创建完成后完成实名认证，即可申请开通。（已有账号需完成实名认证后即可开通短信服务）</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/sms/%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2.png" width="830" /></p>
+<h4 id="24">2.4 实名认证<a class="headerlink" href="#24" title="Permanent link">&para;</a></h4>
+<p>注册成功又拍云账号之后，即可通过后台的【云产品】-【短信服务】入口进入短信服务界面。短信服务需完成实名认证后才可开通，个人用户需完成个人实名认证，企业用户需完成企业实名认证。</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/sms/短信入口.png" width="830" /></p>
+<p>实名认证界面</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/sms/%E5%AE%9E%E5%90%8D%E4%BF%A1%E6%81%AF.png" width="830" /></p>
+<h4 id="25">2.5 创建模板<a class="headerlink" href="#25" title="Permanent link">&para;</a></h4>
+<p>创建模板可分别创建普通签名通道与免审签名通道的模板，模板类型分为行业短信与营销短信，<span style="color:red">特别注意的是营销短信尾部须添加“退订回T、退订回TD或退订回N”字样，否则会发送失败。</span>
+用户点击管理后台的【云产品】-【短信服务】-【模板】-【创建模板】进行模板创建。</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/sms/创建模板入口.png" width="830" /></p>
+<p>用户创建好模板之后，管理员进行审核（免签通道无需报备签名，只需审核模板，非特殊情况下，审核时间为工作日内的 1-3 小时；普通通道非特殊情况下审核时间为 4-5 个工作日，若签名已报备过，则也是工作日内的 1-3 小时），审核通过后用户可以使用后台导入界面或调用发送短信接口进行发送。</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/sms/创建模板.png" width="830" /></p>
+<h4 id="26">2.6 发送短信<a class="headerlink" href="#26" title="Permanent link">&para;</a></h4>
+<p>在模板审核通过之后，就可以通过后台导入界面或调用接口（具体接口使用方式见接口文档）进行短信发送。</p>
+<p>用户通过点击管理后台的【导入】-【搜索】-【导入文件】-【提交】进行短信发送。</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/sms/模板导入.png" width="830" /></p>
+<p>选择具体所需的通道、短信类型以及模板之后，就可以通过导入 txt 或者 csv 格式的文本文件进行发送。文本格式第一列为手机号，2-5 列填变量参数，无变量参数留空，txt 与 csv 需用英文“,”分隔各列。文本格式如下图：</p>
+<p><img src="http://upyun-assets.b0.upaiyun.com/docs/sms/%E5%AF%BC%E5%85%A5%E6%89%8B%E6%9C%BA%E5%8F%B7%E6%A0%B7%E4%BE%8B%E7%95%8C%E9%9D%A2.png" width="830" /></p>
+<p>导入完文件后，点提交即可完成短信发送。</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/sms/导入发送.png" width="830" /></p>
+<p><br></p>
+<h2 id="3">3. 数据统计<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h4 id="31">3.1 短信资源包<a class="headerlink" href="#31" title="Permanent link">&para;</a></h4>
+<p>又拍云短信服务属于预付费服务，需提前购买短信资源包之后方可使用。购买短信资源包之后，金额会自动转化为短信可使用条数。在统计用户短信条数时，若短信发送失败，则不扣除使用条数。</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/sms/总览.png" width="830" /></p>
+<h4 id="32">3.2 报表统计<a class="headerlink" href="#32" title="Permanent link">&para;</a></h4>
+<p>在发送明细中，可以根据所发送短信的手机号、发送状态、时间，查询所有短信的发送状态。</p>
+<p><img src="https://upyun-assets.b0.upaiyun.com/docs/sms/报表.png" width="830" /></p>
+<p><br></p>
+<h2 id="4">4. 常见问题<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>1.&nbsp;短信模板最多支持创建多少个？</p>
+<p>答：单个通道下的模板上限为40个，即普通签名通道与免审签名通道的模板上限各为40个。</p>
+<p>2.&nbsp;短信超出字数如何收费？
+答：每条短信内容（包括但不限于标点符号、英文字符、汉字等）长度为70个字符（包含签名）如发送短信内容超出70个字符，将以每67字符（包括但不限于标点符号、英文字符、汉字等）为一条短信进行累计计费。单条短信字符数最大值为350个字。</p>
+<p>3.&nbsp;短信模板如何创建？
+答：在管理后台【短信服务】-【模板】-【创建模板】中创建。</p>
+<p>4.&nbsp;短信资源包可退款吗？
+答：短信资源包在购买成功后不支持退款，建议您按需购买。</p>
+<p>5.&nbsp;短信发送成功，但实际未能收到短信是什么原因？</p>
+<p>答：</p>
+<p>1）手机是否长时间未关机，可以重启下；</p>
+<p>2）是否是双卡双待手机，换个卡槽试试；</p>
+<p>3）是都安装了安全软件，短信被拦截到垃圾信箱中；</p>
+<p>4）是都处于停机状态；</p>
+<p>5）出于黑名单状态，投诉过运营商，或退订过业务；</p>
+<p>6.&nbsp;短信发送失败，还会扣费吗？</p>
+<p>答：不会，短信发送失败的话不会扣费。</p>
+<p>7.&nbsp;短信支持三网都可发送吗？</p>
+<p>答：支持。</p>
+<p>8.&nbsp;变量中是否可以直接写网站链接？</p>
+<p>答：可以。</p>
+<p><br></p>
+<h2 id="5">5. 接口文档<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h4 id="51">5.1 短信模板新增接口<a class="headerlink" href="#51" title="Permanent link">&para;</a></h4>
+<p><b>接口地址</b></p>
+<pre><code>POST https://sms-api.upyun.com/api/templates
+</code></pre>
+<p><b>参数定义</b></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>Required（必填）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>模板标题(少于12个字)</td>
+<td>✔️</td>
+</tr>
+<tr>
+<td>content</td>
+<td>模板内容（模版签名+模版内容+2少于350个字）</td>
+<td>✔️</td>
+</tr>
+<tr>
+<td>temp_sign</td>
+<td>模版签名（3～8个字）</td>
+<td>✔️</td>
+</tr>
+<tr>
+<td>sign_location</td>
+<td>模版签名位置 (top,bottom)</td>
+<td>✔️</td>
+</tr>
+<tr>
+<td>type</td>
+<td>模板类型 (industry, marketing)</td>
+<td>✔️</td>
+</tr>
+<tr>
+<td>report_type</td>
+<td>审核类型（vip, general）</td>
+<td>✔️</td>
+</tr>
+</tbody>
+</table>
+<p><b>响应</b></p>
+<p>创建成功返回响应码和内容。</p>
+<pre><code>201 Created
+{
+  "title": "title",
+  "temp_sign": "sign",
+  "content": "content",
+  "sign_location": "top",
+  "type": "industry",
+  "status": "review",
+  "updated_at": "2017-04-10T02:58:12.000Z",
+  "report_type": "vip",
+  "id": 4,
+  "owner": {
+    "id": 1,
+    "name": "taevas",
+    "general": 8000,
+    "vip": 0,
+    "industry": 4,
+    "marketing": 0
+  }
+}
+</code></pre>
+<p><b>响应值说明</b></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>模板标题</td>
+</tr>
+<tr>
+<td>temp_sign</td>
+<td>模板签名</td>
+</tr>
+<tr>
+<td>content</td>
+<td>模板内容</td>
+</tr>
+<tr>
+<td>status</td>
+<td>模板状态（审核中、通过、失败)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>短信类型(营销、行业)</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>report_type</td>
+<td>审核类型（免签, 普通）</td>
+</tr>
+<tr>
+<td>id</td>
+<td>模板编号</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>创建者信息</td>
+</tr>
+<tr>
+<td>owner.id</td>
+<td>用户编号</td>
+</tr>
+<tr>
+<td>owner.name</td>
+<td>用户昵称</td>
+</tr>
+<tr>
+<td>owner.general</td>
+<td>普通短信剩余条数</td>
+</tr>
+<tr>
+<td>owner.vip</td>
+<td>免签短信剩余条数</td>
+</tr>
+<tr>
+<td>owner.industry</td>
+<td>已发送行业短信条数</td>
+</tr>
+<tr>
+<td>owner.marketing</td>
+<td>已发送营销短信条数</td>
+</tr>
+</tbody>
+</table>
+<p><b>请求示例</b></p>
+<pre><code>POST https://sms-api.upyun.com/api/templates HTTP/1.1
+Authorization: &lt;your token&gt;
+{
+  "title": "title",
+  "content": "content",
+  "temp_sign": "sign",
+  "sign_location": "top",
+  "type": "industry",
+  "report_type": "vip"
+}
+</code></pre>
+<h4 id="52">5.2 短信模板删除接口<a class="headerlink" href="#52" title="Permanent link">&para;</a></h4>
+<p><b>接口地址</b></p>
+<pre><code>DELETE https://sms-api.upyun.com/api/templates/{template_id}
+</code></pre>
+<p><b>参数定义</b></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>Required（必填）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>template_id</td>
+<td>模板编号</td>
+<td>✔️</td>
+</tr>
+</tbody>
+</table>
+<p><b>响应</b></p>
+<pre><code>204 No Content
+</code></pre>
+<p><b>请求示例</b></p>
+<pre><code>DELETE https://sms-api.upyun.com/api/templates/4
+Authorization: &lt;your token&gt;
+</code></pre>
+<h4 id="53">5.3 短信模板修改接口<a class="headerlink" href="#53" title="Permanent link">&para;</a></h4>
+<p><b>接口地址</b></p>
+<pre><code>PATCH /api/templates/{template_id}
+</code></pre>
+<p><b>参数定义</b></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>Required（必填）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>template_id</td>
+<td>模板编号</td>
+<td>✔️</td>
+</tr>
+<tr>
+<td>title</td>
+<td>模板标题(少于12个字)</td>
+<td></td>
+</tr>
+<tr>
+<td>content</td>
+<td>模板内容（模版签名+模版内容+2少于350个字）</td>
+<td></td>
+</tr>
+<tr>
+<td>temp_sign</td>
+<td>模版签名（3～8个字）</td>
+<td></td>
+</tr>
+<tr>
+<td>sign_location</td>
+<td>模版签名位置 (top,bottom)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><b>响应</b></p>
+<pre><code>200 OK
+{
+  "title": "hello",
+  "temp_sign": "sign",
+  "content": "content",
+  "sign_location": "top",
+  "type": "industry",
+  "status": "review",
+  "updated_at": "2017-04-10T03:31:18.000Z",
+  "id": 3,
+  "report_type": "vip",
+  "owner": {
+    "id": 1,
+    "name": "taevas",
+    "general": 8000,
+    "vip": 0,
+    "industry": 4,
+    "marketing": 0
+  }
+}
+</code></pre>
+<p><b>响应值说明</b></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>模板标题</td>
+</tr>
+<tr>
+<td>temp_sign</td>
+<td>模板签名</td>
+</tr>
+<tr>
+<td>content</td>
+<td>模板内容</td>
+</tr>
+<tr>
+<td>status</td>
+<td>模板状态（审核中、通过、失败)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>短信类型(营销、行业)</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>report_type</td>
+<td>审核类型（免签, 普通）</td>
+</tr>
+<tr>
+<td>id</td>
+<td>模板编号</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>创建者信息</td>
+</tr>
+<tr>
+<td>owner.id</td>
+<td>用户编号</td>
+</tr>
+<tr>
+<td>owner.name</td>
+<td>用户昵称</td>
+</tr>
+<tr>
+<td>owner.general</td>
+<td>普通短信剩余条数</td>
+</tr>
+<tr>
+<td>owner.vip</td>
+<td>免签短信剩余条数</td>
+</tr>
+<tr>
+<td>owner.industry</td>
+<td>已发送行业短信条数</td>
+</tr>
+<tr>
+<td>owner.marketing</td>
+<td>已发送营销短信条数</td>
+</tr>
+</tbody>
+</table>
+<p><b>请求示例</b></p>
+<pre><code>PATCH https://sms-api.upyun.com/api/templates/3
+Authorization: &lt;your token&gt;
+{
+  "title": "hello"
+}
+</code></pre>
+<h4 id="54">5.4 查询模板接口<a class="headerlink" href="#54" title="Permanent link">&para;</a></h4>
+<p><b>接口地址</b></p>
+<pre><code>GET https://sms-api.upyun.com/api/templates
+</code></pre>
+<p><b>参数定义</b></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>Required（必填）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>模板状态 (review, success, defeat)</td>
+<td></td>
+</tr>
+<tr>
+<td>type</td>
+<td>模板类型 (industry, marketing)</td>
+<td></td>
+</tr>
+<tr>
+<td>report_type</td>
+<td>审核类型（vip, general）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><b>响应</b></p>
+<pre><code>200 OK
+{
+  "templates": [
+    {
+      "title": "hello",
+      "temp_sign": "sign",
+      "content": "content",
+      "sign_location": "top",
+      "type": "industry",
+      "status": "review",
+      "updated_at": "2017-04-10T03:31:18.000Z",
+      "id": 3,
+      "report_type": "vip",
+      "owner": {
+        "id": 1,
+        "name": "taevas",
+        "general": 8000,
+        "vip": 0,
+        "industry": 4,
+        "marketing": 0
+      }
+    }
+  ]
+}
+</code></pre>
+<p><b>响应值说明</b></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>模板标题</td>
+</tr>
+<tr>
+<td>temp_sign</td>
+<td>模板签名</td>
+</tr>
+<tr>
+<td>content</td>
+<td>模板内容</td>
+</tr>
+<tr>
+<td>status</td>
+<td>模板状态（审核中、通过、失败)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>短信类型(营销、行业)</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>report_type</td>
+<td>审核类型（免签, 普通）</td>
+</tr>
+<tr>
+<td>id</td>
+<td>模板编号</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>创建者信息</td>
+</tr>
+<tr>
+<td>owner.id</td>
+<td>用户编号</td>
+</tr>
+<tr>
+<td>owner.name</td>
+<td>用户昵称</td>
+</tr>
+<tr>
+<td>owner.general</td>
+<td>普通短信剩余条数</td>
+</tr>
+<tr>
+<td>owner.vip</td>
+<td>免签短信剩余条数</td>
+</tr>
+<tr>
+<td>owner.industry</td>
+<td>已发送行业短信条数</td>
+</tr>
+<tr>
+<td>owner.marketing</td>
+<td>已发送营销短信条数</td>
+</tr>
+</tbody>
+</table>
+<p><b>请求示例</b></p>
+<pre><code>GET https://sms-api.upyun.com/api/templates?type=industry&amp;report_type=vip
+Authorization: &lt;your token&gt;
+</code></pre>
+<h4 id="55">5.5 短信发送接口<a class="headerlink" href="#55" title="Permanent link">&para;</a></h4>
+<p><b>接口地址</b></p>
+<pre><code>POST https://sms-api.upyun.com/api/messages
+</code></pre>
+<p><b>参数定义</b></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>Required（必填）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mobile</td>
+<td>手机号，逗号分隔</td>
+<td>✔️</td>
+</tr>
+<tr>
+<td>template_id</td>
+<td>模板编号</td>
+<td>✔️</td>
+</tr>
+<tr>
+<td>vars</td>
+<td>短信参数（以 <code>|</code> 分隔）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><b>响应</b></p>
+<pre><code>200 OK
+{
+  "message_ids": [
+    {
+      "error_code": "ILLEGAL_MOBILE",
+      "mobile": "15757"
+    },
+    {
+      "message_id": 30,
+      "mobile": "15757654321”
+    }
+  ]
+}
+</code></pre>
+<p><b>响应值说明</b></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message_ids</td>
+<td>给所有手机号发送短信的结果</td>
+</tr>
+<tr>
+<td>error_code</td>
+<td>错误情况</td>
+</tr>
+<tr>
+<td>message_id</td>
+<td>message 编号</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>手机号</td>
+</tr>
+</tbody>
+</table>
+<p><b>请求示例</b></p>
+<pre><code>POST https://sms-api.upyun.com/api/messages
+Authorization: &lt;your token&gt;
+{
+  "template_id": 2,
+  "mobile": "15757,15757654321”
+}
+</code></pre>
+<h4 id="56">5.6 短信报表查询接口<a class="headerlink" href="#56" title="Permanent link">&para;</a></h4>
+<p><b>接口地址</b></p>
+<pre><code>GET https://sms-api.upyun.com/api/messages
+</code></pre>
+<p><b>参数定义</b></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>Required（必填）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date</td>
+<td>日期</td>
+<td></td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>手机号</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>消息发送的状态</td>
+<td></td>
+</tr>
+<tr>
+<td>page</td>
+<td>页码</td>
+<td></td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>每页显示数量</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><b>响应</b></p>
+<pre><code>200 OK
+{
+  "messages": [
+    {
+      "id": 4,
+      "template_id": 2,
+      "report_type": "vip",
+      "title": "测试测试",
+      "type": "industry",
+      "content": "hello，hello",
+      "temp_sign": "落子時",
+      "mobile": "15757654321”,
+      "sent_at": null,
+      "created_at": "2017-04-07T08:47:37.000Z",
+      "status": "processing",
+      "quantity": 1,
+      "owner": {
+        "id": 1,
+        "name": "taevas",
+        "general": 8000,
+        "vip": 0,
+        "industry": 4,
+        "marketing": 0
+      }
+    }
+    {
+      "id": 2,
+      "template_id": 2,
+      "report_type": "vip",
+      "title": "测试测试",
+      "type": "industry",
+      "content": "hello，hello【落子時】",
+      "temp_sign": "落子時",
+      "mobile": "15757123456”,
+      "sent_at": "2017-04-06T08:36:01.000Z",
+      "created_at": "2017-04-06T08:36:00.000Z",
+      "status": "success",
+      "quantity": 1,
+      "owner": {
+        "id": 1,
+        "name": "taevas",
+        "general": 8000,
+        "vip": 0,
+        "industry": 4,
+        "marketing": 0
+      }
+    }
+  ],
+  "total": 2
+}
+</code></pre>
+<p><b>响应值说明</b></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>短信编号</td>
+</tr>
+<tr>
+<td>template_id</td>
+<td>模板编号</td>
+</tr>
+<tr>
+<td>report_type</td>
+<td>审核类型</td>
+</tr>
+<tr>
+<td>title</td>
+<td>模板标题</td>
+</tr>
+<tr>
+<td>type</td>
+<td>短信类型(营销、行业)</td>
+</tr>
+<tr>
+<td>content</td>
+<td>模板内容</td>
+</tr>
+<tr>
+<td>temp_sign</td>
+<td>模板签名</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td>sent_at</td>
+<td>发送时间</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td>status</td>
+<td>短信发送状态</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>创建者信息</td>
+</tr>
+<tr>
+<td>owner.id</td>
+<td>用户编号</td>
+</tr>
+<tr>
+<td>owner.name</td>
+<td>用户昵称</td>
+</tr>
+<tr>
+<td>owner.general</td>
+<td>普通短信剩余条数</td>
+</tr>
+<tr>
+<td>owner.vip</td>
+<td>免签短信剩余条数</td>
+</tr>
+<tr>
+<td>owner.industry</td>
+<td>已发送行业短信条数</td>
+</tr>
+<tr>
+<td>owner.marketing</td>
+<td>已发送营销短信条数</td>
+</tr>
+</tbody>
+</table>
+<p><b>请求示例</b></p>
+<pre><code>curl -H "Authorization: &lt;your token&gt;" https://sms-api.upyun.com/api/messages?mobile=15757654321
+</code></pre>
+<h2 id="6">6. 错误码<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h4 id="61">6.1 错误码列表<a class="headerlink" href="#61" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>错误码</th>
+<th>说明</th>
+<th>状态码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INVALID_FILE</td>
+<td>文件不存在或大小格式不符合规范</td>
+<td>400</td>
+</tr>
+<tr>
+<td>MISSING_PARAMETER</td>
+<td>必填项为空</td>
+<td>400</td>
+</tr>
+<tr>
+<td>INVALID_CREDENTIALS</td>
+<td>无效的认证</td>
+<td>401</td>
+</tr>
+<tr>
+<td>REQUIRE_TEMPLATE_OWNER</td>
+<td>没有模板的权限</td>
+<td>403</td>
+</tr>
+<tr>
+<td>REQUIRE_SIGNATURE_OWNER</td>
+<td>没有签名的权限</td>
+<td>403</td>
+</tr>
+<tr>
+<td>USER_NOT_FOUND</td>
+<td>用户不存在</td>
+<td>404</td>
+</tr>
+<tr>
+<td>TEMPLATE_NOT_FOUND</td>
+<td>模板不存在</td>
+<td>404</td>
+</tr>
+<tr>
+<td>NOT_FOUND</td>
+<td>页面不存在</td>
+<td>404</td>
+</tr>
+<tr>
+<td>INSUFFICIENT_FUNDS</td>
+<td>短信额度不足，请充值</td>
+<td>409</td>
+</tr>
+<tr>
+<td>MOBILE_LIMIT</td>
+<td>手机号数量上限</td>
+<td>409</td>
+</tr>
+<tr>
+<td>ILLEGAL_MOBILE</td>
+<td>手机号无效</td>
+<td>409</td>
+</tr>
+<tr>
+<td>ILLEGAL_PARAMER</td>
+<td>参数无效</td>
+<td>409</td>
+</tr>
+<tr>
+<td>TEMPLATE_LIMIT</td>
+<td>模板数量达到上限</td>
+<td>409</td>
+</tr>
+<tr>
+<td>TEMPLATE_AUDITING</td>
+<td>模板正在审核，无法使用</td>
+<td>409</td>
+</tr>
+<tr>
+<td>TEMPLATE_NOT_AUDITED</td>
+<td>模板未审核</td>
+<td>409</td>
+</tr>
+<tr>
+<td>ILLEGAL_SIGNATURE</td>
+<td>模版签名长度不合法，必须为3～8个字</td>
+<td>409</td>
+</tr>
+<tr>
+<td>ILLEGAL_TITLE</td>
+<td>模版标题长度不合法，必须小于12个字</td>
+<td>409</td>
+</tr>
+<tr>
+<td>TEMPLATE_FAILED</td>
+<td>模板审核失败，请重新提交</td>
+<td>409</td>
+</tr>
+<tr>
+<td>ILLEGAL_CONTENT_LENGTH</td>
+<td>模版内容长度不合法，签名+内容必须小于348个字</td>
+<td>409</td>
+</tr>
+<tr>
+<td>ILLEGAL_REPORT_TYPE</td>
+<td>无效的审核类型</td>
+<td>409</td>
+</tr>
+<tr>
+<td>ILLEGAL_TEMPLATE_ID</td>
+<td>无效的模板编号</td>
+<td>422</td>
+</tr>
+<tr>
+<td>SMS_SYSTEM_ERROR</td>
+<td>SMS 服务异常</td>
+<td>500</td>
+</tr>
+<tr>
+<td>SYSTEM_ERROR</td>
+<td>系统错误</td>
+<td>500</td>
+</tr>
+</tbody>
+</table>
+<h4 id="62">6.2 错误码响应<a class="headerlink" href="#62" title="Permanent link">&para;</a></h4>
+<pre><code>400 Bad Request
+{
+  “error_code”: “INVALID_FILE”,
+  “message”: “文件不存在或大小格式不符合规范”
+}
+</code></pre>
+<h4 id="63">6.3 响应说明<a class="headerlink" href="#63" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>状态码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>error_code</td>
+<td>仅出现在错误码列表中</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>额外的描述，不与错误码列表中的说明相匹配</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="7">7. 发送失败原因查询<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<p>因运营商各个网关针对错误码定义不同, 返回的含义也不尽相同所以该错原因查询均为经验值, 仅供参考。</p>
+<p>如需了解详细原因，请联系客服。</p>
+<p>附件：<a href="http://up-static.b0.upaiyun.com/sms/发送失败原因查询.xlsx">发送原因查询列表</a></p>
+<h2 id="8">8. 常用语言示例代码<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<p>PHP 发送示例代码</p>
+<pre><code class="language-php">&lt;?php
+// 注意：需要替换这里的请求参数和 $options['http']['header'] 中的 token
+$msg['mobile']='135xxxxxxxx'; // 必填参数，多个手机号使用逗号分隔
+$msg['template_id'] = 1;  // 必填参数，短信模板 ID
+$msg['vars'] = 'a|b'; // 选填参数，模板变量
+
+$url = 'https://sms-api.upyun.com/api/messages';
+
+$options = array(
+    'http' =&gt; array(
+        'header'  =&gt; &quot;Content-type: application/x-www-form-urlencoded\r\nAuthorization: &lt;YOUR_TOKEN&gt;&quot;,
+        'method'  =&gt; 'POST',
+        'content' =&gt; http_build_query($msg)
+    )
+);
+$context  = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+</code></pre>
+<p>JAVA 发送示例代码</p>
+<pre><code class="language-java">URL url = new URL(&quot;https://sms-api.upyun.com/api/messages&quot;);
+
+//设置 JSON 参数
+JSONObject object = new JSONObject();
+object.put(&quot;template_id&quot;, 1);
+object.put(&quot;mobile&quot;, &quot;135xxxxxxxx&quot;);
+
+HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+// 设置必要参数
+conn.setConnectTimeout(10000);
+conn.setUseCaches(false);
+conn.setDoOutput(true);
+conn.setRequestMethod(&quot;POST&quot;);
+conn.setRequestProperty(&quot;Connection&quot;, &quot;Keep-Alive&quot;);
+conn.setRequestProperty(&quot;Authorization&quot;, &quot;&lt;YOUR_TOKEN&gt;&quot;);
+conn.setRequestProperty(&quot;Content-type&quot;, &quot;application/json&quot;);
+
+// 创建链接
+conn.connect();
+OutputStream os = conn.getOutputStream();
+os.write(object.toString().getBytes(&quot;UTF-8&quot;));
+
+//Gets the status code from an HTTP response message
+int code = conn.getResponseCode();
+
+InputStreamReader reader = new InputStreamReader(conn.getInputStream());
+BufferedReader br = new BufferedReader(reader);
+char[] chars = new char[1024];
+int length = 0;
+StringBuilder result = new StringBuilder();
+while ((length = br.read(chars)) != -1) {
+    result.append(chars, 0, length);
+}
+System.out.println(&quot;code:&quot; + code + &quot;::&quot; + result.toString());
+</code></pre></div>
+        </div>
+
+        
+
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/prettify.min.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

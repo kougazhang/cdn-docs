@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/api/errno/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>API 错误码表</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/">产品简介</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/quick_start/">快速入门</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_guide/">开发者指南</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/rest_api/">REST API</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/form_api/">FORM API</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_tools/">开发者工具</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/sdk/">SDK 使用文档</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/fusion_storage/">融合云存储</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/multipart_upload/">分块上传（已弃用）</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="api/errno/">API 错误码表</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">概述</a></li>
+                    
+                  
+                    <li class=""><a href="#api">API 错误码表</a></li>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/purge/">缓存刷新</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/small_program/">微信小程序</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="mobile-stats/">移动流量</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="sms/">短信服务</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>API 错误码表</h1>
+
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>API 请求失败时，服务端会返回一个 JSON 格式的响应体。它可以用于定位具体错误原因。如：</p>
+<pre><code>{&quot;msg&quot;: &quot;file or directory not found&quot;, &quot;code&quot;: 40400001, &quot;id&quot;: &quot;11e4a729d24943409933a5e8314cd32e&quot;}
+</code></pre>
+<p>** 字段说明 **</p>
+<ul>
+<li><code>code</code>：错误码。具体含义见 <a href="#api">API 错误码表</a>。</li>
+<li><code>msg</code>：错误的简单描述。</li>
+<li><code>id</code>：又拍云为该请求生成的唯一 ID。</li>
+</ul>
+<hr />
+<h2 id="api">API 错误码表<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<p>如遇 5xx 错误，请反馈给<a href="https://www.upyun.com/contact">售后</a>或您的商务经理。</p>
+<table>
+<thead>
+<tr>
+<th>HTTP 状态码</th>
+<th>返回代码</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>40001000</td>
+<td>wrong uri</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001001</td>
+<td>wrong content-md5</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001002</td>
+<td>wrong content-length</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001003</td>
+<td>meta invalid</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001004</td>
+<td>folder args invalid</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001005</td>
+<td>iter args invalid</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001006</td>
+<td>type invalid</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001007</td>
+<td>block invalid</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001008</td>
+<td>list type not support</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001009</td>
+<td>invalid update time</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001011</td>
+<td>invalid append position</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001021</td>
+<td>invalid utf8 key</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001022</td>
+<td>wrong multipart action</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001023</td>
+<td>wrong multipart uuid</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001024</td>
+<td>wrong multipart type</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001025</td>
+<td>wrong multipart length</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001027</td>
+<td>wrong multipart size</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001030</td>
+<td>wrong multipart part id</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001031</td>
+<td>duplicate multipart part</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001032</td>
+<td>oversize multipart part</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001033</td>
+<td>overflow multipart part</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001034</td>
+<td>unexpect multipart length</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001035</td>
+<td>notfound multipart uuid</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001036</td>
+<td>completed multipart</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001037</td>
+<td>incomplete multipart parts</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001038</td>
+<td>invalid append file</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001041</td>
+<td>request wrong type</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001042</td>
+<td>request wrong timestamp</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001043</td>
+<td>request wrong column</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001044</td>
+<td>request wrong list</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001045</td>
+<td>not found</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001046</td>
+<td>wrong length</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001047</td>
+<td>wrong check column</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001051</td>
+<td>encode data error</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001052</td>
+<td>decode data error</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001055</td>
+<td>put and check error</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40001161</td>
+<td>wrong range</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40010001</td>
+<td>not enough arguments</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40010002</td>
+<td>url not allowed</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40010003</td>
+<td>tasks number error</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40010029</td>
+<td>only 1~10 tasks supported in get</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40010033</td>
+<td>decode tasks error</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011001</td>
+<td>invalid x-gmkerl-type</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011002</td>
+<td>invalid x-gmkerl-value</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011003</td>
+<td>invalid x-gmkerl-unsharp</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011004</td>
+<td>invalid x-gmkerl-quality</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011005</td>
+<td>invalid x-gmkerl-exif-switch</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011006</td>
+<td>invalid x-gmkerl-gifto</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011007</td>
+<td>invalid x-gmkerl-webp</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011008</td>
+<td>invalid x-gmkerl-format</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011009</td>
+<td>invalid x-gmkerl-crop</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011010</td>
+<td>invalid x-gmkerl-rotate</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011011</td>
+<td>invalid x-gmkerl-gaussblur</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011012</td>
+<td>invalid x-gmkerl-compress</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011013</td>
+<td>invalid x-gmkerl-progressive</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011014</td>
+<td>invalid x-gmkerl-noicc</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011015</td>
+<td>invalid x-gmkerl-watermark-switch</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011016</td>
+<td>invalid x-gmkerl-watermark-align</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011017</td>
+<td>invalid x-gmkerl-watermark-margin</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011018</td>
+<td>invalid x-gmkerl-watermark-opacity</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011019</td>
+<td>invalid x-gmkerl-watermark-animate</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011020</td>
+<td>invalid x-gmkerl-watermark-font</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011021</td>
+<td>invalid x-gmkerl-watermark-text</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011022</td>
+<td>invalid x-gmkerl-watermark-color</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011023</td>
+<td>invalid x-gmkerl-watermark-border</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011024</td>
+<td>invalid x-gmkerl-watermark-size</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011025</td>
+<td>invalid x-gmkerl-gradient-orientation</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011026</td>
+<td>invalid x-gmkerl-gradient-pos</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011027</td>
+<td>invalid x-gmkerl-gradient-startcolor</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011028</td>
+<td>invalid x-gmkerl-gradient-stopcolor</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011029</td>
+<td>invalid x-gmkerl-extract-func</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011030</td>
+<td>invalid x-gmkerl-extract-color-count</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011031</td>
+<td>invalid x-gmkerl-extract-offset</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011032</td>
+<td>invalid x-gmkerl-extract-palette</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011033</td>
+<td>invalid x-gmkerl-canvas</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011034</td>
+<td>invalid x-gmkerl-canvas-color</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011035</td>
+<td>invalid param in thumb</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011050</td>
+<td>invalid app name</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011051</td>
+<td>invalid x-upyun-part-id</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011052</td>
+<td>invalid x-upyun-multi-length</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011053</td>
+<td>invalid x-upyun-multi-type</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011054</td>
+<td>invalid x-upyun-part-size</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011055</td>
+<td>invalid invalid multipart stage</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011056</td>
+<td>invalid invalid x-upyun-multi-uuid</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011057</td>
+<td>invalid UTF8 Key</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011058</td>
+<td>invalid x-upyun-multi-uuid not found</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011059</td>
+<td>file already upload</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011060</td>
+<td>file md5 not match</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011061</td>
+<td>part id error</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011062</td>
+<td>part already complete</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011091</td>
+<td>invalid app name</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40011092</td>
+<td>invalid file ttl</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000000</td>
+<td>storage bad request</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000001</td>
+<td>need save-key</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000002</td>
+<td>need body</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000003</td>
+<td>need bucket name</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000004</td>
+<td>need expiration</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000005</td>
+<td>need file</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000006</td>
+<td>content md5 not match</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000007</td>
+<td>need policy</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000008</td>
+<td>need signature</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000009</td>
+<td>decode policy error</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000010</td>
+<td>data too long for ext-param</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000011</td>
+<td>chunked request bodies not supported yet</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000012</td>
+<td>write file to fs error</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000013</td>
+<td>need content-md5 but no body provided</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000014</td>
+<td>need content-md5 but no content provided</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000015</td>
+<td>missing required arguments</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000016</td>
+<td>missing file_hash argument</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000017</td>
+<td>missing file_blocks argument</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000018</td>
+<td>too many file blocks</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000019</td>
+<td>missing file_size argument</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000020</td>
+<td>missing save_token argument</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000021</td>
+<td>missing block_index argument</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000022</td>
+<td>missing block_hash argument</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000023</td>
+<td>block already exists</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000024</td>
+<td>block not finished</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000025</td>
+<td>file size not match</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000026</td>
+<td>block index out of range</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000027</td>
+<td>block size too small, at least 100KB</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000028</td>
+<td>block size too large, at most 5MB</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000029</td>
+<td>save-key encoding should be utf8</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000030</td>
+<td>path encoding should be utf8</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000031</td>
+<td>filename should be utf8</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000032</td>
+<td>ffmpeg args error</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000033</td>
+<td>failed to read firstchunk</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000034</td>
+<td>client error</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000035</td>
+<td>need purge body</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000036</td>
+<td>uri bucket must be same as param bucket</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000037</td>
+<td>unknown service</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000038</td>
+<td>no boundary defined in Content-Type</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000039</td>
+<td>Content-Length is equal to 0</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000040</td>
+<td>source bucket not equal target bucket</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000041</td>
+<td>source key equals to target key</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000042</td>
+<td>source key wrong</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000043</td>
+<td>wrong metadata directive</td>
+</tr>
+<tr>
+<td>400</td>
+<td>40000044</td>
+<td>need metadata</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100001</td>
+<td>need date header</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100002</td>
+<td>date offset error</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100003</td>
+<td>unknown realm in authorization header</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100004</td>
+<td>need authorization header</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100005</td>
+<td>signature error</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100006</td>
+<td>user not exists</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100007</td>
+<td>user blocked</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100008</td>
+<td>user blocked in this bucket</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100009</td>
+<td>user password error</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100010</td>
+<td>account not exist</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100011</td>
+<td>account blocked</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100012</td>
+<td>bucket not exist</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100013</td>
+<td>bucket blocked</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100014</td>
+<td>bucket removed</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100015</td>
+<td>bucket read only</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100016</td>
+<td>invalid date value in header</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100017</td>
+<td>user need permission</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100018</td>
+<td>account inactivate</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100019</td>
+<td>account forbidden</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100020</td>
+<td>account reject</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100021</td>
+<td>overdue account</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100022</td>
+<td>uri prefix error</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100023</td>
+<td>uri postfix error</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100024</td>
+<td>expire error</td>
+</tr>
+<tr>
+<td>401</td>
+<td>40100025</td>
+<td>auth error</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300001</td>
+<td>file name contains invalid chars (\r\n\t)</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300002</td>
+<td>file path too long</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300003</td>
+<td>file name too long</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300004</td>
+<td>bucket is full</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300005</td>
+<td>directory not empty</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300006</td>
+<td>authorization has expired</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300007</td>
+<td>content md5 not match</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300008</td>
+<td>file too small</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300009</td>
+<td>file too large</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300010</td>
+<td>file type error</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300011</td>
+<td>has no permission to delete</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300012</td>
+<td>need content-type</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300013</td>
+<td>form api disabled</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300014</td>
+<td>order must be asc or desc</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300015</td>
+<td>path is not a file, maybe a directory</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300016</td>
+<td>content-secret only accept [a-zA-Z0-9]</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300017</td>
+<td>no thumb setting found for bucket</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300018</td>
+<td>not an image</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300019</td>
+<td>image width too small or too big</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300020</td>
+<td>image height too small or too big</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300021</td>
+<td>image limit exceeded</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300022</td>
+<td>invalid image-width-range</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300023</td>
+<td>invalid image-height-range</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300024</td>
+<td>exceed max size</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300025</td>
+<td>wrong content-type header</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300026</td>
+<td>need content-length header</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300027</td>
+<td>request body too big</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300028</td>
+<td>request has expired</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300029</td>
+<td>purge too much items</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300030</td>
+<td>wrong content-length header</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300031</td>
+<td>only support that list flat files by bucket's root folder</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300032</td>
+<td>start time format error</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300033</td>
+<td>end time format error</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300034</td>
+<td>start time bigger than end time</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40300035</td>
+<td>content-length of policy format error</td>
+</tr>
+<tr>
+<td>403</td>
+<td>40310007</td>
+<td>Binded domain and source domain can't be the same</td>
+</tr>
+<tr>
+<td>404</td>
+<td>40400001</td>
+<td>file or directory not found</td>
+</tr>
+<tr>
+<td>404</td>
+<td>40400002</td>
+<td>base64 decoded err</td>
+</tr>
+<tr>
+<td>404</td>
+<td>40401004</td>
+<td>Not found, mark as deleted</td>
+</tr>
+<tr>
+<td>404</td>
+<td>40401005</td>
+<td>Not found, block deleted</td>
+</tr>
+<tr>
+<td>404</td>
+<td>40401006</td>
+<td>type invalid</td>
+</tr>
+<tr>
+<td>406</td>
+<td>40600001</td>
+<td>dir not acceptable</td>
+</tr>
+<tr>
+<td>406</td>
+<td>40600002</td>
+<td>folder already exists</td>
+</tr>
+<tr>
+<td>406</td>
+<td>40600003</td>
+<td>single-copy bucket not support form api</td>
+</tr>
+<tr>
+<td>406</td>
+<td>40600004</td>
+<td>single-copy bucket not support breakpoint resume</td>
+</tr>
+<tr>
+<td>408</td>
+<td>40800001</td>
+<td>read client request timeout</td>
+</tr>
+<tr>
+<td>412</td>
+<td>41200001</td>
+<td>precondition failed</td>
+</tr>
+<tr>
+<td>413</td>
+<td>41300001</td>
+<td>content length too large</td>
+</tr>
+<tr>
+<td>415</td>
+<td>41500001</td>
+<td>media type error, need content-type</td>
+</tr>
+<tr>
+<td>429</td>
+<td>42900001</td>
+<td>too many requests</td>
+</tr>
+<tr>
+<td>429</td>
+<td>42900002</td>
+<td>too many requests of the same uri</td>
+</tr>
+<tr>
+<td>429</td>
+<td>42900003</td>
+<td>too many requests of the same bucket</td>
+</tr>
+<tr>
+<td>429</td>
+<td>42900004</td>
+<td>request banned</td>
+</tr>
+<tr>
+<td>429</td>
+<td>42900005</td>
+<td>bandwidth limit</td>
+</tr>
+<tr>
+<td>429</td>
+<td>42900006</td>
+<td>too many auth check</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300000</td>
+<td>unknown error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300001</td>
+<td>write hub failed</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300002</td>
+<td>decode error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300003</td>
+<td>ffmpeg error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300006</td>
+<td>get hub error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300007</td>
+<td>capture file from fs error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300008</td>
+<td>delete hub error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300009</td>
+<td>get body temp file error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300010</td>
+<td>read body temp file error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300011</td>
+<td>capture file from ffmpeg error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300012</td>
+<td>service error in thumb</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300013</td>
+<td>put file capture timeout</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300014</td>
+<td>get client socket error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300015</td>
+<td>decode image info error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300016</td>
+<td>get image info error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300017</td>
+<td>failed to new md5</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300018</td>
+<td>failed to new form</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300020</td>
+<td>put file capture error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300021</td>
+<td>put capture broken pipe</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300022</td>
+<td>new resource error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300023</td>
+<td>connect to db error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300024</td>
+<td>get master failed</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300025</td>
+<td>write info error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300026</td>
+<td>get data error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300027</td>
+<td>put file to fs error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300028</td>
+<td>get file from fs error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300029</td>
+<td>unknow error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300030</td>
+<td>upstream closed connection</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300031</td>
+<td>read upstream timeout</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300032</td>
+<td>wrong data</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300033</td>
+<td>new resource error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300034</td>
+<td>get info errors</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300035</td>
+<td>decode hub body error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300036</td>
+<td>send to message queue error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300038</td>
+<td>failed to new http</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300039</td>
+<td>failed to get client body reader</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300040</td>
+<td>wrong config</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300041</td>
+<td>connect to database error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300042</td>
+<td>delete path error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300043</td>
+<td>put task to message queue error</td>
+</tr>
+<tr>
+<td>503</td>
+<td>50300044</td>
+<td>avalon list dir error</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>如有疑问请 <a href="https://www.upyun.com/contact">联系我们</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/ai/audit/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>内容识别(有存储)</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="active">
+                <a class="itm-l1" href="ai/audit/">内容识别(有存储)</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">快速入门</a></li>
+                    
+                  
+                    <li class=""><a href="#_2">开发者指南</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">图片</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_7">视频点播</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_11">视频直播</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_14">状态码表</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_15">准确率</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_16">色情识别</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_17">图片</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_18">视频点播</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_19">视频直播</a></li>
+                      </ul>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/audit_nostorage/">内容识别(无存储)</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/api_console/">内容处理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/face_detect/">人脸识别</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>内容识别(有存储)</h1>
+
+<h2 id="_1">快速入门<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>内容识别(有存储)基于云存储服务，非结构化数据会放在云存储，或直接从云存储上读取数据，您在使用它之前，请确保您已经注册又拍云账号并完成实名验证，请确保您已经创建<a href="/api/quick_start/">云存储服务</a>和开通内容识别服务。</p>
+<p>收费方面，收费，支持免费试用，详情敬请<a href="https://www.upyun.com/products/audit#section-pricing">联系商务</a>。</p>
+<hr />
+<h2 id="_2">开发者指南<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">图片<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><a name="image_upload_process"></a></p>
+<h4 id="_4">上传预处理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p><img alt="上传预处理" src="http://uprocess.b0.upaiyun.com/docs/cloud/audit.png" /></p>
+<p>在上传图片时，提供预处理参数。待图片上传完成后，自动进行异步处理，处理完成后，回调通知用户处理结果。</p>
+<p>支持的 API： <a href="/api/form_api/#upload_args">FORM API</a>。</p>
+<p>参数名是 <code>apps</code>，参数值是 JSON 字符串。一个 <code>apps</code> 最多只允许包含一个任务。</p>
+<p>** apps 参数结构 **</p>
+<pre><code>apps = [
+    {
+        &quot;name&quot;: &quot;imgaudit&quot;,                         // 异步任务名称，imgaudit 表示图片识别
+        &quot;notify_url&quot;: &quot;&lt;notify_url&gt;&quot;                // 回调地址，不填时使用上传参数中的 notify_url
+    }
+]
+</code></pre>
+<p>** 回调通知 **</p>
+<p>任务处理完成后，向 <code>notify_url</code> 地址发送回调通知。详见「<a href="#image_notify_url">回调通知</a>」。</p>
+<hr />
+<p><a name="image_submit_task"></a></p>
+<h4 id="_5">云存储中的图片处理<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>** 请求方法 **</p>
+<p>对已经存在云存储中的图片，以 <code>POST</code> 方法向 <code>http://p0.api.upyun.com/pretreatment/</code> 提交处理任务，响应中返回任务 <code>task_id</code>。任务以异步的方式处理，处理完成后，回调通知用户处理结果。</p>
+<pre><code>curl -X POST \
+    http://p0.api.upyun.com/pretreatment/ \
+    -H &quot;Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -H &quot;Date: &lt;Wed, 29 Oct 2014 02:26:58 GMT&gt;&quot; \
+    -H &quot;Content-MD5: &lt;Content-MD5&gt;&quot; \
+    -d &quot;service=&lt;service&gt;&quot; \
+    -d &quot;notify_url=&lt;notify_url&gt;&quot; \
+    -d &quot;app_name=&lt;app_name&gt;&quot; \
+    -d &quot;tasks=&lt;base64 编码后的任务字符串&gt;&quot;
+</code></pre>
+<p>** 认证鉴权 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<p>** 请求参数 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>是</td>
+<td>图片所在的服务名</td>
+</tr>
+<tr>
+<td>notify_url</td>
+<td>string</td>
+<td>是</td>
+<td>回调通知地址，详见<a href="#image_notify_url">回调通知</a></td>
+</tr>
+<tr>
+<td>tasks</td>
+<td>string</td>
+<td>是</td>
+<td>任务信息，详见 <a href="#image_tasks">tasks 参数说明</a></td>
+</tr>
+<tr>
+<td>app_name</td>
+<td>string</td>
+<td>是</td>
+<td>处理功能，<code>imgaudit</code> 表示图片识别</td>
+</tr>
+</tbody>
+</table>
+<p><a name="image_tasks"></a>
+** tasks 参数说明 **</p>
+<p>1. 按 JSON 格式组装任务，一次请求 <code>tasks</code> 最多可以提交 10 个任务。</p>
+<pre><code>[
+    {
+        &quot;source&quot;: &quot;/upyun.jpg&quot;,     // 需要审核的图片
+    },
+    …
+]
+</code></pre>
+<p>2. 把 JSON 字符串 Base64 编码，得到 <code>tasks</code>。</p>
+<p>** 响应信息 **</p>
+<ul>
+<li>任务提交成功：返回 <code>200</code>，响应体是一组按任务提交先后顺序排序的 <code>task_id</code>。例如：</li>
+</ul>
+<pre><code>[
+    &quot;35f0148d414a688a275bf915ba7cebb2&quot;,
+    &quot;98adbaa52b2f63d6d7f327a0ff223348&quot;,
+    &quot;c3103189fa906a5354d29bd807e8dc51&quot;,
+    …
+]
+</code></pre>
+<ul>
+<li>任务提交失败：返回相应的出错信息，具体请参阅「<a href="#status">状态码表</a>」。</li>
+</ul>
+<p>** 回调通知 **</p>
+<p>任务处理完成后，向 <code>notify_url</code> 地址发送回调通知。详见「<a href="#image_notify_url">回调通知</a>」。</p>
+<hr />
+<p><a name="image_notify_url"></a></p>
+<h4 id="_6">回调通知<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>任务处理完成后，向 <code>notify_url</code> 发送 <code>HTTP POST</code> 请求，请求体是回调信息。</p>
+<pre><code>curl -X POST \
+    &lt;notify_url&gt; \
+    -H &quot;Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -H &quot;Date: &lt;Wed, 29 Oct 2014 02:26:58 GMT&gt;&quot; \
+    -H &quot;Content-MD5: &lt;Content-MD5&gt;&quot; \
+    -d &quot;service=&lt;service&gt;&quot; \
+    # 其他参数...
+</code></pre>
+<p>** 回调信息 **</p>
+<p>回调信息为 JSON 字符串，参数名及说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>图片所在的服务名</td>
+</tr>
+<tr>
+<td>status_code</td>
+<td>integer</td>
+<td>处理结果状态码，<code>200</code> 表示成功处理，详见<a href="#status">状态码表</a></td>
+</tr>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>图片路径</td>
+</tr>
+<tr>
+<td>result</td>
+<td>json</td>
+<td>识别结果集，包含 <code>porn</code></td>
+</tr>
+<tr>
+<td>porn</td>
+<td>json</td>
+<td>鉴黄结果，包含 <code>label</code>、<code>rate</code>、<code>review</code></td>
+</tr>
+<tr>
+<td>label</td>
+<td>integer</td>
+<td>图片被判定的分类，可能值 <code>0</code>、<code>1</code>、<code>2</code>，<code>0</code> 表示正常，<code>1</code> 表示色情，<code>2</code> 表示性感</td>
+</tr>
+<tr>
+<td>rate</td>
+<td>float</td>
+<td>图片被判定为某个分类的概率，介于 <code>[0-1]</code> 之间</td>
+</tr>
+<tr>
+<td>review</td>
+<td>boolean</td>
+<td>是否需要人工复审，<code>true</code> 表示需要，<code>false</code> 表示不需要</td>
+</tr>
+<tr>
+<td>task_id</td>
+<td>string</td>
+<td>任务对应的 <code>task_id</code></td>
+</tr>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>错误信息，空字符串表示无错误信息</td>
+</tr>
+</tbody>
+</table>
+<p>** 回调签名 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<p>** 举例 **</p>
+<pre><code>{
+    &quot;service&quot;: &quot;upyun-temp&quot;,
+    &quot;status_code&quot;: 200,
+    &quot;source&quot;: &quot;upyun.jpg&quot;,
+    &quot;result&quot;: {
+        &quot;porn&quot;: {
+            &quot;label&quot;: 0,
+            &quot;rate&quot;: 0.9833183288574219,
+            &quot;review&quot;: false
+        }
+    },
+    &quot;task_id&quot;: &quot;7b01610c7fa700b56cd7c80be5e08d5c&quot;,
+    &quot;error&quot;: &quot;&quot;
+}
+</code></pre>
+<hr />
+<h3 id="_7">视频点播<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><a name="video_upload_process"></a></p>
+<h4 id="_8">上传预处理<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p><img alt="上传预处理" src="http://uprocess.b0.upaiyun.com/docs/cloud/audit.png" /></p>
+<p>在上传视频点播时，提供预处理参数。待视频上传完成后，自动进行异步处理，处理完成后，回调通知用户处理结果。</p>
+<p>支持的 API： <a href="/api/form_api/#upload_args">FORM API</a>。</p>
+<p>参数名是 <code>apps</code>，参数值是 JSON 字符串。一个 <code>apps</code> 最多只允许包含一个任务。</p>
+<p>** apps 参数结构 **</p>
+<pre><code>apps = [
+    {
+        &quot;name&quot;: &quot;videoaudit&quot;,           // 异步任务名称，videoaudit 表示点播识别
+        &quot;notify_url&quot;: &quot;&lt;notify_url&gt;&quot;    // 回调地址，不填时使用上传参数中的 notify_url
+        &quot;interval&quot;: 10,                 // 截图间隔周期，非必填
+        &quot;save_as&quot;: &quot;/foo_{index}.jpg&quot;,      // 截图保存路径，非必填
+        &quot;resize&quot;: &quot;640x480&quot;,                // 截图保存尺寸，非必填
+    }
+]
+</code></pre>
+<p><code>interval</code>、<code>save_as</code>、<code>resize</code> 参数解释说明，见 <a href="#video_tasks">tasks 参数说明</a>。</p>
+<p>** 回调通知 **</p>
+<p>任务处理完成后，向 <code>notify_url</code> 地址发送回调通知。详见「<a href="#video_notify_url">回调通知</a>」。</p>
+<hr />
+<p><a name="video_submit_task"></a></p>
+<h4 id="_9">云存储中的视频点播处理<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>** 请求方法 **</p>
+<p>对已经存在云存储中的视频点播，以 <code>POST</code> 方法向 <code>http://p0.api.upyun.com/pretreatment/</code> 提交处理任务，响应中返回任务 <code>task_id</code>。任务以异步的方式处理，处理完成后，回调通知用户处理结果。</p>
+<pre><code>curl -X POST \
+    http://p0.api.upyun.com/pretreatment/ \
+    -H &quot;Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -H &quot;Date: &lt;Wed, 29 Oct 2014 02:26:58 GMT&gt;&quot; \
+    -H &quot;Content-MD5: &lt;Content-MD5&gt;&quot; \
+    -d &quot;service=&lt;service&gt;&quot; \
+    -d &quot;notify_url=&lt;notify_url&gt;&quot; \
+    -d &quot;app_name=&lt;app_name&gt;&quot; \
+    -d &quot;tasks=&lt;base64 编码后的任务字符串&gt;&quot;
+</code></pre>
+<p>** 认证鉴权 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<p>** 请求参数 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>是</td>
+<td>视频点播所在的服务名</td>
+</tr>
+<tr>
+<td>notify_url</td>
+<td>string</td>
+<td>是</td>
+<td>回调通知地址，详见<a href="#video_notify_url">回调通知</a></td>
+</tr>
+<tr>
+<td>tasks</td>
+<td>string</td>
+<td>是</td>
+<td>任务信息，详见 <a href="#video_tasks">tasks 参数说明</a></td>
+</tr>
+<tr>
+<td>app_name</td>
+<td>string</td>
+<td>是</td>
+<td>处理功能，<code>videoaudit</code> 表示点播识别</td>
+</tr>
+</tbody>
+</table>
+<p><a name="video_tasks"></a>
+** tasks 参数说明 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>是</td>
+<td>视频点播的路径</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>integer</td>
+<td>否</td>
+<td>截图间隔时间，默认 <code>10</code>，单位秒</td>
+</tr>
+<tr>
+<td>save_as</td>
+<td>string</td>
+<td>否</td>
+<td>截图保存路径，默认不保存截图 <br /> 支持<a href="/api/form_api/#save-key">动态参数</a>和 <code>{index}</code>(必填)，后缀作为截图格式，支持 <code>jpg</code> 和 <code>png</code></td>
+</tr>
+<tr>
+<td>resize</td>
+<td>string</td>
+<td>否</td>
+<td>截图保存尺寸，默认原图大小，格式宽x高，如 <code>640x480</code></td>
+</tr>
+</tbody>
+</table>
+<p>1. 按 JSON 格式组装任务，一次请求 <code>tasks</code> 最多可以提交 10 个任务。</p>
+<pre><code>[
+    {
+        &quot;source&quot;: &quot;/upyun.mp4&quot;,
+        &quot;save_as&quot;: &quot;/foo_{index}.jpg&quot;,   // {index} 表示第几张截图，第一张是 /foo_1.jpg，第二张是 /foo_2.jpg
+    },
+    …
+]
+</code></pre>
+<p>2. 把 JSON 字符串 Base64 编码，得到 <code>tasks</code>。</p>
+<p>** 响应信息 **</p>
+<ul>
+<li>任务提交成功：返回 <code>200</code>，响应体是一组按任务提交先后顺序排序的 <code>task_id</code>。例如：</li>
+</ul>
+<pre><code>[
+    &quot;35f0148d414a688a275bf915ba7cebb2&quot;,
+    …
+]
+</code></pre>
+<ul>
+<li>任务提交失败：返回相应的出错信息，具体请参阅「<a href="#status">状态码表</a>」。</li>
+</ul>
+<p>** 回调通知 **</p>
+<p>任务处理完成后，向 <code>notify_url</code> 地址发送回调通知。详见「<a href="#video_notify_url">回调通知</a>」。</p>
+<hr />
+<p><a name="video_notify_url"></a></p>
+<h4 id="_10">回调通知<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>任务处理完成后，向 <code>notify_url</code> 发送 <code>HTTP POST</code> 请求，请求体是回调信息。</p>
+<pre><code>curl -X POST \
+    &lt;notify_url&gt; \
+    -H &quot;Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -H &quot;Date: &lt;Wed, 29 Oct 2014 02:26:58 GMT&gt;&quot; \
+    -H &quot;Content-MD5: &lt;Content-MD5&gt;&quot; \
+    -d &quot;service=&lt;service&gt;&quot; \
+    # 其他参数...
+</code></pre>
+<p>** 回调信息 **</p>
+<p>回调信息为 JSON 字符串，参数名及说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task_id</td>
+<td>string</td>
+<td>任务对应的 <code>task_id</code></td>
+</tr>
+<tr>
+<td>status_code</td>
+<td>integer</td>
+<td>处理结果状态码，<code>200</code> 表示成功处理，详见<a href="#status">状态码表</a></td>
+</tr>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>视频点播所在的服务名</td>
+</tr>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>截图保存路径，如果请求参数中未设置 <code>save_as</code>，不存在</td>
+</tr>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>错误信息，空字符串表示无错误信息</td>
+</tr>
+<tr>
+<td>result</td>
+<td>json</td>
+<td>识别结果集，包含 <code>porn</code></td>
+</tr>
+<tr>
+<td>result.porn</td>
+<td>json</td>
+<td>鉴黄结果，包含 <code>label</code>、<code>rate</code>、<code>review</code></td>
+</tr>
+<tr>
+<td>result.porn.label</td>
+<td>integer</td>
+<td>图片被判定的分类，可能值 <code>0</code>、<code>1</code>、<code>2</code>，<code>0</code> 表示正常，<code>1</code> 表示色情，<code>2</code> 表示性感</td>
+</tr>
+<tr>
+<td>result.porn.rate</td>
+<td>float</td>
+<td>图片被判定为某个分类的概率，介于 <code>[0-1]</code> 之间</td>
+</tr>
+<tr>
+<td>result.porn.review</td>
+<td>boolean</td>
+<td>是否需要人工复审，<code>true</code> 表示需要，<code>false</code> 表示不需要</td>
+</tr>
+<tr>
+<td>filelist</td>
+<td>json</td>
+<td>截图集, 为每个时间点的截图审核结果</td>
+</tr>
+<tr>
+<td>filelist.result</td>
+<td>json</td>
+<td>识别结果集，包含 <code>porn</code></td>
+</tr>
+<tr>
+<td>filelist.result.shot_time</td>
+<td>string</td>
+<td>截图时间点</td>
+</tr>
+<tr>
+<td>filelist.result.porn</td>
+<td>json</td>
+<td>鉴黄结果，包含 <code>label</code>、<code>rate</code>、<code>review</code></td>
+</tr>
+<tr>
+<td>filelist.result.porn.label</td>
+<td>integer</td>
+<td>图片被判定的分类，可能值 <code>0</code>、<code>1</code>、<code>2</code>，<code>0</code> 表示正常，<code>1</code> 表示色情，<code>2</code> 表示性感</td>
+</tr>
+<tr>
+<td>filelist.result.porn.rate</td>
+<td>float</td>
+<td>图片被判定为某个分类的概率，介于 <code>[0-1]</code> 之间</td>
+</tr>
+<tr>
+<td>filelist.result.porn.review</td>
+<td>boolean</td>
+<td>是否需要人工复审，<code>true</code> 表示需要，<code>false</code> 表示不需要</td>
+</tr>
+</tbody>
+</table>
+<p>** 回调签名 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<p>** 举例 **</p>
+<pre><code>{
+    &quot;service&quot;: &quot;upyun-temp&quot;,
+    &quot;status_code&quot;: 200,
+    &quot;source&quot;: &quot;upyun.mp4&quot;,
+    &quot;result&quot;: {
+        &quot;porn&quot;: {
+            &quot;label&quot;: 0,
+            &quot;rate&quot;: 0.9833183288574219,
+            &quot;review&quot;: false
+        }
+    },
+    &quot;filelist&quot;: [
+        {
+            &quot;result&quot;: {
+                    &quot;porn&quot;: {
+                    &quot;label&quot;: 0,
+                    &quot;rate&quot;: 0.9833183288574219,
+                    &quot;review&quot;: false
+                }
+            },
+            &quot;shot_time&quot;: 0,
+            &quot;save_as&quot;: &quot;foo_1.jpg&quot;
+        }
+    ],
+    &quot;task_id&quot;: &quot;7b01610c7fa700b56cd7c80be5e08d5c&quot;,
+    &quot;error&quot;: &quot;&quot;
+}
+</code></pre>
+<hr />
+<h3 id="_11">视频直播<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p><a name="live_create"></a></p>
+<h4 id="_12">创建任务<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<p><img alt="直播任务处理流程" src="https://upyun-assets.b0.upaiyun.com/docs/process/live_audit.png" /></p>
+<p>以 <code>POST</code> 方法向 <code>http://p1.api.upyun.com/&lt;service&gt;/liveaudit/create</code> 提交任务，服务收到请求后创建定时任务，获取流最近关键帧，识别并返回结果。特别地，<code>&lt;service&gt;</code> 需替换为具体的服务名。</p>
+<pre><code>curl -X POST \
+    http://p1.api.upyun.com/&lt;service&gt;/liveaudit/create \
+    -H &quot;Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -H &quot;Date: &lt;Wed, 29 Oct 2014 02:26:58 GMT&gt;&quot; \
+    -H &quot;Content-MD5: &lt;Content-MD5&gt;&quot; \
+    -d '{&quot;service&quot;: &quot;&lt;service&gt;&quot;, &quot;source&quot;: &quot;&lt;source&gt;&quot;, &quot;save_as&quot;: &quot;&lt;save_as&gt;&quot;, &quot;notify_url&quot;: &quot;&lt;notify_url&gt;&quot;}'
+</code></pre>
+<p>** 认证鉴权 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<p>** 请求参数 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>是</td>
+<td>图片存储的服务名</td>
+</tr>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>是</td>
+<td>RTMP 流地址，必须以 <code>rtmp://</code> 开头</td>
+</tr>
+<tr>
+<td>save_as</td>
+<td>string</td>
+<td>是</td>
+<td>截图保存地址，支持<a href="/api/form_api/#save-key">动态参数</a>，后缀作为截图格式，支持 <code>jpg</code> 和 <code>png</code></td>
+</tr>
+<tr>
+<td>notify_url</td>
+<td>string</td>
+<td>是</td>
+<td>回调通知地址，详见<a href="#live_notify_url">回调通知</a></td>
+</tr>
+<tr>
+<td>interval</td>
+<td>string</td>
+<td>否</td>
+<td>截图间隔时间，默认 <code>10</code>，单位秒</td>
+</tr>
+<tr>
+<td>resize</td>
+<td>string</td>
+<td>否</td>
+<td>截图保存尺寸，默认原图大小，格式宽x高，如 <code>640x480</code></td>
+</tr>
+</tbody>
+</table>
+<p>** 响应信息 **</p>
+<ul>
+<li>任务提交成功：返回 <code>200</code>，响应体是流最近关键帧的识别结果。例如：</li>
+</ul>
+<pre><code>{
+    &quot;service&quot;: &quot;upyun-temp&quot;,
+    &quot;status_code&quot;: 200,
+    &quot;source&quot;: &quot;upyun.jpg&quot;,
+    &quot;result&quot;: {
+        &quot;porn&quot;: {
+            &quot;label&quot;: 0,
+            &quot;rate&quot;: 0.9833183288574219,
+            &quot;review&quot;: false
+        }
+    },
+    &quot;task_id&quot;: &quot;7b01610c7fa700b56cd7c80be5e08d5c&quot;
+    &quot;error&quot;: &quot;&quot;
+}
+</code></pre>
+<ul>
+<li>任务提交失败：返回相应的出错信息，具体请参阅「<a href="#status">状态码表</a>」。</li>
+</ul>
+<p><a name="live_notify_url"></a>
+** 周期性处理 **</p>
+<p>之后，系统会周期去获取流，并提取最近关键帧进行识别，识别结果向 <code>notify_url</code> 发送 <code>HTTP POST</code> 请求，请求体是回调信息。</p>
+<pre><code>curl -X POST \
+    &lt;notify_url&gt; \
+    -H &quot;Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -H &quot;Date: &lt;Wed, 29 Oct 2014 02:26:58 GMT&gt;&quot; \
+    -H &quot;Content-MD5: &lt;Content-MD5&gt;&quot; \
+    -d &quot;service=&lt;service&gt;&quot; \
+    # 其他参数...
+</code></pre>
+<p>** 回调信息 **</p>
+<p>回调信息为 JSON 字符串，参数名及说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>图片存储的服务名</td>
+</tr>
+<tr>
+<td>status_code</td>
+<td>integer</td>
+<td>处理结果状态码，<code>200</code> 表示成功处理，详见<a href="#status">状态码表</a></td>
+</tr>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>图片路径</td>
+</tr>
+<tr>
+<td>result</td>
+<td>json</td>
+<td>识别结果集，包含 <code>porn</code></td>
+</tr>
+<tr>
+<td>porn</td>
+<td>json</td>
+<td>鉴黄结果，包含 <code>label</code>、<code>rate</code>、<code>review</code></td>
+</tr>
+<tr>
+<td>label</td>
+<td>integer</td>
+<td>图片被判定的分类，可能值 <code>0</code>、<code>1</code>、<code>2</code>，<code>0</code> 表示正常，<code>1</code> 表示色情，<code>2</code> 表示性感</td>
+</tr>
+<tr>
+<td>rate</td>
+<td>float</td>
+<td>图片被判定为某个分类的概率，介于 <code>[0-1]</code> 之间</td>
+</tr>
+<tr>
+<td>review</td>
+<td>boolean</td>
+<td>是否需要人工复审，<code>true</code> 表示需要，<code>false</code> 表示不需要</td>
+</tr>
+<tr>
+<td>task_id</td>
+<td>string</td>
+<td>任务对应的 <code>task_id</code></td>
+</tr>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>错误信息，空字符串表示无错误信息</td>
+</tr>
+</tbody>
+</table>
+<p>** 回调签名 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<p>** 举例 **</p>
+<pre><code>{
+    &quot;service&quot;: &quot;upyun-temp&quot;,
+    &quot;status_code&quot;: 200,
+    &quot;source&quot;: &quot;upyun.jpg&quot;,
+    &quot;result&quot;: {
+        &quot;porn&quot;: {
+            &quot;label&quot;: 0,
+            &quot;rate&quot;: 0.9833183288574219,
+            &quot;review&quot;: false
+        }
+    },
+    &quot;task_id&quot;: &quot;7b01610c7fa700b56cd7c80be5e08d5c&quot;
+    &quot;error&quot;: &quot;&quot;
+}
+</code></pre>
+<hr />
+<p><a name="live_cancel"></a></p>
+<h4 id="_13">取消任务<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<p>以 <code>POST</code> 方法向 <code>http://p1.api.upyun.com/&lt;service&gt;/liveaudit/cancel</code> 提交任务。特别地，<code>&lt;service&gt;</code> 需替换为具体的服务名。</p>
+<pre><code>curl -X POST \
+    http://p1.api.upyun.com/&lt;service&gt;/liveaudit/cancel \
+    -H &quot;Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -H &quot;Date: &lt;Wed, 29 Oct 2014 02:26:58 GMT&gt;&quot; \
+    -H &quot;Content-MD5: &lt;Content-MD5&gt;&quot; \
+    -d '{&quot;service&quot;: &lt;service&gt;, &quot;task_id&quot;: &lt;task_id&gt;}'
+</code></pre>
+<p>** 认证鉴权 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<p>** 请求参数 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>是</td>
+<td>图片存储的服务名</td>
+</tr>
+<tr>
+<td>task_id</td>
+<td>string</td>
+<td>是</td>
+<td>任务 ID, 任务创建时系统返回的任务 ID</td>
+</tr>
+</tbody>
+</table>
+<p>** 响应信息 **</p>
+<ul>
+<li>任务提交成功：返回 <code>200</code>。例如：</li>
+</ul>
+<pre><code>{&quot;status&quot;: 200}
+</code></pre>
+<ul>
+<li>任务提交失败：返回相应的出错信息，具体请参阅「<a href="#status">状态码表</a>」。</li>
+</ul>
+<p>** 注 **</p>
+<ul>
+<li>如果系统对流操作失败次数过多，如流已经停止, 会自动触发取消操作。</li>
+</ul>
+<hr />
+<p><a name="status"></a></p>
+<h3 id="_14">状态码表<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>处理成功</td>
+</tr>
+<tr>
+<td>400</td>
+<td>缺失必填参数，ErrMissingRequiredArgument</td>
+</tr>
+<tr>
+<td>400</td>
+<td>参数类型错误，ErrType</td>
+</tr>
+<tr>
+<td>400</td>
+<td><code>interval</code> 参数错误，ErrInterval</td>
+</tr>
+<tr>
+<td>403</td>
+<td>任务已存在，ErrRepeat</td>
+</tr>
+<tr>
+<td>404</td>
+<td>文件不存在/直播流不存在/任务不存在</td>
+</tr>
+<tr>
+<td>405</td>
+<td>请求方法不允许</td>
+</tr>
+<tr>
+<td>413</td>
+<td>文件大小超过 10M</td>
+</tr>
+<tr>
+<td>415</td>
+<td>文件不是图片</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>服务端错误。如遇此类错误，请反馈给<a href="https://www.upyun.com/contact">售后</a>或您的商务经理</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_15">准确率<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>从某业务系统随机抽取 24 万张图片，先进行机器审核，再对结果进行人工复查两遍，最终确定准确率是 99.68%。即 99.68% 的机器判断是准确的，类似于人工审核的准确率，可以代替人工进行审核。</p>
+<!--
+
+| 图片类型      | 图片总数  | 检测结果                                                          | 准确率   |
+|---------------|-----------|-------------------------------------------------------------------|-----------|
+| 人脸（正常）    | 12282     | (0, 0.2]: 11387, (0.2, 0.5]: 642, (0.5, 0.8]: 200, (0.8, 1]: 53   | 98%       |
+| 宠物（正常）    | 6825      | (0, 0.2]: 6608, (0.2, 0.5]: 163, (0.5, 0.8]: 45, (0.8, 1]: 9      | 99%       |
+| 风景（正常）    | 17369     | (0, 0.2]: 17284, (0.2, 0.5]: 58, (0.5, 0.8]: 23, (0.8, 1]: 4      | 99.8%     |
+| 色情        | 16006     | (0, 0.2]: 1, (0.2, 0.5]: 16, (0.5, 0.8]: 362, (0.8, 1]: 15627     | 97.63%    |
+
+** 注 **
+
+- 人脸、宠物、风景正常图片准确率计算公式是： (0,0.8] 图片数/图片总数。色情图片准确率计算公式是：(0.8,1] 图片数/图片总数。
+- 测试的样本选自实际业务系统，且是第一次使用。
+
+-->
+
+<hr />
+<h2 id="_16">色情识别<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p>识别色情、性感、正常内容。对于不确定内容，使用 <code>review：true</code> 表示。</p>
+<h3 id="_17">图片<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>如果是新增图片，可以使用<a href="#image_upload_process">上传预处理</a>接口，把图片上传至又拍云存储的同时，进行鉴黄。</p>
+</li>
+<li>
+<p>如果图片已经存在又拍云存储，可以使用<a href="#image_submit_task">直接处理</a>接口，进行鉴黄。</p>
+</li>
+</ul>
+<h3 id="_18">视频点播<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>如果是新增视频，可以使用<a href="#video_upload_process">上传预处理</a>接口，把视频上传至又拍云存储的同时，进行鉴黄。</p>
+</li>
+<li>
+<p>如果视频已经存在又拍云存储 ，可以使用<a href="#video_submit_task">直接处理</a>接口，进行鉴黄。</p>
+</li>
+<li>
+<p>系统按间隔（<code>interval</code>）对点播进行截图（关键帧提取），然后对截图进行鉴黄。默认间隔是 6s。如果视频是高敏内容，间隔可以设置的更小。</p>
+</li>
+<li>
+<p>鉴黄结果中有截图时间点信息，它可以帮助定位违规内容的位置，和查看识别内容的位置。</p>
+</li>
+</ul>
+<h3 id="_19">视频直播<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>根据直播的特性，为视频直播设计了专门的接口，包括<a href="#live_create">创建任务</a>接口和<a href="#live_cancel">取消任务</a>接口。</p>
+</li>
+<li>
+<p>系统按间隔（<code>interval</code>）对直播流进行截图（关键帧提取），然后对截图进行鉴黄。默认间隔是 6s。如果流是高敏内容，间隔可以设置的更小。</p>
+</li>
+<li>
+<p>没有任务查询接口，需要客户端记录直播流与任务（<code>task_id</code>）的关系。</p>
+</li>
+</ul>
+<!--
+
+## 功能
+
+### 色情识别
+
+色情，描述性行为和色情场景、女性裸露敏感部位、男性裸露下体等。
+
+<img src="http://p.upyun.com/docs/cloud/porno2.jpg" height="180" target="_blank" title="查看" />
+<img src="http://p.upyun.com/docs/cloud/porno3.png" height="180" target="_blank" title="查看" />
+<img src="http://p.upyun.com/docs/cloud/porno4.jpg" height="180" target="_blank" title="查看" />
+
+正常，非色情图片
+
+<img src="http://p.upyun.com/docs/cloud/normal1.jpg" height="180" target="_blank" title="查看" />
+<img src="http://p.upyun.com/docs/cloud/normal2.jpg" height="180" target="_blank" title="查看" />
+<img src="http://p.upyun.com/docs/cloud/normal3.jpg" height="180" target="_blank" title="查看" />
+
+
+
+
+
+### 直播鉴黄
+
+### 图片鉴黄
+
+### 点播鉴黄
+
+### 涉政识别
+
+### 违禁识别
+
+-->
+
+<hr />
+<p>如有疑问请 <a href="https://www.upyun.com/contact">联系我们</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

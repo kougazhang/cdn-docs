@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/ai/api_console/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>内容处理</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/audit/">内容识别(有存储)</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/audit_nostorage/">内容识别(无存储)</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="ai/api_console/">内容处理</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">快速入门</a></li>
+                    
+                  
+                    <li class=""><a href="#_2">内容处理</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">请求</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">响应</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_5">举例</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_6">获取内容屏蔽信息</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_7">请求</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_8">响应</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_9">举例</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_10">示例代码</a></li>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/face_detect/">人脸识别</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>内容处理</h1>
+
+<h2 id="_1">快速入门<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>内容识别处理接口是用户调整内容(图片，视频)的识别分类，提交给又拍云处理(确认屏蔽，彻底删除，取消屏蔽)内容，内容必须是保存在又拍云存储。请确保您已经注册又拍云账号并完成实名验证，请确保您已经<a href="https://console.upyun.com/toolbox/audit/">开通内容识别服务</a>。</p>
+<hr />
+<h2 id="_2">内容处理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>提交任务到又拍云进行内容相关处理，包括确认屏蔽，彻底删除，取消屏蔽。</p>
+<h3 id="_3">请求<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><strong>请求语法</strong></p>
+<pre><code>POST /console/identify?act=&lt;action&gt; HTTP/1.1
+Host: banma.api.upyun.com
+Date: GMT Date
+Authorization: UPYUN &lt;ClientKey&gt;:&lt;Signature&gt;
+Content-Type: application/json
+
+{&quot;service&quot;:&quot;&lt;服务名&gt;&quot;, &quot;tasks&quot;:[{&quot;kind&quot;:&lt;文件类型&gt;, &quot;path&quot;:&quot;&lt;文件路径&gt;&quot;}]}
+</code></pre>
+<p>** 签名认证 **</p>
+<p><code>Authorization</code> 详见<a href="/ai/authorization/#_1">签名认证</a>。</p>
+<p><strong>请求参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>action</td>
+<td>string</td>
+<td>是</td>
+<td>请求的处理任务，<code>shield</code> 表示确认屏蔽，<code>cancel_shield</code> 表示取消屏蔽，<code>delete</code> 表示彻底删除</td>
+</tr>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>是</td>
+<td>用户服务名</td>
+</tr>
+<tr>
+<td>tasks</td>
+<td>list</td>
+<td>是</td>
+<td>一组任务列表，详见 <a href="#tasks">tasks 参数说明</a></td>
+</tr>
+<tr>
+<td>kind</td>
+<td>integer</td>
+<td>是</td>
+<td>内容的类型，<code>1</code> 表示图片，<code>2</code> 表示视频</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>是</td>
+<td>内容的路径</td>
+</tr>
+</tbody>
+</table>
+<p><a name="tasks"></a>
+** tasks 参数说明 **</p>
+<p>按 JSON 格式组装任务，一次请求 <code>tasks</code> 最多可以提交 10 个任务。</p>
+<pre><code>[
+    {
+        &quot;kind&quot;: 1,     // 提交的文件类型，1 表示图片 2 表示视频
+        &quot;path&quot;: &quot;/upyun.jpg&quot;  // 提交的文件路径  
+    },
+    …
+]
+</code></pre>
+<h3 id="_4">响应<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>响应参数是 JSON 字符串，参数名及说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status_code</td>
+<td>integer</td>
+<td>处理结果状态码，<code>200</code> 表示成功处理</td>
+</tr>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>错误信息，空字符串表示无错误信息</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">举例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><strong>请求示例</strong></p>
+<pre><code>POST /console/identify?act=shield HTTP/1.1
+Host: banma.api.upyun.com 
+Date: Thu, 12 Oct 2017 07:32:34 GMT
+Content-Type: application/json
+Authorization: UPYUN 2GO7K6NCPInWZqvJewohbDH5jmtaBY0x:mW7gtK0PRvhR0Mzn/x6RSAbh3cg=
+Content-Length: 61
+
+{&quot;service&quot;:&quot;upyun&quot;, &quot;tasks&quot;:[{&quot;kind&quot;:1, &quot;path&quot;:&quot;/upyun.jpg&quot;}]}
+</code></pre>
+<p><strong>响应示例</strong></p>
+<pre><code>HTTP/1.1 200 OK
+Server: marco/1.8
+Content-Type: application/json
+Content-Length: 31
+Date: Thu, 12 Oct 2017 07:32:29 GMT
+
+{&quot;status_code&quot;:200,&quot;error&quot;:&quot;&quot;}
+</code></pre>
+<h2 id="_6">获取内容屏蔽信息<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>获取指定内容是否被屏蔽及屏蔽密钥</p>
+<h3 id="_7">请求<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><strong>请求语法</strong></p>
+<pre><code>GET /console/shield_info?service=&lt;service_name&gt;&amp;path=&lt;path&gt; HTTP/1.1
+Host: banma.api.upyun.com
+Date: GMT Date
+Authorization: UPYUN &lt;ClientKey&gt;:&lt;Signature&gt;
+</code></pre>
+<p>** 签名认证 **</p>
+<p><code>Authorization</code> 详见<a href="/ai/authorization/#_1">签名认证</a>。</p>
+<p><strong>请求参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>是</td>
+<td>用户服务名</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>是</td>
+<td>内容路径</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">响应<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>响应参数是 JSON 字符串，参数名及说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status_code</td>
+<td>integer</td>
+<td>处理结果状态码，<code>200</code> 表示成功处理</td>
+</tr>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>错误信息，空字符串表示无错误信息</td>
+</tr>
+<tr>
+<td>shielded</td>
+<td>boolean</td>
+<td>文件是否被屏蔽</td>
+</tr>
+<tr>
+<td>secret</td>
+<td>string</td>
+<td>屏蔽文件的 <code>secret</code> 内容，没有屏蔽返回空字符串</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">举例<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p><strong>请求示例</strong></p>
+<pre><code>GET /console/shield_info?service=upyun&amp;path=/upyun.jpg HTTP/1.1
+Host: banma.api.upyun.com 
+Date: Thu, 12 Oct 2017 07:32:34 GMT
+Authorization: UPYUN 2GO7K6NCPInWZqvJewohbDH5jmtaBY0x:mW7gtK0PRvhR0Mzn/x6RSAbh3cg=
+</code></pre>
+<p><strong>响应示例</strong></p>
+<pre><code>HTTP/1.1 200 OK
+Server: marco/1.8
+Content-Type: application/json
+Content-Length: 57
+Date: Thu, 12 Oct 2017 07:32:29 GMT
+
+{&quot;status_code&quot;:200,&quot;error&quot;:&quot;&quot;,&quot;shielded&quot;:false,secret:&quot;&quot;}
+</code></pre>
+<h1 id="_10">示例代码<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h1>
+<p>使用时，<code>client_key</code> 和 <code>client_secret</code> 替换为内容识别控制台上的密钥</p>
+<p>请求信息根据请求参数要求填写</p>
+<pre><code class="language-py"># python
+# -*- coding: UTF-8 -*-
+import base64
+import datetime
+import hashlib
+import hmac
+
+import requests
+
+def b64(s):
+    return base64.b64encode(s.encode()).decode()
+
+# 时间格式化
+def httpdate_rfc1123(dt=None):
+    dt = dt or datetime.datetime.utcnow()
+    return datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
+
+
+# 签名
+def sign(client_key, client_secret, method, uri, date):
+    signarr = [method, uri, date]
+    signstr = '&amp;'.join(signarr)
+    signstr = base64.b64encode(
+        hmac.new(client_secret.encode(), signstr.encode(), digestmod=hashlib.sha1).digest()
+    ).decode()
+    return 'UPYUN %s:%s' % (client_key, signstr)
+
+# 密钥
+client_key = 'GO7K6NCPInWZqvJewohbDH5jmt'
+client_secret = 'KQrAn5OjgG3HVlkJo78DbyiuL'
+
+# 内容屏蔽
+def shield():
+    headers = {}
+    headers['Date'] = httpdate_rfc1123()
+    headers['Authorization'] = sign(client_key, client_secret, 'POST', '/console/identify?act=shield', headers['Date'])
+    data = {
+        &quot;service&quot;:&quot;upyun&quot;,
+        &quot;tasks&quot;: [{
+        'kind':1,
+        'path': '/test.jpg',
+    }]}
+    resp = requests.post('http://banma.api.upyun.com/console/identify?act=shield', headers=headers, json=data)
+    print(resp.status_code, resp.text)
+
+# 内容取消屏蔽
+def cancel_shield():
+    headers = {}
+    headers['Date'] = httpdate_rfc1123()
+    headers['Authorization'] = sign(client_key, client_secret, 'POST', '/console/identify?act=cancel_shield', headers['Date'])
+    data = {
+        &quot;service&quot;:&quot;upyun&quot;,
+        &quot;tasks&quot;: [{
+        'kind':1,
+        'path': '/test.jpg',
+    }]}
+    resp = requests.post('http://banma.api.upyun.com/console/identify?act=cancel_shield', headers=headers, json=data)
+    print(resp.status_code, resp.text)
+
+# 内容删除
+def delete():
+    headers = {}
+    headers['Date'] = httpdate_rfc1123()
+    headers['Authorization'] = sign(client_key, client_secret, 'POST', '/console/identify?act=delete', headers['Date'])
+    data = {
+        &quot;service&quot;:&quot;upyun&quot;,
+        &quot;tasks&quot;: [{
+        'kind':1,
+        'path': '/test.jpg',
+    }]}
+    resp = requests.post('http://banma.api.upyun.com/console/identify?act=delete', headers=headers, json=data)
+    print(resp.status_code, resp.text)
+
+# 获取内容屏蔽信息
+def get_info():
+    headers = {}
+    headers['Date'] = httpdate_rfc1123()
+    headers['Authorization'] = sign(client_key, client_secret, 'GET', '/console/shield_info?service=upyun&amp;path=/test.jpg', headers['Date'])
+
+    resp = requests.get('http://banma.api.upyun.com/console/shield_info?service=upyun&amp;path=/test.jpg', headers=headers)
+    print(resp.status_code, resp.text)
+
+
+def main():
+    shield()
+    cancel_shield()
+    delete()
+    get_info()
+
+if __name__ == '__main__':
+    main()
+</code></pre></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

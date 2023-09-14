@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/mobile-stats/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/prettify.css" rel="stylesheet">
+        <link href="../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>移动流量</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/">产品简介</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/quick_start/">快速入门</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_guide/">开发者指南</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/rest_api/">REST API</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/form_api/">FORM API</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_tools/">开发者工具</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/sdk/">SDK 使用文档</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/fusion_storage/">融合云存储</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/multipart_upload/">分块上传（已弃用）</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/errno/">API 错误码表</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/purge/">缓存刷新</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/small_program/">微信小程序</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="mobile-stats/">移动流量</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">平台概述</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_2">产品特点</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">应用场景</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">对接说明</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_5">接口文档</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_6">接口详情</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_7">充值回调说明</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_8">错误码说明</a></li>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="sms/">短信服务</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>移动流量</h1>
+
+<h2 id="_1">平台概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>又拍云手机流量营销平台，整合移动、电信、联通三大运营商流量资源，将强大的流量营销服务，通过接口等形式提供给商家合作伙伴，帮助商家开展品牌宣传、APP/游戏/微信公众号/网站的拉新与促活等多种营销活动。</p>
+<p>通过接入又拍云流量营销平台，商家可以获得更多流量、用户和收益，而商家提供的活动也让用户获得了三网通用流量和更加丰富的活动体验。</p>
+<h3 id="_2">产品特点<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>1.三网通用，成本优势，覆盖面广</p>
+<p>2.快速对接、全流水、易对账、精结算</p>
+<h3 id="_3">应用场景<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>1.APP 下载赠流量</p>
+<p>2.微信公众号增粉</p>
+<p>3.奖品礼券</p>
+<p>4.流量加油站</p>
+<p>5.积分兑换流量</p>
+<p>6.活动比赛送流量</p>
+<p>7.流量红包</p>
+<p>8.员工福利</p>
+<h3 id="_4">对接说明<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>1.请联系商务（Tel:0571-89775132）确定您的应用场景需求，获取对应流量报价</p>
+<p>2.注册又拍云账号，如果您已有账号，请登录 <a href="https://console.upyun.com/login/">又拍云控制台</a> 完成企业/个人认证</p>
+<p>3.前往导航 &gt; 工具箱 &gt; 手机流量营销页面，开通该服务（开通邮件中包含接口地址）</p>
+<p>4.通过流量营销控制台配置回调地址</p>
+<p>5.出口 IP 出于安全考虑暂不支持控制台配置，可联系我司商务完成生产环境联调</p>
+<p><strong>业务交互流程:</strong></p>
+<p><img src="http://up-static.b0.upaiyun.com/phone-traffic/upyun-mobile-traffic.png" width="830" /></p>
+<h2 id="_5">接口文档<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>又拍云手机流量平台接口入口地址统一为：<a href="https://ptp-api.upyun.com">https://ptp-api.upyun.com</a>，请求接口时，统一使用 <code>POST</code> 方法， 文档类型统一为 <code>Content-Type: application/json</code>，使用 JSON 格式发送请求， 响应结果也会以 JSON 格式返回；文档中接口的请求地址只包含路径部分，实际请求时，需要加上统一入口地址 <a href="https://ptp-api.upyun.com">https://ptp-api.upyun.com</a>。文档中描述签名计算时，都是先正序排序（给出的示例字符串已经是排序后的结果），再做 SHA1 运算。</p>
+<p>本文档一共描述了四个接口和一个充值回调说明，接口如下：</p>
+<ul>
+<li>获取签名 <code>POST /refreshToken</code></li>
+<li>提交订单 <code>POST /chargeOrder</code></li>
+<li>查询订单状态 <code>POST /seekOrder</code></li>
+<li>查询余额 <code>POST /getMyBalance</code></li>
+</ul>
+<p>针对以上接口，目前提供了 php 版本 sdk，用于提供接口调用示例， 各企业用户可以根据自己的需要进行封装，完善错误处理，下载地址：<a href="http://up-static.b0.upaiyun.com/phone-traffic/upyun-mobile-stats.zip">点击下载</a>。</p>
+<h3 id="_6">接口详情<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><strong>1.获取计算签名需要的 token</strong></p>
+<p>接口说明</p>
+<p>该接口用于获取 token，调用其他接口时，需要使用 token 计算签名。由于 token 需要在后续的接口请求中，全局共享，所以在并发请求的场景下，建议将 token 保存在 Redis/Mysql 等第三方存储中</p>
+<p>请求地址</p>
+<pre><code>POST /refreshToken
+</code></pre>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>appkey</td>
+<td>String</td>
+<td>必须</td>
+<td>appkey，由又拍云提供，可以登录手机流量后台查看</td>
+</tr>
+<tr>
+<td>appsecret</td>
+<td>String</td>
+<td>必须</td>
+<td>appsecret，由又拍云提供，可以登录手机流量后台查看</td>
+</tr>
+</tbody>
+</table>
+<p>请求示例</p>
+<pre><code>curl https://ptp-api.upyun.com/refreshToken -H &quot;Content-Type: application/json&quot; -d &quot;{\&quot;appkey\&quot;: \&quot;your_appkey_put_here\&quot;, \&quot;appsecret\&quot;: \&quot;your_appsecret_put_here\&quot;}&quot;
+</code></pre>
+<p>响应参数</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>示例值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>200</td>
+<td>响应状态码，200 表示正常，其他详见错误码</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>XsdOpxqudzMnw</td>
+<td>用于签名计算需要的 token，token 默认有效期为 24 小时，仅最后一次请求接口生成的 token 才有效</td>
+</tr>
+<tr>
+<td>info</td>
+<td>String</td>
+<td>请求成功</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>响应示例</p>
+<pre><code class="language-json">{
+    &quot;code&quot;: &quot;200&quot;,
+    &quot;token&quot;: &quot;XsdOpxqudzMnw&quot;,
+    &quot;info&quot;: &quot;请求成功&quot;
+}
+</code></pre>
+<p><strong>2.创建订单</strong></p>
+<p>接口说明</p>
+<p>创建手机流量充值订单</p>
+<p>请求地址</p>
+<pre><code>POST /chargeOrder
+</code></pre>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>appkey</td>
+<td>String</td>
+<td>必须</td>
+<td>E1KRHcKd3qoef8V1</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>String</td>
+<td>必须</td>
+<td>被充值手机号进行 AES 对称加密再 base64 转码后的值，一次只允许一个手机号码，见<a href="http://up-static.b0.upaiyun.com/phone-traffic/AESCryptSample.zip">示例程序</a></td>
+</tr>
+<tr>
+<td>prodcode</td>
+<td>String</td>
+<td>必须</td>
+<td>流量包的产品编号</td>
+</tr>
+<tr>
+<td>custno</td>
+<td>String</td>
+<td>必须</td>
+<td>客户自定义的订单号，用于客户内部记录订单，长度必须小于30， 且每次充值，编号不重复</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>String</td>
+<td>必须</td>
+<td>根据 token 和请求参数计算的签名，签名规则见算法说明部分 (<a href="http://up-static.b0.upaiyun.com/phone-traffic/AESCryptSample.zip">示例程序下载</a>)</td>
+</tr>
+<tr>
+<td>prodtime</td>
+<td>Integer</td>
+<td>选填</td>
+<td>流量时段，<code>1</code> 表示全时段流量，<code>0</code> 表示闲时流量，默认为全时段流量</td>
+</tr>
+<tr>
+<td>prodstandard</td>
+<td>Integer</td>
+<td>选填</td>
+<td>用于区分网络类型，可选值分别为：<code>7</code>表示全部网络类型，<code>3</code>表示 2g 和 3g 两种网络类型，<code>1</code>表示 2g 网络类型，默认值为<code>7</code></td>
+</tr>
+</tbody>
+</table>
+<p>响应参数</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>示例值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>200</td>
+<td>响应状态码，200 表示创建订单成功；410 511 必须再次查询订单确认；其他错误码视为创建失败；系统响应超时等其他非正常响应，需要调用查询订单接口确认</td>
+</tr>
+<tr>
+<td>custno</td>
+<td>String</td>
+<td>20150238829</td>
+<td>客户订单号，和请求值一致</td>
+</tr>
+<tr>
+<td>orderno</td>
+<td>String</td>
+<td>2016298237019</td>
+<td>又拍云平台的订单号</td>
+</tr>
+<tr>
+<td>info</td>
+<td>String</td>
+<td>充值成功</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>算法说明</p>
+<ol>
+<li>
+<p>计算手机号的 AES 对称加密，再 base64 转码后的值</p>
+</li>
+<li>
+<p>将接口请求参数按照请求参数名称正序排序;</p>
+</li>
+<li>
+<p>将请求参数和请求参数值拼接成字符串：<code>appkey${YourAppKey}custno${YourCustno}mobile${YourAesEncodedMobile}prodcode${YourPrdcode}token${YourToken</code>(将字符串中的变量<code>${...}</code>部分替换成实际值即可，)</p>
+</li>
+<li>
+<p>对拼接后的字符串进行SHA1指纹运算，得到的 16 进制字符串 <code>b5cd94c99e3e576f5e2ca0e66ee3da670cb1c62b</code> 便是 sign 值</p>
+</li>
+</ol>
+<p>示例</p>
+<p>参数拼接后的字符串为：<code>appkey3P83lWwkoV15yZVTcustno20151123114702mobile8mBGFNfe1o/rzAx2Ost2IQ==prodcodeCMCC_10tokenVqHAab3JYXBDkCoO</code>（注意手机号是 aes 加密再 base64 编码后的），进行 SHA1 运算得到的 sign 值为：<code>8b05f52e605c7ab89a895eb730cacab4cbeabd4c</code></p>
+<p>响应示例</p>
+<pre><code class="language-json">{
+    &quot;code&quot;: &quot;200&quot;,
+    &quot;custno&quot;: &quot;20150238829&quot;,
+    &quot;orderno&quot;: &quot;2016298237019&quot;,
+    &quot;info&quot;: &quot;充值成功&quot;
+}
+</code></pre>
+<p><strong>3.查询订单状态</strong></p>
+<p>接口说明</p>
+<p>查询充值订单当前的状态，用于确认是否充值成功</p>
+<p>请求地址</p>
+<pre><code>POST /seekOrder
+</code></pre>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>custno</td>
+<td>String</td>
+<td>必须</td>
+<td>客户提交的订单号</td>
+</tr>
+<tr>
+<td>appkey</td>
+<td>String</td>
+<td>必须</td>
+<td>鉴权账号</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>String</td>
+<td>必须</td>
+<td>签名，签名规则为：将 <code>appkey${YourAppKey}custno${YourCustno}requesttime${YourReqestTime}TOKEN${YourToken}</code> 中<code>${...}</code>变量部分替换为实际值，再进行 SHA1 运算。如果请求参数不包含 <code>requesttime</code>，计算签名则不需要该值</td>
+</tr>
+<tr>
+<td>requesttime</td>
+<td>String</td>
+<td>否</td>
+<td>查询的时间点，该参数为可选参数，格式为"YYYY-MM-DD HH:mm:ss"，当传递该参数时，我们会在给定时间点的前后 1 个小时范围内查询；如果未传该参数，我们将在最近一周的订单中查询</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>示例值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>200</td>
+<td>响应状态码，200 表示充值成功；430 516 530 表示充值失败；511 必须人工再次确认；其他错误码视为充值中</td>
+</tr>
+<tr>
+<td>custno</td>
+<td>String</td>
+<td>20150238829</td>
+<td>客户自定义订单号</td>
+</tr>
+<tr>
+<td>info</td>
+<td>String</td>
+<td>成功</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>响应示例</p>
+<pre><code class="language-json">{
+    &quot;code&quot;: &quot;200&quot;,
+    &quot;custno&quot;: &quot;2015823871239&quot;,
+    &quot;info&quot;: &quot;充值成功&quot;
+}
+</code></pre>
+<p><strong>4.查询余额</strong></p>
+<p>请求地址</p>
+<pre><code>POST /getMyBalance
+</code></pre>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>appkey</td>
+<td>String</td>
+<td>必须</td>
+<td></td>
+</tr>
+<tr>
+<td>sign</td>
+<td>String</td>
+<td>必须</td>
+<td>签名，算法为 <code>appkey${YourAppKey}TOKEN${Yourtoken}</code> 中<code>${...}</code>变量部分替换实际值，再进行 SHA1 运算得到的字符串便为 sign 值</td>
+</tr>
+</tbody>
+</table>
+<p>响应参数</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>示例值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>200</td>
+<td>响应状态码</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>Float</td>
+<td>100.00</td>
+<td>账户余额（包含冻结金额）</td>
+</tr>
+<tr>
+<td>freeze</td>
+<td>Float</td>
+<td>20.00</td>
+<td>冻结金额，正在交易的订单金额</td>
+</tr>
+<tr>
+<td>availBalance</td>
+<td>Float</td>
+<td>80.00</td>
+<td>实际可用余额（不包含冻结金额）</td>
+</tr>
+</tbody>
+</table>
+<p>响应示例</p>
+<pre><code class="language-json">{
+    &quot;code&quot;: &quot;200&quot;,
+    &quot;balance&quot;: 100,
+    &quot;freeze&quot;: 20,
+    &quot;availBalance&quot;: 80
+}
+</code></pre>
+<h3 id="_7">充值回调说明<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>客户需要在又拍云手机流量后台填写充值回调地址，并注意防火墙配置，不能屏蔽又拍云服务器地址。配置成功后，每次充值后，又拍云会向该地址发送 <code>POST</code> 请求，请求的数据格式为 <code>application/json</code></p>
+<p>请求参数</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>必须</td>
+<td>响应状态码，200 表示充值成功；430,530 表示充值失败，其他错误码或异常信息表示充值中</td>
+</tr>
+<tr>
+<td>orderno</td>
+<td>String</td>
+<td>必须</td>
+<td>又拍云平台的订单号</td>
+</tr>
+<tr>
+<td>custno</td>
+<td>String</td>
+<td>必须</td>
+<td>客户自定义订单号</td>
+</tr>
+<tr>
+<td>info</td>
+<td>String</td>
+<td>必须</td>
+<td>描述信息</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>String</td>
+<td>必须</td>
+<td>签名，客户可以使用该值校验请求是否合法，强烈建议接收充值回调时进行校验。签名规则为：将 <code>code${Code}custno${YourCustno}info${Info}orderno${OrderNo}token${YourToken}</code> 字符串中的变量部分<code>${...}</code>替换为请求参数中的值，再对得到的字符串进行 SHA1 签名</td>
+</tr>
+</tbody>
+</table>
+<p>客户接受请求成功后，需要响应如下 <code>json</code> 值：</p>
+<pre><code class="language-json">{
+    &quot;info&quot;: &quot;1&quot;
+}
+</code></pre>
+<p>否则，又拍云将隔 1 分钟再重试一次，一共回调 3 次</p>
+<h2 id="_8">错误码说明<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p><strong>注：需要留意每个接口响应参数说明中的 code 处理方式</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">错误码</th>
+<th style="text-align: left;">说明</th>
+<th style="text-align: left;">错误码</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">200</td>
+<td style="text-align: left;">成功</td>
+<td style="text-align: left;">201</td>
+<td style="text-align: left;">充值中</td>
+</tr>
+<tr>
+<td style="text-align: left;">410</td>
+<td style="text-align: left;">运营商返回超时</td>
+<td style="text-align: left;">422</td>
+<td style="text-align: left;">用户状态异常</td>
+</tr>
+<tr>
+<td style="text-align: left;">430</td>
+<td style="text-align: left;">订购/充值失败</td>
+<td style="text-align: left;">502</td>
+<td style="text-align: left;">sign签名错误</td>
+</tr>
+<tr>
+<td style="text-align: left;">503</td>
+<td style="text-align: left;">余额不足</td>
+<td style="text-align: left;">504</td>
+<td style="text-align: left;">非法的回调地址</td>
+</tr>
+<tr>
+<td style="text-align: left;">505</td>
+<td style="text-align: left;">手机号不合法</td>
+<td style="text-align: left;">506</td>
+<td style="text-align: left;">用户不能订购该套餐</td>
+</tr>
+<tr>
+<td style="text-align: left;">507</td>
+<td style="text-align: left;">接口参数异常</td>
+<td style="text-align: left;">508</td>
+<td style="text-align: left;">令牌鉴权不通过</td>
+</tr>
+<tr>
+<td style="text-align: left;">509</td>
+<td style="text-align: left;">客户未认证授权</td>
+<td style="text-align: left;">510</td>
+<td style="text-align: left;">查询太频繁</td>
+</tr>
+<tr>
+<td style="text-align: left;">511</td>
+<td style="text-align: left;">内部异常，此时对订单的查询、充值等操作等需要联系客户再次确认</td>
+<td style="text-align: left;">512</td>
+<td style="text-align: left;">订单号重复</td>
+</tr>
+<tr>
+<td style="text-align: left;">513</td>
+<td style="text-align: left;">运营商请求超时</td>
+<td style="text-align: left;">514</td>
+<td style="text-align: left;">ip不在白名单</td>
+</tr>
+<tr>
+<td style="text-align: left;">515</td>
+<td style="text-align: left;">该客户不存在</td>
+<td style="text-align: left;">516</td>
+<td style="text-align: left;">不存在此订单</td>
+</tr>
+<tr>
+<td style="text-align: left;">517</td>
+<td style="text-align: left;">无法识别的手机号</td>
+<td style="text-align: left;">519</td>
+<td style="text-align: left;">当前appkey或appsecret错误</td>
+</tr>
+<tr>
+<td style="text-align: left;">520</td>
+<td style="text-align: left;">活动不存在</td>
+<td style="text-align: left;">526</td>
+<td style="text-align: left;">合同不在有效期</td>
+</tr>
+<tr>
+<td style="text-align: left;">527</td>
+<td style="text-align: left;">token不在有效期</td>
+<td style="text-align: left;">530</td>
+<td style="text-align: left;">订购/充值失败</td>
+</tr>
+<tr>
+<td style="text-align: left;">531</td>
+<td style="text-align: left;">签名不通过</td>
+<td style="text-align: left;">532</td>
+<td style="text-align: left;">订单号长度超过30</td>
+</tr>
+<tr>
+<td style="text-align: left;">533</td>
+<td style="text-align: left;">aes加密有误</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+        
+
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/prettify.min.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

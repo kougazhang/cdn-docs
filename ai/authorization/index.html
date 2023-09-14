@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/ai/authorization/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>认证鉴权</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/audit/">内容识别(有存储)</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/audit_nostorage/">内容识别(无存储)</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/api_console/">内容处理</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="ai/authorization/">认证鉴权</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">签名认证</a></li>
+                    
+                  
+                    <li class=""><a href="#_2">举例</a></li>
+                    
+                  
+                    <li class=""><a href="#_3">代码演示</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">注意事项</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_5">常用语言代码示例</a></li>
+                      </ul>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/face_detect/">人脸识别</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>认证鉴权</h1>
+
+<p>使用 API 时，需要对请求进行签名。系统发给用户的请求，也会进行签名，供用户验证请求来源。</p>
+<h2 id="_1">签名认证<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>** 签名语法 **</p>
+<pre><code>Authorization: UPYUN &lt;ClientKey&gt;:&lt;Signature&gt;
+
+&lt;Signature&gt; = Base64 (HMAC-SHA1 (&lt;ClientSecret&gt;,
+&lt;Method&gt;&amp;
+&lt;URI&gt;&amp;
+&lt;Date&gt;&amp;
+&lt;Content-MD5&gt;
+))
+</code></pre>
+<p>** 参数说明 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ClientKey</td>
+<td>是</td>
+<td>用户密钥 KEY</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>是</td>
+<td>请求方式，如：GET、POST、PUT、HEAD 等</td>
+</tr>
+<tr>
+<td>URI</td>
+<td>是</td>
+<td>请求路径</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>是</td>
+<td>请求日期时间，GMT 格式字符串 (<a href="http://tools.ietf.org/html/rfc1123">RFC 1123</a>)，如 <code>Wed, 29 Oct 2014 02:26:58 GMT</code></td>
+</tr>
+<tr>
+<td>Content-MD5</td>
+<td>否</td>
+<td>请求体的 MD5 校验值，如果请求体为空，可以为空</td>
+</tr>
+<tr>
+<td>ClientSecret</td>
+<td>是</td>
+<td>用户密钥 Secret</td>
+</tr>
+</tbody>
+</table>
+<p>** 注 **</p>
+<ul>
+<li>非必选参数为空时，连同前面的 <code>&amp;</code> 一起不参与签名计算。所有计算的 MD5 值，格式均是 32 位小写。</li>
+<li>HMAC-SHA1 输出的必须是<strong>原生的二进制数据</strong>。</li>
+<li>请求签名有效期为 30 分钟，如果签名超过有效期，需要重新生成签名。</li>
+<li>回调签名有效期由用户自行确定，建议设置为 30 分钟。</li>
+</ul>
+<h2 id="_2">举例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>** 参数信息 **</p>
+<pre><code>// 操作员信息
+ClientKey = TSzF4Cd9JPt6Qcm3WqfDiuUpoAH1            
+ClientSecret = KuGnZUD17aN9oyRkjSixBqlwQcH
+
+// 参数
+Method = POST                           
+URI = /image/url/check
+Date = Thu, 12 Oct 2017 06:57:50 GMT
+Body = {'url': 'http://uprocess.b0.upaiyun.com/demo.jpg'}
+Content-MD5 = MD5(Body)
+            = DD0F8A735A45323A32EE4D6154E9985B
+</code></pre>
+<p>** 生成 Signature **</p>
+<pre><code>Signature = Base64 (HMAC-SHA1 (&lt;ClientSecret&gt;,
+&lt;Method&gt;&amp;
+&lt;URI&gt;&amp;
+&lt;Date&gt;&amp;
+&lt;Content-MD5&gt;
+))
+// 不用换行或空格，上面格式的换行或空格是为了方便阅读
+= Base64 (HMAC-SHA1 (ClientSecret, Method&amp;URI&amp;Date&amp;Content-MD5))
+// HMAC-SHA1 返回的原生二进制数据进行 Base64 编码
+= CKhrW8SSU0ctnmavfnRs1s1NFBY=
+</code></pre>
+<p>** 签名 **</p>
+<pre><code>Authorization: UPYUN TSzF4Cd9JPt6Qcm3WqfDiuUpoAH1:CKhrW8SSU0ctnmavfnRs1s1NFBY=
+</code></pre>
+<p>** 完整请求 **</p>
+<pre><code>POST /image/url/check HTTP/1.1
+Host: banma.api.upyun.com
+Date: Thu, 12 Oct 2017 06:57:50 GMT
+Content-MD5: DD0F8A735A45323A32EE4D6154E9985B
+Authorization: UPYUN TSzF4Cd9JPt6Qcm3WqfDiuUpoAH1:CKhrW8SSU0ctnmavfnRs1s1NFBY=
+Content-Length: 50
+Content-Type: application/json
+
+{&quot;url&quot;: &quot;http://uprocess.b0.upaiyun.com/demo.jpg&quot;}
+</code></pre>
+<hr />
+<h2 id="_3">代码演示<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">注意事项<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>本示例适用于云存储，云处理，内容识别，容器云服务。</li>
+<li>使用时，根据自己的需求、配置，修改对应参数: <code>key</code>，<code>secret</code>，<code>uri</code>，<code>method</code>，<code>policy</code>，<code>md5</code>。</li>
+<li>本示例使用的 <code>key</code>，<code>secret</code> 在不同服务中的含义不一样，云存储、云处理、内容识别(有存储) 中表示 <code>Operator</code> 和 <code>Password</code>，
+内容识别(无存储)、容器云表示各自服务提供的 <code>ClientKey</code> 和 <code>ClientSecret</code>。</li>
+<li>根据对应 API 文档说明，把认证信息，填入相应的 <code>http</code> 请求信息中。</li>
+<li>使用 <code>form API</code> 上传时，需要用户生成 <code>policy</code>，本示例不提供生成 <code>policy</code> 的使用实例。</li>
+</ol>
+<h3 id="_5">常用语言代码示例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h4 id="go">go 代码演示<a class="headerlink" href="#go" title="Permanent link">&para;</a></h4>
+<pre><code class="language-go">package main
+
+import (
+    &quot;crypto/hmac&quot;
+    &quot;crypto/md5&quot;
+    &quot;crypto/sha1&quot;
+    &quot;encoding/base64&quot;
+    &quot;fmt&quot;
+    &quot;strings&quot;
+    &quot;time&quot;
+)
+
+var (
+    key    = &quot;upyun&quot;
+    secret = &quot;secret&quot; // 对于上传，处理，跟内容识别需要MD5加密
+    uri    = &quot;/v1/apps/&quot;
+    method = &quot;GET&quot;
+)
+
+func md5Str(s string) string {
+    return fmt.Sprintf(&quot;%x&quot;, md5.Sum([]byte(s)))
+}
+
+func makeRFC1123Date(d time.Time) string {
+    utc := d.UTC().Format(time.RFC1123)
+    return strings.Replace(utc, &quot;UTC&quot;, &quot;GMT&quot;, -1)
+}
+func base64ToStr(b []byte) string {
+    return base64.StdEncoding.EncodeToString(b)
+}
+
+func sign(key, secret, method, uri, date, policy, md5 string) string {
+    mac := hmac.New(sha1.New, []byte(secret))
+    elems := []string{}
+    for _, v := range []string{method, uri, date, policy, md5} {
+        if v != &quot;&quot; {
+            elems = append(elems, v)
+        }
+    }
+    value := strings.Join(elems, &quot;&amp;&quot;)
+    fmt.Println(value)
+    mac.Write([]byte(value))
+    signStr := base64ToStr(mac.Sum(nil))
+    return &quot;UPYUN &quot; + key + &quot;:&quot; + signStr
+}
+
+func main() {
+    date := makeRFC1123Date(time.Now())
+    fmt.Println(date)
+    fmt.Println(md5Str(secret))
+
+    // 上传，处理，内容识别有存储
+    fmt.Println(sign(key, md5Str(secret), method, uri, date, &quot;&quot;, &quot;&quot;))
+
+    // 容器云，内容识别无存储
+    fmt.Println(sign(key, secret, method, uri, date, &quot;&quot;, &quot;&quot;))
+}
+
+</code></pre>
+<h4 id="python">python 代码演示<a class="headerlink" href="#python" title="Permanent link">&para;</a></h4>
+<pre><code class="language-py"># -*- coding: UTF-8 -*-
+import base64
+import datetime
+import hashlib
+import hmac
+
+# Tip 1
+# 使用时需要根据自己配置与需求提供参数 key secret uri method
+key = 'upyun'
+secret = 'secret'
+uri = '/v1/apps/'
+method = 'GET'
+
+
+def httpdate_rfc1123(dt=None):
+    dt = dt or datetime.datetime.utcnow()
+    return dt.strftime('%a, %d %b %Y %H:%M:%S GMT')
+
+def md5(value):
+    return hashlib.md5(value.encode()).hexdigest()
+
+def sign(client_key, client_secret, method, uri, date, policy=None, md5=None):
+    # Tip 4
+    # MD5 信息可选
+    signarr = []
+    for v in [method, uri, date, policy, md5]:
+        if v != None:
+            signarr.append(v)
+    signstr = '&amp;'.join(signarr)
+    signstr = base64.b64encode(
+        hmac.new(client_secret.encode(), signstr.encode(),
+                 digestmod=hashlib.sha1).digest()
+    ).decode()
+    return 'UPYUN %s:%s' % (client_key, signstr)
+
+
+def main():
+    # Tip 2
+    # 时间需要与 http 头 Date 信息保持一致
+    # date = httpdate_rfc1123()
+    date = 'Thu, 14 Dec 2017 06:03:27 GMT'
+
+    # Tip 3
+    # sign 函数返回的值填入 http 头 Authorization 信息中
+    print date
+
+    print md5(secret)
+
+    # 上传，处理，内容识别有存储
+    print sign(key, md5(secret), method, uri, date)
+
+    # 内容识别无存储，容器云
+    print sign(key, secret, method, uri, date)
+
+if __name__ == '__main__':
+    main()
+</code></pre>
+<h4 id="js">js 代码演示<a class="headerlink" href="#js" title="Permanent link">&para;</a></h4>
+<pre><code class="language-js">var crypto = require('crypto');
+
+function sign(key, secret, method, uri, date, policy=null, md5=null) {
+    elems = [];
+    [method, uri, date, policy, md5].forEach(item =&gt; {
+        if (item != null) {
+            elems.push(item)
+        }
+    })
+    value = elems.join('&amp;');
+    auth = hmacsha1(secret, value);
+    return `UPYUN ${key}:${auth}`;
+}
+
+function MD5(value) {
+    return crypto.createHash('md5').update(value).digest('hex');
+}
+
+function hmacsha1(secret, value) {
+    return crypto.createHmac('sha1', secret).update(value, 'utf-8').digest().toString('base64');
+}
+
+date = new Date().toGMTString();
+console.log(date);
+
+key = 'upyun';
+secret = 'secret';
+method = 'GET';
+uri = '/v1/apps/';
+
+console.log(MD5('secret'));
+
+// 上传，处理，内容识别有存储
+console.log(sign(key, MD5(secret), method, uri, date));
+
+// 内容识别无存储，容器云
+console.log(sign(key, secret, method, uri, date));
+</code></pre>
+<h4 id="java">java 代码演示<a class="headerlink" href="#java" title="Permanent link">&para;</a></h4>
+<pre><code class="language-java">import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SignatureException;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+
+import java.util.Base64;
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+import java.util.TimeZone;
+
+import java.security.*;
+import java.io.*;
+
+public class auth {
+    private static final String HMAC_SHA1_ALGORITHM = &quot;HmacSHA1&quot;;
+
+    public static String md5(String string) {
+        byte[] hash;
+        try {
+            hash = MessageDigest.getInstance(&quot;MD5&quot;).digest(string.getBytes(&quot;UTF-8&quot;));
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(&quot;UTF-8 is unsupported&quot;, e);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(&quot;MessageDigest不支持MD5Util&quot;, e);
+        }
+        StringBuilder hex = new StringBuilder(hash.length * 2);
+        for (byte b : hash) {
+            if ((b &amp; 0xFF) &lt; 0x10) hex.append(&quot;0&quot;);
+            hex.append(Integer.toHexString(b &amp; 0xFF));
+        }
+        return hex.toString();
+    }
+
+    public static byte[] hashHmac(String data, String key)
+            throws SignatureException, NoSuchAlgorithmException, InvalidKeyException {
+        SecretKeySpec signingKey = new SecretKeySpec(key.getBytes(), HMAC_SHA1_ALGORITHM);
+        Mac mac = Mac.getInstance(HMAC_SHA1_ALGORITHM);
+        mac.init(signingKey);
+        return mac.doFinal(data.getBytes());
+    }
+
+    public static String sign(String key, String secret, String method, String uri, String date, String policy,
+            String md5) throws Exception {
+        String value = method + &quot;&amp;&quot; + uri + &quot;&amp;&quot; + date;
+        if (policy != null &amp;&amp; policy.length() &gt; 0) {
+            value = value + &quot;&amp;&quot; + policy;
+        }
+
+        if (md5 != null &amp;&amp; md5.length() &gt; 0) {
+            value = value + &quot;&amp;&quot; + md5;
+        }
+        byte[] hmac = hashHmac(value, secret);
+        String sign = Base64.getEncoder().encodeToString(hmac);
+        return &quot;UPYUN &quot; + key + &quot;:&quot; + sign;
+    }
+
+
+    public static String getRfc1123Time() {
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat(
+            &quot;EEE, dd MMM yyyy HH:mm:ss z&quot;, Locale.US);
+        dateFormat.setTimeZone(TimeZone.getTimeZone(&quot;GMT&quot;));
+        return dateFormat.format(calendar.getTime());
+    }
+
+    public static void main(String[] args) throws Exception {
+        String key = &quot;upyun&quot;;
+        String secret = &quot;secret&quot;;
+        String method = &quot;GET&quot;;
+        String uri = &quot;/v1/apps/&quot;;
+
+        String date = getRfc1123Time();
+
+        System.out.println(date);
+
+        System.out.println(md5(secret));
+
+        // 上传，处理，内容识别有存储
+        System.out.println(sign(key, md5(secret), method, uri, date, &quot;&quot;, &quot;&quot;));
+
+        // 内容识别无存储，容器云
+        System.out.println(sign(key, secret, method, uri, date, &quot;&quot;, &quot;&quot;));
+    }
+}
+</code></pre>
+<h4 id="php">php 代码演示<a class="headerlink" href="#php" title="Permanent link">&para;</a></h4>
+<pre><code class="language-php">&lt;?php
+
+function sign($key, $secret, $method, $uri, $date, $policy=null, $md5=null)
+{
+    $elems = array();
+    foreach (array($method, $uri, $date, $policy, $md5) as $v)
+    {
+        if ($v)
+        {
+            $elems[] = $v;
+        }
+    }
+    $value = implode('&amp;', $elems);
+    $sign = base64_encode(hash_hmac('sha1', $value, $secret, true));
+    return 'UPYUN ' . $key . ':' . $sign;
+}
+
+function main()
+{
+    $key = 'upyun';
+    $secret = 'secret';
+    $uri = '/v1/apps/';
+    $method = 'GET';
+    $date = gmdate('D, d M Y H:i:s \G\M\T');
+
+    $md = md5($secret);
+
+    echo $md . &quot;\n&quot;;
+
+    echo $date . &quot;\n&quot;;
+
+    // 上传，处理，内容识别有存储
+    echo sign($key, md5($secret), $method, $uri, $date) . &quot;\n&quot;;
+
+    // 内容识别无存储，容器云
+    echo sign($key, $secret, $method, $uri, $date);
+}
+
+main();
+</code></pre>
+<hr />
+<p>如有疑问请 <a href="https://www.upyun.com/contact">联系我们</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

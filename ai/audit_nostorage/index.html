@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/ai/audit_nostorage/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>内容识别(无存储)</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/audit/">内容识别(有存储)</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="ai/audit_nostorage/">内容识别(无存储)</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">快速入门</a></li>
+                    
+                  
+                    <li class=""><a href="#_2">图片识别(图片内容)</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">请求</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">响应</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_5">举例</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#url">图片识别(图片 URL)</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_6">请求</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_7">响应</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_8">举例</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#url_1">点播识别(点播 URL)</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_9">请求</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_10">响应</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_11">回调</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_12">举例</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_13">文本识别</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_14">请求</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_15">响应</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_16">举例</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_17">状态码说明</a></li>
+                    
+                  
+                    <li class=""><a href="#python">Python 演示</a></li>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/api_console/">内容处理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/face_detect/">人脸识别</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>内容识别(无存储)</h1>
+
+<h2 id="_1">快速入门<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>内容识别(无存储)是直接把内容提交给平台，提交方式可以是内容本身或 URL，平台处理完成后返回结果，不保留数据。您在使用它之前，请确保您已经注册又拍云账号并完成实名验证，请确保您已经<a href="https://console.upyun.com/toolbox/audit/">开通内容识别服务</a>。</p>
+<p>服务需要收费，可以免费试用，详情敬请<a href="https://www.upyun.com/products/audit#section-pricing">联系商务</a>。</p>
+<hr />
+<h2 id="_2">图片识别(图片内容)<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>上传图片内容，进行识别。<code>act=porn</code> 表示色情识别，<code>act=political</code> 表示涉政识别。</p>
+<h3 id="_3">请求<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><strong>请求语法</strong></p>
+<pre><code>POST /image/bin/check?act=&lt;act&gt; HTTP/1.1
+Host: banma.api.upyun.com
+Date: GMT Date
+Authorization: UPYUN &lt;ClientKey&gt;:&lt;Signature&gt;
+Content-Type: &lt;图片内容类型，必填&gt;
+
+[Image Content...]
+</code></pre>
+<p>** 签名认证 **</p>
+<p><code>Authorization</code> 详见<a href="/ai/authorization/#_1">签名认证</a>。</p>
+<h3 id="_4">响应<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>响应参数是 JSON 字符串，参数名及说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status_code</td>
+<td>integer</td>
+<td>处理结果状态码，<code>200</code> 表示成功处理</td>
+</tr>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>错误信息，空字符串表示无错误信息</td>
+</tr>
+<tr>
+<td>porn</td>
+<td>json</td>
+<td>色情识别结果</td>
+</tr>
+<tr>
+<td>porn.scores</td>
+<td>list</td>
+<td>各个分类及概率, 从左至右依次是 <code>正常概率</code>、<code>色情概率</code>、<code>性感概率</code></td>
+</tr>
+<tr>
+<td>porn.label</td>
+<td>integer</td>
+<td>推荐分类，可能值 <code>0</code>、<code>1</code>、<code>2</code>，<code>0</code> 表示正常，<code>1</code> 表示色情，<code>2</code> 表示性感</td>
+</tr>
+<tr>
+<td>porn.rate</td>
+<td>float</td>
+<td>推荐分类的概率</td>
+</tr>
+<tr>
+<td>porn.review</td>
+<td>bool</td>
+<td>是否需要人工审核</td>
+</tr>
+<tr>
+<td>political</td>
+<td>json</td>
+<td>涉政识别结果</td>
+</tr>
+<tr>
+<td>political.label</td>
+<td>integer</td>
+<td>分类, 可能值 <code>100</code>, <code>101</code>, <code>100</code> 表示正常, <code>101</code> 表示涉政</td>
+</tr>
+<tr>
+<td>political.name</td>
+<td>string</td>
+<td>图片中出现的政治人物姓名</td>
+</tr>
+<tr>
+<td>political.similarity</td>
+<td>float</td>
+<td>相似度</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">举例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><strong>请求示例</strong></p>
+<pre><code>POST /image/bin/check?act=porn HTTP/1.1
+Host: banma.api.upyun.com
+Date: Thu, 12 Oct 2017 07:32:34 GMT
+Content-Type: image/jpeg
+Authorization: UPYUN 2GO7K6NCPInWZqvJewohbDH5jmtaBY0x:mW7gtK0PRvhR0Mzn/x6RSAbh3cg=
+Content-Length: 447330
+
+[Image Content...]
+</code></pre>
+<p><strong>响应示例</strong></p>
+<pre><code>HTTP/1.1 200 OK
+Server: marco/1.8
+Content-Type: application/json
+Content-Length: 163
+Date: Thu, 12 Oct 2017 07:32:29 GMT
+
+{&quot;status_code&quot;:200,&quot;error&quot;:&quot;&quot;,&quot;porn&quot;:{&quot;scores&quot;:[0.999045193195343,0.00015256137703545392,0.0008022452238947153],&quot;rate&quot;:0.999045193195343,&quot;label&quot;:0,&quot;review&quot;:false}}
+</code></pre>
+<h2 id="url">图片识别(图片 URL)<a class="headerlink" href="#url" title="Permanent link">&para;</a></h2>
+<p>提交图片 URL，进行识别。<code>act=porn</code> 表示色情识别，<code>act=political</code> 表示涉政识别。</p>
+<h3 id="_6">请求<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><strong>请求语法</strong></p>
+<pre><code>POST /image/url/check?act=&lt;act&gt; HTTP/1.1
+Host: banma.api.upyun.com
+Date: GMT Date
+Authorization: UPYUN &lt;ClientKey&gt;:&lt;Signature&gt;
+Content-Type: application/json
+
+{&quot;url&quot;: &quot;&lt;图片的绝对路径&gt;&quot;}
+</code></pre>
+<p>** 签名认证 **</p>
+<p><code>Authorization</code> 详见<a href="/ai/authorization/#_1">签名认证</a>。</p>
+<p><strong>请求参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>是</td>
+<td>图片的 URL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">响应<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>响应参数是 JSON 字符串，参数名及说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status_code</td>
+<td>integer</td>
+<td>处理结果状态码，<code>200</code> 表示成功处理</td>
+</tr>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>错误信息，空字符串表示无错误信息</td>
+</tr>
+<tr>
+<td>porn</td>
+<td>json</td>
+<td>色情识别结果</td>
+</tr>
+<tr>
+<td>porn.scores</td>
+<td>list</td>
+<td>各个分类及概率, 从左至右依次是 <code>正常概率</code>、<code>色情概率</code>、<code>性感概率</code></td>
+</tr>
+<tr>
+<td>porn.label</td>
+<td>integer</td>
+<td>推荐分类，可能值 <code>0</code>、<code>1</code>、<code>2</code>，<code>0</code> 表示正常，<code>1</code> 表示色情，<code>2</code> 表示性感</td>
+</tr>
+<tr>
+<td>porn.rate</td>
+<td>float</td>
+<td>推荐分类的概率</td>
+</tr>
+<tr>
+<td>porn.review</td>
+<td>bool</td>
+<td>是否需要人工审核</td>
+</tr>
+<tr>
+<td>political</td>
+<td>json</td>
+<td>涉政识别结果</td>
+</tr>
+<tr>
+<td>political.label</td>
+<td>integer</td>
+<td>分类, 可能值 <code>100</code>, <code>101</code>, <code>100</code> 表示正常, <code>101</code> 表示涉政</td>
+</tr>
+<tr>
+<td>political.name</td>
+<td>string</td>
+<td>图片中出现的政治人物姓名</td>
+</tr>
+<tr>
+<td>political.similarity</td>
+<td>float</td>
+<td>相似度</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">举例<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><strong>请求示例</strong></p>
+<pre><code>POST /image/url/check?act=porn HTTP/1.1
+Host: banma.api.upyun.com
+Date: Thu, 12 Oct 2017 06:57:50 GMT
+Authorization: UPYUN 2GO7K6NCPInWZqvJewohbDH5jmtaBY0x:CKhrW8SSU0ctnmavfnRs1s1NFBY=
+Content-Length: 50
+Content-Type: application/json
+
+{&quot;url&quot;: &quot;http://uprocess.b0.upaiyun.com/demo.jpg&quot;}
+</code></pre>
+<p><strong>响应示例</strong></p>
+<pre><code>HTTP/1.1 200 OK
+Server: marco/1.8
+Content-Type: application/json
+Content-Length: 164
+Date: Thu, 12 Oct 2017 06:57:45 GMT
+
+{&quot;status_code&quot;:200,&quot;error&quot;:&quot;&quot;,&quot;porn&quot;:{&quot;scores&quot;:[0.9996986389160156,0.0001312318054260686,0.0001701978617347777],&quot;rate&quot;:0.9996986389160156,&quot;label&quot;:0,&quot;review&quot;:false}}
+</code></pre>
+<h2 id="url_1">点播识别(点播 URL)<a class="headerlink" href="#url_1" title="Permanent link">&para;</a></h2>
+<p>提交视频点播 URL，进行识别。识别是异步进行的，收到请求后，会先返回任务的 ID，待结果出来后，回调返回识别结果。<code>act=porn</code> 表示色情识别。</p>
+<h3 id="_9">请求<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p><strong>请求语法</strong></p>
+<pre><code>POST /video/check?act=porn HTTP/1.1
+Host: banma.api.upyun.com
+Date: GMT Date
+Authorization: UPYUN &lt;ClientKey&gt;:&lt;Signature&gt;
+Content-Type: application/json
+
+{&quot;url&quot;: &quot;&lt;视频点播的绝对路径&gt;&quot;, &quot;notify_url&quot;: &quot;&lt;回调地址&gt;&quot;}
+</code></pre>
+<p>** 签名认证 **</p>
+<p><code>Authorization</code> 详见<a href="/ai/authorization/#_1">签名认证</a>。</p>
+<p><strong>请求参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>是</td>
+<td>点播的 URL</td>
+</tr>
+<tr>
+<td>notify_url</td>
+<td>string</td>
+<td>是</td>
+<td>回调地址, 识别结果将以 <code>POST</code> 请求发往该地址</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>integer</td>
+<td>否</td>
+<td>截图间隔, 默认每 10s 从点播中取一帧</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">响应<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>响应参数是 JSON 字符串，参数名及说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task_id</td>
+<td>string</td>
+<td>任务 ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_11">回调<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>任务处理完成后，向 <code>notify_url</code> 发送 <code>HTTP POST</code> 请求，请求体是回调信息。</p>
+<pre><code>curl -X POST \
+    &lt;notify_url&gt; \
+    -H &quot;Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -H &quot;Date: &lt;Wed, 29 Oct 2014 02:26:58 GMT&gt;&quot; \
+    -H &quot;Content-MD5: &lt;Content-MD5&gt;&quot; \
+    -d &quot;service=&lt;service&gt;&quot; \
+    # 其他参数...
+</code></pre>
+<p>** 回调参数 **</p>
+<p>回调参数为 JSON 字符串，参数名及说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>task_id</td>
+<td>string</td>
+<td>任务对应的 <code>task_id</code></td>
+</tr>
+<tr>
+<td>status_code</td>
+<td>integer</td>
+<td>处理结果状态码，<code>200</code> 表示成功处理，详见<a href="#status">状态码表</a></td>
+</tr>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>视频点播所在的服务名</td>
+</tr>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>截图保存路径，如果请求参数中未设置 <code>save_as</code>，不存在</td>
+</tr>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>错误信息，空字符串表示无错误信息</td>
+</tr>
+<tr>
+<td>result</td>
+<td>json</td>
+<td>识别结果集，包含 <code>porn</code></td>
+</tr>
+<tr>
+<td>result.porn</td>
+<td>json</td>
+<td>鉴黄结果，包含 <code>label</code>、<code>rate</code>、<code>review</code></td>
+</tr>
+<tr>
+<td>result.porn.label</td>
+<td>integer</td>
+<td>图片被判定的分类，可能值 <code>0</code>、<code>1</code>、<code>2</code>，<code>0</code> 表示正常，<code>1</code> 表示色情，<code>2</code> 表示性感</td>
+</tr>
+<tr>
+<td>result.porn.rate</td>
+<td>float</td>
+<td>图片被判定为某个分类的概率，介于 <code>[0-1]</code> 之间</td>
+</tr>
+<tr>
+<td>result.porn.review</td>
+<td>boolean</td>
+<td>是否需要人工复审，<code>true</code> 表示需要，<code>false</code> 表示不需要</td>
+</tr>
+<tr>
+<td>filelist</td>
+<td>json</td>
+<td>截图集, 为每个时间点的截图审核结果</td>
+</tr>
+<tr>
+<td>filelist.result</td>
+<td>json</td>
+<td>识别结果集，包含 <code>porn</code></td>
+</tr>
+<tr>
+<td>filelist.result.shot_time</td>
+<td>string</td>
+<td>截图时间点</td>
+</tr>
+<tr>
+<td>filelist.result.porn</td>
+<td>json</td>
+<td>鉴黄结果，包含 <code>label</code>、<code>rate</code>、<code>review</code></td>
+</tr>
+<tr>
+<td>filelist.result.porn.label</td>
+<td>integer</td>
+<td>图片被判定的分类，可能值 <code>0</code>、<code>1</code>、<code>2</code>，<code>0</code> 表示正常，<code>1</code> 表示色情，<code>2</code> 表示性感</td>
+</tr>
+<tr>
+<td>filelist.result.porn.rate</td>
+<td>float</td>
+<td>图片被判定为某个分类的概率，介于 <code>[0-1]</code> 之间</td>
+</tr>
+<tr>
+<td>filelist.result.porn.review</td>
+<td>boolean</td>
+<td>是否需要人工复审，<code>true</code> 表示需要，<code>false</code> 表示不需要</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_12">举例<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p><strong>请求示例</strong></p>
+<pre><code>POST /video/check HTTP/1.1
+Host: banma.api.upyun.com
+Date: Thu, 12 Oct 2017 06:57:51 GMT
+Authorization: UPYUN 2GO7K6NCPInWZqvJewohbDH5jmtaBY0x:qXT2W1ROzdO3WXVM2nlLguc370k=
+Content-Length: 109
+Content-Type: application/json
+
+{&quot;url&quot;: &quot;http://uprocess.b0.upaiyun.com/demo/short_video/UPYUN.mp4&quot;, &quot;notify_url&quot;: &quot;http://httpbin.org/post&quot;}
+</code></pre>
+<p><strong>响应示例</strong></p>
+<pre><code>HTTP/1.1 200 OK
+Server: marco/1.8
+Content-Type: application/json
+Content-Length: 65
+Date: Thu, 12 Oct 2017 06:57:45 GMT
+
+{&quot;status_code&quot;:200,&quot;task_id&quot;:&quot;AIYgOOTk2OMav3iS64zPSS1Js0FzkT95&quot;}
+</code></pre>
+<p><strong>回调示例</strong></p>
+<pre><code>POST &lt;notify_url&gt; HTTP/1.1
+Content-Type: application/json
+Date: Thu, 12 Oct 2017 04:06:43 GMT
+Content-Md5: d2acd6c01e1de9afa203b585f614c0cf
+Content-Length: 1775
+Authorization: UPYUN 2GO7K6NCPInWZqvJewohbDH5jmtaBY0x:P8qmASfkbtM/6CMo1WlqW59W9+g=
+
+{&quot;error&quot;:&quot;&quot;,&quot;filelist&quot;:[{&quot;result&quot;:{&quot;porn&quot;:{&quot;label&quot;:0,&quot;rate&quot;:0.9995450377464294,&quot;review&quot;:false}},&quot;shot_time&quot;:0},{&quot;result&quot;:{&quot;porn&quot;:{&quot;label&quot;:0,&quot;rate&quot;:0.9990586638450623,&quot;review&quot;:false}},&quot;shot_time&quot;:10},{&quot;result&quot;:{&quot;porn&quot;:{&quot;label&quot;:0,&quot;rate&quot;:0.9997151494026184,&quot;review&quot;:false}},&quot;shot_time&quot;:20},{&quot;result&quot;:{&quot;porn&quot;:{&quot;label&quot;:0,&quot;rate&quot;:0.9990173578262329,&quot;review&quot;:false}},&quot;shot_time&quot;:30},{&quot;result&quot;:{&quot;porn&quot;:{&quot;label&quot;:0,&quot;rate&quot;:0.9789921641349792,&quot;review&quot;:false}},&quot;shot_time&quot;:40},{&quot;result&quot;:{&quot;porn&quot;:{&quot;label&quot;:0,&quot;rate&quot;:0.9992973804473877,&quot;review&quot;:false}},&quot;shot_time&quot;:50},{&quot;result&quot;:{&quot;porn&quot;:{&quot;label&quot;:0,&quot;rate&quot;:0.9562959671020508,&quot;review&quot;:false}},&quot;shot_time&quot;:60},{&quot;result&quot;:{&quot;porn&quot;:{&quot;label&quot;:0,&quot;rate&quot;:0.9989614486694336,&quot;review&quot;:false}},&quot;shot_time&quot;:70}],&quot;result&quot;:{&quot;porn&quot;:{&quot;label&quot;:0,&quot;rate&quot;:0.9931503997908698,&quot;review&quot;:false}},&quot;service&quot;:&quot;&quot;,&quot;source&quot;:&quot;&quot;,&quot;status_code&quot;:200,&quot;task_id&quot;:&quot;rDt7IaxKeQMGWVvX8YZ5MbwJtT0WuQbh&quot;}
+</code></pre>
+<h2 id="_13">文本识别<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>提交文本内容，进行识别。识别包括色情、广告、暴恐等，<code>act=spam</code> 表示违规识别。</p>
+<h3 id="_14">请求<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p><strong>请求语法</strong></p>
+<pre><code>POST /text/check?act=spam HTTP/1.1
+Host: banma.api.upyun.com
+Date: GMT Date
+Authorization: UPYUN &lt;ClientKey&gt;:&lt;Signature&gt;
+Content-Type: application/json
+
+{&quot;text&quot;: &quot;&lt;文本内容&gt;&quot;}
+</code></pre>
+<p>** 签名认证 **</p>
+<p><code>Authorization</code> 详见<a href="/ai/authorization/#_1">签名认证</a>。</p>
+<p><strong>请求参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>是</td>
+<td>文本内容，JSON 字符串，最大允许 64k</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_15">响应<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>响应参数是 JSON 字符串，参数名及说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status_code</td>
+<td>integer</td>
+<td>处理结果状态码，<code>200</code> 表示成功处理</td>
+</tr>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>错误信息，空字符串表示无错误信息</td>
+</tr>
+<tr>
+<td>spam</td>
+<td>json</td>
+<td>文本识别结果</td>
+</tr>
+<tr>
+<td>spam.task_id</td>
+<td>string</td>
+<td>任务 ID</td>
+</tr>
+<tr>
+<td>spam.scores</td>
+<td>list</td>
+<td>各个分类及概率, 从左至右依次是 <code>正常概率</code>、<code>违规概率</code></td>
+</tr>
+<tr>
+<td>spam.label</td>
+<td>integer</td>
+<td>推荐分类，可能值 <code>0</code>、<code>1</code>、<code>2</code>，<code>0</code> 表示正常，<code>1</code> 表示违规，<code>2</code> 表示疑似</td>
+</tr>
+<tr>
+<td>spam.rate</td>
+<td>float</td>
+<td>推荐分类的概率</td>
+</tr>
+<tr>
+<td>spam.review</td>
+<td>bool</td>
+<td>是否需要人工审核，<code>true</code> 表示需要，<code>false</code> 表示不需要</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_16">举例<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p><strong>请求示例</strong></p>
+<pre><code>POST /text/check HTTP/1.1
+Host: banma.api.upyun.com
+Date: Tue, 19 Sep 2017 07:47:49 GMT
+Authorization: UPYUN x2biJtrSOGhuYj4vzPg70nfZeLEIdmlH:Q+sPbbukYstHJprpSLsS+lnOrro=
+Content-Length: 30
+Content-Type: application/json
+
+{&quot;text&quot;: &quot;这是正常文本&quot;}
+</code></pre>
+<p><strong>响应示例</strong></p>
+<pre><code>HTTP/1.1 200 OK
+Server: marco/1.8
+Content-Type: application/json
+Content-Length: 190
+Date: Tue, 19 Sep 2017 07:47:50 GMT
+
+{&quot;status_code&quot;: 200, error: &quot;&quot;, &quot;spam&quot;:{&quot;task_id&quot;:&quot;6583350f&quot;,&quot;scores&quot;:[0.9713295698165894,0.028670458123087883],&quot;rate&quot;:0.028670458123087883,&quot;label&quot;:1,&quot;review&quot;:false}}
+</code></pre>
+<p><a name="status"></a></p>
+<h2 id="_17">状态码说明<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>处理成功</td>
+</tr>
+<tr>
+<td>400</td>
+<td>请求参数错误</td>
+</tr>
+<tr>
+<td>401</td>
+<td>请求认证失败</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>服务端错误，请反馈给<a href="https://www.upyun.com/contact">售后</a>或您的商务经理</td>
+</tr>
+</tbody>
+</table>
+<h2 id="python">Python 演示<a class="headerlink" href="#python" title="Permanent link">&para;</a></h2>
+<pre><code class="language-py">import base64
+import datetime
+import hashlib
+import hmac
+
+import requests
+
+def b64(s):
+    return base64.b64encode(s.encode()).decode()
+
+# 时间格式化
+def httpdate_rfc1123(dt=None):
+    dt = dt or datetime.datetime.utcnow()
+    return datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
+
+
+# 签名
+def sign(client_key, client_secret, method, uri, date):
+    signarr = [method, uri, date]
+    signstr = '&amp;'.join(signarr)
+    signstr = base64.b64encode(
+        hmac.new(client_secret.encode(), signstr.encode(), digestmod=hashlib.sha1).digest()
+    ).decode()
+    return 'UPYUN %s:%s' % (client_key, signstr)
+
+
+# 密钥
+client_key = '2GO7K6NCPInWZqvJewohbDH5jmt'
+client_secret = 'BKQrAn5OjgG3HVlkJo78DbyiuL'
+
+# 图片 URL 进行色情识别
+def image_check():
+    headers = {}
+    headers['Date'] = httpdate_rfc1123()
+    headers['Authorization'] = sign(client_key, client_secret, 'POST', '/image/url/check', headers['Date'])
+    data = {
+        'url': 'http://uprocess.b0.upaiyun.com/demo.jpg'
+    }
+    resp = requests.post('http://banma.api.upyun.com/image/url/check', headers=headers, json=data)
+    print(resp.status_code, resp.text)
+
+
+# 视频点播 URL 进行色情识别
+def video_check():
+    headers = {}
+    headers['Date'] = httpdate_rfc1123()
+    headers['Authorization'] = sign(client_key, client_secret, 'POST', '/video/check', headers['Date'])
+    data = {
+        'url': 'http://uprocess.b0.upaiyun.com/demo/short_video/UPYUN.mp4',
+        'notify_url': 'http://httpbin.org/post'
+    }
+    resp = requests.post('http://banma.api.upyun.com/video/check', headers=headers, json=data)
+    print(resp.status_code, resp.text)
+
+
+# 文本识别
+def text_check():
+    # 文本审核
+    headers = {}
+    headers['Date'] = httpdate_rfc1123()
+    headers['Authorization'] = sign(client_key, client_secret, 'POST', '/text/check', headers['Date'])
+    data = {
+        'text': '这里放文本内容'
+    }
+    resp = requests.post('http://banma.api.upyun.com/text/check', headers=headers, json=data)
+    print(resp.status_code, resp.text)
+
+
+# 调用
+def main():
+    image_check()
+    video_check()
+    text_check()
+
+
+if __name__ == '__main__':
+    main()
+</code></pre></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

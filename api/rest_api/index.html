@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/api/rest_api/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>REST API</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/">产品简介</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/quick_start/">快速入门</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_guide/">开发者指南</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="api/rest_api/">REST API</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">请求方法</a></li>
+                    
+                  
+                    <li class=""><a href="#_2">上传文件</a></li>
+                    
+                  
+                    <li class=""><a href="#_3">断点续传</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">名称概念</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_5">初始化断点续传</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_6">续传数据</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_7">结束断点续传</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_8">下载文件</a></li>
+                    
+                  
+                    <li class=""><a href="#_9">删除文件</a></li>
+                    
+                  
+                    <li class=""><a href="#_10">创建目录</a></li>
+                    
+                  
+                    <li class=""><a href="#_11">删除目录</a></li>
+                    
+                  
+                    <li class=""><a href="#_12">获取文件信息</a></li>
+                    
+                  
+                    <li class=""><a href="#_13">获取目录文件列表</a></li>
+                    
+                  
+                    <li class=""><a href="#_14">获取服务使用量</a></li>
+                    
+                  
+                    <li class=""><a href="#metadata">Metadata</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#metadata_1">添加 Metadata</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#metadata_2">修改 Metadata</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_15">常见应用案例</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_16">签名认证（旧）</a></li>
+                    
+                  
+                    <li class=""><a href="#_17">图片预处理（旧）</a></li>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/form_api/">FORM API</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/developer_tools/">开发者工具</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/sdk/">SDK 使用文档</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/fusion_storage/">融合云存储</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/multipart_upload/">分块上传（已弃用）</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/errno/">API 错误码表</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/purge/">缓存刷新</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="api/small_program/">微信小程序</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="mobile-stats/">移动流量</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="sms/">短信服务</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>REST API</h1>
+
+<p>基于 RESTful 架构的 API，您可以使用任何编程语言发送 HTTP/HTTPS 请求与云存储通信。特别地，文中请求参数均通过 HTTP/HTTPS 请求头以 <code>Key: Value</code> 的形式传递。</p>
+<hr />
+<h2 id="_1">请求方法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<pre><code class="language-sh">curl -X GET \
+    http://v0.api.upyun.com/&lt;bucket&gt;/&lt;path&gt; \
+    -H &quot;Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -H &quot;Date: &lt;Wed, 29 Oct 2014 11:26:58 GMT&gt;&quot;\
+    -H &quot;Content-MD5: &lt;Content-MD5&gt;&quot;\
+    # 其他可选参数...
+</code></pre>
+<p><strong>基本域名</strong></p>
+<ul>
+<li>智能选路（推荐）：<code>v0.api.upyun.com</code></li>
+<li>电信线路：<code>v1.api.upyun.com</code></li>
+<li>联通（网通）线路：<code>v2.api.upyun.com</code></li>
+<li>移动（铁通）线路：<code>v3.api.upyun.com</code></li>
+</ul>
+<p><strong>认证鉴权</strong></p>
+<p>详见<a href="/api/authorization/#header">签名认证</a>。</p>
+<hr />
+<p><a name="upload_file"></a></p>
+<h2 id="_2">上传文件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>把文件上传至又拍云存储。在上传图片文件时，可以设置预处理参数，图片会处理后再保存。</p>
+<pre><code>PUT /&lt;bucket&gt;/path/to/file
+</code></pre>
+<p><strong>上传参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Date</td>
+<td>是</td>
+<td>String</td>
+<td>请求日期时间，GMT 格式字符串 (<a href="http://tools.ietf.org/html/rfc1123">RFC 1123</a>)，如 <code>Wed, 29 Oct 2014 02:26:58 GMT</code></td>
+</tr>
+<tr>
+<td>Content-Length</td>
+<td>是</td>
+<td>String</td>
+<td>请求内容长度</td>
+</tr>
+<tr>
+<td>Content-MD5</td>
+<td>否</td>
+<td>String</td>
+<td>上传文件的 MD5 值，如果请求中文件太大计算 MD5 不方便，可以为空</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>否</td>
+<td>String</td>
+<td>文件类型，默认使用文件扩展名作为文件类型</td>
+</tr>
+<tr>
+<td>Content-Secret</td>
+<td>否</td>
+<td>String</td>
+<td>文件密钥，用于保护文件，防止文件被直接访问，见 <a href="/api/rest_api/#Content-Secret">Content-Secret 参数说明</a></td>
+</tr>
+<tr>
+<td>x-upyun-meta-x</td>
+<td>否</td>
+<td>String</td>
+<td>文件元信息，见 <a href="/api/rest_api/#metadata">Metadata</a></td>
+</tr>
+<tr>
+<td>x-upyun-meta-ttl</td>
+<td>否</td>
+<td>Integer</td>
+<td>文件元信息, 指定文件的生存时间，单位天，最大支持180天，见 <a href="/api/rest_api/#metadata">Metadata</a></td>
+</tr>
+<tr>
+<td>x-gmkerl-thumb</td>
+<td>否</td>
+<td>String</td>
+<td>图片预处理参数，见<a href="/cloud/image/#sync_upload_process">上传预处理（同步）</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>响应信息</strong></p>
+<ul>
+<li>上传成功：返回 <code>200</code>，当上传文件是图片且设置 <code>x-gmkerl-xxx</code> 时，包含图片<a href="/cloud/image/#attribute">基本信息</a>（包括图片宽、高、格式、帧数），例如：</li>
+</ul>
+<pre><code>&gt; HTTP/1.1 200 OK
+&gt; x-upyun-width: 50
+&gt; x-upyun-height: 50
+&gt; x-upyun-file-type: JPEG
+&gt; x-upyun-frames: 1
+</code></pre>
+<ul>
+<li>上传失败：返回相应的出错信息，具体请参阅「<a href="/api/errno/">API 错误码表</a>」。</li>
+</ul>
+<p><a name="Content-Secret"></a>
+<strong>Content-Secret 参数说明</strong></p>
+<ul>
+<li>
+<p>文件设置 <code>Content-Secret</code> 后，文件将不能被直接访问，若需访问，需要在 URL 后加上 「间隔标识符」 和 「文件密钥」。如： 间隔符为 <code>!</code>，<code>Content-Secret</code> 为 <code>abc</code>，图片访问方式为： <a href="https://p.upyun.com/docs/cloud/secret.jpg!abc" target="_blank" title="查看"><code>https://p.upyun.com/docs/cloud/secret.jpg!abc</code></a>。</p>
+</li>
+<li>
+<p><strong>间隔标识符</strong> 用于分隔文件 URL 和文件密钥，有 3 种可选，分别是：!（感叹号/默认值）、-（中划线）和 _（下划线），可登录又拍云<a href="https://console.upyun.com/services/" target="_blank">控制台</a>，在 「服务」 &gt; 「功能配置」 &gt; 「云处理」 中设置。</p>
+</li>
+<li>
+<p>删除或修改 <code>Content-Secret</code>，见 Metadata 的<a href="/api/rest_api/#metadata_exg">常见应用案例</a>。</p>
+</li>
+<li>
+<p>如果原文件是一张图片，除了通过文件密码进行访问外，还可以通过<a href="/cloud/image/#url">图片处理</a>进行访问。</p>
+</li>
+<li>
+<p>如果原文件是一张图片，文件密钥应避免与<a href="/cloud/image/#thumb">缩略图版本</a>冲突，如果冲突，文件密钥的优先级大于缩略图版本。</p>
+</li>
+</ul>
+<hr />
+<p><a name="Multi_upload"></a></p>
+<h2 id="_3">断点续传<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在上传大文件或移动端上传文件时，因为网络质量、传输时间过长等原因造成上传失败，可以使用断点续传。特别地，断点续传上传的图片不支持预处理。特别地，断点续传上传的文件不能使用其他上传方式覆盖，如果需要覆盖，须先删除文件。</p>
+<h3 id="_4">名称概念<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>文件分块：直接切分二进制文件成小块。分块大小固定为 1M。最后一个分块除外。</li>
+<li>上传阶段：使用 <code>x-upyun-multi-stage</code> 参数来指示断点续传的阶段。分为以下三个阶段: <code>initate</code>(上传初始化), <code>upload</code>(上传中), <code>complete</code>(上传结束)。各阶段依次进行。</li>
+<li>分片序号：使用 <code>x-upyun-part-id</code> 参数来指示当前的分片序号，序号从 0 起算。</li>
+<li>顺序上传：对于同一个断点续传任务，只支持顺序上传。</li>
+<li>上传标识：使用 <code>x-upyun-multi-uuid</code> 参数来唯一标识一次上传任务, 类型为字符串, 长度为 36 位。</li>
+<li>上传清理：断点续传未完成的文件，会保存 24 小时，超过后，文件会被删除。</li>
+</ul>
+<!-- 支持混合使用, 不同阶段之间以逗号分隔(eg. `initate,upload` 表示初始化上传并上传第一个文件分块, `upload,complete` 表示上传最后一个文件分块并结束上传) -->
+
+<hr />
+<h3 id="_5">初始化断点续传<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<pre><code>PUT /&lt;bucket&gt;/path/to/file
+</code></pre>
+<p><strong>请求参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content-Length</td>
+<td>是</td>
+<td>String</td>
+<td>请求内容长度</td>
+</tr>
+<tr>
+<td>x-upyun-multi-stage</td>
+<td>是</td>
+<td>String</td>
+<td>值为 <code>initiate</code>， 表示初始化上传任务</td>
+</tr>
+<tr>
+<td>x-upyun-multi-length</td>
+<td>是</td>
+<td>String</td>
+<td>待上传文件大小，整型，单位 Byte</td>
+</tr>
+<tr>
+<td>x-upyun-multi-type</td>
+<td>否</td>
+<td>String</td>
+<td>待上传文件的 <code>MIME</code> 类型，默认 <code>application/octet-stream</code>，建议自行设置</td>
+</tr>
+<tr>
+<td>x-upyun-meta-x</td>
+<td>否</td>
+<td>String</td>
+<td>用于额外指定文件的元信息，详见 <a href="/api/rest_api/#metadata">Metadata</a></td>
+</tr>
+<tr>
+<td>x-upyun-meta-ttl</td>
+<td>否</td>
+<td>Integer</td>
+<td>文件元信息, 指定文件的生存时间，单位天，最大支持180天，见 <a href="/api/rest_api/#metadata">Metadata</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>响应信息</strong></p>
+<p>初始化断点续传成功返回 <code>204</code> 状态码, 包括以下响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x-upyun-multi-uuid</td>
+<td>String</td>
+<td>本次上传任务的标识</td>
+</tr>
+<tr>
+<td>x-upyun-next-part-id</td>
+<td>String</td>
+<td>下一个分块序号。因为是初始化阶段，所以值为 <code>0</code></td>
+</tr>
+</tbody>
+</table>
+<p>上传失败时返回相应的出错信息，具体请参阅「<a href="/api/errno/">API 错误码表</a>」。</p>
+<hr />
+<h3 id="_6">续传数据<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<pre><code>PUT /&lt;bucket&gt;/path/to/file
+</code></pre>
+<p><strong>请求参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content-Length</td>
+<td>是</td>
+<td>String</td>
+<td>请求内容长度</td>
+</tr>
+<tr>
+<td>x-upyun-multi-stage</td>
+<td>是</td>
+<td>String</td>
+<td>值为 <code>upload</code>， 表示开始上传文件数据</td>
+</tr>
+<tr>
+<td>x-upyun-multi-uuid</td>
+<td>是</td>
+<td>String</td>
+<td>本次上传任务的标识，是初始化断点续传任务时响应信息中的 <code>x-upyun-multi-uuid</code></td>
+</tr>
+<tr>
+<td>x-upyun-part-id</td>
+<td>是</td>
+<td>String</td>
+<td>指定此次分片的唯一 ID，应严格等于上一次请求返回的 <code>x-upyun-next-part-id</code></td>
+</tr>
+<tr>
+<td>Content-MD5</td>
+<td>否</td>
+<td>String</td>
+<td>所上传分块的 MD5 值，等效于<a href="/api/authorization/#header">签名认证</a>中的 <code>Content-MD5</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>响应信息</strong></p>
+<p>断点续传此分块成功返回 <code>204</code> 状态码, 包括以下响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x-upyun-multi-uuid</td>
+<td>String</td>
+<td>本次上传任务的标识</td>
+</tr>
+<tr>
+<td>x-upyun-next-part-id</td>
+<td>String</td>
+<td>下一个分块序号。若全部分块都已经传完，则该响应头值为 <code>-1</code></td>
+</tr>
+</tbody>
+</table>
+<p>上传失败时返回相应的出错信息，具体请参阅「<a href="/api/errno/">API 错误码表</a>」。</p>
+<hr />
+<h3 id="_7">结束断点续传<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<pre><code>PUT /&lt;bucket&gt;/path/to/file
+</code></pre>
+<p><strong>请求参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content-Length</td>
+<td>是</td>
+<td>String</td>
+<td>请求内容长度</td>
+</tr>
+<tr>
+<td>x-upyun-multi-stage</td>
+<td>是</td>
+<td>String</td>
+<td>值为 <code>complete</code>， 表示完成断点续传任务</td>
+</tr>
+<tr>
+<td>x-upyun-multi-uuid</td>
+<td>是</td>
+<td>String</td>
+<td>本次上传任务的标识，是初始化断点续传任务时响应信息中的 <code>x-upyun-multi-uuid</code></td>
+</tr>
+<tr>
+<td>Content-MD5</td>
+<td>否</td>
+<td>String</td>
+<td>请求的 MD5 值，等效于<a href="/api/authorization/#header">签名认证</a>中的 <code>Content-MD5</code></td>
+</tr>
+<tr>
+<td>x-upyun-multi-md5</td>
+<td>否</td>
+<td>String</td>
+<td>整个文件的 MD5 值，用于服务端校验</td>
+</tr>
+</tbody>
+</table>
+<p><strong>响应信息</strong></p>
+<p>结束断点续传成功，如果返回 <code>204</code> 状态码，表示文件覆盖同名文件；如果返回 <code>201</code> 状态码，表示文件是新文件。</p>
+<p>响应信息还包括以下响应参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x-upyun-multi-uuid</td>
+<td>String</td>
+<td>本次上传任务的标识</td>
+</tr>
+<tr>
+<td>x-upyun-multi-type</td>
+<td>String</td>
+<td>本次上传文件的 <code>MIME</code> 类型</td>
+</tr>
+<tr>
+<td>x-upyun-multi-length</td>
+<td>String</td>
+<td>本次上传文件大小，整型，单位 Byte</td>
+</tr>
+</tbody>
+</table>
+<p>上传失败时返回相应的出错信息，具体请参阅「<a href="/api/errno/">API 错误码表</a>」。</p>
+<hr />
+<h2 id="_8">下载文件<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<pre><code>GET /&lt;bucket&gt;/path/to/file
+</code></pre>
+<p><strong>响应信息</strong></p>
+<ul>
+<li>下载成功：返回 <code>200</code>，HTTP body 中返回文件内容。</li>
+<li>下载失败：返回相应的出错信息，具体请参阅「<a href="/api/errno/">API 错误码表</a>」。</li>
+</ul>
+<hr />
+<h2 id="_9">删除文件<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<pre><code>DELETE /&lt;bucket&gt;/path/to/file
+</code></pre>
+<p><strong>请求参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x-upyun-async</td>
+<td>否</td>
+<td><code>true</code> 表示进行异步删除，不设置表示同步删除（默认）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>响应信息</strong></p>
+<ul>
+<li>删除成功：返回 <code>200</code>。</li>
+<li>删除失败：返回相应的出错信息，具体请参阅「<a href="/api/errno/">API 错误码表</a>」。</li>
+</ul>
+<p><strong>注</strong></p>
+<ul>
+<li>同步删除有频率限制，批量删除请在请求头里加上 <code>x-upyun-async: true</code> 进行异步删除（无频率限制）。</li>
+<li>异步删除请求成功，返回 <code>200</code>，但删除操作会延期执行。</li>
+</ul>
+<hr />
+<h2 id="_10">创建目录<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<pre><code>POST /&lt;bucket&gt;/path/to/folder
+</code></pre>
+<p><strong>请求参数</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>folder</td>
+<td>是</td>
+<td>值为 <code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>响应信息</strong></p>
+<ul>
+<li>创建成功：返回 <code>200</code>。</li>
+<li>创建失败：返回相应的出错信息，具体请参阅「<a href="/api/errno/">API 错误码表</a>」。</li>
+</ul>
+<hr />
+<h2 id="_11">删除目录<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<pre><code>DELETE /&lt;bucket&gt;/path/to/folder
+</code></pre>
+<p><strong>响应信息</strong></p>
+<ul>
+<li>删除成功：返回 <code>200</code>。</li>
+<li>删除失败：返回相应的出错信息，具体请参阅「<a href="/api/errno/">API 错误码表</a>」。</li>
+</ul>
+<p><strong>注</strong></p>
+<ul>
+<li>只允许删除空的目录，非空目录需要先删除里面的文件，否则删除请求会被拒绝。</li>
+</ul>
+<hr />
+<h2 id="_12">获取文件信息<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<pre><code>HEAD /&lt;bucket&gt;/path/to/file
+</code></pre>
+<p><strong>响应信息</strong></p>
+<ul>
+<li>
+<p>获取成功：返回 <code>200</code>，返回头信息如下所示：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x-upyun-file-type</td>
+<td>文件为 <code>file</code>，文件夹为 <code>folder</code></td>
+</tr>
+<tr>
+<td>x-upyun-file-size</td>
+<td>文件大小</td>
+</tr>
+<tr>
+<td>x-upyun-file-date</td>
+<td>文件创建时间</td>
+</tr>
+<tr>
+<td>Content-Md5</td>
+<td>文件的 MD5 值</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>获取失败：返回相应的出错信息，具体请参阅「<a href="/api/errno/">API 错误码表</a>」。</p>
+</li>
+</ul>
+<hr />
+<h2 id="_13">获取目录文件列表<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<pre><code>GET /&lt;bucket&gt;/path/to/folder
+</code></pre>
+<p><strong>分页参数</strong></p>
+<p>如果目录中文件数量过多，为了更友好的获取文件信息，可以分页获取：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x-list-iter</td>
+<td>否</td>
+<td>string</td>
+<td>分页开始位置，通过<code>x-upyun-list-iter</code> 响应头返回，所以第一次请求不需要填写</td>
+</tr>
+<tr>
+<td>x-list-limit</td>
+<td>否</td>
+<td>string</td>
+<td>获取的文件数量，默认 100，最大 10000</td>
+</tr>
+<tr>
+<td>x-list-order</td>
+<td>否</td>
+<td>string</td>
+<td><code>asc</code> 或 <code>desc</code>，按文件名升序或降序排列。默认 <code>asc</code></td>
+</tr>
+<tr>
+<td>Accept</td>
+<td>否</td>
+<td>string</td>
+<td><code>application/json</code>,返回json格式</td>
+</tr>
+</tbody>
+</table>
+<p><strong>响应信息</strong></p>
+<ul>
+<li>获取成功：返回 <code>200</code>。</li>
+<li>获取失败：返回相应的出错信息，具体请参阅「<a href="/api/errno/">API 错误码表</a>」。</li>
+</ul>
+<p>例如：</p>
+<pre><code>&gt; HTTP/1.1 200 OK
+&gt; x-upyun-list-iter: c2Rmc2Rsamdvc2pnb3dlam9pd2Vmd2Z3Zg==
+foo.jpg\tN\t4237\t1415096225\nbar\tF\t423404\t1415096260
+</code></pre>
+<ul>
+<li><code>x-upyun-list-iter</code> 返回下一次分页开始位置。它由一串 Base64 编码的随机数组成，当它是 <code>g2gCZAAEbmV4dGQAA2VvZg</code> 时，表示<strong>最后一个分页</strong>。</li>
+<li>HTTP body 为各个文件/目录的信息，文件/目录之间以 <code>\n</code> 分隔，属性按 「文件\t类型\t大小\t最后修改时间」 排列，类型可选值：<code>N</code> 表示文件，<code>F</code> 表示目录。</li>
+</ul>
+<p>若设置了<code>Accept: application/json</code>请求头则返回:</p>
+<pre><code class="language-json">{
+    &quot;files&quot;: [{
+        &quot;type&quot;: &quot;image/jpeg&quot;,
+        &quot;length&quot;: 4237,
+        &quot;name&quot;: &quot;foo.jpg&quot;,
+        &quot;last_modified&quot;: 1415096225
+    }, {
+        &quot;type&quot;: &quot;folder&quot;,
+        &quot;length&quot;: 423404,
+        &quot;name&quot;: &quot;bar&quot;,
+        &quot;last_modified&quot;: 1415096260
+    }],
+    &quot;iter&quot;: &quot;c2Rmc2Rsamdvc2pnb3dlam9pd2Vmd2Z3Zg==&quot;
+}
+</code></pre>
+<hr />
+<h2 id="_14">获取服务使用量<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<pre><code>GET /&lt;bucket&gt;/?usage
+</code></pre>
+<p><strong>响应信息</strong></p>
+<ul>
+<li>获取成功：返回 <code>200</code>。HTTP body 内容为服务的使用量（单位为<code>Byte</code>）。</li>
+<li>获取失败：返回相应的出错信息，具体请参阅「<a href="/api/errno/">API 错误码表</a>」。</li>
+</ul>
+<hr />
+<h2 id="metadata">Metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h2>
+<p>下载文件时，在响应头里返回文件的所有元数据。</p>
+<h3 id="metadata_1">添加 Metadata<a class="headerlink" href="#metadata_1" title="Permanent link">&para;</a></h3>
+<p><a href="/api/rest_api/#_2">上传文件</a>时，如果在请求头里带上以 <code>x-upyun-meta-</code> 开头的参数，那么该参数会作为文件的元数据存储到云存储。例如：</p>
+<pre><code>curl -d 'abc' \
+    http://v0.api.upyun.com/&lt;bucket&gt;/abc.txt \
+    -H &quot;Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;&quot; \
+    -H &quot;Date: &lt;Wed, 30 Oct 2016 11:26:58 GMT&gt;&quot;\
+    -H &quot;x-upyun-meta-foo: Bar&quot;\
+    -H &quot;x-upyun-meta-a: 2&quot;
+</code></pre>
+<p>文件 <code>abc.txt</code> 会增加 <code>x-upyun-meta-foo: bar</code> 和 <code>x-upyun-meta-a: 2</code> 这两个元信息。</p>
+<hr />
+<h3 id="metadata_2">修改 Metadata<a class="headerlink" href="#metadata_2" title="Permanent link">&para;</a></h3>
+<pre><code>PATCH /&lt;bucket&gt;/path/to/file?metadata=&lt;option&gt;
+</code></pre>
+<p>option 的取值如下：</p>
+<table>
+<thead>
+<tr>
+<th>option</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>merge（<strong>默认</strong>）</td>
+<td>合并文件元信息，如果是相同的元信息，将被新上传的值替换</td>
+</tr>
+<tr>
+<td>replace</td>
+<td>替换文件元信息为新上传的文件元信息</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>删除文件元信息</td>
+</tr>
+</tbody>
+</table>
+<p><strong>响应信息</strong></p>
+<ul>
+<li>修改成功：返回 <code>200</code>。</li>
+<li>修改失败：返回相应的出错信息，具体请参阅「<a href="/api/errno/">API 错误码表</a>」。</li>
+</ul>
+<p><strong>举例</strong></p>
+<p>例 1：合并元信息，<code>metadata=merge</code></p>
+<pre><code>curl -d 'abc' http://v0.api.upyun.com/&lt;bucket&gt;/abc.txt \
+    -H &quot;Authorization: Basic b3BlcmF0b3I6cGFzc3dvcmQ=&quot; \
+    -H &quot;x-upyun-meta-a: 1&quot;
+
+curl -XPATCH http://v0.api.upyun.com/&lt;bucket&gt;/abc.txt?metadata=merge \
+    -H &quot;Authorization: Basic b3BlcmF0b3I6cGFzc3dvcmQ=&quot; \
+    -H &quot;x-upyun-meta-a: 2&quot; \
+    -H &quot;x-upyun-meta-b: 3&quot;
+</code></pre>
+<p>文件 abc.txt 的元信息是：</p>
+<pre><code>x-upyun-meta-a: 2
+x-upyun-meta-b: 3
+</code></pre>
+<p>例 2：替换元信息，<code>metadata=replace</code></p>
+<pre><code>curl -d 'abc' http://v0.api.upyun.com/&lt;bucket&gt;/abc.txt \
+    -H &quot;Authorization: Basic b3BlcmF0b3I6cGFzc3dvcmQ=&quot; \
+    -H &quot;x-upyun-meta-a: 1&quot; \
+    -H &quot;x-upyun-meta-b: 2&quot;
+
+curl -XPATCH http://v0.api.upyun.com/&lt;bucket&gt;/abc.txt?metadata=replace \
+    -H &quot;Authorization: Basic b3BlcmF0b3I6cGFzc3dvcmQ=&quot; \
+    -H &quot;x-upyun-meta-a: 3&quot; \
+    -H &quot;x-upyun-meta-c: 4&quot;
+</code></pre>
+<p>文件 abc.txt 的元信息为：</p>
+<pre><code>x-upyun-meta-a: 3
+x-upyun-meta-c: 4
+</code></pre>
+<p>例 3：删除元信息，<code>metadata=delete</code></p>
+<pre><code>curl -d 'abc' http://v0.api.upyun.com/&lt;bucket&gt;/abc.txt \
+    -H &quot;Authorization: Basic b3BlcmF0b3I6cGFzc3dvcmQ=&quot; \
+    -H &quot;x-upyun-meta-a: 1&quot; \
+    -H &quot;x-upyun-meta-b: 2&quot;
+
+curl -XPATCH http://v0.api.upyun.com/&lt;bucket&gt;/abc.txt?metadata=delete \
+    -H &quot;Authorization: Basic b3BlcmF0b3I6cGFzc3dvcmQ=&quot; \
+    -H &quot;x-upyun-meta-a: true&quot;
+</code></pre>
+<p>文件 abc.txt 的元信息为：</p>
+<pre><code>x-upyun-meta-b: 2
+</code></pre>
+<p><a name="metadata_exg"></a></p>
+<h3 id="_15">常见应用案例<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>例 1：修改 Metadata 默认不更新文件的 <code>Last-Modified</code>，如果需要更新，在参数中指定 <code>update_last_modified=true</code>：</p>
+<pre><code>curl -XPATCH http://v0.api.upyun.com/&lt;bucket&gt;/abc.txt?metadata=replace&amp;update_last_modified=true \
+    -H &quot;Authorization: Basic b3BlcmF0b3I6cGFzc3dvcmQ=&quot; \
+    -H &quot;x-upyun-meta-a: 3&quot; \
+    -H &quot;x-upyun-meta-c: 4&quot;
+</code></pre>
+<p>例 2：<code>Content-Secret</code> 是被存储为 <code>x-upyun-meta-secret</code> 元信息，如果需要修改或删除，可以对 <code>x-upyun-meta-secret</code> 进行操作：</p>
+<pre><code>curl -XPATCH http://v0.api.upyun.com/&lt;bucket&gt;/abc.txt?metadata=delete \
+    -H &quot;Authorization: Basic b3BlcmF0b3I6cGFzc3dvcmQ=&quot; \
+    -H &quot;x-upyun-meta-secret: upyun520&quot;
+</code></pre>
+<hr />
+<h2 id="_16">签名认证（旧）<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p><strong>签名格式</strong></p>
+<pre><code>Authorization: UpYun &lt;operator&gt;:&lt;signature&gt;
+</code></pre>
+<p><strong>签名（signature）算法</strong></p>
+<p>签名所需的相关信息如下表：</p>
+<table>
+<thead>
+<tr>
+<th>所需信息</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>METHOD</td>
+<td>请求方式，如：GET、POST、PUT、HEAD 等</td>
+</tr>
+<tr>
+<td>PATH</td>
+<td>请求路径，需 URL 编码处理 (<a href="http://tools.ietf.org/html/rfc1738">RFC 1738</a>)</td>
+</tr>
+<tr>
+<td>DATE</td>
+<td>请求日期，GMT 格式字符串 (<a href="http://tools.ietf.org/html/rfc1123">RFC 1123</a>)</td>
+</tr>
+<tr>
+<td>CONTENT_LENGTH</td>
+<td>请求内容长度，除 GET 等无实体请求外，需和请求头部的 <code>Content-Length</code> 一致</td>
+</tr>
+<tr>
+<td>PASSWORD</td>
+<td>服务的操作员的密码</td>
+</tr>
+</tbody>
+</table>
+<p>将 <code>PASSWORD</code> md5 之后（我们暂且将其记作 <code>PASSWORD_MD5</code>），上表所注的其他信息以 <code>&amp;</code> 字符进行拼接（按表格从上至下的顺序）即（<code>METHOD&amp;PATH&amp;DATE&amp;CONTENT-LENGTH&amp;PASSWORD_MD5</code>），并将所得字符串进行 MD5 加密，即得我们所需的 签名（signature）</p>
+<p><strong>注</strong></p>
+<ul>
+<li>签名的有效期为 30 分钟。如果超过 30 分钟，则需重新生成签名。</li>
+<li>GET，DELETE 操作的 CONTENT_LENGTH 为 0。</li>
+</ul>
+<p><strong>例如</strong></p>
+<p>请求方式为 <code>GET</code>，URI 为 <code>bucket</code> 服务的子目录 <code>/sub</code>，请求时间为 <code>Wed, 29 Oct 2014 02:26:58 GMT</code>，因为是 <code>GET</code>，所以 <code>CONTENT-LENGTH</code> 为 <code>0</code>，假设该服务有一个授权操作员名为 <code>upyun</code>，该操作员密码为 <code>password</code>（密码 md5 后为 <code>5f4dcc3b5aa765d61d8327deb882cf99</code>），那么：</p>
+<p>签名（signature）即是对字符串 <code>GET&amp;/bucket/sub&amp;Wed, 29 Oct 2014 02:26:58 GMT&amp;0&amp;5f4dcc3b5aa765d61d8327deb882cf99</code> 计算 MD5 所得，即：<code>03db45e2904663c5c9305a9c6ed62af3</code>，因此，只需在请求头部加上如下字段即可：</p>
+<pre><code>Authorization: UpYun upyun:03db45e2904663c5c9305a9c6ed62af3
+</code></pre>
+<hr />
+<h2 id="_17">图片预处理（旧）<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x-gmkerl-extract-color-count</td>
+<td>否</td>
+<td>主题色提取的颜色数量，默认 <code>256</code></td>
+</tr>
+<tr>
+<td>x-gmkerl-extract-format</td>
+<td>否</td>
+<td>主题色提取格式，默认 <code>hex</code></td>
+</tr>
+<tr>
+<td>x-gmkerl-thumbnail</td>
+<td>否</td>
+<td>缩略图版本名称，可搭配其他 <code>x-gmkerl-*</code> 参数使用</td>
+</tr>
+<tr>
+<td>x-gmkerl-type</td>
+<td>否</td>
+<td>缩略类型，见 <a href="#gmkerl-type">x-gmkerl-type 可选值列表</a></td>
+</tr>
+<tr>
+<td>x-gmkerl-value</td>
+<td>否</td>
+<td>缩略类型对应的参数值，见 <a href="#gmkerl-value">x-gmkerl-value 值说明</a></td>
+</tr>
+<tr>
+<td>x-gmkerl-quality</td>
+<td>否</td>
+<td>压缩质量，默认 <code>95</code></td>
+</tr>
+<tr>
+<td>x-gmkerl-unsharp</td>
+<td>否</td>
+<td>是否锐化，默认锐化</td>
+</tr>
+<tr>
+<td>x-gmkerl-rotate</td>
+<td>否</td>
+<td>图片旋转（顺时针），可选值：<code>auto</code>、<code>(0, 360]</code>。详见<a href="/cloud/image/#rotate">旋转</a></td>
+</tr>
+<tr>
+<td>x-gmkerl-crop</td>
+<td>否</td>
+<td>图片裁剪，格式：<code>&lt;w&gt;x&lt;h&gt;a&lt;x&gt;a&lt;y&gt;</code>。详见<a href="/cloud/image/#crop">裁剪</a></td>
+</tr>
+<tr>
+<td>x-gmkerl-exif-switch</td>
+<td>否</td>
+<td>是否保留 EXIF 信息，默认不保留 <br /> 仅在搭配 <code>x-gmkerl-crop</code>、<code>x-gmkerl-type</code>、<code>x-gmkerl-thumbnail</code> 时有效</td>
+</tr>
+<tr>
+<td>x-gmkerl-watermark-text</td>
+<td>否</td>
+<td>文字水印内容，必须经过 urlencode 处理</td>
+</tr>
+<tr>
+<td>x-gmkerl-watermark-font</td>
+<td>否</td>
+<td>文字水印字体，默认 <code>simsun</code>，见 <a href="#gmkerl-watermark-font">x-gmkerl-watermark-font 可选值列表</a></td>
+</tr>
+<tr>
+<td>x-gmkerl-watermark-size</td>
+<td>否</td>
+<td>文字水印字体大小，正整数，单位像素，默认 <code>32</code></td>
+</tr>
+<tr>
+<td>x-gmkerl-watermark-align</td>
+<td>否</td>
+<td>水印对齐方式，默认 <code>top,left</code>，见 <a href="#gmkerl-watermark-align">x-gmkerl-watermark-align 值说明</a></td>
+</tr>
+<tr>
+<td>x-gmkerl-watermark-margin</td>
+<td>否</td>
+<td>水印边距，格式 <code>x,y</code>，既 <code>水平边距,垂直边距</code>，单位像素，默认 <code>20,20</code></td>
+</tr>
+<tr>
+<td>x-gmkerl-watermark-opacity</td>
+<td>否</td>
+<td>水印透明度，取值范围 0 ~ 100 的整数，默认 <code>0</code></td>
+</tr>
+<tr>
+<td>x-gmkerl-watermark-color</td>
+<td>否</td>
+<td>文字水印颜色，RGB 值，默认 <code>#000000</code></td>
+</tr>
+<tr>
+<td>x-gmkerl-watermark-border</td>
+<td>否</td>
+<td>文字水印边框，默认无边框，见 <a href="#gmkerl-watermark-border">x-gmkerl-watermark-border 值说明</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="gmkerl-type"></a>
+<strong>x-gmkerl-type 可选值列表</strong></p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fix_width</code></td>
+<td>限定宽度，高度自适应</td>
+</tr>
+<tr>
+<td><code>fix_height</code></td>
+<td>限定高度，宽度自适应</td>
+</tr>
+<tr>
+<td><code>fix_width_or_height</code></td>
+<td>限定宽度和高度，宽高不足时不缩放</td>
+</tr>
+<tr>
+<td><code>fix_both</code></td>
+<td>固定宽度和高度，宽高不足时强行缩放</td>
+</tr>
+<tr>
+<td><code>fix_max</code></td>
+<td>限定最长边，短边自适应</td>
+</tr>
+<tr>
+<td><code>fix_min</code></td>
+<td>限定最短边，长边自适应</td>
+</tr>
+<tr>
+<td><code>fix_scale</code></td>
+<td>等比例缩放（1-1000）</td>
+</tr>
+</tbody>
+</table>
+<p><a name="gmkerl-value"></a>
+<strong>x-gmkerl-value 值说明</strong></p>
+<ul>
+<li>当 <code>x-gmkerl-type</code> 指定为 <code>fix_width_or_height</code> 或 <code>fix_both</code> 时，<code>x-gmkerl-value</code> 值的格式为 <code>&lt;width&gt;x&lt;height&gt;</code>，如 <code>480x576</code>。</li>
+<li>当 <code>x-gmkerl-type</code>  为其他的类型，<code>x-gmkerl-value</code> 值只需要指定单个数字，如 <code>100</code>，意思为高和/或宽为 <code>100</code>。</li>
+</ul>
+<p><a name="gmkerl-watermark-font"></a>
+<strong>x-gmkerl-watermark-font 可选值列表</strong></p>
+<ul>
+<li><code>simsun</code>：宋体(simsun)</li>
+<li><code>simhei</code>：黑体 (simhei)</li>
+<li><code>simkai</code>：楷体 (simkai)</li>
+<li><code>simli</code>：隶书 (simli)</li>
+<li><code>simyou</code>：幼圆 (simyou)</li>
+<li><code>simfang</code>：仿宋 (simfang)</li>
+</ul>
+<p><a name="gmkerl-watermark-align"></a>
+<strong>x-gmkerl-watermark-align 值说明</strong></p>
+<p>格式 <code>valign,halign</code>，既 <code>垂直对齐,水平对齐</code>，<code>valign</code>、<code>halign</code> 可选值：</p>
+<ul>
+<li>垂直对齐：<code>top</code>，<code>middle</code>，<code>bottom</code>；</li>
+<li>水平对齐：<code>left</code>，<code>center</code>，<code>right</code>。</li>
+</ul>
+<p><a name="gmkerl-watermark-border"></a>
+<strong>x-gmkerl-watermark-border 值说明</strong></p>
+<ul>
+<li>格式 <code>rgba</code>， <code>RGB</code> 表示边框的颜色，<code>a</code> 表示边框的透明度，如 <code>#cccccccc</code></li>
+</ul>
+<hr />
+<p>如有疑问请 <a href="https://www.upyun.com/contact">联系我们</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

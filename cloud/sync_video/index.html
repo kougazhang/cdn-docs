@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/cloud/sync_video/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>同步视频处理</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/">产品简介</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/image/">图片处理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/av/">异步音视频处理</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="cloud/sync_video/">同步视频处理</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">简介</a></li>
+                    
+                  
+                    <li class=""><a href="#m3u8">M3U8 拼接</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_2">请求</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">响应</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">举例</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#m3u8_1">M3U8 剪辑</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_5">请求</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_6">响应</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_7">举例</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#m3u8_2">视频截图（M3U8 截图）</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_8">请求</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_9">响应</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_10">举例</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#m3u8_3">获取 M3U8 信息</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_11">请求</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_12">响应</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_13">举例</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_14">获取音视频元信息</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_15">请求</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_16">响应</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_17">举例</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_18">状态码说明</a></li>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/sync_audio/">同步音频处理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/unzip/">压缩解压缩</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/spider/">文件拉取</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/uconvert/">文档转换</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/async_image/">异步图片拼接</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="cloud/av_pretreatment/">音视频处理（已弃用）</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>同步视频处理</h1>
+
+<h2 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>为了解决异步视频处理时间长，又拍云推出针对 M3U8（ts）的实时视频处理解决方案，可以实现秒级视频拼接、合并、元信息获取。您可以把视频切片成 M3U8（ts），来使用实时视频处理。</p>
+<p>本类功能现在免费，欢迎使用。在使用它之前，请确保您已经注册又拍云账号并完成实名验证，请确保您已经创建<a href="/api/quick_start/">云存储服务</a>。</p>
+<p>相关阅读：<a href="/cloud/av/">异步音视频处理</a>，<a href="/cloud/sync_audio/">同步音频处理</a>。</p>
+<p><a name="concat"></a></p>
+<h2 id="m3u8">M3U8 拼接<a class="headerlink" href="#m3u8" title="Permanent link">&para;</a></h2>
+<p>多个 M3U8 拼接成一个。</p>
+<h3 id="_2">请求<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>** 请求语法 **</p>
+<pre><code>POST http://p1.api.upyun.com/&lt;service&gt;/m3u8er/concat HTTP/1.1
+Host: p1.api.upyun.com
+Date: GMT Date
+Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;
+Content-Type: application/json
+
+{&quot;m3u8s&quot;: [&quot;&lt;拼接 M3U8 的存储地址&gt;&quot;], &quot;save_as&quot;: &quot;&lt;结果保存地址&gt;&quot;}
+</code></pre>
+<p>** 签名验证 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<p>** 请求参数 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>m3u8s</td>
+<td>array</td>
+<td>是</td>
+<td>拼接 M3U8 的存储地址，按提交的顺序进行拼接</td>
+</tr>
+<tr>
+<td>save_as</td>
+<td>string</td>
+<td>是</td>
+<td>结果保存地址</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">响应<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">status_code</td>
+<td>状态码，见 「<a href="#status">状态码说明</a>」</td>
+</tr>
+<tr>
+<td style="text-align: left;">message</td>
+<td>返回信息</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">举例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>** 请求示例 **</p>
+<pre><code>POST http://p1.api.upyun.com/&lt;service&gt;/m3u8er/concat HTTP/1.1
+Host: p1.api.upyun.com
+Content-Length: 114
+Date: Thu, 11 May 2017 06:45:23 GMT
+Content-Type: application/json
+Authorization: UPYUN &lt;operator&gt;:6LrWf1AG2qiEjW1RByafxQmSwNQ=
+
+{&quot;save_as&quot;: &quot;m3u8s/concat_40s.m3u8&quot;, &quot;m3u8s&quot;: [&quot;m3u8s/HZW.mp4.0s_20s.m3u8&quot;, &quot;m3u8s/bxjg-1700-mp2.ts.0s_20s.m3u8&quot;]}
+</code></pre>
+<p>** 响应示例 **</p>
+<pre><code>HTTP/1.1 200 OK
+Server: marco/1.0
+Content-Type: application/json
+X-Request-Id: 1cdb466a48493b641522965699f4e9f0
+Content-Length: 37
+Date: Thu, 11 May 2017 07:48:00 GMT
+
+{&quot;status_code&quot;: 200, &quot;message&quot;: &quot;ok&quot;}
+</code></pre>
+<p><a name="clip"></a></p>
+<h2 id="m3u8_1">M3U8 剪辑<a class="headerlink" href="#m3u8_1" title="Permanent link">&para;</a></h2>
+<p>从 M3U8 中剪辑一段，或去掉一段保留前后两段。</p>
+<h3 id="_5">请求<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>** 请求语法 **</p>
+<pre><code>POST http://p1.api.upyun.com/&lt;service&gt;/m3u8er/clip HTTP/1.1
+Host: p1.api.upyun.com
+Date: GMT Date
+Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;
+Content-Type: application/json
+
+{&quot;m3u8&quot;: &quot;&lt;M3U8 的存储地址&gt;&quot;, &quot;include&quot;: [&lt;开始时间点&gt;, &lt;结束时间点&gt;], &quot;save_as&quot;: &quot;&lt;结果保存地址&gt;&quot;}
+</code></pre>
+<p>** 签名验证 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<p>** 请求参数 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>m3u8</td>
+<td>string</td>
+<td>是</td>
+<td>M3U8 的存储地址</td>
+</tr>
+<tr>
+<td>save_as</td>
+<td>string</td>
+<td>是</td>
+<td>结果保存地址</td>
+</tr>
+<tr>
+<td>include</td>
+<td>array</td>
+<td>否</td>
+<td>包含某段内容的开始结束时间，单位是秒。当 <code>index</code> 为 false 时，为开始结束分片序号</td>
+</tr>
+<tr>
+<td>exclude</td>
+<td>array</td>
+<td>否</td>
+<td>不包含某段内容的开始结束时间，单位是秒。当 <code>index</code> 为 false 时，为开始结束分片序号</td>
+</tr>
+<tr>
+<td>index</td>
+<td>boolean</td>
+<td>否</td>
+<td><code>include</code> 或者 <code>exclude</code> 中的值是否为 ts 分片序号，默认为 false</td>
+</tr>
+</tbody>
+</table>
+<p>** 注 **</p>
+<ul>
+<li><code>include</code> 与 <code>exclude</code> 互斥，只能设置一个。当两个都设置时，使用 <code>include</code>。</li>
+<li>当 <code>include</code> 中设定时间在 ts 分片中间时，会保留整个 ts 分片的内容；当是 <code>exclude</code> 时，会去掉整个 ts 分片的内容。</li>
+<li>当 <code>index</code> 是 true 时，<code>include</code> 或 <code>exclude</code> 使用 ts 文件的序号，序号从 0 开始，即第一个 ts 分片是 0，第二个 ts 分片是 1，以此类推。</li>
+</ul>
+<h3 id="_6">响应<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">status_code</td>
+<td>状态码，见 「<a href="#status">状态码说明</a>」</td>
+</tr>
+<tr>
+<td style="text-align: left;">message</td>
+<td>返回信息</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">举例<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>** 请求示例 **</p>
+<pre><code>POST http://p1.api.upyun.com/&lt;service&gt;/m3u8er/clip HTTP/1.1
+Host: p1.api.upyun.com
+Content-Length: 90
+Date: Thu, 11 May 2017 06:46:39 GMT
+Content-Type: application/json
+Authorization: UPYUN &lt;operator&gt;:7z19rZnzeSnzeQvdE6BlG9m7Cn0=
+
+{&quot;save_as&quot;: &quot;m3u8s/HZW.mp4.0s_20s.m3u8&quot;, &quot;include&quot;: [0, 20], &quot;m3u8&quot;: &quot;m3u8s/HZW.mp4.m3u8&quot;}
+</code></pre>
+<p>** 响应示例 **</p>
+<pre><code>HTTP/1.1 200 OK
+Server: marco/1.0
+Content-Type: application/json
+X-Request-Id: cfe98cb5fa525984c9f57bdab1a513fb
+Content-Length: 37
+Date: Thu, 11 May 2017 07:49:14 GMT
+
+{&quot;status_code&quot;: 200, &quot;message&quot;: &quot;ok&quot;}
+</code></pre>
+<p><a name="snapshot"></a></p>
+<h2 id="m3u8_2">视频截图（M3U8 截图）<a class="headerlink" href="#m3u8_2" title="Permanent link">&para;</a></h2>
+<p>从 M3U8，MP4 或其他格式视频中获取一张截图。</p>
+<h3 id="_8">请求<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>** 请求语法 **</p>
+<pre><code>POST http://p1.api.upyun.com/&lt;service&gt;/snapshot HTTP/1.1
+Host: p1.api.upyun.com
+Date: GMT Date
+Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;
+Content-Type: application/json
+
+{&quot;source&quot;: &quot;&lt;视频的存储地址&gt;&quot;, &quot;point&quot;: &quot;&lt;时间点&gt;&quot;, &quot;save_as&quot;: &quot;&lt;截图保存地址&gt;&quot;}
+</code></pre>
+<p>** 签名验证 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<p>** 请求参数 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>是</td>
+<td>视频的存储地址</td>
+</tr>
+<tr>
+<td>save_as</td>
+<td>string</td>
+<td>是</td>
+<td>截图保存地址</td>
+</tr>
+<tr>
+<td>point</td>
+<td>string</td>
+<td>是</td>
+<td>截图时间点，格式为 <code>HH:MM:SS</code></td>
+</tr>
+<tr>
+<td>size</td>
+<td>string</td>
+<td>否</td>
+<td>截图尺寸，格式为 <code>宽x高</code>，默认是视频尺寸</td>
+</tr>
+<tr>
+<td>format</td>
+<td>string</td>
+<td>否</td>
+<td>截图格式，可选值为 <code>jpg</code>，<code>png</code>, <code>webp</code>, 默认根据 save_as 的后缀生成</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">响应<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">status_code</td>
+<td>状态码，见 「<a href="#status">状态码说明</a>」</td>
+</tr>
+<tr>
+<td style="text-align: left;">message</td>
+<td>返回信息</td>
+</tr>
+<tr>
+<td style="text-align: left;">content_type</td>
+<td>截图类型</td>
+</tr>
+<tr>
+<td style="text-align: left;">content_length</td>
+<td>截图大小</td>
+</tr>
+<tr>
+<td style="text-align: left;">save_as</td>
+<td>截图保存地址</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">举例<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>** 请求示例 **</p>
+<pre><code>POST http://p1.api.upyun.com/&lt;service&gt;/snapshot HTTP/1.1
+Host: p1.api.upyun.com
+Date: Tue, 20 Jun 2017 10:19:15 GMT
+Authorization: UPYUN &lt;operator&gt;:4+Hqjo788qC4v4zHRxnvhpweFQo=
+Content-Length: 96
+Content-Type: application/json
+
+{&quot;source&quot;: &quot;/tmp/360p.mp4&quot;, &quot;save_as&quot;: &quot;/foo03.jpg&quot;, &quot;point&quot;: &quot;00:00:05&quot;}
+</code></pre>
+<p>** 响应示例 **</p>
+<pre><code>HTTP/1.1 200 OK
+Server: marco/1.4
+Content-Type: application/json
+X-Request-Id: 8f404a0b864531edbaa7288563e0db0e
+Content-Length: 87
+Date: Tue, 20 Jun 2017 10:19:27 GMT
+
+{&quot;status_code&quot;: 200, &quot;message&quot;: &quot;ok&quot;,&quot;content_type&quot;:&quot;image/jpeg&quot;,&quot;content_length&quot;:14482,&quot;save_as&quot;:&quot;/foo03.jpg&quot;}
+</code></pre>
+<h2 id="m3u8_3">获取 M3U8 信息<a class="headerlink" href="#m3u8_3" title="Permanent link">&para;</a></h2>
+<p>获取 M3U8 时长和分片信息。</p>
+<h3 id="_11">请求<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>** 请求语法 **</p>
+<pre><code>POST http://p1.api.upyun.com/&lt;service&gt;/m3u8er/get_meta HTTP/1.1
+Host: p1.api.upyun.com
+Date: GMT Date
+Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;
+Content-Type: application/json
+
+{&quot;m3u8&quot;: &quot;&lt;M3U8 的存储地址 &gt;&quot;}
+</code></pre>
+<p>** 签名验证 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<p>** 请求参数 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>m3u8</td>
+<td>string</td>
+<td>是</td>
+<td>M3U8 的存储地址</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_12">响应<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">status_code</td>
+<td>状态码，见 「<a href="#status">状态码说明</a>」</td>
+</tr>
+<tr>
+<td style="text-align: left;">message</td>
+<td>返回信息</td>
+</tr>
+<tr>
+<td style="text-align: left;">meta.duartion</td>
+<td>m3u8 时长</td>
+</tr>
+<tr>
+<td style="text-align: left;">meta.points</td>
+<td>时间点</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_13">举例<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>** 请求示例 **</p>
+<pre><code>POST http://p1.api.upyun.com/&lt;service&gt;/m3u8er/get_meta HTTP/1.1
+Host: p1.api.upyun.com
+Content-Length: 29
+Date: Thu, 11 May 2017 06:40:06 GMT
+Content-Type: application/json
+Authorization: UPYUN &lt;operator&gt;:3FRsny9cB/7VVRaHv4WyZBvpms0=
+
+{&quot;m3u8&quot;: &quot;m3u8s/concat.m3u8&quot;}
+</code></pre>
+<p>** 响应示例 **</p>
+<pre><code>HTTP/1.1 200 OK
+Server: marco/1.0
+Content-Type: application/json
+X-Request-Id: 3f58bba91921504e395b8010037ca038
+Content-Length: 5707
+Date: Thu, 11 May 2017 08:48:05 GMT
+
+{&quot;status_code&quot;: 200, &quot;message&quot;: &quot;ok&quot;, &quot;meta&quot;: {&quot;duration&quot;: 2850.2974559999984, &quot;points&quot;: [11.277933000000001, 23.723700000000001, 34.634599999999999, 42.008632999999996, 50.483765999999996, 64.764698999999993, 70.804065999999992, 82.31556599999999, 92.892798999999997, 100.20009899999999, 114.74796599999999, 123.92379899999999, 131.09763199999998, 140.97416499999997, 158.32483199999996, 160.05989899999994, 172.70586599999996, 181.04753299999996, 191.79159999999996, &lt;后续省略&gt;]}}
+</code></pre>
+<p><a name="avmeta"></a></p>
+<h2 id="_14">获取音视频元信息<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>获取音视频的元信息</p>
+<h3 id="_15">请求<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>** 请求语法 **</p>
+<pre><code>POST http://p1.api.upyun.com/&lt;service&gt;/avmeta/get_meta HTTP/1.1
+Host: p1.api.upyun.com
+Date: GMT Date
+Authorization: UPYUN &lt;Operator&gt;:&lt;Signature&gt;
+Content-Type: application/json
+
+{&quot;source&quot;: &quot;&lt;音视频的存储地址 &gt;&quot;}
+</code></pre>
+<p>** 签名验证 **</p>
+<p><code>Authorization</code> 详见<a href="/cloud/authorization/#_1">签名认证</a>。</p>
+<p>** 请求参数 **</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>是</td>
+<td>音视频的存储地址</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_16">响应<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>format</td>
+<td>json</td>
+<td>音视频格式信息</td>
+</tr>
+<tr>
+<td>format.bitrate</td>
+<td>int</td>
+<td>比特率</td>
+</tr>
+<tr>
+<td>format.duration</td>
+<td>float</td>
+<td>时长</td>
+</tr>
+<tr>
+<td>format.format</td>
+<td>string</td>
+<td>容器格式</td>
+</tr>
+<tr>
+<td>format.fullname</td>
+<td>string</td>
+<td>容器格式全称</td>
+</tr>
+<tr>
+<td>streams</td>
+<td>list</td>
+<td>stream 列表</td>
+</tr>
+<tr>
+<td>stream.index</td>
+<td>int</td>
+<td>表示第几路流</td>
+</tr>
+<tr>
+<td>stream.type</td>
+<td>string</td>
+<td>一般情况下, <code>video</code> 或 <code>audio</code></td>
+</tr>
+<tr>
+<td>stream.bitrate</td>
+<td>int</td>
+<td>流码率</td>
+</tr>
+<tr>
+<td>stream.codec</td>
+<td>string</td>
+<td>流编码</td>
+</tr>
+<tr>
+<td>stream.codec_desc</td>
+<td>string</td>
+<td>流编码说明</td>
+</tr>
+<tr>
+<td>stream.duration</td>
+<td>float</td>
+<td>流时长</td>
+</tr>
+<tr>
+<td>stream.video_fps</td>
+<td>float</td>
+<td>(视频流)视频帧数</td>
+</tr>
+<tr>
+<td>stream.video_height</td>
+<td>int</td>
+<td>(视频流)视频高度</td>
+</tr>
+<tr>
+<td>stream.video_width</td>
+<td>int</td>
+<td>(视频流)视频宽度</td>
+</tr>
+<tr>
+<td>stream.audio_channels</td>
+<td>int</td>
+<td>(音频流)音频通道数</td>
+</tr>
+<tr>
+<td>stream.audio_samplerate</td>
+<td>int</td>
+<td>(音频流)音频采样率</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_17">举例<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>** 请求示例 **</p>
+<pre><code>POST /&lt;service&gt;/avmeta/get_meta HTTP/1.1
+Host: p1.api.upyun.com
+User-Agent: python-requests/2.18.2
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Date: Mon, 21 Aug 2017 05:50:03 GMT
+Authorization: UPYUN &lt;service&gt;:ivoVvndudFq76zpZr/3S5QZGUNg=
+Content-Length: 27
+Content-Type: application/json
+
+{&quot;source&quot;: &quot;/tmp/360p.mp4&quot;}
+</code></pre>
+<p>** 响应示例 **</p>
+<pre><code>HTTP/1.1 200 OK
+Server: marco/1.6
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+X-Request-Id: 6b37641338d5a71cd6306eb7da14448d
+Date: Mon, 21 Aug 2017 05:50:05 GMT
+X-Request-Path: poc-hgh-a-14, 403-zj-fud-206
+Content-Encoding: gzip
+
+{
+    &quot;streams&quot;: [
+        {
+            &quot;index&quot;: 0,
+            &quot;type&quot;: &quot;video&quot;,
+            &quot;video_fps&quot;: 25,
+            &quot;video_height&quot;: 236,
+            &quot;video_width&quot;: 426,
+            &quot;codec_desc&quot;: &quot;H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10&quot;,
+            &quot;codec&quot;: &quot;h264&quot;,
+            &quot;bitrate&quot;: 99608,
+            &quot;duration&quot;: 184.8,
+            &quot;metadata&quot;: {
+                &quot;handler_name&quot;: &quot;VideoHandler&quot;,
+                &quot;language&quot;: &quot;und&quot;
+            }
+        },
+        {
+            &quot;index&quot;: 1,
+            &quot;type&quot;: &quot;audio&quot;,
+            &quot;audio_channels&quot;: 2,
+            &quot;audio_samplerate&quot;: 44100,
+            &quot;codec_desc&quot;: &quot;AAC (Advanced Audio Coding)&quot;,
+            &quot;codec&quot;: &quot;aac&quot;,
+            &quot;bitrate&quot;: 48005,
+            &quot;duration&quot;: 184.855011,
+            &quot;metadata&quot;: {
+                &quot;handler_name&quot;: &quot;SoundHandler&quot;,
+                &quot;language&quot;: &quot;und&quot;
+            }
+        }
+    ],
+    &quot;format&quot;: {
+        &quot;duration&quot;: 184.902,
+        &quot;fullname&quot;: &quot;QuickTime / MOV&quot;,
+        &quot;bitrate&quot;: 154062,
+        &quot;filesize&quot;: 3.560797e+06,
+        &quot;format&quot;: &quot;mov,mp4,m4a,3gp,3g2,mj2&quot;
+    }
+}
+</code></pre>
+<p><a name="status"></a></p>
+<h2 id="_18">状态码说明<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>处理成功</td>
+</tr>
+<tr>
+<td>400</td>
+<td>请求参数错误</td>
+</tr>
+<tr>
+<td>401</td>
+<td>请求参数错误</td>
+</tr>
+<tr>
+<td>404</td>
+<td>m3u8/视频不存在</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>服务端错误，请反馈给<a href="https://www.upyun.com/contact">售后</a>或您的商务经理</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>如有疑问请 <a href="https://www.upyun.com/contact">联系我们</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

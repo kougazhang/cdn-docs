@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://docs.upyun.com/ai/face_detect/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>又拍云文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.upyun.com/">又拍云文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="">文档首页</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cdn/">CDN</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="live/Introduction/">直播</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="video/">点播&短视频</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="api/">云存储</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="cloud/">云处理</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="ai/audit/">人工智能</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="download/">SDK&工具</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="faq/">常见问题</a>
+                
+              </li>
+            
+                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="">文档</a></li>
+    <li>人脸识别</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/upyun/docs/" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/audit/">内容识别(有存储)</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/audit_nostorage/">内容识别(无存储)</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/api_console/">内容处理</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="ai/authorization/">认证鉴权</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="ai/face_detect/">人脸识别</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">快速入门</a></li>
+                    
+                  
+                    <li class=""><a href="#_2">开发者指南</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_3">请求方法</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_4">响应信息</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_5">状态码表</a></li>
+                      </ul>
+                    
+                  
+                    <li class=""><a href="#_6">功能</a></li>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_7">人脸检测</a></li>
+                      </ul>
+                    
+                  
+                  </ul>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>人脸识别</h1>
+
+<h2 id="_1">快速入门<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>又拍云处理（人脸识别）基于 CDN 或云存储服务，您在使用它之前，请确保您已经注册又拍云账号并完成实名验证，请确保您已经创建 <a href="/cdn/guide/">CDN 服务</a>或<a href="/api/quick_start/">云存储服务</a>。</p>
+<p>收费方面，现在免费公测中，后续会进行收费。</p>
+<hr />
+<h2 id="_2">开发者指南<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><a name="submit_task"></a></p>
+<h3 id="_3">请求方法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>通过 URL 访问图片时，对图片进行识别。任务以同步的方式处理，处理完成后，响应信息中返回人脸识别的信息。</p>
+<p>** 格式 **</p>
+<pre><code>图片 URL + 间隔标识符 + 参数
+</code></pre>
+<p>间隔标识符说明，见<a href="/cloud/image/#tag">间隔标识符</a>；参数说明，见<a href="#function">功能</a>。</p>
+<p>** 举例 **</p>
+<p>图片 URL 是 <a href="https://p.upyun.com/docs/cloud/face.jpg" target="_blank" title="查看"><code>https://p.upyun.com/docs/cloud/face.jpg</code></a> </p>
+<p>人脸检测的 URL 是 <a href="https://p.upyun.com/docs/cloud/face.jpg!/face/detection" target="_blank" title="查看"><code>https://p.upyun.com/docs/cloud/face.jpg!/face/detection</code></a></p>
+<h3 id="_4">响应信息<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>识别成功：返回 <code>200</code>，响应信息是人脸识别结果。响应信息为 JSON 格式，字段名及含义如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>face</td>
+<td>list</td>
+<td>人脸位置坐标信息，如果没有人脸，返回空信息</td>
+</tr>
+<tr>
+<td>size</td>
+<td>list</td>
+<td>图片的宽、高</td>
+</tr>
+</tbody>
+</table>
+<p>** 举例 **</p>
+<pre><code>{
+    &quot;size&quot;: [
+        598,
+        960
+    ],
+    &quot;face&quot;: [
+        {
+            &quot;x&quot;: 179,
+            &quot;y&quot;: 290,
+            &quot;width&quot;: 288,
+            &quot;height&quot;: 288
+        }
+    ]
+}
+</code></pre>
+<ul>
+<li>识别失败：返回相应的出错信息，具体请参阅「<a href="#status">状态码表</a>」。</li>
+</ul>
+<hr />
+<p><a name="status"></a></p>
+<h3 id="_5">状态码表<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>处理成功</td>
+</tr>
+<tr>
+<td>404</td>
+<td>文件不存在</td>
+</tr>
+<tr>
+<td>413</td>
+<td>文件大小超出限制</td>
+</tr>
+<tr>
+<td>415</td>
+<td>不支持的文件类型</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>服务端错误。如遇此类错误，请反馈给<a href="https://www.upyun.com/contact">售后</a>或您的商务经理</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="function"></a></p>
+<h2 id="_6">功能<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">人脸检测<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/face/&lt;固定值&gt;</code></td>
+<td>detection</td>
+<td>分析图片上是否有人脸，并返回相应信息</td>
+</tr>
+</tbody>
+</table>
+<p>** 注 **</p>
+<ul>
+<li>图片大小不能超过 8M，否则不处理。</li>
+</ul>
+<hr />
+<p>如有疑问请 <a href="https://www.upyun.com/contact">联系我们</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <li><a href="/faq/">FAQ</a></li>
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/upyun">GitHub</a></li>
+            <li><a href="https://segmentfault.com/upyun">技术问答</a></li>
+            <li><a href="https://www.upyun.com/zh/join_us.html">加入我们</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2019 又拍云</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>
