@@ -1,322 +1,322 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://kougazhang.github.io/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/ai/api_console/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/ai/api_console/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/ai/audit/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/ai/audit/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/ai/audit_nostorage/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/ai/audit_nostorage/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/ai/authorization/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/ai/authorization/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/ai/face_detect/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/ai/face_detect/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/api/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/api/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/api/authorization/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/api/authorization/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/api/developer_guide/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/api/developer_guide/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/api/developer_tools/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/api/developer_tools/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/api/errno/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/api/errno/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/api/form_api/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/api/form_api/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/api/fusion_storage/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/api/fusion_storage/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/api/multipart_upload/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/api/multipart_upload/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/api/old_thumb/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/api/old_thumb/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/api/purge/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/api/purge/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/api/quick_start/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/api/quick_start/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/api/rest_api/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/api/rest_api/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/api/sdk/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/api/sdk/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/api/small_program/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/api/small_program/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cdn/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cdn/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cdn/advanced/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cdn/advanced/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cdn/analysis/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cdn/analysis/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cdn/basic/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cdn/basic/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cdn/buy/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cdn/buy/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cdn/config/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cdn/config/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cdn/edgerules/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cdn/edgerules/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cdn/faq/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cdn/faq/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cdn/guide/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cdn/guide/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cdn/live/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cdn/live/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cdn/log/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cdn/log/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cdn/product/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cdn/product/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cdn/refresh/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cdn/refresh/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cdn/service/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cdn/service/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cdn/ssl/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cdn/ssl/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cdn/tools/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cdn/tools/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cloud/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cloud/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cloud/async_image/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cloud/async_image/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cloud/attachment/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cloud/attachment/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cloud/authorization/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cloud/authorization/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cloud/av/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cloud/av/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cloud/av_pretreatment/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cloud/av_pretreatment/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cloud/image/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cloud/image/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cloud/spider/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cloud/spider/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cloud/sync_audio/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cloud/sync_audio/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cloud/sync_video/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cloud/sync_video/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cloud/uconvert/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cloud/uconvert/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/cloud/unzip/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/cloud/unzip/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/download/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/download/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/faq/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/faq/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/guide/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/guide/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/guide/php_rest_guide/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/guide/php_rest_guide/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/live/Introduction/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/live/Introduction/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/live/advanced/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/live/advanced/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/live/guide/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/live/guide/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/live/mobile-sdk/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/live/mobile-sdk/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/live/primary/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/live/primary/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/misc/discuz/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/misc/discuz/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/misc/phpwind/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/misc/phpwind/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/misc/ueditor/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/misc/ueditor/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/mobile-stats/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/mobile-stats/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/sms/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/sms/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/video/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/video/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://kougazhang.github.io/video/short_video_demo/</loc>
+         <loc>https://kougazhang.github.io/cdn-docs/video/short_video_demo/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
