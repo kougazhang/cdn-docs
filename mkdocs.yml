@@ -1,6 +1,6 @@
 site_name: 又拍云文档中心
-site_url: http://docs.upyun.com/
-repo_url: https://github.com/upyun/docs/
+site_url: https://kougazhang.github.io/cdn-docs/
+repo_url: https://github.com/kougazhang/cdn-docs/
 docs_dir: sources
 theme:
     name: null
