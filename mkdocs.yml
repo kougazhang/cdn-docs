@@ -1,10 +1,10 @@
-site_name: 又拍云文档中心
+site_name: CDN Documents v0.0.1
 site_url: https://kougazhang.github.io/cdn-docs/
+base_url: cdn-docs
 repo_url: https://github.com/kougazhang/cdn-docs/
 docs_dir: sources
 theme:
-    name: null
-    custom_dir: theme/updocs/
+    name: material
 copyright: Copyright &copy; 2017, 又拍云
 
 nav:
