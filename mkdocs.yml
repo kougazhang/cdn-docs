@@ -2,10 +2,12 @@ site_name: 又拍云文档中心
 site_url: http://docs.upyun.com/
 repo_url: https://github.com/upyun/docs/
 docs_dir: sources
-theme_dir: theme/updocs
+theme:
+    name: null
+    custom_dir: theme/updocs/
 copyright: Copyright &copy; 2017, 又拍云
 
-pages:
+nav:
 
 - '文档首页': 'index.md'
 - 'CDN':

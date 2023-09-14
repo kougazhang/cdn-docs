@@ -63,3 +63,4 @@ target/
 sftp-config.json
 
 site/*
+.idea/
