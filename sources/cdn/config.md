@@ -1538,6 +1538,22 @@ PCI DSS 最新合规标准已于 2018 年 6 月 30 日生效，该标准要求�
 
 ##6.访问控制
 
+访问控制就是防盗链，相关资料整理：
+
+- [CDN 常见防盗链技术方案](../static/html/CDN常见防盗链技术方案.html)
+
+简单理解如下：
+
+- token 防盗链/URL 鉴权： 在 URL 的 query 部分把 timestamp 用哈希算法（如 MD5）生成 1 个 token，就如同目前的分享链接一样，CDN 服务器进行校验，如果 token 过期，则返回 403。
+- 回源鉴权/远程鉴权：和 token 防盗链类似，只不过是每次由源站自己进行鉴权。
+- Refer 鉴权：检查 Request 的 header 中 refer 相关的头。
+- IP 黑白名单：好理解。
+
+CDN 相关实现：
+
+- Nginx 模块：基于Nginx的应用鉴权架构 http://fly-luck.github.io/2019/02/04/Nginx%20Auth/
+- 关键点：如何存储，是不是要带参缓存
+
 ###6.1 IP 黑白名单
 
 > 功能说明
