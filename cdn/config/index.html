@@ -3725,6 +3725,22 @@ font/opentype
 </ul>
 <hr />
 <h2 id="6">6.访问控制<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<p>访问控制就是防盗链，相关资料整理：</p>
+<ul>
+<li><a href="../../static/html/CDN%E5%B8%B8%E8%A7%81%E9%98%B2%E7%9B%97%E9%93%BE%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88.html">CDN 常见防盗链技术方案</a></li>
+</ul>
+<p>简单理解如下：</p>
+<ul>
+<li>token 防盗链/URL 鉴权： 在 URL 的 query 部分把 timestamp 用哈希算法（如 MD5）生成 1 个 token，就如同目前的分享链接一样，CDN 服务器进行校验，如果 token 过期，则返回 403。</li>
+<li>回源鉴权/远程鉴权：和 token 防盗链类似，只不过是每次由源站自己进行鉴权。</li>
+<li>Refer 鉴权：检查 Request 的 header 中 refer 相关的头。</li>
+<li>IP 黑白名单：好理解。</li>
+</ul>
+<p>CDN 相关实现：</p>
+<ul>
+<li>Nginx 模块：基于Nginx的应用鉴权架构 http://fly-luck.github.io/2019/02/04/Nginx%20Auth/</li>
+<li>关键点：如何存储，是不是要带参缓存</li>
+</ul>
 <h3 id="61-ip">6.1 IP 黑白名单<a class="headerlink" href="#61-ip" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>功能说明</p>
