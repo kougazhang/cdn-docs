@@ -1544,7 +1544,7 @@ PCI DSS 最新合规标准已于 2018 年 6 月 30 日生效，该标准要求�
 
 简单理解如下：
 
-- token 防盗链/URL 鉴权： 在 URL 的 query 部分把 timestamp 用哈希算法（如 MD5）生成 1 个 token，就如同目前的分享链接一样，CDN 服务器进行校验，如果 token 过期，则返回 403。
+- token 防盗链/时间戳防盗链/URL 鉴权： 在 URL 的 query 部分把 timestamp 用哈希算法（如 MD5）生成 1 个 token，就如同目前的分享链接一样，CDN 服务器进行校验，如果 token 过期，则返回 403。
 - 回源鉴权/远程鉴权：和 token 防盗链类似，只不过是每次由源站自己进行鉴权。
 - Refer 鉴权：检查 Request 的 header 中 refer 相关的头。
 - IP 黑白名单：好理解。
@@ -1794,16 +1794,15 @@ Token 防盗链是通过对时间有关的字符串进行签名，将时间、�
 
 Token 防盗链的实现原理可参见如下图所示：
 
-<img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/upyun-cdn-access-token.png" height="380" width="500" />
+<img src="../static/img/cdn-url-authentication.png" height="380" width="500" />
 
-如上图所示，整个 token 防盗链的实现需要如下几个部分来配合：
-
-1）客户端：负责发送原始请求给客户端业务服务器以及发送带签名的 URL 给 CDN 节点进行验证；
-
-2）业务服务器：根据约定的算法生成带 _upt 参数的 URL 返回给客户端；
-
-3）CDN 节点：负责和客户端进行时间、签名校验；
-
+1. CDN 客户在**“源站应用服务器”和“CDN 厂商控制台上”**配置鉴权URL的生成规则（包括鉴权算法和密钥）。
+   假设鉴权 URL 为：http://DomainName/timestamp/md5hash/FileName。
+2. 客户端访问源站应用的页面时，源站应用服务器将会按照鉴权URL的生成规则生成鉴权URL，并且把鉴权URL包含在应用页面上返回给客户端（图中②和③）。 
+3. 客户端使用鉴权URL向CDN节点发起资源请求（图中④）。 
+4. CDN节点对鉴权URL中的鉴权信息（包括鉴权字符串、时间戳等）进行验证，判断请求的合法性。
+   - 鉴权失败，拒绝访问请求。
+   - 鉴权通过，正常响应合法请求。
 
 1、签名参数
 
@@ -1843,6 +1842,8 @@ _upt = MD5( secret & etime & URI ){ 中间 8 位 } + etime ＝ abcdefgh137000060
 ```
 http://test.example.com/dir/pic.jpg？_upt=abcdefgh137000060
 ```
+
+[客户侧 Demo](../static/code/url_authentication.py)
 
 **实现方式**
 
