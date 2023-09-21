@@ -3731,7 +3731,7 @@ font/opentype
 </ul>
 <p>简单理解如下：</p>
 <ul>
-<li>token 防盗链/URL 鉴权： 在 URL 的 query 部分把 timestamp 用哈希算法（如 MD5）生成 1 个 token，就如同目前的分享链接一样，CDN 服务器进行校验，如果 token 过期，则返回 403。</li>
+<li>token 防盗链/时间戳防盗链/URL 鉴权： 在 URL 的 query 部分把 timestamp 用哈希算法（如 MD5）生成 1 个 token，就如同目前的分享链接一样，CDN 服务器进行校验，如果 token 过期，则返回 403。</li>
 <li>回源鉴权/远程鉴权：和 token 防盗链类似，只不过是每次由源站自己进行鉴权。</li>
 <li>Refer 鉴权：检查 Request 的 header 中 refer 相关的头。</li>
 <li>IP 黑白名单：好理解。</li>
@@ -3911,11 +3911,16 @@ Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:21.0) Gecko/20130331 Firefox/21.0
 <p>Token 防盗链是通过对时间有关的字符串进行签名，将时间、签名信息通过一定的方式传递给 CDN 节点服务器作为判定依据，CDN 边缘节点依据约定的算法判断来访的 URL 是否有访问权限。如果通过，执行下一步；如果不通过，响应 HTTP 403 状态码或者通过 302 跳转到其他 URL。</p>
 <p><strong>实现原理</strong></p>
 <p>Token 防盗链的实现原理可参见如下图所示：</p>
-<p><img src="https://upyun-assets.b0.upaiyun.com/docs/cdn/upyun-cdn-access-token.png" height="380" width="500" /></p>
-<p>如上图所示，整个 token 防盗链的实现需要如下几个部分来配合：</p>
-<p>1）客户端：负责发送原始请求给客户端业务服务器以及发送带签名的 URL 给 CDN 节点进行验证；</p>
-<p>2）业务服务器：根据约定的算法生成带 _upt 参数的 URL 返回给客户端；</p>
-<p>3）CDN 节点：负责和客户端进行时间、签名校验；</p>
+<p><img src="../static/img/cdn-url-authentication.png" height="380" width="500" /></p>
+<ol>
+<li>CDN 客户在<strong>“源站应用服务器”和“CDN 厂商控制台上”</strong>配置鉴权URL的生成规则（包括鉴权算法和密钥）。
+   假设鉴权 URL 为：http://DomainName/timestamp/md5hash/FileName。</li>
+<li>客户端访问源站应用的页面时，源站应用服务器将会按照鉴权URL的生成规则生成鉴权URL，并且把鉴权URL包含在应用页面上返回给客户端（图中②和③）。 </li>
+<li>客户端使用鉴权URL向CDN节点发起资源请求（图中④）。 </li>
+<li>CDN节点对鉴权URL中的鉴权信息（包括鉴权字符串、时间戳等）进行验证，判断请求的合法性。</li>
+<li>鉴权失败，拒绝访问请求。</li>
+<li>鉴权通过，正常响应合法请求。</li>
+</ol>
 <p>1、签名参数</p>
 <pre><code>
 etime: URL 过期的时间，必须是 UNIX TIME 格式，如：2017/3/9 9:19:0 -&gt; 1489022340
@@ -3943,6 +3948,7 @@ _upt = MD5( secret &amp; etime &amp; URI ){ 中间 8 位 } + etime ＝ abcdefgh1
 <p>最后经过客户端业务服务器生成的 URL 为：</p>
 <pre><code>http://test.example.com/dir/pic.jpg？_upt=abcdefgh137000060
 </code></pre>
+<p><a href="../../static/code/url_authentication.py">客户侧 Demo</a></p>
 <p><strong>实现方式</strong></p>
 <p>1.客户端业务服务器生成验证信息</p>
 <p>验证信息的生成由业务服务器负责，具体的加密过程需要确认如下事项：</p>
