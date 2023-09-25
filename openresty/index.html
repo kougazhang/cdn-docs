@@ -8,21 +8,25 @@
       
       
       
-        <link rel="canonical" href="https://kougazhang.github.io/cdn-docs/misc/ueditor/">
+        <link rel="canonical" href="https://kougazhang.github.io/cdn-docs/openresty/">
       
       
+        <link rel="prev" href="../nginx/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+        <link rel="next" href="../cdn/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
     
     
       
-        <title>Ueditor - CDN Documents v0.0.1</title>
+        <title>Openresty - CDN Documents v0.0.1</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.046329b4.min.css">
       
       
 
@@ -41,7 +45,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,11 +66,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -79,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="CDN Documents v0.0.1" class="md-header__button md-logo" aria-label="CDN Documents v0.0.1" data-md-component="logo">
+    <a href=".." title="CDN Documents v0.0.1" class="md-header__button md-logo" aria-label="CDN Documents v0.0.1" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -99,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ueditor
+              Openresty
             
           </span>
         </div>
@@ -183,7 +182,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="CDN Documents v0.0.1" class="md-nav__button md-logo" aria-label="CDN Documents v0.0.1" data-md-component="logo">
+    <a href=".." title="CDN Documents v0.0.1" class="md-nav__button md-logo" aria-label="CDN Documents v0.0.1" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -212,7 +211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -229,17 +228,19 @@
       
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
@@ -252,7 +253,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Developer
@@ -265,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nginx/" class="md-nav__link">
+      <a href="../nginx/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -283,9 +284,16 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../openresty/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -294,6 +302,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -346,7 +355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cdn/" class="md-nav__link">
+      <a href="../cdn/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -366,7 +375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cdn/product/" class="md-nav__link">
+      <a href="../cdn/product/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -386,7 +395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cdn/guide/" class="md-nav__link">
+      <a href="../cdn/guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -406,7 +415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cdn/buy/" class="md-nav__link">
+      <a href="../cdn/buy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -426,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cdn/service/" class="md-nav__link">
+      <a href="../cdn/service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -446,7 +455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cdn/config/" class="md-nav__link">
+      <a href="../cdn/config/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -466,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cdn/edgerules/" class="md-nav__link">
+      <a href="../cdn/edgerules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -486,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cdn/analysis/" class="md-nav__link">
+      <a href="../cdn/analysis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -506,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cdn/refresh/" class="md-nav__link">
+      <a href="../cdn/refresh/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -526,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cdn/log/" class="md-nav__link">
+      <a href="../cdn/log/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -546,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cdn/ssl/" class="md-nav__link">
+      <a href="../cdn/ssl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -566,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cdn/tools/" class="md-nav__link">
+      <a href="../cdn/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -586,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cdn/faq/" class="md-nav__link">
+      <a href="../cdn/faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -647,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../live/Introduction/" class="md-nav__link">
+      <a href="../live/Introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -667,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../live/guide/" class="md-nav__link">
+      <a href="../live/guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -687,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../live/primary/" class="md-nav__link">
+      <a href="../live/primary/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -707,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../live/advanced/" class="md-nav__link">
+      <a href="../live/advanced/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -727,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../live/mobile-sdk/" class="md-nav__link">
+      <a href="../live/mobile-sdk/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -788,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/" class="md-nav__link">
+      <a href="../video/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -808,7 +817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video/short_video_demo/" class="md-nav__link">
+      <a href="../video/short_video_demo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -869,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/" class="md-nav__link">
+      <a href="../api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -889,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/quick_start/" class="md-nav__link">
+      <a href="../api/quick_start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -909,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/developer_guide/" class="md-nav__link">
+      <a href="../api/developer_guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -929,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/authorization/" class="md-nav__link">
+      <a href="../api/authorization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -949,7 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/rest_api/" class="md-nav__link">
+      <a href="../api/rest_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -969,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/form_api/" class="md-nav__link">
+      <a href="../api/form_api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -989,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/developer_tools/" class="md-nav__link">
+      <a href="../api/developer_tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1009,7 +1018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/sdk/" class="md-nav__link">
+      <a href="../api/sdk/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1029,7 +1038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/fusion_storage/" class="md-nav__link">
+      <a href="../api/fusion_storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1049,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/multipart_upload/" class="md-nav__link">
+      <a href="../api/multipart_upload/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1069,7 +1078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/errno/" class="md-nav__link">
+      <a href="../api/errno/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1089,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/purge/" class="md-nav__link">
+      <a href="../api/purge/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1109,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/small_program/" class="md-nav__link">
+      <a href="../api/small_program/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1129,7 +1138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mobile-stats/" class="md-nav__link">
+      <a href="../mobile-stats/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1149,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sms/" class="md-nav__link">
+      <a href="../sms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1210,7 +1219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/" class="md-nav__link">
+      <a href="../cloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1230,7 +1239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/authorization/" class="md-nav__link">
+      <a href="../cloud/authorization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1250,7 +1259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/image/" class="md-nav__link">
+      <a href="../cloud/image/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1270,7 +1279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/av/" class="md-nav__link">
+      <a href="../cloud/av/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1290,7 +1299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/sync_video/" class="md-nav__link">
+      <a href="../cloud/sync_video/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1310,7 +1319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/sync_audio/" class="md-nav__link">
+      <a href="../cloud/sync_audio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1330,7 +1339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/unzip/" class="md-nav__link">
+      <a href="../cloud/unzip/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1350,7 +1359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/spider/" class="md-nav__link">
+      <a href="../cloud/spider/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1370,7 +1379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/uconvert/" class="md-nav__link">
+      <a href="../cloud/uconvert/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1390,7 +1399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/async_image/" class="md-nav__link">
+      <a href="../cloud/async_image/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1410,7 +1419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cloud/av_pretreatment/" class="md-nav__link">
+      <a href="../cloud/av_pretreatment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1471,7 +1480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/audit/" class="md-nav__link">
+      <a href="../ai/audit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1491,7 +1500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/audit_nostorage/" class="md-nav__link">
+      <a href="../ai/audit_nostorage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1511,7 +1520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/api_console/" class="md-nav__link">
+      <a href="../ai/api_console/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1531,7 +1540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/authorization/" class="md-nav__link">
+      <a href="../ai/authorization/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1551,7 +1560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/face_detect/" class="md-nav__link">
+      <a href="../ai/face_detect/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1612,7 +1621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../download/" class="md-nav__link">
+      <a href="../download/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1673,7 +1682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/" class="md-nav__link">
+      <a href="../faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1712,42 +1721,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    更新说明
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    使用须知
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    安装说明
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    相关下载
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1764,48 +1737,9 @@
   
 
 
-  <h1>Ueditor</h1>
+  <h1>Openresty</h1>
 
-<p><a href="http://ueditor.baidu.com/website/">UEditor</a>用户现在也可以把 UPYUN 服务集成进去，轻松把图片和附件上传到你的 UPYUN 空间。</p>
-<h2 id="_1">更新说明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>V0.2 更新：</p>
-<ul>
-<li>优化 0.1 版的代码，增加完善了错误判断；</li>
-</ul>
-<h2 id="_2">使用须知<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ul>
-<li>已经安装部署百度编辑器 UEditor</li>
-<li>工具是基于 UPYUN 服务的，使用需要有有效的 UPYUN 帐号，还没有帐号的用户，可以<a href="https://console.upyun.com/#/register/">点击免费注册账号</a></li>
-</ul>
-<h2 id="_3">安装说明<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>1. 官网下载工具包<a href="http://upyun-assets.b0.upaiyun.com/docs/ueditor-plugin/upyun_ueditor.zip">upyun_ueditor.zip</a>；</p>
-<p>2. 解压到任意目录，可得文件夹 upyun-ueditor；</p>
-<p>3.  复制文件 upyun-ueditor/upyun_config.php、upyun-ueditor/upyun.class.php、upyun-ueditor/editor_config.js、upyun-ueditor/index.php 到所部署的 UEditor 根目录下，复制文件 upyun-ueditor/php/fileUp.php、upyun-ueditor/php/imageUp.php 到所部署的 UEditor 根目录下的 php 目录；</p>
-<p>4.  配置 upyun-ueditor/upyun_config.php 中的 UPYUN 空间授权信息</p>
-<pre><code class="language-php"> //UPYUN 图片空间授权
- $img_bucketname = &quot;&quot;;    //图片空间名称
- $img_username = &quot;&quot;;     //图片空间授权管理员帐号
- $img_password = &quot;&quot;;  //图片空间授权管理员密码
- //UPYUN 文件空间授权
- $file_bucketname = &quot;&quot;;    //文件空间名称
- $file_username = &quot;&quot;;     //文件空间授权管理员帐号
- $file_password = &quot;&quot;;  //文件空间授权管理员密码
-</code></pre>
-<p>说明：如果不需要将图片和非图片类文件分空间存储，则只需将图片空间和文件空间相关信息填写成同一个文件类空间即可（必须为文件类空间）</p>
-<p>5.  配置 upyun-ueditor/editor_config.js 中的空间名</p>
-<pre><code class="language-php"> var img_bucketname = &quot;&quot;;     //UPYUN 图片空间名
- var file_bucketname = &quot;&quot;;     //UPYUN 文件空间名
-</code></pre>
-<p>说明：如果不需要将图片和非图片类文件分空间存储，则只需将图片空间和文件空间相关信息填写成同一个文件类空间即可（必须为文件类空间）</p>
-<h2 id="_4">相关下载<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="http://upyun-assets.b0.upaiyun.com/docs/ueditor-plugin/upyun_ueditor.zip">集成工具包下载</a></li>
-<li>安装使用说明文档：<ul>
-<li><a href="http://upyun-assets.b0.upaiyun.com/docs/ueditor-plugin/upyun_ueditor__readme_v0.2.pdf">PDF 版本</a></li>
-<li><a href="http://upyun-assets.b0.upaiyun.com/docs/ueditor-plugin/upyun_ueditor__readme_v0.2.docx">WORD 版本</a></li>
-</ul>
-</li>
-</ul>
+
 
 
 
@@ -1847,10 +1781,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>
