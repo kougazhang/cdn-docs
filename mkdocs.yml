@@ -10,6 +10,9 @@ copyright: Copyright &copy; 2017, 又拍云
 nav:
 
 - '文档首页': 'index.md'
+- 'Developer':
+    - 'Nginx': 'nginx/index.md'
+    - 'Openresty': 'openresty/index.md'
 - 'CDN':
     - '内容总览': 'cdn/index.md'
     - '产品介绍': 'cdn/product.md'
